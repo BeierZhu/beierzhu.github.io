@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Beier Zhu"
 title_separator          : "-"
 name                     : &name "Beier Zhu"
-description              : &description "PhD Candidate at Nanyang Technological University"
+description              : &description "Research Scientist at Nanyang Technological University"
 url                      : https://beierzhu.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "beierzhu.github.io"
@@ -82,11 +82,11 @@ analytics:
 author:
   name             : "Beier Zhu"
   avatar           : "profile.jpg"
-  bio              : "PhD Candidate at Nanyang Technological University"
+  bio              : "PhD Scientist at Nanyang Technological University"
   location         : "Singapore"
   employer         :
   googlescholar    : "https://scholar.google.com/citations?user=jHczmjwAAAAJ&hl=en"
-  email            : "beier002@e.ntu.edu.sg"
+  email            : "beier [dot] zhu [at] ntu [dot] edu [dot] sg "
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
