@@ -7,27 +7,15 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I'm currently a PhD candidate at [MReaL Lab](https://mreallab.github.io), [Nanyang Technological University](https://www.ntu.edu.sg) advised by [Prof. Hanwang Zhang](https://personal.ntu.edu.sg/hanwangzhang/). I am gratefully supported by [AISG PhD fellowship](https://aisingapore.org/research/phd-fellowship-programme/). Prior to the PhD, I received B.E. and M.E. degree from [Tsinghua University](https://www.tsinghua.edu.cn) in 2016 and 2019.
+I'm currently a Research Fellow at [Nanyang Technological University](https://www.ntu.edu.sg), working with [Prof. Hanwang Zhang](https://personal.ntu.edu.sg/hanwangzhang/).
 
-I focus on learning unbiased models against the distribution shifts in computer vision, vision-language, long-tailed classification, etc.
+I obtained my PhD degree from [Nanyang Technological University](https://www.ntu.edu.sg) advised by [Prof. Hanwang Zhang](https://personal.ntu.edu.sg/hanwangzhang/). Prior to the PhD, I received B.E. and M.E. degree from [Tsinghua University](https://www.tsinghua.edu.cn) in 2016 and 2019.
 
-Experiences
+Research Topics
 ======
-* Nanyang Techonological University, Singapore.  
-  PhD of Computer Science.  
-  2021-Now.  
-  
-* SenseTime Technology, Beijing.  
-  Computer Vision Researcher.  
-  2019-2021.  
+**Theory**:  I develop robust machine learning algorithms, with interests in long-tailed learning, group robustness, OOD generalization, and fairness.
 
-* Tsinghua University, Beijing.  
-  Master of Electrical Engineering.  
-  2016-2019.
-  
-* Tsinghua Univeristy, Beijing.  
-  Bachelor of Engineering.  
-  2012-2016.
+**Application**: I’m interested in understanding and applying large multimodal models, e.g., MLLMs, VLMs, and Stable Diffusion, to downstream tasks.
 
 Publications
 ======
