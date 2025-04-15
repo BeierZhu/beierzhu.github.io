@@ -20,10 +20,25 @@ Research Topics
 Publications
 ======
 (\* denotes equal contribution. ^ denotes corresponding author)
+* Project-Probe-Aggregate: Efficient Fine-Tuning for Group Robustness.  
+  **Beier Zhu**, Jiequan Cui, Hanwang Zhang, Chi Zhang   
+  Main Track **Highlight**, Conference on Computer Vision and Pattern Recognition, CVPR 2025.  
+  
+* Robust Fine-tuning of Zero-shot Models via Variance Reduction.  
+  **Beier Zhu**, Jiequan Cui, Hanwang Zhang   
+  Main Track, Conference on Neural Information Processing Systems, NeurIPS 2024   
+
+* Enhancing Zero-Shot Vision Models by Label-Free Prompt Distribution Learning and Bias Correcting.  
+  Xingyu Zhu*, **Beier Zhu***, Yi Tan, Shuo Wang, Yanbin Hao, Hanwang Zhang     
+  Main Track **Spotlight**, Conference on Neural Information Processing Systems, NeurIPS 2024.   
+
+* Selective Vision-Language Subspace Projection for Few-shot CLIP.  
+  Xingyu Zhu*, **Beier Zhu***, Yi Tan, Shuo Wang, Yanbin Hao, Hanwang Zhang   
+  Main Track **Oral**, Conference on Neural Information Processing Systems. NeurIPS 2023.    
 
 * Generalized Logit Adjustment: Calibrating Fine-tuned Models by Removing Label Bias in Foundation Models.  
-  **Beier Zhu**, Kaihua Tang, Qianru Sun, Hanwang Zhang  
-  Main Track, Conference on Neural Information Processing Systems. NeurIPS 2023.  
+  **Beier Zhu**, Kaihua Tang, Qianru Sun, Hanwang Zhang     
+  Main Track, Conference on Neural Information Processing Systems. NeurIPS 2023.    
   [paper](https://arxiv.org/abs/2310.08106) [code](https://github.com/BeierZhu/GLA)  
 
 * Prompt-aligned Gradient for Prompt Tuning.  
@@ -60,11 +75,7 @@ Publications
   Shenxing Shi, ^**Beier Zhu**, Sohrab Mirsaeidi, Xinzhou Dong.  
   IEEE Transactions on Smart Grid. TSG 2018.  
   [paper](https://ieeexplore.ieee.org/document/8445640)
-  
-* Extending the Capacity of Cvae for Face Synthesis and Modeling.  
-  Shengju Qian, Wayne Wu, Yangxiaokang Liu, **Beier Zhu**, Fumin Shen.   
-  Workshops, Conference on Neural Information Processing Systems. NeurIPS 2018.  
-  [paper](https://r2learning.github.io/assets/papers/CameraReadySubmission%2011.pdf)
+
 
 * Polygonal Region Detection.  
   **Beier Zhu**, Rui Zhang.  
