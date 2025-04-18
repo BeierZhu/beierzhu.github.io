@@ -29,11 +29,11 @@ Publications
   Main Track, Conference on Neural Information Processing Systems, NeurIPS 2024   
 
 * Enhancing Zero-Shot Vision Models by Label-Free Prompt Distribution Learning and Bias Correcting.  
-  Xingyu Zhu*, **Beier Zhu***, Yi Tan, Shuo Wang, Yanbin Hao, Hanwang Zhang     
+  Xingyu Zhu\*, **Beier Zhu\***, Yi Tan, Shuo Wang, Yanbin Hao, Hanwang Zhang     
   Main Track **Spotlight**, Conference on Neural Information Processing Systems, NeurIPS 2024.   
 
 * Selective Vision-Language Subspace Projection for Few-shot CLIP.  
-  Xingyu Zhu*, **Beier Zhu***, Yi Tan, Shuo Wang, Yanbin Hao, Hanwang Zhang   
+  Xingyu Zhu\*, **Beier Zhu\***, Yi Tan, Shuo Wang, Yanbin Hao, Hanwang Zhang   
   Main Track **Oral**, Conference on Neural Information Processing Systems. NeurIPS 2023.    
 
 * Generalized Logit Adjustment: Calibrating Fine-tuned Models by Removing Label Bias in Foundation Models.  
@@ -62,17 +62,17 @@ Publications
   [paper](https://arxiv.org/abs/2112.14380) [code](https://github.com/BeierZhu/xERM)
 
 * Structure-Coherent Deep Feature Learning for Robust Face Alignment.  
-  \*Chunze Lin, \***Beier Zhu**, Quan Wang, Renjie Liao, Chen Qian, Jiwen Lu, Jie Zhou.  
+  Chunze Lin\*, **Beier Zhu\***, Quan Wang, Renjie Liao, Chen Qian, Jiwen Lu, Jie Zhou.  
   IEEE Transactions on Image Processing. TIP 2021.  
   [paper](https://arxiv.org/abs/2006.11697) [code](https://github.com/BeierZhu/Sturcture-Coherency-Face-Alignment)
 
 * Fault Location for Radial Distribution Network via Topology and Reclosure-Generating Traveling Waves.  
-  Shenxing Shi, ^**Beier Zhu**, Aoyu Lei, Xinzhou Dong.  
+  Shenxing Shi, **Beier Zhu^**, Aoyu Lei, Xinzhou Dong.  
   IEEE Transactions on Smart Grid. TSG 2019.  
   [paper](https://ieeexplore.ieee.org/document/8664125)
 
 * Fault Classification for Transmission Lines Based on Group Sparse Representation.  
-  Shenxing Shi, ^**Beier Zhu**, Sohrab Mirsaeidi, Xinzhou Dong.  
+  Shenxing Shi, **Beier Zhu^**, Sohrab Mirsaeidi, Xinzhou Dong.  
   IEEE Transactions on Smart Grid. TSG 2018.  
   [paper](https://ieeexplore.ieee.org/document/8445640)
 
