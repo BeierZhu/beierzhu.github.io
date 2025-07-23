@@ -109,11 +109,11 @@ let setGiscusTheme = (theme) => {
 
 let addMermaidZoom = (records, observer) => {
   var svgs = d3.selectAll(".mermaid svg");
-  svgs.each(function () {
+  svgs.each(function() {
     var svg = d3.select(this);
     svg.html("<g>" + svg.html() + "</g>");
     var inner = svg.select("g");
-    var zoom = d3.zoom().on("zoom", function (event) {
+    var zoom = d3.zoom().on("zoom", function(event) {
       inner.attr("transform", event.transform);
     });
     svg.call(zoom);
@@ -210,7 +210,7 @@ let transTheme = () => {
 let determineThemeSetting = () => {
   let themeSetting = localStorage.getItem("theme");
   if (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") {
-    themeSetting = "system";
+    themeSetting = "light";
   }
   return themeSetting;
 };
@@ -237,10 +237,10 @@ let initTheme = () => {
   setThemeSetting(themeSetting);
 
   // Add event listener to the theme toggle button.
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function() {
     const mode_toggle = document.getElementById("light-toggle");
 
-    mode_toggle.addEventListener("click", function () {
+    mode_toggle.addEventListener("click", function() {
       toggleThemeSetting();
     });
   });
