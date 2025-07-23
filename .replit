@@ -1,0 +1,13 @@
+modules = ["bun-1.1", "nodejs-20", "python-3.11", "web"]
+run = "node index.js"
+
+[nix]
+channel = "stable-24_05"
+packages = ["ruby_3_3"]
+
+[deployment]
+run = ["sh", "-c", "node index.js"]
+
+[[ports]]
+localPort = 4000
+externalPort = 80
