@@ -12,7 +12,7 @@ nav_order: 2
 
 <!-- Bibsearch Feature -->
 
-You can find full list of my publications and recent works on my [Google Scholar](https://scholar.google.com/citations?user=seUq_d0AAAAJ&hl](https://scholar.google.com/citations?hl=en&user=jHczmjwAAAAJ).
+You can find full list of my publications and recent works on my [Google Scholar](https://scholar.google.com/citations?hl=en&user=jHczmjwAAAAJ).
 
 {% include bib_search.liquid %}
 
