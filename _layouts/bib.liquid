@@ -22,15 +22,18 @@
             {% endif %}
           </abbr>
         {% else %}
+          
           <div style="text-align: center">
-          <span class="badge-orange-outline rounded w-100">{{ entry.abbr }}</span>
-          </div>
+            <!-- <span class="badge-orange-outline rounded w-100">{{ entry.abbr }}</span> -->
+            <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
+          </div> 
 
-          {% if entry.award %}
-            <div style="text-align: center;margin-bottom: 0.3em;">
-            <abbr class="badge rounded w-75">{{ entry.award }}</abbr>
-            </div>
-          {% endif %}
+            <!-- {% if entry.award %}
+              <div style="text-align: center">
+              <abbr class="badge rounded w-75">{{ entry.award }}</abbr>
+              </div>
+            {% endif %} -->
+
         {% endif %}
       {% endif %}
       
@@ -180,9 +183,9 @@
     </div>
     
     <!-- If the paper received an award -->
-    <!-- {%- if entry.award -%}
-    <b>{{entry.award}}</b>
-    {%- endif -%} -->
+    {%- if entry.award -%}
+    <b class="text-danger">{{ entry.award }}</b>
+    {%- endif -%}
 
 
     <!-- Links/Buttons -->
