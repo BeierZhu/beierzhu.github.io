@@ -8,4 +8,7 @@ nav: true
 nav_order: 3
 ---
 
-Coming soon. Notes and thoughts on research, machine learning, and other topics of interest.
+## 资源和文档
+
+- [论文写作.pdf](/assets/pdf/论文写作.pdf)
+
