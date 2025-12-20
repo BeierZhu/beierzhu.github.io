@@ -8,7 +8,4 @@ nav: true
 nav_order: 3
 ---
 
-## 资源和文档
-
-- [论文写作.pdf](/assets/pdf/论文写作.pdf)
 
