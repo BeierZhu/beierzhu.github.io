@@ -31,7 +31,7 @@ emphasis on robust adaptation, faithful reasoning, and controllable generation.
 {% assign news = site.news | reverse %}
 {% for item in news limit: site.news_limit %}
   <tr>
-    <th scope="row" style="width: 20%">{{ item.date | date: "%b, %Y" }}</th>
+    <td style="width: 20%">{{ item.date | date: "%b, %Y" }}</td>
     <td>
       {% if item.inline %}
         {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
