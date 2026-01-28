@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="post">
- 
+
   <article>
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
@@ -52,8 +52,39 @@ layout: default
     <div style="clear: both;"></div>
     <div class="clearfix">{{ content }}</div>
 
-  
+    <!-- News -->
+    {% if site.news_limit %}
+      <div class="news">
+        <h2>News</h2>
+        {% if site.news != blank %}
+          <div class="news-scroll-box">
+            <table class="table table-sm table-borderless">
+              {% assign news = site.news | reverse %}
+              {% for item in news limit: site.news_limit %}
+                <tr>
+                  <th scope="row" style="width: 20%">{{ item.date | date: "%b %-d, %Y" }}</th>
+                  <td>
+                    {% if item.inline %}
+                      {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+                    {% else %}
+                      <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                    {% endif %}
+                  </td>
+                </tr>
+              {% endfor %}
+            </table>
+          </div>
+        {% else %}
+          <p>No news so far...</p>
+        {% endif %}
+      </div>
+    {% endif %}
 
+    <!-- Selected papers -->
+    {% if page.selected_papers %}
+      <h2><a href="{{ '/publications/' | relative_url }}" style="color: inherit;">Selected Publications</a></h2>
+      {% include selected_papers.liquid %}
+    {% endif %}
 
   </article>
 </div>
