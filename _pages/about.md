@@ -26,11 +26,22 @@ emphasis on robust adaptation, faithful reasoning, and controllable generation.
 <br/>
 
 ### News
-<div class="news-scroll-box">
+<div class="news-scroll-box" style="font-weight: 300;">
+<table class="table table-sm table-borderless" style="font-weight: 300;">
 {% assign news = site.news | reverse %}
 {% for item in news limit: site.news_limit %}
-<p style="margin-bottom: 0.3rem;"><span style="display: inline-block; width: 80px; color: #888;">{{ item.date | date: "%b, %Y" }}</span> {% if item.inline %}{{ item.content | remove: '<p>' | remove: '</p>' | emojify }}{% else %}<a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>{% endif %}</p>
+  <tr>
+    <td style="width: 20%">{{ item.date | date: "%b, %Y" }}</td>
+    <td>
+      {% if item.inline %}
+        {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+      {% else %}
+        <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endif %}
+    </td>
+  </tr>
 {% endfor %}
+</table>
 </div>
 
 <br/> 
