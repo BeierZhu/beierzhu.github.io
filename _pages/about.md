@@ -26,8 +26,8 @@ emphasis on robust adaptation, faithful reasoning, and controllable generation.
 <br/>
 
 ### News
-<div class="news-scroll-box" style="font-weight: 400;">
-<table class="table table-sm table-borderless" style="font-weight: 400;">
+<div class="news-scroll-box">
+<table class="table table-sm table-borderless">
 {% assign news = site.news | reverse %}
 {% for item in news limit: site.news_limit %}
   <tr>
