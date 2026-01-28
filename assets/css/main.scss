@@ -48,6 +48,12 @@ $max-content-width: 930px;
     background: #ccc;
     border-radius: 3px;
   }
+
+  // 减小表格行距
+  table.table-sm td {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
 }
 
 
