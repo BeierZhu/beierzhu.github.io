@@ -41,6 +41,17 @@ $max-content-width: {{ site.max_width }};
   overflow-y: auto;
   padding-right: 10px;
   
+  table {
+    margin-bottom: 0;
+    tr {
+      td, th {
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+        line-height: 1.2;
+      }
+    }
+  }
+
   &::-webkit-scrollbar {
     width: 6px;
   }
