@@ -36,4 +36,19 @@ $max-content-width: {{ site.max_width }};
   font-size: 1.1em;
 }
 
+.news-scroll-box {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 10px;
+  
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+  }
+}
+
+
 
