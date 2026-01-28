@@ -16,4 +16,4 @@ Check the repo scope (this allows push access)
 Click Generate token
 Copy the token immediately (you won't see it again!)
 
-git push https://YOUR_USERNAME:YOUR_TOKEN@github.com/beierzhu/beierzhu.github.io.git main
+git push https://BeierZhu:YOUR_TOKEN@github.com/beierzhu/beierzhu.github.io.git main
