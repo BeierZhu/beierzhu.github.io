@@ -22,6 +22,27 @@ social: true # includes social icons at the bottom of the page
 
 **Research**: My research focuses on developing robust machine learning algorithms with strong theoretical foundations, with particular interests in imbalanced learning, group robustness, out-of-distribution (OOD) generalization. On the application side, I am also interested in understanding and leveraging large multimodal models—such as Multimodal Large Language Models (MLLMs), Vision-Language Models (VLMs), and Stable Diffusion—for solving downstream tasks.
 
+<br/>
+
+### News
+<div class="news-scroll-box">
+<table class="table table-sm table-borderless">
+{% assign news = site.news | reverse %}
+{% for item in news limit: site.news_limit %}
+  <tr>
+    <th scope="row" style="width: 20%">{{ item.date | date: "%b %-d, %Y" }}</th>
+    <td>
+      {% if item.inline %}
+        {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+      {% else %}
+        <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endif %}
+    </td>
+  </tr>
+{% endfor %}
+</table>
+</div>
+
 <br/> 
 ### Selected Publications 
 (__First, second, and corresponding author papers__; * and ^ denote equal contribution and corresponding authorship.)
