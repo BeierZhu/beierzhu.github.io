@@ -36,21 +36,53 @@ layout: default
       <h1>Beier Zhu</h1>
       <p>
         Research Fellow in Robust Machine Learning,<br>
-        Nanyang Technological University. <a href="./assets/pdf/Beier_Zhu.pdf"><i class="fas fa-file-pdf"></i>Curriculum Vitae</a>
-      </p><br/><br/>
+        Nanyang Technological University.
+        <a href="./assets/pdf/Beier_Zhu.pdf">
+          <i class="fas fa-file-pdf"></i> Curriculum Vitae
+        </a>
+      </p>
+
+      <!-- Social: 放在 CV 正下方 -->
+      {% if page.social %}
+        <div class="social">
+          <div class="contact-icons">
+            {% include social.liquid %}
+          </div>
+        </div>
+      {% endif %}
     </div>
 
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
 
     <div style="clear: both;"></div>
     <div class="clearfix">{{ content }}</div>
+
+    <!-- News -->
+    {% if site.news_limit %}
+      <div class="news">
+        <h2>News</h2>
+        {% if site.news != blank %}
+          <div class="news-scroll-box">
+            <table class="table table-sm table-borderless">
+              {% assign news = site.news | reverse %}
+              {% for item in news limit: site.news_limit %}
+                <tr>
+                  <th scope="row" style="width: 20%">{{ item.date | date: "%b %Y" }}</th>
+                  <td>
+                    {% if item.inline %}
+                      {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+                    {% else %}
+                      <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                    {% endif %}
+                  </td>
+                </tr>
+              {% endfor %}
+            </table>
+          </div>
+        {% else %}
+          <p>No news so far...</p>
+        {% endif %}
+      </div>
+    {% endif %}
 
   </article>
 </div>
