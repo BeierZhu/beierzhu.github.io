@@ -6,22 +6,21 @@
 // Dimensions
 $max-content-width: 930px;
 
-@import
-  "variables",
-  "themes",
-  "layout",
-  "base",
-  "distill",
-  "cv",
-  "tabs",
-  "typograms",
-  "font-awesome/fontawesome",
-  "font-awesome/brands",
-  "font-awesome/solid",
-  "font-awesome/regular",
-  "tabler-icons/tabler-icons.scss",
-  "tabler-icons/tabler-icons-filled.scss",
-  "tabler-icons/tabler-icons-outline.scss"
+@import "variables",
+"themes",
+"layout",
+"base",
+"distill",
+"cv",
+"tabs",
+"typograms",
+"font-awesome/fontawesome",
+"font-awesome/brands",
+"font-awesome/solid",
+"font-awesome/regular",
+"tabler-icons/tabler-icons.scss",
+"tabler-icons/tabler-icons-filled.scss",
+"tabler-icons/tabler-icons-outline.scss"
 ;
 
 .badge-orange-outline {
@@ -37,13 +36,14 @@ $max-content-width: 930px;
 }
 
 .news-scroll-box {
-  max-height: 250px;
+  max-height: 190px;
   overflow-y: auto;
   padding-right: 10px;
 
   &::-webkit-scrollbar {
     width: 6px;
   }
+
   &::-webkit-scrollbar-thumb {
     background: #ccc;
     border-radius: 3px;
@@ -51,10 +51,7 @@ $max-content-width: 930px;
 
   // 减小表格行距
   table.table-sm td {
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
   }
 }
-
-
-
