@@ -184,7 +184,12 @@
     {%- endif -%}
     {%- if entry.month -%}
       {%- capture entrymonth -%}{{ " " }}{{ entry.month | capitalize }}{%- endcapture -%}
-    {%- endif -%}          
+    {%- endif -%}
+    {%- if page.selected_papers -%}
+      {%- capture entryyear -%}, {{ entry.year }}{%- endcapture -%}
+    {%- else -%}
+      {%- assign entryyear = "" -%}
+    {%- endif -%}
     {%- capture periodical -%}{{ entrytype }}{{ entrymonth }}{{ entryyear }}{%- endcapture -%}
     <div class="periodical">
       {{ periodical | strip }}
