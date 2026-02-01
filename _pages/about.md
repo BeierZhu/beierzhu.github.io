@@ -47,7 +47,7 @@ emphasis on robust adaptation, faithful reasoning, and controllable generation.
 
 <div style="height: 3em;"></div>
 
-### Selected Publications ([full list](/publications/))
+### Selected Publications
 <hr style="margin-top: 0.3em; margin-bottom: 1em;">
  <i class="fa-solid fa-handshake" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> and <i class="fa-solid fa-envelope" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> denote equal contribution and corresponding authorship.
 
@@ -60,5 +60,25 @@ emphasis on robust adaptation, faithful reasoning, and controllable generation.
 </div>
 
 <div class="view-more-container">
-  <a href="/publications/" class="view-more-btn">View More Publications</a>
+  <button class="view-more-btn" id="toggle-publications">View More Publications</button>
+  <a href="/publications/" class="view-more-btn view-full-list-btn">View Full List</a>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtn = document.getElementById('toggle-publications');
+  const pubSection = document.querySelector('.selected-publications');
+  let expanded = false;
+  
+  toggleBtn.addEventListener('click', function() {
+    expanded = !expanded;
+    if (expanded) {
+      pubSection.classList.add('expanded');
+      toggleBtn.textContent = 'Show Less';
+    } else {
+      pubSection.classList.remove('expanded');
+      toggleBtn.textContent = 'View More Publications';
+    }
+  });
+});
+</script>

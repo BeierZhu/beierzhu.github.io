@@ -1553,12 +1553,24 @@ ninja-keys::part(ninja-input-wrapper) {
       }
     }
   }
+  
+  // Expanded state - show all entries
+  &.expanded ol.bibliography {
+    > li:nth-child(n+9) {
+      display: block;
+    }
+    
+    > li:nth-child(8)::after {
+      display: none;
+    }
+  }
 }
 
 // View more publications button
 .view-more-container {
   display: flex;
   justify-content: center;
+  gap: 1rem;
   margin-top: -2rem;
   position: relative;
   z-index: 10;
@@ -1573,6 +1585,8 @@ ninja-keys::part(ninja-input-wrapper) {
   border-radius: 25px;
   text-decoration: none !important;
   font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   
@@ -1580,5 +1594,17 @@ ninja-keys::part(ninja-input-wrapper) {
     border-color: var(--global-theme-color);
     color: var(--global-theme-color) !important;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.view-full-list-btn {
+  background-color: var(--global-theme-color);
+  color: white !important;
+  border-color: var(--global-theme-color);
+  
+  &:hover {
+    background-color: var(--global-hover-color);
+    border-color: var(--global-hover-color);
+    color: white !important;
   }
 }
