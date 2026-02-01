@@ -16,6 +16,27 @@ nav_order: 2
 You can find full list of my publications and recent works on my [Google Scholar](https://scholar.google.com/citations?hl=en&user=jHczmjwAAAAJ). 
  <i class="fa-solid fa-handshake" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> and <i class="fa-solid fa-envelope" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> denote equal contribution and corresponding authorship.
 
+<div class="venue-stats-table">
+<table>
+  <thead>
+    <tr>
+      <th>Venue</th>
+      <th>Papers</th>
+      <th><i class="fa-solid fa-handshake"></i>/<i class="fa-solid fa-envelope"></i></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for venue in site.data.venue_stats %}
+    <tr>
+      <td>{{ venue.venue }}</td>
+      <td>{{ venue.count }}</td>
+      <td>{{ venue.first_corresponding }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
 {% include bib_search.liquid %}
 
 <div class="publications">
