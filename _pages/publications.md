@@ -12,18 +12,16 @@ nav_order: 2
 
 <!-- Bibsearch Feature -->
 
-
-You can find full list of my publications and recent works on my [Google Scholar](https://scholar.google.com/citations?hl=en&user=jHczmjwAAAAJ). 
- <i class="fa-solid fa-handshake" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> and <i class="fa-solid fa-envelope" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> denote equal contribution and corresponding authorship.
+ <i class="fa-solid fa-handshake" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> and <i class="fa-solid fa-envelope" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> denote equal contribution and corresponding authorship. You can find full list of my publications on my [Google Scholar](https://scholar.google.com/citations?hl=en&user=jHczmjwAAAAJ). 
 
 <div class="stats-tables-container">
 <div class="venue-stats-table">
 <table>
-  <caption><b>By Venue</b></caption>
+  <caption>By Venue and Authorship</caption>
   <tr class="total-row">
       <td><b>Venue</b></td>
       <td><b>Papers</b></td>
-      <td><b>1<sup>st</sup>/<i class="fa-solid fa-envelope"></i></b></td>
+      <td><b>1<sup>st</sup> and <i class="fa-solid fa-envelope"></i></b></td>
     </tr>
   <tbody>
     {% assign total_count = 0 %}
@@ -48,7 +46,7 @@ You can find full list of my publications and recent works on my [Google Scholar
 
 <div class="class-stats-table">
 <table>
-  <caption><b>By Research Topic</b></caption>
+  <caption>By Research Topic</caption>
   <tr class="total-row">
     <td><b>Category</b></td>
     <td><b>Topic</b></td>

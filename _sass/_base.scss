@@ -1530,17 +1530,18 @@ ninja-keys::part(ninja-input-wrapper) {
 // Selected publications fade effect
 .selected-publications {
   position: relative;
-  
+
   ol.bibliography {
+
     // Hide entries after the 8th one
-    > li:nth-child(n+9) {
+    >li:nth-child(n+9) {
       display: none;
     }
-    
+
     // Fade effect on the 8th entry
-    > li:nth-child(8) {
+    >li:nth-child(8) {
       position: relative;
-      
+
       &::after {
         content: '';
         position: absolute;
@@ -1553,14 +1554,14 @@ ninja-keys::part(ninja-input-wrapper) {
       }
     }
   }
-  
+
   // Expanded state - show all entries
   &.expanded ol.bibliography {
-    > li:nth-child(n+9) {
+    >li:nth-child(n+9) {
       display: block;
     }
-    
-    > li:nth-child(8)::after {
+
+    >li:nth-child(8)::after {
       display: none;
     }
   }
@@ -1589,7 +1590,7 @@ ninja-keys::part(ninja-input-wrapper) {
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  
+
   &:hover {
     border-color: var(--global-theme-color);
     color: var(--global-theme-color) !important;
@@ -1601,7 +1602,7 @@ ninja-keys::part(ninja-input-wrapper) {
   background-color: var(--global-theme-color);
   color: white !important;
   border-color: var(--global-theme-color);
-  
+
   &:hover {
     background-color: var(--global-hover-color);
     border-color: var(--global-hover-color);
@@ -1620,43 +1621,45 @@ ninja-keys::part(ninja-input-wrapper) {
 .venue-stats-table,
 .class-stats-table {
   overflow-x: auto;
-  
+
   table {
     width: auto;
     border-collapse: collapse;
     font-size: 1rem;
-    
+
     caption {
       caption-side: top;
       font-weight: normal;
       padding-bottom: 0.5rem;
       text-align: left;
     }
-    
+
     caption b {
       font-weight: bold;
     }
-    
-    th, td {
+
+    th,
+    td {
       padding: 0.5rem 1rem;
       text-align: center;
       border: 1px solid var(--global-divider-color);
+      font-size: 1rem;
     }
-    
+
     th {
       background-color: var(--global-code-bg-color);
       font-weight: normal;
     }
-    
+
     td:first-child {
       text-align: center;
       vertical-align: middle;
     }
-    
+
     i {
       font-size: 0.8em;
     }
-    
+
     .total-row {
       background-color: var(--global-code-bg-color);
     }
@@ -1676,7 +1679,7 @@ ninja-keys::part(ninja-input-wrapper) {
   margin-left: 0.5rem;
   vertical-align: middle;
   transition: all 0.2s ease;
-  
+
   &:hover {
     background-color: var(--global-hover-color);
     border-color: var(--global-hover-color);
