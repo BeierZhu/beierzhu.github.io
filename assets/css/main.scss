@@ -35,6 +35,11 @@ $max-content-width: 930px;
   font-size: 1.1em;
 }
 
+// 隐藏 Selected Publications 的年份标题
+h2.bibliography {
+  display: none !important;
+}
+
 .news-scroll-box {
   max-height: 190px;
   overflow-y: auto;
