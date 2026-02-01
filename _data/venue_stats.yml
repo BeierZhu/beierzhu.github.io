@@ -1,33 +1,15 @@
-- venue: NeurIPS
-  count: 5
+- venue: NeurIPS/ICLR
+  count: 6
+  first_corresponding: 5
+- venue: CVPR/ICCV
+  count: 8
   first_corresponding: 4
-- venue: CVPR
-  count: 4
-  first_corresponding: 1
-- venue: ICCV
-  count: 4
-  first_corresponding: 3
 - venue: AAAI
   count: 5
   first_corresponding: 3
-- venue: ICLR
-  count: 1
-  first_corresponding: 1
 - venue: MM
   count: 1
   first_corresponding: 1
 - venue: TIP
-  count: 1
-  first_corresponding: 1
-- venue: TSG
-  count: 2
-  first_corresponding: 2
-- venue: FCS
-  count: 1
-  first_corresponding: 1
-- venue: arXiv
-  count: 2
-  first_corresponding: 0
-- venue: Thesis
   count: 1
   first_corresponding: 1
