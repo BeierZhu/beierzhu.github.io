@@ -78,22 +78,8 @@
       {% assign author_array_size = entry.author_array | size %}
 
       {% assign author_array_limit = author_array_size %}
-      {% assign self_position = 0 %}
-      {% for author in entry.author_array %}
-        {%- assign check_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
-        {% if site.scholar.last_name contains check_last_name %}
-          {% if site.scholar.first_name contains author.first %}
-            {% assign self_position = forloop.index %}
-            {% break %}
-          {% endif %}
-        {% endif %}
-      {% endfor %}
       {% if site.max_author_limit and author_array_size > site.max_author_limit %}
-        {% if self_position > site.max_author_limit %}
-          {% assign author_array_limit = self_position %}
-        {% else %}
-          {% assign author_array_limit = site.max_author_limit %}
-        {% endif %}
+        {% assign author_array_limit = site.max_author_limit %}
       {% endif %}
 
       {%- for author in entry.author_array limit: author_array_limit -%}
