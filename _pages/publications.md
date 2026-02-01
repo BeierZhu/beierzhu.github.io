@@ -18,13 +18,11 @@ You can find full list of my publications and recent works on my [Google Scholar
 
 <div class="venue-stats-table">
 <table>
-  <thead>
-    <tr>
-      <th><b>Venue</b></th>
-      <th><b>Papers</b></th>
-      <th><b><i class="fa-solid fa-handshake"></i> and <i class="fa-solid fa-envelope"></i></b></th>
+  <tr class="total-row">
+      <td><b>Venue</b></td>
+      <td><b>Papers</b></td>
+      <td><b>1<sup>st</sup> and <i class="fa-solid fa-envelope"></i></b></td>
     </tr>
-  </thead>
   <tbody>
     {% assign total_count = 0 %}
     {% assign total_fc = 0 %}
