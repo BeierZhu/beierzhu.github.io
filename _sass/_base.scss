@@ -1609,6 +1609,37 @@ ninja-keys::part(ninja-input-wrapper) {
   }
 }
 
+.venue-stats-table {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  
+  table {
+    width: auto;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    
+    th, td {
+      padding: 0.5rem 1rem;
+      text-align: center;
+      border: 1px solid var(--global-divider-color);
+    }
+    
+    th {
+      background-color: var(--global-code-bg-color);
+      font-weight: 600;
+    }
+    
+    td:first-child {
+      text-align: left;
+      font-weight: 500;
+    }
+    
+    i {
+      font-size: 0.8em;
+    }
+  }
+}
+
 .view-full-list-btn-inline {
   display: inline-block;
   padding: 0.2rem 0.8rem;
