@@ -1,4 +1,8 @@
 bundle exec jekyll serve --host 0.0.0.0
+
+python scripts/update_stats.py
+
+
 git push origin main
 
 GitHub no longer accepts passwords for pushing code - you need to use a Personal Access Token instead. Here's how to fix this:
