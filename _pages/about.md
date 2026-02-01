@@ -47,7 +47,7 @@ emphasis on robust adaptation, faithful reasoning, and controllable generation.
 
 <div style="height: 3em;"></div>
 
-### Selected Publications
+### Selected Publications <a href="/publications/" class="view-full-list-btn-inline">View Full List</a>
 <hr style="margin-top: 0.3em; margin-bottom: 1em;">
  <i class="fa-solid fa-handshake" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> and <i class="fa-solid fa-envelope" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> denote equal contribution and corresponding authorship.
 
@@ -61,7 +61,6 @@ emphasis on robust adaptation, faithful reasoning, and controllable generation.
 
 <div class="view-more-container">
   <button class="view-more-btn" id="toggle-publications">View More Publications</button>
-  <a href="/publications/" class="view-more-btn view-full-list-btn">View Full List</a>
 </div>
 
 <script>

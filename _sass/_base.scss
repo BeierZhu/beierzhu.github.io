@@ -1608,3 +1608,25 @@ ninja-keys::part(ninja-input-wrapper) {
     color: white !important;
   }
 }
+
+.view-full-list-btn-inline {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  background-color: var(--global-theme-color);
+  color: white !important;
+  border: 1px solid var(--global-theme-color);
+  border-radius: 15px;
+  text-decoration: none !important;
+  font-size: 0.75rem;
+  font-weight: normal;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background-color: var(--global-hover-color);
+    border-color: var(--global-hover-color);
+    color: white !important;
+    text-decoration: none !important;
+  }
+}
