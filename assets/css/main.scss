@@ -35,8 +35,8 @@ $max-content-width: 930px;
   font-size: 1.1em;
 }
 
-// 隐藏 Selected Publications 的年份标题
-h2.bibliography {
+// 只在主页的 Selected Publications 隐藏年份标题
+.selected-publications h2.bibliography {
   display: none !important;
 }
 
