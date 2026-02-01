@@ -1624,13 +1624,17 @@ ninja-keys::part(ninja-input-wrapper) {
   table {
     width: auto;
     border-collapse: collapse;
-    font-size: 0.9rem;
+    font-size: 1rem;
     
     caption {
       caption-side: top;
-      font-weight: bold;
+      font-weight: normal;
       padding-bottom: 0.5rem;
       text-align: left;
+    }
+    
+    caption b {
+      font-weight: bold;
     }
     
     th, td {

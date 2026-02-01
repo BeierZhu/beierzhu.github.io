@@ -19,7 +19,7 @@ You can find full list of my publications and recent works on my [Google Scholar
 <div class="stats-tables-container">
 <div class="venue-stats-table">
 <table>
-  <caption>By Venue</caption>
+  <caption><b>By Venue</b></caption>
   <tr class="total-row">
       <td><b>Venue</b></td>
       <td><b>Papers</b></td>
@@ -48,7 +48,7 @@ You can find full list of my publications and recent works on my [Google Scholar
 
 <div class="class-stats-table">
 <table>
-  <caption>By Research Topic</caption>
+  <caption><b>By Research Topic</b></caption>
   <tr class="total-row">
     <td><b>Category</b></td>
     <td><b>Topic</b></td>
