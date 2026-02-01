@@ -26,13 +26,22 @@ You can find full list of my publications and recent works on my [Google Scholar
     </tr>
   </thead>
   <tbody>
+    {% assign total_count = 0 %}
+    {% assign total_fc = 0 %}
     {% for venue in site.data.venue_stats %}
+    {% assign total_count = total_count | plus: venue.count %}
+    {% assign total_fc = total_fc | plus: venue.first_corresponding %}
     <tr>
       <td>{{ venue.venue }}</td>
       <td>{{ venue.count }}</td>
       <td>{{ venue.first_corresponding }}</td>
     </tr>
     {% endfor %}
+    <tr class="total-row">
+      <td><strong>Total</strong></td>
+      <td><strong>{{ total_count }}</strong></td>
+      <td><strong>{{ total_fc }}</strong></td>
+    </tr>
   </tbody>
 </table>
 </div>
