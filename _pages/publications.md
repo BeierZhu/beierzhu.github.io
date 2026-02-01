@@ -56,6 +56,13 @@ You can find full list of my publications and recent works on my [Google Scholar
   </tr>
   <tbody>
     {% for supclass in site.data.class_stats %}
+    {% if supclass.supclass == "Others" %}
+    <tr>
+      <td><b>{{ supclass.supclass }}</b></td>
+      <td></td>
+      <td>{{ supclass.total }}</td>
+    </tr>
+    {% else %}
     {% assign first_row = true %}
     {% for cls in supclass.classes %}
     <tr>
@@ -67,6 +74,7 @@ You can find full list of my publications and recent works on my [Google Scholar
       <td>{{ cls.count }}</td>
     </tr>
     {% endfor %}
+    {% endif %}
     {% endfor %}
   </tbody>
 </table>
