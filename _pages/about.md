@@ -58,3 +58,7 @@ emphasis on robust adaptation, faithful reasoning, and controllable generation.
 {% bibliography --file selected_papers --group_by none %}
 
 </div>
+
+<div class="view-more-container">
+  <a href="/publications/" class="view-more-btn">View More Publications</a>
+</div>

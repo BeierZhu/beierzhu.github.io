@@ -1526,3 +1526,59 @@ ninja-keys::part(ninja-input-wrapper) {
   background-color: var(--global-theme-color);
   color: var(--global-text-color);
 }
+
+// Selected publications fade effect
+.selected-publications {
+  position: relative;
+  
+  ol.bibliography {
+    // Hide entries after the 8th one
+    > li:nth-child(n+9) {
+      display: none;
+    }
+    
+    // Fade effect on the 8th entry
+    > li:nth-child(8) {
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent 0%, var(--global-bg-color) 85%);
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+// View more publications button
+.view-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.view-more-btn {
+  display: inline-block;
+  padding: 0.6rem 1.8rem;
+  background-color: var(--global-bg-color);
+  color: var(--global-text-color) !important;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 25px;
+  text-decoration: none !important;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  
+  &:hover {
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color) !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  }
+}
