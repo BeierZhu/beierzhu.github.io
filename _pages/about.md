@@ -49,7 +49,7 @@ emphasis on robust adaptation, faithful reasoning, and controllable generation.
 
 ### Selected Publications ([full list](/publications/))
 <hr style="margin-top: 0.3em; margin-bottom: 1em;">
-(__First, second, and corresponding author papers__; * and ^ denote equal contribution and corresponding authorship.)
+(__First, second, and corresponding author papers__; <i class="fa-solid fa-users" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> and <i class="fa-solid fa-envelope" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> denote equal contribution and corresponding authorship.)
 
 {% include bib_search.liquid %}
 
