@@ -1609,14 +1609,29 @@ ninja-keys::part(ninja-input-wrapper) {
   }
 }
 
-.venue-stats-table {
+.stats-tables-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
   margin: 1.5rem 0;
+  align-items: flex-start;
+}
+
+.venue-stats-table,
+.class-stats-table {
   overflow-x: auto;
   
   table {
     width: auto;
     border-collapse: collapse;
     font-size: 0.9rem;
+    
+    caption {
+      caption-side: top;
+      font-weight: bold;
+      padding-bottom: 0.5rem;
+      text-align: left;
+    }
     
     th, td {
       padding: 0.5rem 1rem;
@@ -1631,6 +1646,7 @@ ninja-keys::part(ninja-input-wrapper) {
     
     td:first-child {
       text-align: center;
+      vertical-align: middle;
     }
     
     i {

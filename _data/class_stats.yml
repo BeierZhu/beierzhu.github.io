@@ -1,0 +1,61 @@
+- supclass: Robust Learning
+  total: 1
+  classes:
+  - name: Diffusion Solvers
+    count: 1
+- supclass: Multimodal Learning
+  total: 1
+  classes:
+  - name: Video Generation
+    count: 1
+- supclass: Others
+  total: 33
+  classes:
+  - name: 'Application: Classification Fairness'
+    count: 1
+  - name: 'Application: Diffusion Generation'
+    count: 1
+  - name: 'Application: Face Alignment'
+    count: 1
+  - name: 'Application: Hallucination Mitigation'
+    count: 1
+  - name: 'Application: Image Clustering'
+    count: 1
+  - name: 'Application: LLM Agent'
+    count: 1
+  - name: 'Application: Power System'
+    count: 2
+  - name: 'Application: Speech Recognition'
+    count: 1
+  - name: 'Application: VLM Adaptation'
+    count: 5
+  - name: 'Application: Visual Reasoning'
+    count: 1
+  - name: Faithful Reasoning for MLLMs
+    count: 1
+  - name: Hallucination Mitigation for MLLMs
+    count: 1
+  - name: Image Generation
+    count: 2
+  - name: MLLMs Safety
+    count: 1
+  - name: Robustness
+    count: 1
+  - name: Survey
+    count: 1
+  - name: 'Theory: Diffusion Solver'
+    count: 2
+  - name: 'Theory: Group Robustness'
+    count: 1
+  - name: 'Theory: Imbalanced Learning'
+    count: 3
+  - name: 'Theory: Knowledge Distillation'
+    count: 1
+  - name: 'Theory: OOD Generalization'
+    count: 1
+  - name: Uncategorized
+    count: 1
+  - name: Video Generation
+    count: 1
+  - name: others
+    count: 1
