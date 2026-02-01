@@ -1637,6 +1637,10 @@ ninja-keys::part(ninja-input-wrapper) {
     i {
       font-size: 0.8em;
     }
+    
+    .total-row {
+      background-color: var(--global-code-bg-color);
+    }
   }
 }
 
