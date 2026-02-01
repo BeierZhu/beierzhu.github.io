@@ -26,6 +26,7 @@ emphasis on robust adaptation, faithful reasoning, and controllable generation.
 <div style="height: 1.5em;"></div>
 
 ### News
+<hr style="margin-top: 0.3em; margin-bottom: 1em;">
 <div class="news-scroll-box" style="font-weight: 300;">
 <table class="table table-sm table-borderless" style="font-weight: 300;">
 {% assign news = site.news | reverse %}
@@ -44,9 +45,10 @@ emphasis on robust adaptation, faithful reasoning, and controllable generation.
 </table>
 </div>
 
-<div style="height:1em;"></div>
+<div style="height: 1.5em;"></div>
 
 ### Selected Publications ([full list](/publications/))
+<hr style="margin-top: 0.3em; margin-bottom: 1em;">
 (__First, second, and corresponding author papers__; * and ^ denote equal contribution and corresponding authorship.)
 
 {% include bib_search.liquid %}
