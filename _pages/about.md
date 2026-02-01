@@ -44,7 +44,7 @@ emphasis on robust adaptation, faithful reasoning, and controllable generation.
 
 <div style="height:1em;"></div>
 
-### Selected Publications 
+### Selected Publications ([full list](/publications/))
 (__First, second, and corresponding author papers__; * and ^ denote equal contribution and corresponding authorship.)
 
 {% include bib_search.liquid %}
