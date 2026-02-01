@@ -7,9 +7,12 @@
 - count: 5
   first_corresponding: 3
   venue: AAAI
-- count: 1
-  first_corresponding: 1
+- count: 2
+  first_corresponding: 2
   venue: MM
 - count: 2
   first_corresponding: 2
   venue: TIP
+- count: 5
+  first_corresponding: 4
+  venue: Others
