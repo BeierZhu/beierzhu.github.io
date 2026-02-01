@@ -16,14 +16,13 @@ nav_order: 2
 You can find full list of my publications and recent works on my [Google Scholar](https://scholar.google.com/citations?hl=en&user=jHczmjwAAAAJ). 
  <i class="fa-solid fa-handshake" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> and <i class="fa-solid fa-envelope" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> denote equal contribution and corresponding authorship.
 
-<div class="stats-tables-container">
 <div class="venue-stats-table">
 <table>
-  <caption>By Venue</caption>
+  <caption>Publication Statistics by Venue and Authorship</caption>
   <tr class="total-row">
       <td><b>Venue</b></td>
       <td><b>Papers</b></td>
-      <td><b>1<sup>st</sup>/<i class="fa-solid fa-envelope"></i></b></td>
+      <td><b>1<sup>st</sup> and <i class="fa-solid fa-envelope"></i></b></td>
     </tr>
   <tbody>
     {% assign total_count = 0 %}
@@ -44,33 +43,6 @@ You can find full list of my publications and recent works on my [Google Scholar
     </tr>
   </tbody>
 </table>
-</div>
-
-<div class="class-stats-table">
-<table>
-  <caption>By Research Topic</caption>
-  <tr class="total-row">
-    <td><b>Category</b></td>
-    <td><b>Topic</b></td>
-    <td><b>Papers</b></td>
-  </tr>
-  <tbody>
-    {% for supclass in site.data.class_stats %}
-    {% assign first_row = true %}
-    {% for cls in supclass.classes %}
-    <tr>
-      {% if first_row %}
-      <td rowspan="{{ supclass.classes.size }}"><b>{{ supclass.supclass }}</b><br>({{ supclass.total }})</td>
-      {% assign first_row = false %}
-      {% endif %}
-      <td>{{ cls.name }}</td>
-      <td>{{ cls.count }}</td>
-    </tr>
-    {% endfor %}
-    {% endfor %}
-  </tbody>
-</table>
-</div>
 </div>
 
 {% include bib_search.liquid %}
