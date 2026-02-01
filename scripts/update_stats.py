@@ -13,7 +13,8 @@ VENUE_GROUPS = {
     "ICCV": "CVPR/ICCV",
 }
 
-EXCLUDE_VENUES = {"FCS", "arXiv", "Thesis", "TSG"}
+EXCLUDE_VENUES = set()
+OTHER_VENUES = {"FCS", "arXiv", "Thesis", "TSG"}
 
 def parse_bib(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
@@ -61,17 +62,18 @@ def compute_stats(papers):
     for paper in papers:
         abbr = paper["abbr"]
         
-        if abbr in EXCLUDE_VENUES:
-            continue
+        if abbr in OTHER_VENUES:
+            venue = "Others"
+        else:
+            venue = VENUE_GROUPS.get(abbr, abbr)
         
-        venue = VENUE_GROUPS.get(abbr, abbr)
         venue_counts[venue] += 1
         
         if is_first_or_corresponding(paper["authors"]):
             venue_fc[venue] += 1
     
     stats = []
-    venue_order = ["NeurIPS/ICLR", "CVPR/ICCV", "AAAI", "MM", "TIP"]
+    venue_order = ["NeurIPS/ICLR", "CVPR/ICCV", "AAAI", "MM", "TIP", "Others"]
     
     for venue in venue_order:
         if venue in venue_counts:
