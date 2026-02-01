@@ -321,6 +321,7 @@ scholar:
 
   style: apa
   locale: en
+  sort_by: none
 
   source: /_bibliography/
   bibliography: papers.bib
