@@ -22,7 +22,7 @@ You can find full list of my publications and recent works on my [Google Scholar
     <tr>
       <th><b>Venue</b></th>
       <th><b>Papers</b></th>
-      <th><b><i class="fa-solid fa-handshake"></i> / <i class="fa-solid fa-envelope"></i></b></th>
+      <th><b><i class="fa-solid fa-handshake"></i> and <i class="fa-solid fa-envelope"></i></b></th>
     </tr>
   </thead>
   <tbody>
