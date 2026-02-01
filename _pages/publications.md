@@ -20,9 +20,9 @@ You can find full list of my publications and recent works on my [Google Scholar
 <table>
   <thead>
     <tr>
-      <th>Venue</th>
-      <th>Papers</th>
-      <th><i class="fa-solid fa-handshake"></i>/<i class="fa-solid fa-envelope"></i></th>
+      <th><b>Venue</b></th>
+      <th><b>Papers</b></th>
+      <th><b><i class="fa-solid fa-handshake"></i> / <i class="fa-solid fa-envelope"></i></b></th>
     </tr>
   </thead>
   <tbody>
@@ -38,9 +38,9 @@ You can find full list of my publications and recent works on my [Google Scholar
     </tr>
     {% endfor %}
     <tr class="total-row">
-      <td><strong>Total</strong></td>
-      <td><strong>{{ total_count }}</strong></td>
-      <td><strong>{{ total_fc }}</strong></td>
+      <td><b>Total</b></td>
+      <td><b>{{ total_count }}</b></td>
+      <td><b>{{ total_fc }}</b></td>
     </tr>
   </tbody>
 </table>
