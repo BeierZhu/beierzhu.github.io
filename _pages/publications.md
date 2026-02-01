@@ -18,6 +18,7 @@ You can find full list of my publications and recent works on my [Google Scholar
 
 <div class="venue-stats-table">
 <table>
+  <caption>Publication Statistics by Venue and Authorship</caption>
   <tr class="total-row">
       <td><b>Venue</b></td>
       <td><b>Papers</b></td>
