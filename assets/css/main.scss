@@ -60,3 +60,10 @@ $max-content-width: 930px;
     padding-bottom: 0rem;
   }
 }
+
+// Award badge with theme color (outline style)
+.award-badge-theme {
+  color: var(--global-theme-color) !important;
+  border: 1.5px solid var(--global-theme-color) !important;
+  background-color: white !important;
+}

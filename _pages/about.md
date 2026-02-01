@@ -45,7 +45,7 @@ emphasis on robust adaptation, faithful reasoning, and controllable generation.
 </table>
 </div>
 
-<div style="height: 1.5em;"></div>
+<div style="height: 3em;"></div>
 
 ### Selected Publications ([full list](/publications/))
 <hr style="margin-top: 0.3em; margin-bottom: 1em;">

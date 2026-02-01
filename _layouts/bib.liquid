@@ -6,6 +6,7 @@
       {%- if entry.abbr -%}
         {%- if site.data.venues[entry.abbr] -%}
           {% assign venue_style = null %}
+          {% assign venue_color = site.data.venues[entry.abbr].color %}
           {% if site.data.venues[entry.abbr].color != blank %}
             {% assign venue_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '"' %}
           {%- endif -%}
@@ -21,18 +22,25 @@
               <div>{{- entry.abbr -}}</div>
             {% endif %}
           </abbr>
+          {% if entry.award %}
+            <div style="text-align: center; margin-top: 0.3em;">
+              {% if venue_color %}
+                <span class="badge rounded w-100 award-badge" style="color: {{ venue_color }}; border: 1.5px solid {{ venue_color }}; background-color: white;">{{ entry.award }}</span>
+              {% else %}
+                <span class="badge rounded w-100 award-badge award-badge-theme">{{ entry.award }}</span>
+              {% endif %}
+            </div>
+          {% endif %}
         {% else %}
           
           <div style="text-align: center">
-            <!-- <span class="badge-orange-outline rounded w-100">{{ entry.abbr }}</span> -->
             <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
-          </div> 
-
-            <!-- {% if entry.award %}
-              <div style="text-align: center">
-              <abbr class="badge rounded w-75">{{ entry.award }}</abbr>
-              </div>
-            {% endif %} -->
+          </div>
+          {% if entry.award %}
+            <div style="text-align: center; margin-top: 0.3em;">
+              <span class="badge rounded w-100 award-badge award-badge-theme">{{ entry.award }}</span>
+            </div>
+          {% endif %}
 
         {% endif %}
       {% endif %}
