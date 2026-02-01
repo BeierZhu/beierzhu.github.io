@@ -23,6 +23,8 @@ social: true # includes social icons at the bottom of the page
 <b>Research</b>: My research focuses on <b>robust and fair learning with provable guarantees</b>, with particular interests in imbalanced learning, group robustness, out-of-distribution (OOD) generalization, and fast diffusion solvers. On the application side, I am also interested in <b>multimodal foundation models</b> (VLMs, MLLMs, and diffusion models), with an
 emphasis on robust adaptation, faithful reasoning, and controllable generation.
 
+<div style="height: 1.5em;"></div>
+
 ### News
 <div class="news-scroll-box" style="font-weight: 300;">
 <table class="table table-sm table-borderless" style="font-weight: 300;">
