@@ -1,5 +1,5 @@
-- count: 8
-  first_corresponding: 5
+- count: 12
+  first_corresponding: 7
   venue: NeurIPS/ICLR
 - count: 7
   first_corresponding: 3
@@ -13,6 +13,6 @@
 - count: 2
   first_corresponding: 2
   venue: TIP
-- count: 5
-  first_corresponding: 4
+- count: 6
+  first_corresponding: 5
   venue: Others
