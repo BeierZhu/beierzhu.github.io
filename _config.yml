@@ -377,6 +377,7 @@ filtered_bibtex_keywords:
     website,
     class,
     supclass,
+    projectpage,
   ]
 
 # Maximum number of authors to be shown for each publication (more authors are visible on click)
