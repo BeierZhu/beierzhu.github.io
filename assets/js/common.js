@@ -1,9 +1,16 @@
 $(document).ready(function () {
   // add toggle functionality to abstract, award and bibtex buttons
   $("a.abstract").click(function () {
-    $(this).parent().parent().find(".abstract.hidden").toggleClass("open");
+    var abstractDiv = $(this).parent().parent().find(".abstract.hidden");
+    abstractDiv.toggleClass("open");
     $(this).parent().parent().find(".award.hidden.open").toggleClass("open");
     $(this).parent().parent().find(".bibtex.hidden.open").toggleClass("open");
+    // Trigger MathJax to render LaTeX in abstract
+    if (abstractDiv.hasClass("open") && typeof MathJax !== "undefined") {
+      MathJax.typesetPromise([abstractDiv[0]]).catch(function (err) {
+        console.log("MathJax typeset failed: " + err.message);
+      });
+    }
   });
   $("a.award").click(function () {
     $(this).parent().parent().find(".abstract.hidden.open").toggleClass("open");
