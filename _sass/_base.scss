@@ -700,12 +700,8 @@ footer.sticky-bottom {
       .preview {}
 
       .abbr {
-        min-height: 2rem;
+        height: auto;
         margin-bottom: 0.5rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.3rem;
-        align-items: center;
 
         abbr {
           display: inline-block;
@@ -727,11 +723,13 @@ footer.sticky-bottom {
           border: 1px solid var(--global-theme-color);
           padding-left: 1rem;
           padding-right: 1rem;
+          margin-top: 0.3rem;
         }
       }
 
       .title {
         font-weight: bolder;
+        clear: both;
       }
 
       .paper-label {
@@ -906,12 +904,8 @@ footer.sticky-bottom {
         }
 
         .abbr {
-          min-height: 2rem;
+          height: auto;
           margin-bottom: 0.5rem;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.3rem;
-          align-items: center;
 
           abbr {
             display: inline-block;
@@ -933,11 +927,13 @@ footer.sticky-bottom {
             border: 1px solid var(--global-theme-color);
             padding-left: 1rem;
             padding-right: 1rem;
+            margin-top: 0.3rem;
           }
         }
 
         .title {
           font-weight: bolder;
+          clear: both;
         }
 
         .author {
