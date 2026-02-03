@@ -700,8 +700,12 @@ footer.sticky-bottom {
       .preview {}
 
       .abbr {
-        height: 2rem;
+        min-height: 2rem;
         margin-bottom: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+        align-items: center;
 
         abbr {
           display: inline-block;
@@ -902,8 +906,12 @@ footer.sticky-bottom {
         }
 
         .abbr {
-          height: 2rem;
+          min-height: 2rem;
           margin-bottom: 0.5rem;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.3rem;
+          align-items: center;
 
           abbr {
             display: inline-block;
