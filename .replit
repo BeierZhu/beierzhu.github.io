@@ -3,7 +3,7 @@ run = "node index.js"
 
 [nix]
 channel = "stable-24_05"
-packages = ["ruby_3_3"]
+packages = ["ruby_3_3", "vim"]
 
 [deployment]
 run = ["sh", "-c", "node index.js"]
