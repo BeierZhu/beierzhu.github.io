@@ -9,6 +9,7 @@ abbr={ICLR},
 bibtex_show={true},
 arxiv={2602.00205},
 abstract={Deep neural networks often exhibit substantial disparities in class-wise accuracy, even when trained on class-balanced data, posing concerns for reliable deployment. While prior efforts have explored empirical remedies, a theoretical understanding of such performance disparities in classification remains limited. In this work, we present Margin Regularization for Performance Disparity Reduction (MR$^2$), a theoretically principled regularization for classification by dynamically adjusting margins in both the logit and representation spaces. Our analysis establishes a margin-based, class-sensitive generalization bound that reveals how per-class feature variability contributes to error, motivating the use of larger margins for hard classes. Guided by this insight, MR$^2$ optimizes per-class logit margins proportional to feature spread and penalizes excessive representation margins to enhance intra-class compactness. Experiments on seven datasets, including ImageNet, and diverse pre-trained backbones (MAE, MoCov2, CLIP) demonstrate that MR$^2$ not only improves overall accuracy but also significantly boosts hard class performance without trading off easy classes, thus reducing performance disparity.},
+code={https://github.com/BeierZhu/MR2},
 }
 
 @inproceedings{zhu2023prompt,
@@ -20,7 +21,8 @@ abstract={Deep neural networks often exhibit substantial disparities in class-wi
   abbr={ICCV},
   year={2023},
   code={https://github.com/BeierZhu/Prompt-align},
-  class={Robust Adaptation for VLMs}
+  class={Robust Adaptation for VLMs},
+  abstract={Thanks to the large pre-trained vision-language models (VLMs) like CLIP, we can craft a zero-shot classifier by "prompt", e.g., the confidence score of an image being "[CLASS]" can be obtained by using the VLM provided similarity measure between the image and the prompt sentence "a photo of a [CLASS]". Therefore, prompt shows a great potential for fast adaptation of VLMs to downstream tasks if we fine-tune the prompt-based similarity measure. However, we find a common failure that improper fine-tuning may not only undermine the prompt's inherent prediction for the task-related classes, but also for other classes in the VLM vocabulary. Existing methods still address this problem by using traditional anti-overfitting techniques such as early stopping and data augmentation, which lack a principled solution specific to prompt. We present Prompt-aligned Gradient, dubbed ProGrad, to prevent prompt tuning from forgetting the the general knowledge learned from VLMs. In particular, ProGrad only updates the prompt whose gradient is aligned (or non-conflicting) to the "general direction", which is represented as the gradient of the KL loss of the pre-defined prompt prediction. Extensive experiments demonstrate the stronger few-shot generalization ability of ProGrad over state-of-the-art prompt tuning methods.}
 }
 
 @inproceedings{zhu2023generalized,
@@ -33,6 +35,7 @@ abstract={Deep neural networks often exhibit substantial disparities in class-wi
   abbr={NeurIPS},
   year={2023},
   code={https://github.com/BeierZhu/GLA},
+  abstract={Foundation models like CLIP allow zero-shot transfer on various tasks without additional training data. Yet, the zero-shot performance is less competitive than a fully supervised one. Thus, to enhance the performance, fine-tuning and ensembling are also commonly adopted to better fit the downstream tasks. However, we argue that such prior work has overlooked the inherent biases in foundation models. Due to the highly imbalanced Web-scale training set, these foundation models are inevitably skewed toward frequent semantics, and thus the subsequent fine-tuning or ensembling is still biased. In this study, we systematically examine the biases in foundation models and demonstrate the efficacy of our proposed Generalized Logit Adjustment (GLA) method. Note that bias estimation in foundation models is challenging, as most pre-train data cannot be explicitly accessed like in traditional long-tailed classification tasks. To this end, GLA has an optimization-based bias estimation approach for debiasing foundation models. As our work resolves a fundamental flaw in the pre-training, the proposed GLA demonstrates significant improvements across a diverse range of tasks: it achieves 1.5 pp accuracy gains on ImageNet, an large average improvement (1.4-4.6 pp) on 11 few-shot datasets, 2.4 pp gains on long-tailed classification.}
 }
 
 @inproceedings{zhu2025distilling,
@@ -46,7 +49,8 @@ abstract={Deep neural networks often exhibit substantial disparities in class-wi
   class={Diffusion Solvers},
   code={https://github.com/BeierZhu/EPD},
   poster={EPD_Poster.pdf},
-  video={https://www.bilibili.com/video/BV1sSeEzhEmp/?spm_id_from=333.1387.homepage.video_card.click&vd_source=aab02baa86c34f988b4134455c8c27c7}
+  video={https://www.bilibili.com/video/BV1sSeEzhEmp/?spm_id_from=333.1387.homepage.video_card.click&vd_source=aab02baa86c34f988b4134455c8c27c7},
+  abstract={Diffusion models (DMs) have achieved state-of-the-art generative performance but suffer from high sampling latency due to their sequential denoising nature. Existing solver-based acceleration methods often face image quality degradation under a low-latency budget. In this paper, we propose the Ensemble Parallel Direction solver (dubbed as EPD-Solver), a novel ODE solver that mitigates truncation errors by incorporating multiple parallel gradient evaluations in each ODE step. Importantly, since the additional gradient computations are independent, they can be fully parallelized, preserving low-latency sampling. Our method optimizes a small set of learnable parameters in a distillation fashion, ensuring minimal training overhead. In addition, our method can serve as a plugin to improve existing ODE samplers. Extensive experiments on various image synthesis benchmarks demonstrate the effectiveness of our EPD-Solver in achieving high-quality and low-latency sampling. For example, at the same latency level of 5 NFE, EPD achieves an FID of 4.47 on CIFAR-10, 7.97 on FFHQ, 8.17 on ImageNet, and 8.26 on LSUN Bedroom, surpassing existing learningbased solvers by a significant margin}
 }
 
 @inproceedings{zhu2025project,
@@ -59,7 +63,8 @@ abstract={Deep neural networks often exhibit substantial disparities in class-wi
   year={2025},
   award={Highlight},
   class={Group Robustness},
-  poster={ppa_poster.pdf}
+  poster={ppa_poster.pdf},
+  abstract={While image-text foundation models have succeeded across diverse downstream tasks, they still face challenges in the presence of spurious correlations between the input and label. To address this issue, we propose a simple three-step approach,Project-Probe-Aggregate (PPA), that enables parameter-efficient fine-tuning for foundation models without relying on group annotations. Building upon the failure-based debiasing scheme, our method, PPA, improves its two key components: minority samples identification and the robust training algorithm. Specifically, we first train biased classifiers by projecting image features onto the nullspace of class proxies from text encoders. Next, we infer group labels using the biased classifier and probe group targets with prior correction. Finally, we aggregate group weights of each class to produce the debiased classifier. Our theoretical analysis shows that our PPA enhances minority group identification and is Bayes optimal for minimizing the balanced group error, mitigating spurious correlations. Extensive experimental results confirm the effectiveness of our PPA: it outperforms the state-of-the-art by an average worst-group accuracy while requiring less than 0.01% tunable parameters without training group labels.}
 }
 
 @inproceedings{zhao2025realtime,
@@ -72,7 +77,8 @@ abstract={Deep neural networks often exhibit substantial disparities in class-wi
       booktitle={International Conference on Learning Representations},
       class={Controllable Video Generation},
       code={https://kesenzhao.github.io/AR-Drag.github.io/},
-      projectpage={https://kesenzhao.github.io/AR-Drag.github.io/}
+      projectpage={https://kesenzhao.github.io/AR-Drag.github.io/},
+      abstract={Real-time motion-controllable video generation remains challenging due to the inherent latency of bidirectional diffusion models and the lack of effective autoregressive (AR) approaches. Existing AR video diffusion models are limited to simple control signals or text-to-video generation, and often suffer from quality degradation and motion artifacts in few-step generation. To address these challenges, we propose AR-Drag, the first RL-enhanced few-step AR video diffusion model for real-time image-to-video generation with diverse motion control. We first fine-tune a base I2V model to support basic motion control, then further improve it via reinforcement learning with a trajectory-based reward model. Our design preserves the Markov property through a Self-Rollout mechanism and accelerates training by selectively introducing stochasticity in denoising steps. Extensive experiments demonstrate that AR-Drag achieves high visual fidelity and precise motion alignment, significantly reducing latency compared with state-of-the-art motion-controllable VDMs, while using only 1.3B parameters.}
 }
 
 @inproceedings{zhao2025unsupervised,
@@ -85,7 +91,8 @@ abstract={Deep neural networks often exhibit substantial disparities in class-wi
   year={2025},
   class={Faithful Reasoning for MLLMs},
   code={https://github.com/kesenzhao/UV-CoT},
-  projectpage={https://kesenzhao.github.io/my_project/projects/UV-CoT.html}  
+  projectpage={https://kesenzhao.github.io/my_project/projects/UV-CoT.html},
+  abstract={Chain-of-thought (CoT) reasoning greatly improves the interpretability and problem-solving abilities of multimodal large language models (MLLMs). However, existing approaches are focused on text CoT, limiting their ability to leverage visual cues. Visual CoT remains underexplored, and the only work is based on supervised fine-tuning (SFT) that relies on extensive labeled bounding-box data and is hard to generalize to unseen cases. In this paper, we introduce Unsupervised Visual CoT (UV-CoT), a novel framework for image-level CoT reasoning via preference optimization. UV-CoT performs preference comparisons between model-generated bounding boxes (one is preferred and the other is dis-preferred), eliminating the need for bounding-box annotations. We get such preference data by introducing an automatic data generation pipeline. Given an image, our target MLLM (e.g., LLaVA-1.5-7B) generates seed bounding boxes using a template prompt and then answers the question using each bounded region as input. An evaluator MLLM (e.g., OmniLLM-12B) ranks the responses, and these rankings serve as supervision to train the target MLLM with UV-CoT by minimizing negative log-likelihood losses. By emulating human perception--identifying key regions and reasoning based on them--UV-CoT can improve visual comprehension, particularly in spatial reasoning tasks where textual descriptions alone fall short. Our experiments on six datasets demonstrate the superiority of UV-CoT, compared to the state-of-the-art textual and visual CoT methods. Our zero-shot testing on four unseen datasets shows the strong generalization of UV-CoT.}
 }
 
 @inproceedings{zhu2024enhancing,
@@ -99,7 +106,8 @@ abstract={Deep neural networks often exhibit substantial disparities in class-wi
   class={Imbalanced Learning},
   code={https://github.com/zhuhsingyuu/Frolic},
   poster={frolic_poster.png},
-  year={2024}
+  year={2024},
+  abstract={Vision-language models, such as CLIP, have shown impressive generalization capacities when using appropriate text descriptions. While optimizing prompts on downstream labeled data has proven effective in improving performance, these methods entail labor costs for annotations and are limited by their quality. Additionally, since CLIP is pre-trained on highly imbalanced Web-scale data, it suffers from inherent label bias that leads to suboptimal performance. To tackle the above challenges, we propose a label-Free prompt distribution learning and bias correction framework, dubbed as **Frolic**, which boosts zero-shot performance without the need for labeled data. Specifically, our Frolic learns distributions over prompt prototypes to capture diverse visual representations and adaptively fuses these with the original CLIP through confidence matching. This fused model is further enhanced by correcting label bias via a label-free logit adjustment. Notably, our method is not only training-free but also circumvents the necessity for hyper-parameter tuning. Extensive experimental results across 16 datasets demonstrate the efficacy of our approach, particularly outperforming the state-of-the-art by an average of 2.6% on 10 datasets with CLIP ViT-B/16 and achieving an average margin of 1.5% on ImageNet and its five distribution shifts with CLIP ViT-B/16.},
 }
 
 @inproceedings{zhu2024robust,
@@ -112,12 +120,13 @@ abstract={Deep neural networks often exhibit substantial disparities in class-wi
   abbr={NeurIPS},
   code={https://github.com/BeierZhu/VRF},
   poster={vrf_poster.pdf},
-  year={2024}
+  year={2024},
+  abstract={When fine-tuning zero-shot models like CLIP, our desideratum is for the fine-tuned model to excel in both in-distribution (ID) and out-of-distribution (OOD). Recently, ensemble-based models (ESM) have been shown to offer significant robustness improvement, while preserving high ID accuracy. However, our study finds that ESMs do not solve the ID-OOD trade-offs: they achieve peak performance for ID and OOD accuracy at different mixing coefficients. When optimized for OOD accuracy, the ensemble model exhibits a noticeable decline in ID accuracy, and vice versa. In contrast, we propose a sample-wise ensembling technique that can simultaneously attain the best ID and OOD accuracy without the trade-offs. Specifically, we construct a Zero-Shot Failure (ZSF) set containing training samples incorrectly predicted by the zero-shot model. For each test sample, we calculate its distance to the ZSF set and assign a higher weight to the fine-tuned model in the ensemble if the distance is small. We term our method Variance Reduction Fine-tuning (VRF), as it effectively reduces the variance in ensemble predictions, thereby decreasing residual error. On ImageNet and five derived distribution shifts, our VRF further improves the OOD accuracy by 1.5 - 2.0 pp over the ensemble baselines while maintaining or increasing ID accuracy. VRF achieves similar large robustness gains (0.9 - 3.1 pp) on other distribution shifts benchmarks.}
 }
 
 @inproceedings{zhu2022cross,
   bibtex_show={true}, 
-  arxiv={2205.14865},
+  arxiv={2112.14380},
   title={Cross-domain empirical risk minimization for unbiased long-tailed classification},
   author={Zhu, Beier and Niu, Yulei and Hua, Xian-Sheng and Zhang, Hanwang},
   booktitle={Proceedings of the AAAI conference on artificial intelligence},
@@ -125,7 +134,8 @@ abstract={Deep neural networks often exhibit substantial disparities in class-wi
   abbr={AAAI},
   award={Oral},
   class={Imbalanced Learning},
-  year={2022}
+  year={2022},
+  abstract={We address the overlooked unbiasedness in existing long-tailed classification methods: we find that their overall improvement is mostly attributed to the biased preference of tail over head, as the test distribution is assumed to be balanced; however, when the test is as imbalanced as the long-tailed training data -- let the test respect Zipf's law of nature -- the tail bias is no longer beneficial overall because it hurts the head majorities. In this paper, we propose Cross-Domain Empirical Risk Minimization (xERM) for training an unbiased model to achieve strong performances on both test distributions, which empirically demonstrates that xERM fundamentally improves the classification by learning better feature representation rather than the head vs. tail game. Based on causality, we further theoretically explain why xERM achieves unbiasedness: the bias caused by the domain selection is removed by adjusting the empirical risks on the imbalanced domain and the balanced but unseen domain. }
 }
 
 @inproceedings{zhu2025enhancing,
@@ -138,4 +148,5 @@ abstract={Deep neural networks often exhibit substantial disparities in class-wi
   year={2025},
   award={Spotlight},
   class={Robust Adaptation for VLMs},
+  abstract={Vision-language models (VLMs) such as CLIP demonstrate strong generalization in zero-shot classification but remain highly vulnerable to adversarial perturbations. Existing methods primarily focus on adversarial fine-tuning or prompt optimization; they often overlook the gaps in CLIP's encoded features, which is shown as the text and image features lie far apart from each other. This misalignment is significantly amplified under adversarial perturbations, leading to severe degradation in classification performance. To address this problem, we propose Cross-modality Alignment, dubbed COLA, an optimal transport-based framework that explicitly addresses adversarial misalignment by restoring both global image-text alignment and local structural consistency in the feature space. (1) COLA first projects adversarial image embeddings onto a subspace spanned by class text features, effectively filtering out non-semantic distortions while preserving discriminative information. (2) It then models images and texts as discrete distributions over multiple augmented views and refines their alignment via OT, with the subspace projection seamlessly integrated into the cost computation. This design ensures stable cross-modal alignment even under adversarial conditions. COLA is training-free and compatible with existing fine-tuned models. Extensive evaluations across 14 zero-shot classification benchmarks demonstrate the effectiveness of COLA, especially with an average improvement of 6.7% on ImageNet and its variants under PGD adversarial attacks, while maintaining high accuracy on clean samples.}
 }
