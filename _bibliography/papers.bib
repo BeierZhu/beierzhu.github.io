@@ -8,6 +8,8 @@
       abbr={arXiv},
       code={https://github.com/BeierZhu/EPD},
       video={https://www.bilibili.com/video/BV1sSeEzhEmp/?spm_id_from=333.1387.homepage.video_card.click&vd_source=aab02baa86c34f988b4134455c8c27c7},
+      abstract={Diffusion models (DMs) have achieved state-of-the-art generative performance but suffer from high sampling latency due to their sequential denoising nature. Existing solver-based acceleration methods often face significant image quality degradation under a low-latency budget, primarily due to accumulated truncation errors arising from the inability to capture high-curvature trajectory segments. In this paper, we propose the Ensemble Parallel Direction solver (dubbed as EPD-Solver), a novel ODE solver that mitigates these errors by incorporating multiple parallel gradient evaluations in each step. Motivated by the geometric insight that sampling trajectories are largely confined to a low-dimensional manifold, EPD-Solver leverages the Mean Value Theorem for vector-valued functions to approximate the integral solution more accurately. Importantly, since the additional gradient computations are independent, they can be fully parallelized, preserving low-latency sampling nature. We introduce a two-stage optimization framework. Initially, EPD-Solver optimizes a small set of learnable parameters via a distillation-based approach. We further propose a parameter-efficient Reinforcement Learning (RL) fine-tuning scheme that reformulates the solver as a stochastic Dirichlet policy. Unlike traditional methods that fine-tune the massive backbone, our RL approach operates strictly within the low-dimensional solver space, effectively mitigating reward hacking while enhancing performance in complex text-to-image (T2I) generation tasks. In addition, our method is flexible and can serve as a plugin (EPD-Plugin) to improve existing ODE samplers.},
+     website={https://openaccess.thecvf.com/content/ICCV2025/html/Zhu_Distilling_Parallel_Gradients_for_Fast_ODE_Solvers_of_Diffusion_Models_ICCV_2025_paper.html}
 }
 
 @article{wang2026hybrid,
@@ -31,6 +33,8 @@ supclass={robust learning},
 abbr={ICLR},
 bibtex_show={true},
 arxiv={2602.00205},
+abstract={Deep neural networks often exhibit substantial disparities in class-wise accuracy, even when trained on class-balanced data, posing concerns for reliable deployment. While prior efforts have explored empirical remedies, a theoretical understanding of such performance disparities in classification remains limited. In this work, we present Margin Regularization for Performance Disparity Reduction (MR$^2$), a theoretically principled regularization for classification by dynamically adjusting margins in both the logit and representation spaces. Our analysis establishes a margin-based, class-sensitive generalization bound that reveals how per-class feature variability contributes to error, motivating the use of larger margins for hard classes. Guided by this insight, MR$^2$ optimizes per-class logit margins proportional to feature spread and penalizes excessive representation margins to enhance intra-class compactness. Experiments on seven datasets, including ImageNet, and diverse pre-trained backbones (MAE, MoCov2, CLIP) demonstrate that MR$^2$ not only improves overall accuracy but also significantly boosts hard class performance without trading off easy classes, thus reducing performance disparity.},
+code={https://github.com/BeierZhu/MR2},
 }
 
 @inproceedings{zhao2025realtime,
@@ -44,7 +48,8 @@ arxiv={2602.00205},
       class={Video Generation},
       supclass={multimodal learning},
       code={https://kesenzhao.github.io/AR-Drag.github.io/},
-      projectpage={https://kesenzhao.github.io/AR-Drag.github.io/}
+      projectpage={https://kesenzhao.github.io/AR-Drag.github.io/},
+      abstract={Real-time motion-controllable video generation remains challenging due to the inherent latency of bidirectional diffusion models and the lack of effective autoregressive (AR) approaches. Existing AR video diffusion models are limited to simple control signals or text-to-video generation, and often suffer from quality degradation and motion artifacts in few-step generation. To address these challenges, we propose AR-Drag, the first RL-enhanced few-step AR video diffusion model for real-time image-to-video generation with diverse motion control. We first fine-tune a base I2V model to support basic motion control, then further improve it via reinforcement learning with a trajectory-based reward model. Our design preserves the Markov property through a Self-Rollout mechanism and accelerates training by selectively introducing stochasticity in denoising steps. Extensive experiments demonstrate that AR-Drag achieves high visual fidelity and precise motion alignment, significantly reducing latency compared with state-of-the-art motion-controllable VDMs, while using only 1.3B parameters. }
 }
 
 @inproceedings{wang2026pmi,
@@ -89,6 +94,7 @@ supclass={multimodal learning},
       supclass={multimodal learning},
       abbr={ICLR},
       booktitle={International Conference on Learning Representations},
+      abstract={Achieving streaming, fine-grained control over the outputs of autoregressive video diffusion models remains challenging, making it difficult to ensure that they consistently align with user expectations. To bridge this gap, we propose stReaming drag-oriEnted interactiVe vidEo manipuLation (REVEL), a new task that enables users to modify generated videos anytime on anything via fine-grained, interactive drag. Beyond DragVideo and SG-I2V, REVEL unifies drag-style video manipulation as editing and animating video frames with both supporting user-specified translation, deformation, and rotation effects, making drag operations versatile. In resolving REVEL, we observe: i) drag-induced perturbations accumulate in latent space, causing severe latent distribution drift that halts the drag process; ii) streaming drag is easily disturbed by context frames, thereby yielding visually unnatural outcomes. We thus propose a training-free approach, DragStream, comprising: i) an adaptive distribution self-rectification strategy that leverages neighboring frames' statistics to effectively constrain the drift of latent embeddings; ii) a spatial-frequency selective optimization mechanism, allowing the model to fully exploit contextual information while mitigating its interference via selectively propagating visual cues along generation. Our method can be seamlessly integrated into existing autoregressive video diffusion models, and extensive experiments firmly demonstrate the effectiveness of our DragStream.}
 }
 
 @inproceedings{gao2025subject,
@@ -103,7 +109,8 @@ supclass={multimodal learning},
   abbr={ICLR},
   code={https://github.com/NJU-PCALab/CoDi},
   projectpage={https://zhanxin-gao.github.io/CoDi/},
-  video={https://www.youtube.com/watch?v=sSzHHK4q1Dc}
+  video={https://www.youtube.com/watch?v=sSzHHK4q1Dc},
+  abstract={Subject-consistent generation (SCG)-aiming to maintain a consistent subject identity across diverse scenes-remains a challenge for text-to-image (T2I) models. Existing training-free SCG methods often achieve consistency at the cost of layout and pose diversity, hindering expressive visual storytelling. To address the limitation, we propose subject-Consistent and pose-Diverse T2I framework, dubbed as CoDi, that enables consistent subject generation with diverse pose and layout. Motivated by the progressive nature of diffusion, where coarse structures emerge early and fine details are refined later, CoDi adopts a two-stage strategy: Identity Transport (IT) and Identity Refinement (IR). IT operates in the early denoising steps, using optimal transport to transfer identity features to each target image in a pose-aware manner. This promotes subject consistency while preserving pose diversity. IR is applied in the later denoising steps, selecting the most salient identity features to further refine subject details. Extensive qualitative and quantitative results on subject consistency, pose diversity, and prompt fidelity demonstrate that CoDi achieves both better visual perception and stronger performance across all metrics.}
 }
 
 @inproceedings{zhu2025hierarchical,
@@ -116,11 +123,12 @@ supclass={multimodal learning},
   supclass={others},
   arxiv={2512.00904},
   bibtex_show={true}, 
+  abstract={Image clustering is a classic problem in computer vision, which categorizes images into different groups. Recent studies utilize nouns as external semantic knowledge to improve clustering performance. However, these methods often overlook the inherent ambiguity of nouns, which can distort semantic representations and degrade clustering quality. To address this issue, we propose a hierarChical semAntic alignmEnt method for image clustering, dubbed CAE, which improves clustering performance in a training-free manner. In our approach, we incorporate two complementary types of textual semantics: caption-level descriptions, which convey fine-grained attributes of image content, and noun-level concepts, which represent high-level object categories. We first select relevant nouns from WordNet and descriptions from caption datasets to construct a semantic space aligned with image features. Then, we align image features with selected nouns and captions via optimal transport to obtain a more discriminative semantic space. Finally, we combine the enhanced semantic and image features to perform clustering. Extensive experiments across 8 datasets demonstrate the effectiveness of our method, notably surpassing the state-of-the-art training-free approach with a 4.2% improvement in accuracy and a 2.9% improvement in adjusted rand index (ARI) on the ImageNet-1K dataset.}
 }
 
 @inproceedings{chen2025dual,
   bibtex_show={true}, 
-  arxiv={511.15392},
+  arxiv={2511.15392},
   title={DEPO: Dual-efficiency preference optimization for LLM agents}, 
   author={Sirui Chen and Mengshi Zhao and Lei Xu and Yuying Zhao and Beier Zhu^ and Hanwang Zhang and Shengjie Zhao and Chaochao Lu},
   booktitle={AAAI Conference on Artificial Intelligence},
@@ -130,7 +138,8 @@ supclass={multimodal learning},
   supclass={others},
   code={https://github.com/OpenCausaLab/DEPO}, 
   projectpage={https://opencausalab.github.io/DEPO/},
-  video={https://www.youtube.com/watch?v=BxLx8WFLdao}
+  video={https://www.youtube.com/watch?v=BxLx8WFLdao},
+  abstract={Recent advances in large language models (LLMs) have greatly improved their reasoning and decision-making abilities when deployed as agents. Richer reasoning, however, often comes at the cost of longer chain of thought (CoT), hampering interaction efficiency in real-world scenarios. Nevertheless, there still lacks systematic definition of LLM agent efficiency, hindering targeted improvements. To this end, we introduce dual-efficiency, comprising (i) step-level efficiency, which minimizes tokens per step, and (ii) trajectory-level efficiency, which minimizes the number of steps to complete a task. Building on this definition, we propose DEPO, a dual-efficiency preference optimization method that jointly rewards succinct responses and fewer action steps. Experiments on WebShop and BabyAI show that DEPO cuts token usage by up to 60.9% and steps by up to 26.9%, while achieving up to a 29.3% improvement in performance. DEPO also generalizes to three out-of-domain math benchmarks and retains its efficiency gains when trained on only 25% of the data.}
 }
 
 @inproceedings{wang2025adaptive,
@@ -144,6 +153,7 @@ supclass={multimodal learning},
   class={Diffusion Solver},
   supclass={robust learning},
   code={https://github.com/WLU-wry02/AdaSDE}, 
+  abstract={Diffusion-based generative processes, formulated as differential equation solving, frequently balance computational speed with sample quality. Our theoretical investigation of ODE- and SDE-based solvers reveals complementary weaknesses: ODE solvers accumulate irreducible gradient error along deterministic trajectories, while SDE methods suffer from amplified discretization errors when the step budget is limited. Building upon this insight, we introduce AdaSDE, a novel single-step SDE solver that aims to unify the efficiency of ODEs with the error resilience of SDEs. Specifically, we introduce a single per-step learnable coefficient, estimated via lightweight distillation, which dynamically regulates the error correction strength to accelerate diffusion sampling. Notably, our framework can be integrated with existing solvers to enhance their capabilities. Extensive experiments demonstrate state-of-the-art performance: at 5 NFE, AdaSDE achieves FID scores of 4.18 on CIFAR-10, 8.05 on FFHQ and 6.96 on LSUN Bedroom.}
 }
 
 @inproceedings{zhu2025enhancing,
@@ -157,11 +167,13 @@ supclass={multimodal learning},
   award={Spotlight},
   class={Robust Adaptation for VLMs},
   supclass={multimodal learning},
+  abstract={Vision-language models (VLMs) such as CLIP demonstrate strong generalization in zero-shot classification but remain highly vulnerable to adversarial perturbations. Existing methods primarily focus on adversarial fine-tuning or prompt optimization; they often overlook the gaps in CLIP's encoded features, which is shown as the text and image features lie far apart from each other. This misalignment is significantly amplified under adversarial perturbations, leading to severe degradation in classification performance. To address this problem, we propose Cross-modality Alignment, dubbed COLA, an optimal transport-based framework that explicitly addresses adversarial misalignment by restoring both global image-text alignment and local structural consistency in the feature space. (1) COLA first projects adversarial image embeddings onto a subspace spanned by class text features, effectively filtering out non-semantic distortions while preserving discriminative information. (2) It then models images and texts as discrete distributions over multiple augmented views and refines their alignment via OT, with the subspace projection seamlessly integrated into the cost computation. This design ensures stable cross-modal alignment even under adversarial conditions. COLA is training-free and compatible with existing fine-tuned models. Extensive evaluations across 14 zero-shot classification benchmarks demonstrate the effectiveness of COLA, especially with an average improvement of 6.7% on ImageNet and its variants under PGD adversarial attacks, while maintaining high accuracy on clean samples.
+}
 }
 
 @inproceedings{10.1145/3746027.3754856,
 author = {Han, Zhiyuan and Zhu^, Beier and Xu, Yanlong and Song, Peipei and Yang, Xun},
-title = {Benchmarking and Bridging Emotion Conflicts for Multimodal Emotion Reasoning},
+title = {Benchmarking and bridging emotion conflicts for multimodal emotion reasoning},
 year = {2025},
 booktitle = {ACM International Conference on Multimedia},
 abbr = {MM},
@@ -173,6 +185,8 @@ video={https://www.youtube.com/watch?v=zkI9cYC5v08},
 arxiv = {2508.01181},
 bibtex_show={true},
 award={Oral},
+abstract={Despite their strong performance in multimodal emotion reasoning, existing Multimodal Large Language Models (MLLMs) often overlook the scenarios involving emotion conflicts, where emotional cues from different modalities are inconsistent. To fill this gap, we first introduce CA-MER, a new benchmark designed to examine MLLMs under realistic emotion conflicts. It consists of three subsets: video-aligned, audio-aligned, and consistent, where only one or all modalities reflect the true emotion. However, evaluations on our CA-MER reveal that current state-of-the-art emotion MLLMs systematically over-rely on audio signal during emotion conflicts, neglecting critical cues from visual modality. To mitigate this bias, we propose MoSEAR, a parameter-efficient framework that promotes balanced modality integration. MoSEAR consists of two modules: (1)MoSE, modality-specific experts with a regularized gating mechanism that reduces modality bias in the fine-tuning heads; and (2)AR, an attention reallocation mechanism that rebalances modality contributions in frozen backbones during inference. Our framework offers two key advantages: it mitigates emotion conflicts and improves performance on consistent samples-without incurring a trade-off between audio and visual modalities. Experiments on multiple benchmarks-including MER2023, EMER, DFEW, and our CA-MER-demonstrate that MoSEAR achieves state-of-the-art performance, particularly under modality conflict conditions.},
+website={https://dl.acm.org/doi/abs/10.1145/3746027.3754856}
 } 
 
 @inproceedings{zhao2025unsupervised,
@@ -186,7 +200,9 @@ award={Oral},
   class={MLLMs Reasoning},
   supclass={multimodal learning},
   code={https://github.com/kesenzhao/UV-CoT},
-  projectpage={https://kesenzhao.github.io/my_project/projects/UV-CoT.html}  
+  projectpage={https://kesenzhao.github.io/my_project/projects/UV-CoT.html},
+  abstract={Chain-of-thought (CoT) reasoning greatly improves the interpretability and problem-solving abilities of multimodal large language models (MLLMs). However, existing approaches are focused on text CoT, limiting their ability to leverage visual cues. Visual CoT remains underexplored, and the only work is based on supervised fine-tuning (SFT) that relies on extensive labeled bounding-box data and is hard to generalize to unseen cases. In this paper, we introduce Unsupervised Visual CoT (UV-CoT), a novel framework for image-level CoT reasoning via preference optimization. UV-CoT performs preference comparisons between model-generated bounding boxes (one is preferred and the other is dis-preferred), eliminating the need for bounding-box annotations. We get such preference data by introducing an automatic data generation pipeline. Given an image, our target MLLM (e.g., LLaVA-1.5-7B) generates seed bounding boxes using a template prompt and then answers the question using each bounded region as input. An evaluator MLLM (e.g., OmniLLM-12B) ranks the responses, and these rankings serve as supervision to train the target MLLM with UV-CoT by minimizing negative log-likelihood losses. By emulating human perception--identifying key regions and reasoning based on them--UV-CoT can improve visual comprehension, particularly in spatial reasoning tasks where textual descriptions alone fall short. Our experiments on six datasets demonstrate the superiority of UV-CoT, compared to the state-of-the-art textual and visual CoT methods. Our zero-shot testing on four unseen datasets shows the strong generalization of UV-CoT.},
+  website={https://openaccess.thecvf.com/content/ICCV2025/html/Zhao_Unsupervised_Visual_Chain-of-Thought_Reasoning_via_Preference_Optimization_ICCV_2025_paper.html}
 }
 
 @ inproceedings{zhu2025distilling,
@@ -201,19 +217,24 @@ award={Oral},
   supclass={robust learning},
   code={https://github.com/BeierZhu/EPD},
   poster={EPD_Poster.pdf},
-  video={https://www.bilibili.com/video/BV1sSeEzhEmp/?spm_id_from=333.1387.homepage.video_card.click&vd_source=aab02baa86c34f988b4134455c8c27c7}
+  video={https://www.bilibili.com/video/BV1sSeEzhEmp/?spm_id_from=333.1387.homepage.video_card.click&vd_source=aab02baa86c34f988b4134455c8c27c7},
+  abstract={Diffusion models (DMs) have achieved state-of-the-art generative performance but suffer from high sampling latency due to their sequential denoising nature. Existing solver-based acceleration methods often face image quality degradation under a low-latency budget. In this paper, we propose the Ensemble Parallel Direction solver (dubbed as EPD-Solver), a novel ODE solver that mitigates truncation errors by incorporating multiple parallel gradient evaluations in each ODE step. Importantly, since the additional gradient computations are independent, they can be fully parallelized, preserving low-latency sampling. Our method optimizes a small set of learnable parameters in a distillation fashion, ensuring minimal training overhead. In addition, our method can serve as a plugin to improve existing ODE samplers. Extensive experiments on various image synthesis benchmarks demonstrate the effectiveness of our EPD-Solver in achieving high-quality and low-latency sampling. For example, at the same latency level of 5 NFE, EPD achieves an FID of 4.47 on CIFAR-10, 7.97 on FFHQ, 8.17 on ImageNet, and 8.26 on LSUN Bedroom, surpassing existing learning-based solvers by a significant margin. Codes are available},
+  website={https://openaccess.thecvf.com/content/ICCV2025/html/Zhu_Distilling_Parallel_Gradients_for_Fast_ODE_Solvers_of_Diffusion_Models_ICCV_2025_paper.html}
 }
 
 @inproceedings{zhu2025dynamic,
   bibtex_show={true}, 
   arxiv={2507.14797},
-  title={Dynamic Multimodal Prototype Learning in Vision-Language Models},
+  title={Dynamic multimodal prototype learning in vision-language models},
   author={Zhu, Xingyu and Wang, Shuo and Zhu, Beier and Li, Miaoge and Li, Yunfan and Fang, Junfeng and Wang, Zhicai and Wang, Dongsheng and Zhang, Hanwang},
   booktitle={International Conference on Computer Vision},
   abbr={ICCV},
   year={2025},
   class={Robust Adaptation for VLMs},
   supclass={multimodal learning},
+  abstract={With the increasing attention to pre-trained vision-language models (VLMs), e.g., CLIP, substantial efforts have been devoted to many downstream tasks, especially in test-time adaptation (TTA). However, previous works focus on learning prototypes only in the textual modality while overlooking the ambiguous semantics in class names. These ambiguities lead to textual prototypes that are insufficient to capture visual concepts, resulting in limited performance. To address this issue, we introduce ProtoMM, a training-free framework that constructs multimodal prototypes to adapt VLMs during the test time. By viewing the prototype as a discrete distribution over the textual descriptions and visual particles, ProtoMM has the ability to combine the multimodal features for comprehensive prototype learning. More importantly, the visual particles are dynamically updated as the testing stream flows. This allows our multimodal prototypes to continually learn from the data, enhancing their generalizability in unseen scenarios. In addition, we quantify the importance of the prototypes and test images by formulating their semantic distance as an optimal transport problem. Extensive experiments on 15 zero-shot benchmarks demonstrate the effectiveness of our method, achieving a 1.03% average accuracy improvement over state-of-the-art methods on ImageNet and its variant datasets.
+},
+website={https://openaccess.thecvf.com/content/ICCV2025/html/Zhu_Dynamic_Multimodal_Prototype_Learning_in_Vision-Language_Models_ICCV_2025_paper.html}
 }
 
 @article{zhu2025debiasing,
@@ -229,6 +250,9 @@ award={Oral},
   publisher={Higher Education Press Beijing},
   class={Survey},
   bibtex_show={true}, 
+  abstract={In recent years, foundation Vision-Language Models (VLMs), such as CLIP [1], which empower zero-shot transfer to a wide variety of domains without fine-tuning, have led to a significant shift in machine learning systems. Despite the impressive capabilities, it is concerning that the VLMs are prone to inheriting biases from the uncurated datasets scraped from the Internet [2–5]. We examine these biases from three perspectives. (1) Label bias, certain classes (words) appear more frequently in the pre-training data. (2) Spurious correlation, non-target features, e.g., image background, that are correlated with labels, resulting in poor group robustness. (3) Social bias, which is a special form of spurious correlation, focuses on societal harm. Unaudited image-text pairs might contain human prejudice, e.g., gender, ethnicity, and age, that are correlated with targets. These biases are subsequently propagated to downstream tasks, leading to biased predictions.
+In this survey, we provide an overview of the three biases prevalent in visual classification within the area of VLMs, along with strategies to mitigate these biases. By doing the survey, we hope to provide a useful resource for the debiasing and VLMs community.},
+  website={https://link.springer.com/article/10.1007/s11704-024-40051-3}
 }
 
 @inproceedings{zhu2025project,
@@ -242,7 +266,9 @@ award={Oral},
   award={Highlight},
   class={Group Robustness},
   supclass={robust learning},
-  poster={ppa_poster.pdf}
+  poster={ppa_poster.pdf},
+  abstract={While image-text foundation models have succeeded across diverse downstream tasks, they still face challenges in the presence of spurious correlations between the input and label. To address this issue, we propose a simple three-step approach,Project-Probe-Aggregate (PPA), that enables parameter-efficient fine-tuning for foundation models without relying on group annotations. Building upon the failure-based debiasing scheme, our method, PPA, improves its two key components: minority samples identification and the robust training algorithm. Specifically, we first train biased classifiers by projecting image features onto the nullspace of class proxies from text encoders. Next, we infer group labels using the biased classifier and probe group targets with prior correction. Finally, we aggregate group weights of each class to produce the debiased classifier. Our theoretical analysis shows that our PPA enhances minority group identification and is Bayes optimal for minimizing the balanced group error, mitigating spurious correlations. Extensive experimental results confirm the effectiveness of our PPA: it outperforms the state-of-the-art by an average worst-group accuracy while requiring less than 0.01% tunable parameters without training group labels.},
+  website={https://openaccess.thecvf.com/content/CVPR2025/html/Zhu_Project-Probe-Aggregate_Efficient_Fine-Tuning_for_Group_Robustness_CVPR_2025_paper.html}
 }
 
 @inproceedings{lei2025stylestudio,
@@ -257,6 +283,8 @@ award={Oral},
   code={https://github.com/Westlake-AGI-Lab/StyleStudio},
   projectpage={https://stylestudio-official.github.io/},  
   year={2025},
+  abstract={Text-driven style transfer aims to merge the style of a reference image with content described by a text prompt. Recent advancements in text-to-image models have improved the nuance of style transformations, yet significant challenges remain, particularly with overfitting to reference styles, limiting stylistic control, and misaligning with textual content. In this paper, we propose three complementary strategies to address these issues. First, we introduce a cross-modal Adaptive Instance Normalization (AdaIN) mechanism for better integration of style and text features, enhancing alignment. Second, we develop a Style-based Classifier-Free Guidance (SCFG) approach that enables selective control over stylistic elements, reducing irrelevant influences. Finally, we incorporate a teacher model during early generation stages to stabilize spatial layouts and mitigate artifacts. Our extensive evaluations demonstrate significant improvements in style transfer quality and alignment with textual prompts. Furthermore, our approach can be integrated into existing style transfer frameworks without fine-tuning.},
+  website={https://openaccess.thecvf.com/content/CVPR2025/html/Lei_StyleStudio_Text-Driven_Style_Transfer_with_Selective_Control_of_Style_Elements_CVPR_2025_paper.html}
 }
 
 @inproceedings{jiang2025devils,
@@ -270,6 +298,8 @@ award={Oral},
   year={2025},
   class={MLLMs De-Hallucination},
   supclass={multimodal learning},
+  abstract={Hallucinations in Large Vision-Language Models (LVLMs) significantly undermine their reliability, motivating researchers to explore the causes of hallucination. However, most studies primarily focus on the language aspect rather than the visual. In this paper, we address how LVLMs process visual information and whether this process causes hallucination. Firstly, we use the attention lens to identify the stages at which LVLMs handle visual data, discovering that the middle layers are crucial. Moreover, we find that these layers can be further divided into two stages: ''visual information enrichment'' and ''semantic refinement'' which respectively propagate visual data to object tokens and interpret it through text. By analyzing attention patterns during the visual information enrichment stage, we find that real tokens consistently receive higher attention weights than hallucinated ones, serving as a strong indicator of hallucination. Further examination of multi-head attention maps reveals that hallucination tokens often result from heads interacting with inconsistent objects. Based on these insights, we propose a simple inference-time method that adjusts visual attention by integrating information across various heads. Extensive experiments demonstrate that this approach effectively mitigates hallucinations in mainstream LVLMs without additional training costs.},
+  website={https://openaccess.thecvf.com/content/CVPR2025/html/Jiang_Devils_in_Middle_Layers_of_Large_Vision-Language_Models_Interpreting_Detecting_CVPR_2025_paper.html}
 }
 
 @unpublished{cui2025generalized,
@@ -281,7 +311,8 @@ award={Oral},
   supclass={robust learning},
   year={2025},
   abbr={arXiv},
-  code={https://github.com/jiequancui/DKL}
+  code={https://github.com/jiequancui/DKL},
+  abstract={In this paper, we delve deeper into the Kullback-Leibler (KL) Divergence loss and mathematically prove that it is equivalent to the Decoupled Kullback-Leibler (DKL) Divergence loss that consists of (1) a weighted Mean Square Error (wMSE) loss and (2) a Cross-Entropy loss incorporating soft labels. Thanks to the decoupled structure of DKL loss, we have identified two areas for improvement. Firstly, we address the limitation of KL loss in scenarios like knowledge distillation by breaking its asymmetric optimization property along with a smoother weight function. This modification effectively alleviates convergence challenges in optimization, particularly for classes with high predicted scores in soft labels. Secondly, we introduce class-wise global information into KL/DKL to reduce bias arising from individual samples. With these two enhancements, we derive the Generalized Kullback-Leibler (GKL) Divergence loss and evaluate its effectiveness by conducting experiments on CIFAR-10/100, ImageNet, and vision-language datasets, focusing on adversarial training, and knowledge distillation tasks. Specifically, we achieve new state-of-the-art adversarial robustness on the public leaderboard -- RobustBench and competitive knowledge distillation performance across CIFAR/ImageNet models and CLIP models, demonstrating the substantial practical merits.}
 }
 
 @article{beier2024towards,
@@ -293,6 +324,7 @@ award={Oral},
   abbr={Thesis},
   supclass={others},
   class={others},
+  abstract={A foundational objective of machine learning is to create models that are (1) unbiased, ensuring fair predictions across different classes; (2) accurate, ex- celling in in-distribution (target) environments; and (3) robust, achieving high performance even under distribution shifts. Recently, vision models pre-trained with language supervision on large-scale data empower zero-shot inference through prompting. Such zero-shot models have demonstrated unprecedented robustness across a broad range of distributions. However, the pre-training data often exhibit a skewed label distribution, contributing to poor performance of zero-shot models on less frequent classes. Additionally, zero-shot models are still inaccurate on several domain-specific tasks, such as differentiating between car models, flower species, and aircraft variants. Therefore, it is a common practice to boost the accuracy and correct the imbalanced prediction via fine-tuning on downstream labeled data. However, fine-tuning with few-shot samples sometimes leads to over-fitting, making these models under-perform compared to zero-shot models. Moreover, even with abundant downstream data, fine-tuning often comes at the cost of robustness: fine- tuned models easily exploit spurious correlations that only hold on the downstream distribution, resulting in lower performance on distribution shifts compared to zero- shot models. This raises a natural question: Can fine-tuned zero-shot models achieve unbiased, accurate, and robust predictions all at once? In this thesis, we affirmatively answer the question through the presentation of three comprehensive studies. • To achieve unbiased predictions, we propose Generalized Logit Adjustment (GLA), a simple post-hoc method which removes the label distribution bias of zero-shot model via estimating the label distribution of the pre-training dataset. Notably, direct access to pre-training data is often restricted due to privacy or copyright concerns. Instead, we only use the downstream data and the zero-shot model to derive an unbiased zero-shot model. Moreover, we prove the non-asymptotic convergence guarantees of the label distribution estimation and demonstrate that ensembling the debiased zero-shot model with an off-the-shelf fine-tuned model is the Bayes optimal classifier. • To avoid the over-fitting issue in few-shot adaptation, we present Prompt- aligned Gradient, dubbed ProGrad – to prevent fine-tuning from forgetting the general knowledge from zero-shot models. By leveraging knowledge from the pre-trained data to regularize fine-tuning on a specific distribution, our ProGrad method is robust to distribution shifts. We further justify the proposed method by demonstrating that it offers lower generalization error bound compared to plain fine-tuning. • To resolve the undesirable ID-OOD trade-offs that persist in prevailing fine- tuning methods: out-of-distribution (OOD) robustness is at odds with in- distribution (ID) accuracy, we propose a sample-wise ensembling technique that can simultaneously attain the best performance on ID and OOD data without trade-offs. Our theoretical analysis shows that it effectively min- imizes the variance of the ensemble models, resulting in reduced residual error. The three proposed methods are independent and can be combined to create fine- tuned models that are unbiased, accurate, and robust. These methods have been thoroughly evaluated in real-world settings, including many-shot learning with abundant data, few-shot learning, and long-tail classification—a challenging sce- nario that combines elements of both many-shot and few-shot data. In all these settings, the methods consistently deliver unbiased predictions and achieve state- of-the-art accuracy and robustness.},
 }
 
 @inproceedings{zhu2024enhancing,
@@ -307,7 +339,9 @@ award={Oral},
   supclass={robust learning},
   code={https://github.com/zhuhsingyuu/Frolic},
   poster={frolic_poster.png},
-  year={2024}
+  year={2024},
+  abstract={Vision-language models, such as CLIP, have shown impressive generalization capacities when using appropriate text descriptions. While optimizing prompts on downstream labeled data has proven effective in improving performance, these methods entail labor costs for annotations and are limited by their quality. Additionally, since CLIP is pre-trained on highly imbalanced Web-scale data, it suffers from inherent label bias that leads to suboptimal performance. To tackle the above challenges, we propose a label-Free prompt distribution learning and bias correction framework, dubbed as **Frolic**, which boosts zero-shot performance without the need for labeled data. Specifically, our Frolic learns distributions over prompt prototypes to capture diverse visual representations and adaptively fuses these with the original CLIP through confidence matching. This fused model is further enhanced by correcting label bias via a label-free logit adjustment. Notably, our method is not only training-free but also circumvents the necessity for hyper-parameter tuning. Extensive experimental results across 16 datasets demonstrate the efficacy of our approach, particularly outperforming the state-of-the-art by an average of 2.6% on 10 datasets with CLIP ViT-B/16 and achieving an average margin of 1.5% on ImageNet and its five distribution shifts with CLIP ViT-B/16.},
+   website={https://proceedings.neurips.cc/paper_files/paper/2024/hash/03cdf8e212ba92a3f36bffe1391928bd-Abstract-Conference.html}
 }
 
 @inproceedings{zhu2024robust,
@@ -321,7 +355,9 @@ award={Oral},
   abbr={NeurIPS},
   code={https://github.com/BeierZhu/VRF},
   poster={vrf_poster.pdf},
-  year={2024}
+  year={2024},
+  abstract={When fine-tuning zero-shot models like CLIP, our desideratum is for the fine-tuned model to excel in both in-distribution (ID) and out-of-distribution (OOD). Recently, ensemble-based models (ESM) have been shown to offer significant robustness improvement, while preserving high ID accuracy. However, our study finds that ESMs do not solve the ID-OOD trade-offs: they achieve peak performance for ID and OOD accuracy at different mixing coefficients. When optimized for OOD accuracy, the ensemble model exhibits a noticeable decline in ID accuracy, and vice versa. In contrast, we propose a sample-wise ensembling technique that can simultaneously attain the best ID and OOD accuracy without the trade-offs. Specifically, we construct a Zero-Shot Failure (ZSF) set containing training samples incorrectly predicted by the zero-shot model. For each test sample, we calculate its distance to the ZSF set and assign a higher weight to the fine-tuned model in the ensemble if the distance is small. We term our method Variance Reduction Fine-tuning (VRF), as it effectively reduces the variance in ensemble predictions, thereby decreasing residual error. On ImageNet and five derived distribution shifts, our VRF further improves the OOD accuracy by 1.5 - 2.0 pp over the ensemble baselines while maintaining or increasing ID accuracy. VRF achieves similar large robustness gains (0.9 - 3.1 pp) on other distribution shifts benchmarks.},
+  website={https://proceedings.neurips.cc/paper_files/paper/2024/hash/8cc7e1509fbfee9cabaacd3ab0bfe2b1-Abstract-Conference.html}
 }
 
 @inproceedings{zhu2024selective,
@@ -336,6 +372,8 @@ award={Oral},
   class={Robust Adaptation for VLMs},
   supclass={multimodal learning},
   code={https://github.com/zhuhsingyuu/SSP},
+  abstract={Vision-language models such as CLIP are capable of mapping the different modality data into a unified feature space, enabling zero/few-shot inference by measuring the similarity of given images and texts. However, most existing methods overlook modality gaps in CLIP's encoded features, which is shown as the text and image features lie far apart from each other, resulting in limited classification performance. To tackle this issue, we introduce a method called Selective Vision-Language Subspace Projection (SSP), which incorporates local image features and utilizes them as a bridge to enhance the alignment between image-text pairs. Specifically, our SSP framework comprises two parallel modules: a vision projector and a language projector. Both projectors utilize local image features to span the respective subspaces for image and texts, thereby projecting the image and text features into their respective subspaces to achieve alignment. Moreover, our approach entails only training-free matrix calculations and can be seamlessly integrated into advanced CLIP-based few-shot learning frameworks. Extensive experiments on 11 datasets have demonstrated SSP's superior text-image alignment capabilities, outperforming the state-of-the-art alignment methods. },
+  website={https://dl.acm.org/doi/abs/10.1145/3664647.3680885}
 }
 
 @inproceedings{cui2024classes,
@@ -349,6 +387,8 @@ award={Oral},
   code={https://github.com/dvlab-research/Parametric-Contrastive-Learning},
   class={Robustness},
   supclass={robust learning},
+  abstract={In this paper, we present an empirical study on image recognition fairness, i.e., extreme class accuracy disparity on balanced data like ImageNet. We experimentally demonstrate that classes are not equal and the fairness issue is prevalent for image classification models across various datasets, network architectures, and model capacities. Moreover, several intriguing properties of fairness are identified. First, the unfairness lies in problematic representation rather than classifier bias. Second, with the proposed concept of Model Prediction Bias, we investigate the origins of problematic representation during optimization. Our findings reveal that models tend to exhibit greater prediction biases for classes that are more challenging to recognize. It means that more other classes will be confused with harder classes. Then the False Positives (FPs) will dominate the learning in optimization, thus leading to their poor accuracy. Further, we conclude that data augmentation and representation learning algorithms improve overall performance by promoting fairness to some degree in image classification.},
+  website={https://openaccess.thecvf.com/content/CVPR2024/html/Cui_Classes_Are_Not_Equal_An_Empirical_Study_on_Image_Recognition_CVPR_2024_paper.html}
 }
 
 @inproceedings{zhu2023generalized,
@@ -362,6 +402,8 @@ award={Oral},
   abbr={NeurIPS},
   year={2023},
   code={https://github.com/BeierZhu/GLA},
+  abstract={Foundation models like CLIP allow zero-shot transfer on various tasks without additional training data. Yet, the zero-shot performance is less competitive than a fully supervised one. Thus, to enhance the performance, fine-tuning and ensembling are also commonly adopted to better fit the downstream tasks. However, we argue that such prior work has overlooked the inherent biases in foundation models. Due to the highly imbalanced Web-scale training set, these foundation models are inevitably skewed toward frequent semantics, and thus the subsequent fine-tuning or ensembling is still biased. In this study, we systematically examine the biases in foundation models and demonstrate the efficacy of our proposed Generalized Logit Adjustment (GLA) method. Note that bias estimation in foundation models is challenging, as most pre-train data cannot be explicitly accessed like in traditional long-tailed classification tasks. To this end, GLA has an optimization-based bias estimation approach for debiasing foundation models. As our work resolves a fundamental flaw in the pre-training, the proposed GLA demonstrates significant improvements across a diverse range of tasks: it achieves 1.5 pp accuracy gains on ImageNet, an large average improvement (1.4-4.6 pp) on 11 few-shot datasets, 2.4 pp gains on long-tailed classification.},
+  website={https://proceedings.neurips.cc/paper_files/paper/2023/hash/cbe1fd3136e0f049bb8bc104231ccb99-Abstract-Conference.html}
 }
 
 @inproceedings{zhu2023debiased,
@@ -375,7 +417,9 @@ award={Oral},
   code={https://github.com/BeierZhu/ProReg},
   class={Robust Adaptation for VLMs},
   supclass={multimodal learning},
-  year={2023}
+  year={2023},
+  abstract={We present a new paradigm for fine-tuning large-scale visionlanguage pre-trained models on downstream task, dubbed Prompt Regularization (ProReg). Different from traditional fine-tuning which easily overfits to the downstream task data, ProReg uses the prediction by prompting the pretrained model to regularize the fine-tuning. The motivation is: by prompting the large model "a photo of a [CLASS]", the fil-lin answer is only dependent on the pretraining encyclopedic knowledge while independent of the task data distribution, which is usually biased. Specifically, given a training sample prediction during fine-tuning, we first calculate its KullbackLeibler loss of the prompt prediction and Cross-Entropy loss of the ground-truth label, and then combine them with a proposed sample-wise adaptive trade-off weight, which automatically adjusts the transfer between the pretrained and downstream domains. On various out-of-distribution benchmarks, we show the consistently strong performance of ProReg compared with conventional fine-tuning, zero-shot prompt, prompt tuning, and other state-of-the-art methods.},
+  website={https://ojs.aaai.org/index.php/AAAI/article/view/25496}
 }
 
 @inproceedings{chen2023leveraging,
@@ -388,7 +432,9 @@ award={Oral},
   abbr={AAAI},
   class={Speech Recognition},
   supclass={others},
-  year={2023}
+  year={2023},
+  abstract={Audio-visual speech recognition (AVSR) has gained remarkable success for ameliorating the noise-robustness of speech recognition. Mainstream methods focus on fusing audio and visual inputs to obtain modality-invariant representations. However, such representations are prone to over-reliance on audio modality as it is much easier to recognize than video modality in clean conditions. As a result, the AVSR model underestimates the importance of visual stream in face of noise corruption. To this end, we leverage visual modality-specific representations to provide stable complementary information for the AVSR task. Specifically, we propose a reinforcement learning (RL) based framework called MSRL, where the agent dynamically harmonizes modality-invariant and modality-specific representations in the auto-regressive decoding process. We customize a reward function directly related to task-specific metrics (i.e., word error rate), which encourages the MSRL to effectively explore the optimal integration strategy. Experimental results on the LRS3 dataset show that the proposed method achieves state-of-the-art in both clean and various noisy conditions. Furthermore, we demonstrate the better generality of MSRL system than other baselines when test set contains unseen noises.},
+  website={https://ojs.aaai.org/index.php/AAAI/article/view/26484}
 }
 
 @inproceedings{zhu2023prompt,
@@ -402,20 +448,24 @@ award={Oral},
   code={https://github.com/BeierZhu/Prompt-align},
   class={Robust Adaptation for VLMs},
   supclass={multimodal learning},
+  abstract={Thanks to the large pre-trained vision-language models (VLMs) like CLIP, we can craft a zero-shot classifier by "prompt", e.g., the confidence score of an image being "[CLASS]" can be obtained by using the VLM provided similarity measure between the image and the prompt sentence "a photo of a [CLASS]". Therefore, prompt shows a great potential for fast adaptation of VLMs to downstream tasks if we fine-tune the prompt-based similarity measure. However, we find a common failure that improper fine-tuning may not only undermine the prompt's inherent prediction for the task-related classes, but also for other classes in the VLM vocabulary. Existing methods still address this problem by using traditional anti-overfitting techniques such as early stopping and data augmentation, which lack a principled solution specific to prompt. We present Prompt-aligned Gradient, dubbed ProGrad, to prevent prompt tuning from forgetting the the general knowledge learned from VLMs. In particular, ProGrad only updates the prompt whose gradient is aligned (or non-conflicting) to the "general direction", which is represented as the gradient of the KL loss of the pre-defined prompt prediction. Extensive experiments demonstrate the stronger few-shot generalization ability of ProGrad over state-of-the-art prompt tuning methods.},
+  website={https://openaccess.thecvf.com/content/ICCV2023/html/Zhu_Prompt-aligned_Gradient_for_Prompt_Tuning_ICCV_2023_paper.html}
   }
 
 @inproceedings{zhu2022cross,
   bibtex_show={true}, 
-  arxiv={2205.14865},
+  arxiv={2112.14380},
   title={Cross-domain empirical risk minimization for unbiased long-tailed classification},
   author={Zhu, Beier and Niu, Yulei and Hua, Xian-Sheng and Zhang, Hanwang},
   booktitle={Proceedings of the AAAI conference on artificial intelligence},
-  code={https://github.com/BeierZhu/Prompt-align},
+  code={https://github.com/BeierZhu/xERM},
   abbr={AAAI},
   award={Oral},
   class={Imbalanced Learning},
   supclass={robust learning},
-  year={2022}
+  abstract={We address the overlooked unbiasedness in existing long-tailed classification methods: we find that their overall improvement is mostly attributed to the biased preference of tail over head, as the test distribution is assumed to be balanced; however, when the test is as imbalanced as the long-tailed training data -- let the test respect Zipf's law of nature -- the tail bias is no longer beneficial overall because it hurts the head majorities. In this paper, we propose Cross-Domain Empirical Risk Minimization (xERM) for training an unbiased model to achieve strong performances on both test distributions, which empirically demonstrates that xERM fundamentally improves the classification by learning better feature representation rather than the head vs. tail game. Based on causality, we further theoretically explain why xERM achieves unbiasedness: the bias caused by the domain selection is removed by adjusting the empirical risks on the imbalanced domain and the balanced but unseen domain.},
+  year={2022},
+  website={https://ojs.aaai.org/index.php/AAAI/article/view/20271}
 }
 
 
@@ -429,6 +479,10 @@ award={Oral},
   year={2021},
   class={Face Alignment},
   supclass={others},
+  website={https://ieeexplore.ieee.org/abstract/document/9442331},
+  code={https://github.com/BeierZhu/Sturcture-Coherency-Face-Alignment},
+  bibtex_show={true}, 
+  abstract={In this paper, we propose a structure-coherent deep feature learning method for face alignment. Unlike most existing face alignment methods which overlook the facial structure cues, we explicitly exploit the relation among facial landmarks to make the detector robust to hard cases such as occlusion and large pose. Specifically, we leverage a landmark-graph relational network to enforce the structural relationships among landmarks. We consider the facial landmarks as structural graph nodes and carefully design the neighborhood to passing features among the most related nodes. Our method dynamically adapts the weights of node neighborhood to eliminate distracted information from noisy nodes, such as occluded landmark point. Moreover, different from most previous works which only tend to penalize the landmarks absolute position during the training, we propose a relative location loss to enhance the information of relative location of landmarks. This relative location supervision further regularizes the facial structure. Our approach considers the interactions among facial landmarks and can be easily implemented on top of any convolutional backbone to boost the performance. Extensive experiments on three popular benchmarks, including WFLW, COFW and 300W, demonstrate the effectiveness of the proposed method. In particular, due to explicit structure modeling, our approach is especially robust to challenging cases resulting in impressive low failure rate on COFW and WFLW datasets.}
 }
 
 @article{shi2019fault,
@@ -443,6 +497,9 @@ award={Oral},
   publisher={IEEE},
   class={Power System},
   supclass={others},
+  bibtex_show={true}, 
+  website={https://ieeexplore.ieee.org/document/8664125},
+  abstract={Fault location in distribution networks is difficult for multiple discontinuities, such as branches and junction points. This paper proposes a fault location scheme using network topology information and reclosure-generating traveling waves. Based on the topology, the circuit breaker closure-generating normal traveling waves (CNTWs) can be analyzed. When permanent faults occur, the circuit breaker reclosure-generating fault traveling waves (RFTWs) contain the information on fault position. The difference between the CNTWs and RFTWs, defined as reclosing superimposed traveling waves (RSTWs), is calculated. For RSTWs, their initial traveling waves are detected by wavelet transform. The time difference between the reclosing instant and the arrival instant of the reflected traveling wave of the fault point is employed to calculate the fault distance. Moreover, due to large numbers of branches, a fault distance may correspond to many sections. To determine the fault section, a database which contains the RSTWs induced by the faults occur in each section is built. The fault section can be identified by finding the most similar signals in the database by taking advantage of an improved dynamic time warping method. The simulation results indicate that the scheme can locate fault for distributed feeders regardless of grounding system type, load variation, and fault type.}
 }
 
 @article{shi2018fault,
@@ -456,5 +513,8 @@ award={Oral},
   abbr={TSG},
   class={Power System},
   supclass={others},
-  publisher={IEEE}
+  publisher={IEEE},
+  website={https://ieeexplore.ieee.org/document/8445640},
+  abstract={Fault classification is an important aspect of the protective relaying system for transmission lines. This paper proposes a new method based on group sparse representation for fault classification in transmission lines in which half-cycle superimposed current signals are measured for the classification task. When compared to conventional feature extraction methods, the proposed method in this paper alleviates the requirement to manually design feature. Signals are factorized over an overcomplete basis in which elements are the fault signals themselves. The algorithm of classification is based on the idea that the training samples of a particular fault type approximately form a linear basis for any test sample belonging to that class. Solved by l2,1-minimization, the coefficient should be group sparse, and its non-zero entries correspond to particular group of correlated training samples. It is illustrated that the proposed classification method can be properly modified to deal with noise-containing signals. Moreover, dimension reduction is performed using random mapping technique. The results of several simulations are carried out by PSCAD/EMTDC and field data in real system indicate that the proposed method is accurate and fast for fault classification, and has a high robustness to noise.},
+  bibtex_show={true}, 
 }
