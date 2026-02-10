@@ -9,7 +9,7 @@ nav_order: 3
 ---
 
 - [论文写作](/assets/pdf/论文写作.pdf)
-- [Suggested Reading List](readinglist.md)
+- [Suggested Reading List](/readinglist/)
 - [Moment-Generating Function](/assets/pdf/MGF.pdf)
 - [Sub-Gaussian Random Variable and its Tail Bound](/assets/pdf/SubGaussian.pdf)
 - [Common Concentration Inequalities](/assets/pdf/Inequalities.pdf)
