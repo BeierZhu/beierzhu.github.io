@@ -2,6 +2,35 @@
  * Styles for the base elements of the theme.
  ******************************************************************************/
 
+// Hiring banner
+.hiring-banner {
+  background-color: rgba(253, 114, 0, 0.08);
+  border-left: 4px solid var(--global-theme-color);
+  padding: 1em 1.2em;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.6;
+
+  b {
+    color: var(--global-theme-color);
+  }
+
+  a {
+    color: var(--global-theme-color);
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+html[data-theme="dark"] {
+  .hiring-banner {
+    background-color: rgba(0, 163, 192, 0.1);
+  }
+}
+
 // Typography
 
 p,

@@ -25,6 +25,12 @@ emphasis on robust adaptation, faithful reasoning, and controllable generation.
 
 <div style="height: 1.5em;"></div>
 
+<div class="hiring-banner">
+  <b>[2025] 📢 We're hiring!</b> Multiple positions for PhD students, postdocs, visiting students, and research assistants are available! <a href="/招生信息/">See 招生信息 →</a>
+</div>
+
+<div style="height: 1.5em;"></div>
+
 ### News
 <hr style="margin-top: 0.3em; margin-bottom: 1em;">
 <div class="news-scroll-box" style="font-weight: 300;">
