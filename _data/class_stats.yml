@@ -1,8 +1,10 @@
 - supclass: Robust Learning
-  total: 12
+  total: 15
   classes:
   - name: Diffusion Solver
-    count: 3
+    count: 4
+  - name: Few-Shot Learning
+    count: 1
   - name: Group Robustness
     count: 1
   - name: Imbalanced Learning
@@ -10,18 +12,18 @@
   - name: OOD Generalization
     count: 2
   - name: Robustness
-    count: 3
+    count: 4
 - supclass: Multimodal Learning
-  total: 15
+  total: 17
   classes:
   - name: Image Generation
     count: 3
   - name: MLLMs De-Hallucination
     count: 2
   - name: MLLMs Reasoning
-    count: 2
+    count: 3
   - name: MLLMs Safety
-    count: 1
+    count: 2
   - name: Robust Adaptation for VLMs
     count: 5
   - name: Video Generation
@@ -31,11 +33,11 @@
   classes:
   - name: Face Alignment
     count: 1
-  - name: Few-Shot Learning
-    count: 1
   - name: Image Clustering
     count: 1
   - name: LLM Agent
+    count: 1
+  - name: Point Cloud
     count: 1
   - name: Power System
     count: 2

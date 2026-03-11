@@ -1,3 +1,72 @@
+@misc{zhao2026thinkingimagescontinuousactions,
+      title={Thinking with Images as Continuous Actions: Numerical Visual Chain-of-Thought}, 
+      author={Kesen Zhao and Beier Zhu^ and Junbao Zhou and Xingyu Zhu and Zhongqi Yue and Hanwang Zhang},
+      year={2026},
+      arxiv={2602.23959},
+      abbr={arXiv},
+      bibtex_show={true},
+      class={MLLMs Reasoning},
+      supclass={multimodal learning},
+      code={https://github.com/kesenzhao/NV-CoT},
+      abstract={Recent multimodal large language models (MLLMs) increasingly rely on visual chain-of-thought to perform region-grounded reasoning over images. However, existing approaches ground regions via either textified coordinates-causing modality mismatch and semantic fragmentation or fixed-granularity patches that both limit precise region selection and often require non-trivial architectural changes. In this paper, we propose Numerical Visual Chain-of-Thought (NV-CoT), a framework that enables MLLMs to reason over images using continuous numerical coordinates. NV-CoT expands the MLLM action space from discrete vocabulary tokens to a continuous Euclidean space, allowing models to directly generate bounding-box coordinates as actions with only minimal architectural modification. The framework supports both supervised fine-tuning and reinforcement learning. In particular, we replace categorical token policies with a Gaussian (or Laplace) policy over coordinates and introduce stochasticity via reparameterized sampling, making NV-CoT fully compatible with GRPO-style policy optimization. Extensive experiments on three benchmarks against eight representative visual reasoning baselines demonstrate that NV-CoT significantly improves localization precision and final answer accuracy, while also accelerating training convergence, validating the effectiveness of continuous-action visual reasoning in MLLMs.}
+}
+
+@inproceedings{
+zhu2026principled,
+title={Few-Step Diffusion Sampling Through Instance-Aware Discretizations},
+author={Liangyu Yuan and Ruoyu Wang and Tong Zhao and Dingwen Fu and Mingkun Lei and Beier Zhu and Chi Zhang},
+booktitle={Computer Vision and Pattern Recognition Conference},
+year={2026},
+class={Diffusion Solver},
+supclass={robust learning},
+abbr={CVPR},
+bibtex_show={true},
+abstract={Diffusion and flow matching models generate high-fidelity data by simulating paths defined by Ordinary or Stochastic Differential Equations (ODEs/SDEs), starting from a tractable prior distribution. The probability flow ODE formulation enables the use of advanced numerical solvers to accelerate sampling. Orthogonal yet vital to solver design is the discretization strategy. While early approaches employed handcrafted heuristics and recent methods adopt optimization-based techniques, most existing strategies enforce a globally shared timestep schedule across all samples. This uniform treatment fails to account for instance-specific complexity in the generative process, potentially limiting performance. Motivated by controlled experiments on synthetic data, which reveals the suboptimality of global schedules under instance-specific dynamics, we propose an instance-aware discretization framework. Our method learns to adapt timestep allocations based on input-dependent priors, extending gradient-based discretization search to the conditional generative setting. Empirical results across diverse settings, including synthetic data, pixel-space diffusion, latent-space images and video flow matching models, demonstrate that our method consistently improves generation quality with marginal tuning cost compared to training and negligible inference overhead.},
+}
+
+
+@inproceedings{
+zhu2026principled,
+title={Principled steering via null-space projection for jailbreak defense in vision-language models},
+author={Xingyu Zhu and Beier Zhu and Shuo Wang and Junfeng Fang and Kesen Zhao and Hanwang Zhang and Xiangnan He},
+booktitle={Computer Vision and Pattern Recognition Conference},
+year={2026},
+class={MLLMs Safety},
+supclass={multimodal learning},
+abbr={CVPR},
+bibtex_show={true},
+abstract={As vision-language models (VLMs) are increasingly deployed in open-world scenarios, they can be easily induced by visual jailbreak attacks to generate harmful content, posing serious risks to model safety and trustworthy usage. Recent activation steering methods inject directional vectors into model activations during inference to induce refusal behaviors and have demonstrated effectiveness. However, a steering vector may both enhance refusal ability and cause over-refusal, thereby degrading model performance on benign inputs. Moreover, due to the lack of theoretical interpretability, these methods still suffer from limited robustness and effectiveness. To better balance safety and utility, we propose NullSteer, a null-space projected activation defense framework. Our method constructs refusal directions within model activations through a linear transformation: it maintains zero perturbation within the benign subspace while dynamically inducing refusal along potentially harmful directions, thereby theoretically achieving safety enhancement without impairing the model’s general capabilities. Extensive experiments show that NullStee significantly reduces harmful outputs under various jailbreak attacks (average ASR reduction over 15% on MiniGPT-4) while maintaining comparable performance to the original model on general benchmarks.},
+}
+
+
+@inproceedings{
+zhu2026adapting,
+title={Adapting point cloud analysis via multimodal Bayesian distribution learning},
+author={Xingyu Zhu and Liang Yi and Shuo Wang and Wenbo Zhu and Yongliang Wu and Beier Zhu^ and Hanwang Zhang},
+booktitle={Computer Vision and Pattern Recognition Conference},
+year={2026},
+class={Point Cloud},
+supclass={others},
+abbr={CVPR},
+bibtex_show={true},
+abstract={Large multimodal 3D vision--language models show strong generalization across diverse 3D tasks, but their performance still degrades notably under domain shifts. This has motivated recent studies on test-time adaptation (TTA), which enables models to adapt online using test-time data. Among existing TTA methods, cache-based mechanisms are widely adopted for leveraging previously observed samples in online prediction refinement. However, they store only limited historical information, leading to progressive information loss as the test stream evolves. In addition, their prediction logits are fused heuristically, making adaptation unstable. To address these limitations, we propose BayesMM, a Multimodal Bayesian Distribution Learning framework for test-time point cloud analysis. BayesMM models textual priors and streaming visual features of each class as Gaussian distributions: textual parameters are derived from semantic prompts, while visual parameters are updated online with arriving samples. The two modalities are fused via Bayesian model averaging, which automatically adjusts their contributions based on posterior evidence, yielding a unified prediction that adapts continually to evolving test-time data without training. Extensive experiments on multiple point cloud benchmarks demonstrate that BayesMM maintains robustness under distributional shifts, yielding over 4% average improvement.},
+}
+
+
+@inproceedings{
+xu2026data,
+title={ACE-merging: data-free model merging with adaptive covariance estimation},
+author={Bo Xu and Haotian Wu and Hehai Lin and Weiquan Huang and Beier Zhu and Yao Shu and Chengwei Qin},
+booktitle={Computer Vision and Pattern Recognition Conference},
+year={2026},
+class={Robustness},
+supclass={robust learning},
+abbr={CVPR},
+bibtex_show={true},
+arxiv={2603.02945},
+abstract={Model merging aims to combine multiple ta expert models into a single model while preserving generalization across diverse tasks. However, interference among experts, especially when they are trained on different objectives, often leads to significant performance degradation. Despite recent progress, resolving this interference without data access, retraining, or architectural modification remains a fundamental challenge. This paper provides a theoretical analysis demonstrating that the input covariance of each task, which is a key factor for optimal merging, can be implicitly estimated from the parameter differences of its fine-tuned model, even in a fully data-free setting. Building on this insight, we introduce ACE-Merging, an Adaptive Covariance Estimation framework that effectively mitigates inter-task interference. Our approach features a principled, closed-form solution that contrasts with prior iterative or heuristic methods. Extensive experiments on both vision and language benchmarks demonstrate that ACE-Merging sets a new state-of-the-art among data-free methods. It consistently outperforms existing baselines; for example, ACE-Merging achieves an average absolute improvement of 4\% over the previous methods across seven tasks on GPT-2. Owing to its efficient closed-form formulation, ACE-Merging delivers superior performance with a modest computational cost, providing a practical and theoretically grounded solution for model merging.},
+}
+
 @unpublished{wang2025parallel,
       title={Parallel diffusion solver via residual dirichlet policy optimization}, 
       author={Ruoyu Wang* and Ziyu Li* and Beier Zhu* and Liangyu Yuan and Hanwang Zhang and Xun Yang and Xiaojun Chang and Chi Zhang},
@@ -18,7 +87,10 @@ journal={IEEE Transactions on Image Processing},
 abbr={TIP},
 year={2026},
 class={Few-Shot Learning},
-supclass={others},
+supclass={robust learning},
+website={https://ieeexplore.ieee.org/abstract/document/11393667},
+abstract={Distribution estimation is a pivotal strategy in few-shot learning (FSL) to mitigate data scarcity by sampling from estimated distributions, utilizing statistical properties (mean and variance) transferred from related base categories. However, category-level estimation alone often fails to generate representative samples due to significant dissimilarities between base and novel categories, leading to suboptimal performance. To address this limitation, we propose Hybrid Granularity Distribution Estimation (HGDE), which integrates both coarse-grained category-level statistics and fine-grained instance-level statistics. By leveraging instance statistics from the nearest base samples, HGDE enhances the characterization of novel categories, capturing subtle features that category-level estimation overlooks. These statistics are fused through linear interpolation to form a robust distribution for novel categories, ensuring both diversity and representativeness in generated samples. Additionally, HGDE employs refined estimation techniques, such as weighted summation for mean calculation and principal component retention for covariance, to further improve accuracy. Empirical evaluations on four FSL benchmarks, including Mini-ImageNet, Tiered-ImageNet, CUB and CIFAR-FS, demonstrate that HGDE offers effective distribution estimation capabilities and leads to notable accuracy gains, with improvements of more than 1.8% in 1-shot tasks on CUB. These results highlight HGDE’s ability to balance mean precision and variance diversity, making it a versatile and effective solution for FSL.},
+bibtex_show={true},
 }
 
 @inproceedings{
@@ -52,17 +124,24 @@ code={https://github.com/BeierZhu/MR2},
 }
 
 @inproceedings{wang2026pmi,
-  title={PMI: flow-based inversion correction via proximal operator},
+  title={Free lunch for stabilizing rectified flow inversion},
   author={Chenru Wang and Beier Zhu and Chi Zhang},
   booktitle={International Conference on Learning Representations},
   class={Image Generation},
   supclass={multimodal learning},
   year={2026},
   abbr={ICLR},
+  abstract={Rectified-Flow (RF)-based generative models have recently emerged as strong alternatives to traditional diffusion models, demonstrating state-of-the-art performance across various tasks. By learning a continuous velocity field that transforms simple noise into complex data, RF-based models not only enable high-quality generation, but also support training-free inversion, which facilitates downstream tasks such as reconstruction and editing. However, existing inversion methods, such as vanilla RF-based inversion, suffer from approximation errors that accumulate across timesteps, leading to unstable velocity fields and degraded reconstruction and editing quality. To address this challenge, we propose Proximal-Mean Inversion (PMI), a training-free gradient correction method that stabilizes the velocity field by guiding it toward a running average of past velocities, constrained within a theoretically derived spherical Gaussian. Furthermore, we introduce mimic-CFG, a lightweight velocity correction scheme for editing tasks, which interpolates between the current velocity and its projection onto the historical average, balancing editing effectiveness and structural consistency. Extensive experiments on PIE-Bench demonstrate that our methods significantly improve inversion stability, image reconstruction quality, and editing fidelity, while reducing the required number of neural function evaluations. Our approach achieves state-of-the-art performance on the PIE-Bench with enhanced efficiency and theoretical soundness.},
+ arxiv={2602.11850},
+ bibtex_show={true}, 
+ code={https://github.com/WinterCCC/ICLR26--Free-Lunch-for-Stabilizing-Rectified-Flow-Inversion}
+ 
 }
  
 @inproceedings{
 zhu2026look,
+ bibtex_show={true}, 
+ arxiv={2602.24041},
 title={Look carefully: adaptive visual reinforcements in multimodal large language models for hallucination mitigation},
 author={Xingyu Zhu and Kesen Zhao and Liang Yi and Shuo Wang and Zhicai Wang and Beier Zhu^ and Hanwang Zhang and Xiangnan He},
 booktitle={International Conference on Learning Representations},
@@ -70,17 +149,21 @@ year={2026},
 abbr={ICLR},
 class={MLLMs De-Hallucination},
 supclass={multimodal learning},
+abstract={Multimodal large language models (MLLMs) have achieved remarkable progress in vision–language reasoning, yet they remain vulnerable to hallucination, where generated content deviates from the visual evidence. Existing mitigation strategies either demand costly supervision during training or introduce additional latency at inference. Recent vision-enhancement methods attempt to address this by reinforcing visual tokens during decoding, but they typically inject all tokens indiscriminately, leading to interference from  background regions and distracting the model from critical cues. To overcome this challenge, we propose an Adaptive vIsual Reinforcement framework for MLLMs, dubbed as AIR. AIR consists of two main components: prototype-based token reduction, which condenses the large pool of visual tokens into a compact subset to suppress redundancy, and OT guided patch reinforcement, which quantifies the alignment between hidden state and patch embeddings to selectively integrate the most consistent patches into the feed-forward layers. As a result, AIR enhances the model’s reliance on salient visual information and effectively mitigates hallucination. Extensive experiments across representative MLLMs demonstrate that AIR substantially reduces hallucination while preserving general capabilities, establishing it as an effective and independent solution for building reliable MLLMs.}
 }
 
 @inproceedings{
 zhu2026guardalign,
-title={GuardAlign: robust safety alignment in multimodal large language models},
+title={GuardAlign: test-time safety alignment in multimodal large language models}, 
 author={Xingyu Zhu and Beier Zhu and Junfeng Fang and Shuo Wang and Yin Zhang and Xiang Wang and Xiangnan He},
 booktitle={International Conference on Learning Representations},
 year={2026},
 abbr={ICLR},
 class={MLLMs Safety},
 supclass={multimodal learning},
+bibtex_show={true}, 
+arxiv={2602.24027},
+abstract={Large vision-language models (LVLMs) have achieved remarkable progress in vision-language reasoning tasks, yet ensuring their safety remains a critical challenge. Recent input-side defenses detect unsafe images with CLIP and prepend safety prefixes to prompts, but they still suffer from inaccurate detection in complex scenes and unstable safety signals during decoding. To address these issues, we propose GuardAlign, a training-free defense framework that integrates two strategies. First, OT-enhanced safety detection leverages optimal transport to measure distribution distances between image patches and unsafe semantics, enabling accurate identification of malicious regions without additional computational cost. Second, cross-modal attentive calibration strengthens the influence of safety prefixes by adaptively reallocating attention across layers, ensuring that safety signals remain consistently activated throughout generation. Extensive evaluations on six representative MLLMs demonstrate that GuardAlign reduces unsafe response rates by up to 39% on SPA-VL, while preserving utility, achieving an improvement on VQAv2 from 78.51% to 79.21%.} 
 }
 
 @inproceedings{zhou2025streaming,
@@ -93,7 +176,9 @@ supclass={multimodal learning},
       supclass={multimodal learning},
       abbr={ICLR},
       booktitle={International Conference on Learning Representations},
-      abstract={Achieving streaming, fine-grained control over the outputs of autoregressive video diffusion models remains challenging, making it difficult to ensure that they consistently align with user expectations. To bridge this gap, we propose stReaming drag-oriEnted interactiVe vidEo manipuLation (REVEL), a new task that enables users to modify generated videos anytime on anything via fine-grained, interactive drag. Beyond DragVideo and SG-I2V, REVEL unifies drag-style video manipulation as editing and animating video frames with both supporting user-specified translation, deformation, and rotation effects, making drag operations versatile. In resolving REVEL, we observe: i) drag-induced perturbations accumulate in latent space, causing severe latent distribution drift that halts the drag process; ii) streaming drag is easily disturbed by context frames, thereby yielding visually unnatural outcomes. We thus propose a training-free approach, DragStream, comprising: i) an adaptive distribution self-rectification strategy that leverages neighboring frames' statistics to effectively constrain the drift of latent embeddings; ii) a spatial-frequency selective optimization mechanism, allowing the model to fully exploit contextual information while mitigating its interference via selectively propagating visual cues along generation. Our method can be seamlessly integrated into existing autoregressive video diffusion models, and extensive experiments firmly demonstrate the effectiveness of our DragStream.}
+      abstract={Achieving streaming, fine-grained control over the outputs of autoregressive video diffusion models remains challenging, making it difficult to ensure that they consistently align with user expectations. To bridge this gap, we propose stReaming drag-oriEnted interactiVe vidEo manipuLation (REVEL), a new task that enables users to modify generated videos anytime on anything via fine-grained, interactive drag. Beyond DragVideo and SG-I2V, REVEL unifies drag-style video manipulation as editing and animating video frames with both supporting user-specified translation, deformation, and rotation effects, making drag operations versatile. In resolving REVEL, we observe: i) drag-induced perturbations accumulate in latent space, causing severe latent distribution drift that halts the drag process; ii) streaming drag is easily disturbed by context frames, thereby yielding visually unnatural outcomes. We thus propose a training-free approach, DragStream, comprising: i) an adaptive distribution self-rectification strategy that leverages neighboring frames' statistics to effectively constrain the drift of latent embeddings; ii) a spatial-frequency selective optimization mechanism, allowing the model to fully exploit contextual information while mitigating its interference via selectively propagating visual cues along generation. Our method can be seamlessly integrated into existing autoregressive video diffusion models, and extensive experiments firmly demonstrate the effectiveness of our DragStream.},
+      code={https://github.com/junbao-zhou/DragStream},
+      projectpage={https://junbao-zhou.github.io/DragStream.github.io/}
 }
 
 @inproceedings{gao2025subject,

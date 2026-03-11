@@ -1680,7 +1680,7 @@ ninja-keys::part(ninja-input-wrapper) {
     }
 
     th {
-      background-color: var(--global-code-bg-color);
+      background-color: rgba(253, 114, 0, 0.08);
       font-weight: normal;
     }
 
@@ -1694,7 +1694,7 @@ ninja-keys::part(ninja-input-wrapper) {
     }
 
     .total-row {
-      background-color: var(--global-code-bg-color);
+      background-color: rgba(253, 114, 0, 0.08);
     }
   }
 }
