@@ -10,14 +10,14 @@ toc:
   beginning: true
 ---
 
-## 0. The Least Squares Problem
+## 0. Least Squares Problem
 
 Suppose we want to solve a linear system $$A\mathbf{x}=\mathbf{b}$$ with $$A \in \mathbb{R}^{m \times n}$$, $$ \mathbf{b} \in \mathbb{R}^m$$ and $$m \geq n$$. 
-Since the system is typically overdetermined, it may not admit an exact solution. Instead, we seek a vector $$\mathbf{x}$$ such that $$A\mathbf{x} \approx \mathbf{b}$$.
+Since the system is typically overdetermined, it may not admit an exact solution. Instead, we seek a vector $$\hat{\mathbf{x}}$$ such that $$A\hat{\mathbf{x}} \approx \mathbf{b}$$.
 This leads to the **least squares** (LS) problem:
 
 $$
-\arg\min_{\mathbf{x} \in \mathbb{R}^n} \|{A}\mathbf{x} - \mathbf{b}\|_2^2.
+\hat{\mathbf{x}}=\arg\min_{\mathbf{x} \in \mathbb{R}^n} \|{A}\mathbf{x} - \mathbf{b}\|_2^2.
 $$
 
 Least squares arises ubiquitously in regression problems. 
@@ -28,8 +28,18 @@ Our focus is on their numerical stability, behavior under rank deficiency, and c
 
 ## 1. Closed-Form Solution
 
+
+
+When $${A}$$ has full column rank $$n$$, $${A}^\top {A}$$ is symmetric positive definite and invertible:
+
+$$
+\boxed{\hat{\mathbf{x}} = ({A}^\top {A})^{-1} {A}^\top \mathbf{b}}.
+$$
+
+The matrix $${A}^+ := ({A}^\top {A})^{-1} {A}^\top$$ is the **Moore–Penrose pseudoinverse** of $${A}$$.
+
 <details class="proof-block">
-<summary class="proof-title">Proof (Derivation via calculus)</summary>
+<summary class="proof-title">Proof (Click to expand)</summary>
 <div class="proof-content" markdown="1">
 
 Expanding the objective:
@@ -54,25 +64,35 @@ $$
 </div>
 </details>
 
-When $${A}$$ has full column rank $$n$$, $${A}^\top {A}$$ is symmetric positive definite and invertible:
 
-$$
-\boxed{\hat{\mathbf{x}} = ({A}^\top {A})^{-1} {A}^\top \mathbf{b}.}
-$$
-
-The matrix $${A}^+ := ({A}^\top {A})^{-1} {A}^\top$$ is the **Moore–Penrose pseudoinverse** of $${A}$$.
-
-**Limitation.** Although this formula is explicit and easy to analyze, it is often not the preferred numerical method in practice. 
+**<span style="color:red;">Limitation.</span>** Although this formula is explicit and easy to analyze, it is often not the preferred numerical method in practice. 
 Even when $$A$$ has full column rank, the matrix may still be ill-conditioned, and forming $$A^\top A$$ further amplifies this issue. 
 To make this precise, we briefly recall the notion of the condition number.
 
 ### 1.1 Condition Number
 
-The main numerical issue of the normal equations is related to the **condition number**. For an invertible matrix $A$, the spectral condition number w.r.t $$\ell_2$$ norm is defined as
+The main numerical issue of the normal equations is related to the **condition number**. For an invertible matrix $$A$$, the spectral condition number w.r.t $$\ell_2$$ norm is defined as
 
 $$
 \kappa_2(A):= \|A\|_2 \|A^{-1}\|_2
 $$
+
+For a full-column-rank symmetric matrix $$A$$, this becomes
+
+$$
+\kappa_2(A)=\frac{\lambda_\mathsf{max}(A)}{\lambda_\mathsf{min}(A)},
+$$
+
+where $$\lambda_\mathsf{max}(A)$$ and $$\lambda_\mathsf{min}(A)$$ denote the largest and smallest eigen values of $$A$$.
+
+<details class="proof-block">
+<summary class="proof-title">Proof (Click to expand)</summary>
+<div class="proof-content" markdown="1">
+
+Definition (matrix norm)
+<div class="proof-end"></div>
+</div>
+</details>
 
 ---
 
