@@ -2,6 +2,63 @@
  * Styles for the base elements of the theme.
  ******************************************************************************/
 
+// Collapsible proof block
+details.proof-block {
+  margin: 1rem 0;
+  border-left: 3px solid var(--global-theme-color);
+  border-radius: 4px;
+  background-color: rgba(253, 114, 0, 0.04);
+
+  summary.proof-title {
+    cursor: pointer;
+    padding: 0.5em 1em;
+    font-style: italic;
+    color: var(--global-theme-color);
+    user-select: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+
+    &::-webkit-details-marker { display: none; }
+
+    &::before {
+      content: "▶";
+      font-size: 0.65em;
+      transition: transform 0.2s ease;
+      display: inline-block;
+      color: var(--global-theme-color);
+    }
+  }
+
+  &[open] > summary.proof-title::before {
+    transform: rotate(90deg);
+  }
+
+  .proof-content {
+    padding: 0.5em 1.2em 0.8em 1.2em;
+    border-top: 1px solid rgba(253, 114, 0, 0.15);
+  }
+
+  .proof-end {
+    text-align: right;
+    font-size: 1.1em;
+    margin-top: 0.5em;
+    color: var(--global-theme-color);
+  }
+}
+
+html[data-theme="dark"] {
+  details.proof-block {
+    background-color: rgba(0, 163, 192, 0.06);
+    border-left-color: var(--global-theme-color);
+
+    .proof-content {
+      border-top-color: rgba(0, 163, 192, 0.2);
+    }
+  }
+}
+
 // Hiring banner
 .hiring-banner {
   background-color: rgba(253, 114, 0, 0.08);

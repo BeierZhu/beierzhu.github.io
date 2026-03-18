@@ -3,54 +3,76 @@ layout: post
 title: "Least Squares: Closed Form, QR, SVD, Gradient Descent, and Ridge Regression"
 date: 2026-03-18
 description: A comprehensive walkthrough of the least squares problem from five angles — closed-form solution, QR decomposition, SVD, gradient descent, and regularization via ridge regression.
-tags: [math, linear-algebra, optimization]
+tags: [optimization]
 categories: [blog]
 math: true
 toc:
   beginning: true
 ---
 
-## Problem Setup
+## 0. The Least Squares Problem
 
-Given a data matrix $$\mathbf{A} \in \mathbb{R}^{m \times n}$$ (with $$m \geq n$$) and a target vector $$\mathbf{b} \in \mathbb{R}^m$$, the **least squares problem** seeks
+Suppose we want to solve a linear system $$A\mathbf{x}=\mathbf{b}$$ with $$A \in \mathbb{R}^{m \times n}$$, $$ \mathbf{b} \in \mathbb{R}^m$$ and $$m \geq n$$. 
+Since the system is typically overdetermined, it may not admit an exact solution. Instead, we seek a vector $$\mathbf{x}$$ such that $$A\mathbf{x} \approx \mathbf{b}$$.
+This leads to the **least squares** (LS) problem:
 
 $$
-\hat{\mathbf{x}} = \arg\min_{\mathbf{x} \in \mathbb{R}^n} \|\mathbf{A}\mathbf{x} - \mathbf{b}\|_2^2.
+\arg\min_{\mathbf{x} \in \mathbb{R}^n} \|{A}\mathbf{x} - \mathbf{b}\|_2^2.
 $$
 
-This arises ubiquitously in regression, signal processing, and scientific computing. Below we examine five perspectives on solving it.
+Least squares arises ubiquitously in regression problems. 
+In this blog, we review and compare five common approaches for solving LS problems, including the closed-form solution, QR factorization, SVD, gradient descent, and ridge regression. 
+Our focus is on their numerical stability, behavior under rank deficiency, and computational efficiency.
 
 ---
 
-## 1. Closed-Form Solution (Normal Equations)
+## 1. Closed-Form Solution
+
+<details class="proof-block">
+<summary class="proof-title">Proof (Derivation via calculus)</summary>
+<div class="proof-content" markdown="1">
 
 Expanding the objective:
 
 $$
-\|\mathbf{A}\mathbf{x} - \mathbf{b}\|_2^2 = \mathbf{x}^\top \mathbf{A}^\top \mathbf{A}\, \mathbf{x} - 2\mathbf{b}^\top \mathbf{A}\mathbf{x} + \mathbf{b}^\top \mathbf{b}.
+\|{A}\mathbf{x} - \mathbf{b}\|_2^2 = \mathbf{x}^\top {A}^\top {A}\, \mathbf{x} - 2\mathbf{b}^\top {A}\mathbf{x} + \mathbf{b}^\top \mathbf{b}.
 $$
 
-Taking the gradient and setting it to zero:
+Taking the gradient w.r.t $$\mathbf{x}$$ and setting it to zero:
 
 $$
-\nabla_{\mathbf{x}} = 2\mathbf{A}^\top \mathbf{A}\, \mathbf{x} - 2\mathbf{A}^\top \mathbf{b} = \mathbf{0},
+\nabla_{\mathbf{x}}\|{A}\mathbf{x} - \mathbf{b}\|_2^2 = 2{A}^\top {A}\, \mathbf{x} - 2{A}^\top \mathbf{b} = \mathbf{0},
 $$
 
 which gives the **normal equations**:
 
 $$
-\mathbf{A}^\top \mathbf{A}\, \hat{\mathbf{x}} = \mathbf{A}^\top \mathbf{b}.
+{A}^\top {A}\, \hat{\mathbf{x}} = {A}^\top \mathbf{b}.
 $$
 
-When $$\mathbf{A}$$ has full column rank, $$\mathbf{A}^\top \mathbf{A}$$ is symmetric positive definite and invertible:
+<div class="proof-end">□</div>
+</div>
+</details>
+
+When $${A}$$ has full column rank $$n$$, $${A}^\top {A}$$ is symmetric positive definite and invertible:
 
 $$
-\boxed{\hat{\mathbf{x}} = (\mathbf{A}^\top \mathbf{A})^{-1} \mathbf{A}^\top \mathbf{b}.}
+\boxed{\hat{\mathbf{x}} = ({A}^\top {A})^{-1} {A}^\top \mathbf{b}.}
 $$
 
-The matrix $$\mathbf{A}^+ := (\mathbf{A}^\top \mathbf{A})^{-1} \mathbf{A}^\top$$ is the **Moore–Penrose pseudoinverse** of $$\mathbf{A}$$.
+The matrix $${A}^+ := ({A}^\top {A})^{-1} {A}^\top$$ is the **Moore–Penrose pseudoinverse** of $${A}$$.
 
-**Limitation.** Explicitly forming and inverting $$\mathbf{A}^\top \mathbf{A}$$ squares the condition number and can be numerically unstable. Better to use QR or SVD.
+**Limitation.** Although this formula is explicit and easy to analyze, it is often not the preferred numerical method in practice. 
+Even when $$A$$ has full column rank, the matrix may still be ill-conditioned, and forming $$A^\top A$$ further amplifies this issue. 
+To make this precise, we briefly recall the notion of the condition number.
+
+### 1.1 Condition Number
+
+The main numerical issue of the normal equations is related to the **condition number**. For an invertible matrix $A$, the spectral condition number w.r.t $$\ell_2$$ norm is defined as
+
+$$
+\kappa_2(A):= \|A\|_2 \|A^{-1}\|_2
+$$
 
 ---
 

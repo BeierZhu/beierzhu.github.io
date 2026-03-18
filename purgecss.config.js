@@ -12,6 +12,10 @@ module.exports = {
       "total-row",
       "post-list",
       "post-tag",
+      "proof-block",
+      "proof-title",
+      "proof-content",
+      "proof-end",
     ],
     deep: [
       /^hiring-banner/,
@@ -20,6 +24,7 @@ module.exports = {
       /^class-stats-table/,
       /^post-list/,
       /^post-tag/,
+      /^proof-/,
     ],
   },
 };
