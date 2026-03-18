@@ -10,12 +10,16 @@ module.exports = {
       "venue-stats-table",
       "class-stats-table",
       "total-row",
+      "post-list",
+      "post-tag",
     ],
     deep: [
       /^hiring-banner/,
       /^stats-tables-container/,
       /^venue-stats-table/,
       /^class-stats-table/,
+      /^post-list/,
+      /^post-tag/,
     ],
   },
 };
