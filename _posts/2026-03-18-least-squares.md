@@ -268,9 +268,7 @@ $$
 
 This is solved cheaply by **back-substitution** in $$O(n^2)$$ once we have $$\mathbf{Q}^\top \mathbf{b}$$. The QR approach is numerically stable and is the standard algorithm in most software (LAPACK's `dgels`).
 
-<object data="/assets/img/qr-demo.pdf" type="application/pdf" width="100%" height="600px">
-  <p>PDF cannot be displayed. <a href="/assets/img/qr-demo.pdf">Download qr-demo.pdf</a>.</p>
-</object>
+<img src="/assets/img/qr-demo.svg" alt="QR Decomposition Demo" style="width: 100%; max-width: 100%;" />
 
 ---
 
