@@ -268,7 +268,10 @@ $$
 
 This is solved cheaply by **back-substitution** in $$O(n^2)$$ once we have $$\mathbf{Q}^\top \mathbf{b}$$. The QR approach is numerically stable and is the standard algorithm in most software (LAPACK's `dgels`).
 
-<img src="/assets/img/qr-demo.svg" alt="QR Decomposition Demo" style="width: 100%; max-width: 100%;" />
+<figure style="text-align: center;">
+  <img src="/assets/img/qr-demo.svg" alt="QR Decomposition Demo" style="width: 30%; max-width: 100%;" />
+  <figcaption>Figure: QR Decomposition of matrix \(A\) into orthogonal \(Q\) and upper triangular \(R\).</figcaption>
+</figure>
 
 ---
 
