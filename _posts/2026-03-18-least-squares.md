@@ -16,21 +16,24 @@ Suppose we want to solve a linear system $$A\mathbf{x}=\mathbf{b}$$ with $$A \in
 Since the system is typically overdetermined, it may not admit an exact solution. Instead, we seek a vector $$\hat{\mathbf{x}}$$ such that $$A\hat{\mathbf{x}} \approx \mathbf{b}$$.
 This leads to the **least squares** (LS) problem:
 
-$$
-\hat{\mathbf{x}}=\arg\min_{\mathbf{x} \in \mathbb{R}^n} \|{A}\mathbf{x} - \mathbf{b}\|_2^2.
-$$
-
+\begin{equation}\label{eq:ls}
+\hat{\mathbf{x}}=\arg\min_{\mathbf{x}\in\mathbb{R}^n}\lVert A\mathbf{x}-\mathbf{b}\rVert_2^2.
+\end{equation}
+ 
 Least squares arises ubiquitously in regression problems. 
 In this blog, we review and compare five common approaches for solving LS problems, including the closed-form solution, QR factorization, SVD, gradient descent, and ridge regression. 
-Our focus is on their numerical stability, behavior under rank deficiency, and computational efficiency.
+Our focus is on their numerical stability and behavior under rank deficiency.
 
 ---
 
-## 1. Closed-Form Solution
+## 1. Normal Equations and the Closed-Form Solution
+Solving \eqref{eq:ls} leads to the **normal equations**:
 
+\begin{equation}\label{eq:normal-equations}
+{A}^\top {A}\, \hat{\mathbf{x}} = {A}^\top \mathbf{b}.
+\end{equation}
 
-
-When $${A}$$ has full column rank $$n$$, $${A}^\top {A}$$ is symmetric positive definite and invertible:
+When $${A}$$ has full column rank $$n$$, $${A}^\top {A}$$ is symmetric positive definite and invertible, and the solution can be written in closed form as
 
 $$
 \boxed{\hat{\mathbf{x}} = ({A}^\top {A})^{-1} {A}^\top \mathbf{b}}.
@@ -39,7 +42,7 @@ $$
 The matrix $${A}^+ := ({A}^\top {A})^{-1} {A}^\top$$ is the **Moore–Penrose pseudoinverse** of $${A}$$.
 
 <details class="proof-block">
-<summary class="proof-title">Proof (Click to expand)</summary>
+<summary class="proof-title">Proof of \eqref{eq:normal-equations} (Click to expand)</summary>
 <div class="proof-content" markdown="1">
 
 Expanding the objective:
@@ -65,7 +68,7 @@ $$
 </details>
 
 
-**<span style="color:red;">Limitation.</span>** Although this formula is explicit and easy to analyze, it is often not the preferred numerical method in practice. 
+**<span style="color:red;">Limitation.</span>** This formula is valuable analytically, but computing the solution through the normal equations is often numerically undesirable.
 Even when $$A$$ has full column rank, the matrix may still be ill-conditioned, and forming $$A^\top A$$ further amplifies this issue. 
 To make this precise, we briefly recall the notion of the condition number.
 
@@ -77,26 +80,176 @@ $$
 \kappa_2(A):= \|A\|_2 \|A^{-1}\|_2
 $$
 
-For a full-column-rank symmetric matrix $$A$$, this becomes
+For a symmetric positive definite matrix $$A$$, this becomes
 
-$$
+\begin{equation}\label{eq:kappa}
 \kappa_2(A)=\frac{\lambda_\mathsf{max}(A)}{\lambda_\mathsf{min}(A)},
-$$
+\end{equation}
 
 where $$\lambda_\mathsf{max}(A)$$ and $$\lambda_\mathsf{min}(A)$$ denote the largest and smallest eigen values of $$A$$.
 
 <details class="proof-block">
-<summary class="proof-title">Proof (Click to expand)</summary>
+<summary class="proof-title">Definition of Matrix Norm (Click to expand))</summary>
 <div class="proof-content" markdown="1">
+  Given any norm $$\|\cdot\|$$ on the space $$\mathbb{R}^n$$ of $$n$$-dimensional vectors with real entries, 
+  the suborinate matrix norm on the $$\mathbb{R}^{n\times n}$$ matrices with real entries is defined by
 
-Definition (matrix norm)
-<div class="proof-end"></div>
+  $$\|A\|=\mathrm{max}_{\mathbf{v}\in \mathbb{R}^n\backslash \{\mathbf{0}\}}\frac{\|A\mathbf{v}\|}{\|\mathbf{v}\|}$$
+  
 </div>
 </details>
+
+<details class="proof-block">
+<summary class="proof-title">Proof of \eqref{eq:kappa} (Click to expand)</summary>
+<div class="proof-content" markdown="1">
+
+Since $$A$$ is symmetric positive definite, all its eigenvalues are real and positive, and
+there exists an orthonormal basis of eigenvectors $$\mathbf{w}_1,\dots,\mathbf{w}_n$$ such that
+
+$$
+A\mathbf{w}_i=\lambda_i \mathbf{w}_i,\quad i=1,2,\dots,n.
+$$
+
+Without loss of generality, assume that
+$$
+0<\lambda_1\le \lambda_2\le \cdots \le \lambda_n.
+$$
+Now let $$\mathbf{u} \in \mathbb{R}^n$$ be arbitrary and write it as
+
+$$
+\mathbf{u}=c_1\mathbf{w}_1+\cdots+c_n\mathbf{w}_n.
+$$
+
+Then
+
+$$
+A\mathbf{u}=c_1\lambda_1 \mathbf{w}_1+\cdots+c_n\lambda_n \mathbf{w}_n.
+$$
+
+Using the orthonormality of $$\mathbf{w}_1,\dots,\mathbf{w}_n$$, we have
+
+$$
+\|Au\|_2^2
+=
+(c_1\lambda_1 w_1+\cdots+c_n\lambda_n w_n)^\top
+(c_1\lambda_1 w_1+\cdots+c_n\lambda_n w_n)
+=
+c_1^2\lambda_1^2+\cdots+c_n^2\lambda_n^2.
+$$
+
+Since $$\lambda_i\le \lambda_n$$ for all $$i$$, it follows that
+$$
+\|A\mathbf{u}\|_2^2
+\le
+(c_1^2+\cdots+c_n^2)\lambda_n^2.
+$$
+Again by orthonormality,
+$$
+\|\mathbf{u}\|_2^2=c_1^2+\cdots+c_n^2.
+$$
+Hence
+$$
+\|A\mathbf{u}\|_2^2 \le \lambda_n^2 \|\mathbf{u}\|_2^2,
+$$
+and therefore
+$$
+\|A\mathbf{u}\|_2 \le \lambda_n \|\mathbf{u}\|_2.
+$$
+By the definition of the matrix $$\ell_2$$-norm, this implies
+
+$$
+\|A\|_2 = \lambda_n = \lambda_\mathsf{max}(A).
+$$
+
+Similarly, we have 
+
+$$
+\|A^{-1}\|_2 = \frac{1}{\lambda_1} = \frac{1}{\lambda_\mathsf{min}(A)}.
+$$
+
+By the definition of the condition number, 
+
+$$
+\kappa_2(A)=\frac{\lambda_\mathsf{max}(A)}{\lambda_\mathsf{min}(A)}.
+$$
+
+<div class="proof-end">□</div>
+</div>
+</details>
+
+The condition number measures the sensitivity of the solution of a linear system to pertubations in the data. 
+Consider
+
+$$
+M \mathbf{x} = \mathbf{c}
+$$
+
+If $$\mathbf{c}$$ is perturbed to $$\mathbf{c}+\delta \mathbf{c}$$ (for example, rounding errors during the calculation.), 
+then the solution changes to $$\mathbf{x}+\delta \mathbf{x}$$, where 
+
+$$
+M \delta \mathbf{x} = \delta \mathbf{c}.
+$$
+
+This leads to the relative error bound
+
+$$
+\frac{\|\delta \mathbf{x}\|_2}{\|\mathbf{x}\|_2^2} \leq \kappa_2(M) \frac{\|\delta \mathbf{c}\|_2}{\|\mathbf{c}\|_2^2} 
+$$
+
+<details class="proof-block">
+<summary class="proof-title">Proof (Click to expand)</summary>
+<div class="proof-content" markdown="1">
+Evidently, $$\mathbf{c}=M\mathbf{x}$$ and $$\delta \mathbf{x} = M^{-1}\delta \mathbf{c}$$. Further
+
+$$\|\mathbf{c}\|\leq \|M\|\|\mathbf{x}\|$$ and $$\|\delta \mathbf{x}\|\leq \|M^{-1}\|\|\delta \mathbf{c}\|$$.
+
+The result follows immediately by multiplying these inequalities.
+
+<div class="proof-end">□</div>
+</div>
+</details>
+
+Importantly, this is an upper bound: a large condition number does not mean that every perturbation causes a large error,
+but it does mean that the system is potentially unstable in the worst case. For the normal equations, we solve
+
+$$
+{A}^\top {A}\, \hat{\mathbf{x}} = {A}^\top \mathbf{b}.
+$$
+
+Since 
+
+$$
+\kappa_2(A^\top A) = \kappa_2(A)^2,
+$$
+
+forming $$A^\top A$$ squares the condition number and may significantly worsen numerical stability. 
+This is why, despite its simple closed form, the normal-equation approach is often avoided in practice.
+
+For example, if
+$$
+A=
+\begin{pmatrix}
+\varepsilon & 0\\
+0 & 1
+\end{pmatrix}
+$$
+where $$\varepsilon\in(0,1)$$, then $$\kappa_2(A)=\varepsilon^{-1}>1$$, while
+$$
+\kappa_2(A^\top A)=\varepsilon^{-2}
+=\varepsilon^{-1}\kappa_2(A)\gg \kappa_2(A)
+$$
+when $$0<\varepsilon\ll 1$$.  
 
 ---
 
 ## 2. QR Decomposition
+
+
+There are various alternative techniques which avoid the direct construction of the normal matrix $$A^\top A$$, 
+and so do not lead to this extreme ill-conditioning. Here, we shall describe one algorithm based on QR decomposition,
+which begins by factorizing the matrix $$A$$ into an orthogonal matrix $$Q$$ and an upper triangular matrix $R$$ 
+
 
 Factor $$\mathbf{A} = \mathbf{Q}\mathbf{R}$$ where $$\mathbf{Q} \in \mathbb{R}^{m \times n}$$ has orthonormal columns ($$\mathbf{Q}^\top \mathbf{Q} = \mathbf{I}_n$$) and $$\mathbf{R} \in \mathbb{R}^{n \times n}$$ is upper triangular with positive diagonal (the thin/reduced QR).
 
@@ -114,6 +267,10 @@ $$
 $$
 
 This is solved cheaply by **back-substitution** in $$O(n^2)$$ once we have $$\mathbf{Q}^\top \mathbf{b}$$. The QR approach is numerically stable and is the standard algorithm in most software (LAPACK's `dgels`).
+
+<object data="/assets/img/qr-demo.pdf" type="application/pdf" width="100%" height="600px">
+  <p>PDF cannot be displayed. <a href="/assets/img/qr-demo.pdf">Download qr-demo.pdf</a>.</p>
+</object>
 
 ---
 
