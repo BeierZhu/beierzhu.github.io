@@ -248,30 +248,27 @@ when $$0<\varepsilon\ll 1$$.
 
 There are various alternative techniques which avoid the direct construction of the normal matrix $$A^\top A$$, 
 and so do not lead to this extreme ill-conditioning. Here, we shall describe one algorithm based on QR decomposition,
-which begins by factorizing the matrix $$A$$ into an orthogonal matrix $$Q$$ and an upper triangular matrix $R$$ 
-
-
-Factor $$\mathbf{A} = \mathbf{Q}\mathbf{R}$$ where $$\mathbf{Q} \in \mathbb{R}^{m \times n}$$ has orthonormal columns ($$\mathbf{Q}^\top \mathbf{Q} = \mathbf{I}_n$$) and $$\mathbf{R} \in \mathbb{R}^{n \times n}$$ is upper triangular with positive diagonal (the thin/reduced QR).
-
-Substituting into the normal equations:
-
-$$
-(\mathbf{Q}\mathbf{R})^\top (\mathbf{Q}\mathbf{R})\,\hat{\mathbf{x}} = (\mathbf{Q}\mathbf{R})^\top \mathbf{b}
-\implies \mathbf{R}^\top \\underbrace{\mathbf{Q}^\top \mathbf{Q}}_{\mathbf{I}} \mathbf{R}\,\hat{\mathbf{x}} = \mathbf{R}^\top \mathbf{Q}^\top \mathbf{b}.
-$$
-
-Since $$\mathbf{R}$$ is invertible we can left-multiply by $$(\mathbf{R}^\top)^{-1}$$:
-
-$$
-\boxed{\mathbf{R}\,\hat{\mathbf{x}} = \mathbf{Q}^\top \mathbf{b}.}
-$$
-
-This is solved cheaply by **back-substitution** in $$O(n^2)$$ once we have $$\mathbf{Q}^\top \mathbf{b}$$. The QR approach is numerically stable and is the standard algorithm in most software (LAPACK's `dgels`).
+which begins by factorizing the matrix $$A$$ into an orthogonal matrix $$Q$$ and an upper triangular matrix $$R$$ (see figure below). 
 
 <figure style="text-align: center;">
   <img src="/assets/img/qr-demo.svg" alt="QR Decomposition Demo" style="width: 30%; max-width: 100%;" />
-  <figcaption>Figure: QR Decomposition of matrix \(A\) into orthogonal \(Q\) and upper triangular \(R\).</figcaption>
+  <figcaption>Figure: QR Decomposition of matrix A into orthogonal Q and upper triangular R.</figcaption>
 </figure>
+
+<div class="theorem-block">
+<div class="theorem-title">Theorem 2.12</div>
+<div class="theorem-content" markdown="1">
+Suppose that $$A \in \mathbb{R}^{m \times n}$$ where $$m \geq n$$. Then, $$A$$ can be written in the form
+
+$$A = \hat{Q}\hat{R},$$
+
+where $$\hat{R}$$ is an upper triangular $$n \times n$$ matrix, and $$\hat{Q}$$ is an $$m \times n$$ matrix which satisfies
+
+$$\hat{Q}^\top \hat{Q} = I_n,$$
+
+where $$I_n$$ is the $$n \times n$$ identity matrix. If $$\mathrm{rank}(A) = n$$, then $$\hat{R}$$ is nonsingular.
+</div>
+</div>
 
 ---
 

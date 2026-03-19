@@ -19,6 +19,9 @@ module.exports = {
       "definition-block",
       "definition-title",
       "definition-content",
+      "theorem-block",
+      "theorem-title",
+      "theorem-content",
     ],
     deep: [
       /^hiring-banner/,
@@ -29,6 +32,7 @@ module.exports = {
       /^post-tag/,
       /^proof-/,
       /^definition-/,
+      /^theorem-/,
     ],
   },
 };

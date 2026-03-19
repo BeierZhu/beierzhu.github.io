@@ -12,6 +12,36 @@ figure {
   }
 }
 
+// Theorem block
+.theorem-block {
+  margin: 1rem 0;
+  border-left: 3px solid var(--global-theme-color);
+  border-radius: 4px;
+  background-color: rgba(253, 114, 0, 0.04);
+
+  .theorem-title {
+    padding: 0.5em 1em;
+    font-weight: 700;
+    color: var(--global-theme-color);
+  }
+
+  .theorem-content {
+    padding: 0 1.2em 0.8em 1.2em;
+    border-top: 1px solid rgba(253, 114, 0, 0.15);
+    font-style: italic;
+  }
+}
+
+html[data-theme="dark"] {
+  .theorem-block {
+    background-color: rgba(0, 163, 192, 0.06);
+
+    .theorem-content {
+      border-top-color: rgba(0, 163, 192, 0.2);
+    }
+  }
+}
+
 // Definition block
 .definition-block {
   margin: 1rem 0;
