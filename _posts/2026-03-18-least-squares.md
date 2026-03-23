@@ -2,7 +2,7 @@
 layout: post
 title: "Least Squares: Closed Form, QR, SVD, Gradient Descent, and Ridge Regression"
 date: 2026-03-18
-description: A comprehensive walkthrough of the least squares problem from five angles — closed-form solution, QR decomposition, SVD, gradient descent, and regularization via ridge regression.
+description: "This blog gives a unified overview of five common methods for solving least-squares problems: the normal equations, QR decomposition, SVD, gradient descent, and ridge regression. We focus on the main issues that distinguish them in practice, including numerical stability, rank deficiency, minimum-norm solutions, and robustness to noise."
 tags: [optimization]
 categories: [blog]
 math: true
@@ -255,134 +255,497 @@ which begins by factorizing the matrix $$A$$ into an orthogonal matrix $$Q$$ and
   <figcaption>Figure: QR Decomposition of matrix A into orthogonal Q and upper triangular R.</figcaption>
 </figure>
 
+The following theorem shows that such a decomposition exists.
+
 <div class="theorem-block">
-<div class="theorem-title">Theorem 2.12</div>
+<div class="theorem-title">Theorem 2.1 (QR factorisation) </div>
 <div class="theorem-content" markdown="1">
 Suppose that $$A \in \mathbb{R}^{m \times n}$$ where $$m \geq n$$. Then, $$A$$ can be written in the form
 
-$$A = \hat{Q}\hat{R},$$
+$$A = {Q}{R},$$
 
-where $$\hat{R}$$ is an upper triangular $$n \times n$$ matrix, and $$\hat{Q}$$ is an $$m \times n$$ matrix which satisfies
+where $${R}$$ is an upper triangular $$n \times n$$ matrix, and $$Q$$ is an $$m \times n$$ matrix which satisfies
 
-$$\hat{Q}^\top \hat{Q} = I_n,$$
+$${Q}^\top {Q} = I_n,$$
 
-where $$I_n$$ is the $$n \times n$$ identity matrix. If $$\mathrm{rank}(A) = n$$, then $$\hat{R}$$ is nonsingular.
+where $$I_n$$ is the $$n \times n$$ identity matrix. If $$\mathrm{rank}(A) = n$$, then $$R$$ is nonsingular.
 </div>
 </div>
+
+<details class="proof-block">
+<summary class="proof-title">Proof of Theorem 2.1 (Click to expand)</summary>
+<div class="proof-content" markdown="1">
+ We use induction on $$n$$, the number of columns in $$A$$. The theorem clearly holds when $$n=1$$ so that $$A$$ has only one column. 
+Indeed, writing $$\mathbf{c}$$ for this column vector and assuming that $$\mathbf{c}\neq \mathbf{0}$$, the matrix $${Q}$$ has just one column, 
+  the vector $$\mathbf{c}/\|\mathbf{c}\|_2$$, and $${R}$$ has a single element, $$\|\mathbf{c}\|_2$$. 
+
+ Suppose that the theorem is true when $$n=k$$, where $$1\le k < m$$. Consider a matrix $$A$$ which has $$m$$ rows and $$k+1$$ columns, partitioned as
+
+ $$
+ A=(A_k\ \ \mathbf{a}),
+ $$
+
+ where $$\mathbf{a} \in\mathbb{R}^m$$ is a column vector and $$A_k$$ has $$k$$ columns. To obtain the desired factorisation $${Q}{R}$$ of $$A$$ we seek $${Q}=({Q}_k\ \ \mathbf{q})$$ and
+
+ $$
+ {R}=
+ \begin{pmatrix}
+ {R}_k & \mathbf{r} \\
+ 0 & {\alpha}
+ \end{pmatrix}
+ $$
+
+ such that
+
+ $$
+ A=(A_k\ \ \mathbf{a})
+ =
+ ({Q}_k\ \ \mathbf{q})
+ \begin{pmatrix}
+ {R}_k & \mathbf{r} \\
+ 0 & {\alpha}
+ \end{pmatrix}.
+ $$
+
+ Multiplying this out and requiring that $${Q}^{\top}{Q}=I_{k+1}$$, the identity matrix of order $$k+1$$, we conclude that
+
+ $$
+ \begin{aligned}
+ A_k &= {Q}_k{R}_k, \\
+ \mathbf{a} &= {Q}_k \mathbf{r} + \mathbf{q} {\alpha}, \\
+ {Q}_k^{\top}{Q}_k &= I_k, \\
+ \mathbf{q}^{\top}{Q}_k &= \mathbf{0}^{\top}, \\
+ \mathbf{q}^{\top}\mathbf{q} &= \mathbf{1}.
+ \end{aligned}
+ $$
+
+ These equations show that $${Q}_k{R}_k$$ is the factorisation of $$A_k$$, which exists by the inductive hypothesis, and then lead to
+
+ $$
+ \begin{aligned}
+ \mathbf{r} &= {Q}_k^{\top}\mathbf{a}, \\
+ \mathbf{q} &= (1/{\alpha})\bigl(\mathbf{a}-{Q}_k{Q}_k^{\top}\mathbf{a}\bigr),
+ \end{aligned}
+ $$
+
+ where $${\alpha}=\|\mathbf{a}-{Q}_k{Q}_k^{\top}\mathbf{a}\|_2$$). The number $${\alpha}$$ is the constant required to ensure that the vector $$\mathbf{q}$$ is normalised.
+
+ With these definitions of $$\mathbf{q}$$, $$\mathbf{r}$$, $$\alpha$$, $${Q}_k$$ and $${R}_k$$ we have constructed the required factors of $$A$$, showing that the theorem is true when $$n=k+1$$. Since it holds when $$n=1$$ the induction is complete.
+
+<div class="proof-end">□</div>
+</div>
+</details>
+
+With QR factorisation, solving \eqref{eq:ls} is equivalent to solve:
+
+$$
+\boxed{R\mathbf{x}=Q^\top \mathbf{b}}
+$$
+
+<details class="proof-block">
+<summary class="proof-title">Proof (Click to expand)</summary>
+<div class="proof-content" markdown="1">
+ Replace $$A$$ with $$QR$$, we have
+
+$$
+\min_\mathbf{x}\|A\mathbf{x}-\mathbf{b}\|_2^2=\min_\mathbf{x}\|QR\mathbf{x}-\mathbf{b}\|_2^2.
+$$
+
+Decompose $\mathbf{b}$ as 
+
+$$
+\mathbf{b}=QQ^\top\mathbf{b} + (I-QQ^\top)\mathbf{b}.
+$$
+
+This leads to 
+
+$$
+\|QR\mathbf{x}-\mathbf{b}\|_2^2=\|Q(R\mathbf{x}-Q^\top\mathbf{b}) - (I-QQ^\top)\mathbf{b}\|_2^2.
+$$
+
+Let
+
+$$
+\mathbf{u}:=Q(R\mathbf{x}-Q^\top\mathbf{b}), \quad \mathbf{v}=(I-QQ^\top)\mathbf{b}.
+$$
+
+It is evident that $$\mathbf{u} \perp \mathbf{v}$$, as
+
+$$
+\mathbf{u}^\top \mathbf{v} = (R\mathbf{x}-Q^\top\mathbf{b})^\top Q^\top (I-QQ^\top)\mathbf{b}=(R\mathbf{x}-Q^\top\mathbf{b})^\top  (Q^\top- Q^\top)\mathbf{b} = \mathbf{0}
+$$
+
+Recall that $$\|\mathbf{u}-\mathbf{v}\|_2^2=\|\mathbf{u}\|_2^2+\|\mathbf{v}\|_2^2$$ if $$\mathbf{u} \perp \mathbf{v}$$.
+Therefore
+
+$$
+\|QR\mathbf{x}-\mathbf{b}\|_2^2=\|R\mathbf{x}-Q^\top\mathbf{b}\|_2^2 + \| (I-QQ^\top)\mathbf{b}\|_2^2.
+$$
+
+Note that the second term on RHS is not related to $$\mathbf{x}$$. Hence, $$\mathbf{x}$$ defined as the solution of $$R\mathbf{x}=Q^\top\mathbf{b}$$, is the required least squares solution.
+<div class="proof-end">□</div>
+</div>
+</details>
+
+Since left multiplication by an orthogonal matrix does not change singular values,
+$$R$$ has the same singular values as $$A$$. Hence, 
+
+$$
+\kappa_2(R)=\kappa_2(A)
+$$
+
+Therefore, QR factorization avoids the **squaring of the condition number** (recall that condition number for the normal equations is $$\kappa_2(A)^2$$) and is numerically more stable than the normal-equation approach.
 
 ---
 
 ## 3. Singular Value Decomposition (SVD)
 
-The full SVD of $$\mathbf{A}$$ is
+When using QR factorization to solve a least-squares problem, we typically assume that 
+$$A$$ has full column rank. In practice, however, $$A$$ may be rank-deficient. 
+In that case, more appropriate choices include SVD or gradient descent with appropriate initialization.
+We begin with the SVD of $$A$$:
 
 $$
-\mathbf{A} = \mathbf{U} \boldsymbol{\Sigma} \mathbf{V}^\top,
+A=U\Sigma V^\top,
 $$
 
-where $$\mathbf{U} \in \mathbb{R}^{m \times m}$$, $$\mathbf{V} \in \mathbb{R}^{n \times n}$$ are orthogonal, and $$\boldsymbol{\Sigma} = \mathrm{diag}(\sigma_1, \ldots, \sigma_n)$$ with $$\sigma_1 \geq \cdots \geq \sigma_n \geq 0$$.
-
-The least-squares solution is given directly by the **pseudoinverse**:
-
-$$
-\hat{\mathbf{x}} = \mathbf{A}^+ \mathbf{b} = \mathbf{V}\boldsymbol{\Sigma}^+ \mathbf{U}^\top \mathbf{b},
-$$
-
-where $$\boldsymbol{\Sigma}^+ = \mathrm{diag}(\sigma_1^{-1}, \ldots, \sigma_r^{-1}, 0, \ldots)$$ and $$r = \mathrm{rank}(\mathbf{A})$$.
-
-Writing $$\mathbf{u}_i, \mathbf{v}_i$$ for the $$i$$-th columns of $$\mathbf{U}, \mathbf{V}$$:
+where $$U\in\mathbb{R}^{m\times m}$$ and $$V\in\mathbb{R}^{n\times n}$$ are orthogonal matrices, and $$\Sigma\in\mathbb{R}^{m\times n}$$ is diagonal except possibly for trailing zero rows or columns.
+Suppose that $$\operatorname{rank}(A)=r$$. Then we may write the SVD in block form as
 
 $$
-\hat{\mathbf{x}} = \sum_{i=1}^{r} \frac{\mathbf{u}_i^\top \mathbf{b}}{\sigma_i} \mathbf{v}_i.
+A=
+[U_1\ U_2]
+\begin{bmatrix}
+\Sigma_1 & 0\\
+0 & 0
+\end{bmatrix}
+\begin{bmatrix}
+V_1^\top\\
+V_2^\top
+\end{bmatrix},
 $$
 
-**Advantages.**
-- Handles rank-deficient $$\mathbf{A}$$ gracefully (yields the minimum-norm solution).
-- Reveals the numerical rank via the singular values.
-- Directly quantifies sensitivity: small $$\sigma_i$$ amplify noise in $$\mathbf{b}$$.
+where:
 
-**Condition number** $$\kappa(\mathbf{A}) = \sigma_1 / \sigma_r$$ governs the sensitivity of $$\hat{\mathbf{x}}$$ to perturbations.
+- $$U_1\in\mathbb{R}^{m\times r}$$ and $$V_1\in\mathbb{R}^{n\times r}$$,
+- $$U_2\in\mathbb{R}^{m\times (m-r)}$$ and $$V_2\in\mathbb{R}^{n\times (n-r)}$$,
+- $$\Sigma_1\in\mathbb{R}^{r\times r}$$ is diagonal with positive singular values.
+
+This decomposition reveals the geometry of the least-squares problem:
+
+- the columns of $$V_2$$ span the null space $$\mathrm{Null}(A)$$,
+- the columns of $$V_1$$ correspond to the effective directions of $$A$$,
+- the columns of $$U_1$$ span the column space $$\mathrm{Col}(A)$$.
+
+
+Using the SVD of $$A$$, we obtain
+$$
+\|A\mathbf{x}-\mathbf{b}\|_2^2
+=
+\|U\Sigma V^\top \mathbf{x}-\mathbf{b}\|_2^2.
+$$
+Since $$U$$ is orthogonal and preserves the Euclidean norm,
+
+$$
+\|A\mathbf{x}-\mathbf{b}\|_2^2
+=
+\|\Sigma V^\top \mathbf{x}-U^\top \mathbf{b}\|_2^2.
+$$
+
+Now write
+
+$$
+V^\top \mathbf{x}
+=
+\begin{bmatrix}
+V_1^\top\\
+V_2^\top
+\end{bmatrix}\mathbf{x}
+=
+\begin{bmatrix}
+\mathbf{y}\\
+\mathbf{z}
+\end{bmatrix},
+\qquad
+U^\top \mathbf{b}
+=
+\begin{bmatrix}
+U_1^\top\\
+U_2^\top
+\end{bmatrix}\mathbf{b}
+=
+\begin{bmatrix}
+\mathbf{c}\\
+\mathbf{d}
+\end{bmatrix},
+$$
+
+where $$\mathbf{y},\mathbf{c}\in\mathbb{R}^r$$ and $$\mathbf{z}\in\mathbb{R}^{n-r}$$, $$\mathbf{d}\in\mathbb{R}^{m-r}$$.
+Hence,
+
+$$
+\|A\mathbf{x}-\mathbf{b}\|_2^2
+=
+\left\|
+\begin{bmatrix}
+\Sigma_1\mathbf{y}\\
+0
+\end{bmatrix}
+-
+\begin{bmatrix}
+\mathbf{c}\\
+\mathbf{d}
+\end{bmatrix}
+\right\|_2^2
+=
+\|\Sigma_1\mathbf{y}-\mathbf{c}\|_2^2+\|\mathbf{d}\|_2^2.
+$$
+
+The second term is independent of $$\mathbf{x}$$, and the first term depends only on $$\mathbf{y}$$, not on $$\mathbf{z}$$. 
+Since $$\Sigma_1$$ is invertible, the minimizing choice of $$\mathbf{y}$$ is
+$$
+\mathbf{y}=\Sigma_1^{-1}\mathbf{c}=\Sigma_1^{-1}U_1^\top \mathbf{b}.
+$$
+Thus every least-squares solution can be written as
+
+$$
+\mathbf{x}
+=
+V_1\Sigma_1^{-1}U_1^\top \mathbf{b}+V_2\mathbf{z},
+\qquad
+\mathbf{z}\in\mathbb{R}^{n-r}.
+$$
+
+Equivalently, if we define
+$$
+\mathbf{x}^\dagger:=V_1\Sigma_1^{-1}U_1^\top \mathbf{b},
+$$
+then all least-squares solutions are of the form
+
+$$
+\mathbf{x}=\mathbf{x}^\dagger+\mathbf{z},
+\qquad
+\mathbf{z}\in\mathrm{Null}(A).
+$$
+
+
+The minimum-norm least-squares solution is
+
+$$
+\boxed{
+\mathbf{x}^\dagger
+=
+V_1\Sigma_1^{-1}U_1^\top \mathbf{b}.
+}
+$$
+
+
+
+Therefore, SVD is often the preferred tool when $$A$$ is singular or nearly singular.
 
 ---
 
-## 4. Gradient Descent
+## 4. Gradient Descent and Implicit Bias
 
-Rather than solving analytically, we minimize $$f(\mathbf{x}) = \|\mathbf{A}\mathbf{x} - \mathbf{b}\|_2^2$$ iteratively. The gradient is
+In the rank-deficient setting, SVD provides a natural and explicit way to characterize all least-squares solutions and to identify the minimum-norm one. Interestingly, gradient descent offers another effective approach: although it does not explicitly impose a minimum-norm criterion, **with zero initialization it implicitly converges to the same solution**.
 
-$$
-\nabla f(\mathbf{x}) = 2\mathbf{A}^\top(\mathbf{A}\mathbf{x} - \mathbf{b}).
-$$
-
-**Gradient descent update** with step size $$\eta > 0$$:
+Consider the least-squares objective
 
 $$
-\mathbf{x}^{(k+1)} = \mathbf{x}^{(k)} - \eta \cdot 2\mathbf{A}^\top(\mathbf{A}\mathbf{x}^{(k)} - \mathbf{b}).
+f(\mathbf{x})=\frac{1}{2}\|A\mathbf{x}-\mathbf{b}\|_2^2.
 $$
 
-### Convergence
-
-The objective is $$\mu$$-strongly convex and $$L$$-smooth with
+Gradient descent updates take the form
 
 $$
-\mu = 2\sigma_{\min}^2(\mathbf{A}), \qquad L = 2\sigma_{\max}^2(\mathbf{A}).
+\mathbf{x}_{t+1}
+=
+\mathbf{x}_t-\eta \nabla f(\mathbf{x}_t)
+=
+\mathbf{x}_t-\eta A^\top(A\mathbf{x}_t-\mathbf{b}),
 $$
 
-With the optimal fixed step size $$\eta^* = 1/L$$, gradient descent converges **linearly**:
+where $$\eta>0$$ is the step size.
+
+When the least-squares solution is not unique, gradient descent exhibits an important implicit bias:  if initialized at
+$$
+\mathbf{x}_0=0,
+$$
+then, under a suitable choice of step size, it converges to the same minimum-norm least-squares solution derived in the previous section, namely
 
 $$
-f(\mathbf{x}^{(k)}) - f(\hat{\mathbf{x}}) \leq \left(1 - \frac{\mu}{L}\right)^k \bigl(f(\mathbf{x}^{(0)}) - f(\hat{\mathbf{x}})\bigr).
+\mathbf{x}^\dagger=A^+\mathbf{b}.
 $$
 
-The convergence rate depends on the **condition number** $$\kappa = L/\mu = \kappa(\mathbf{A})^2$$. Poorly conditioned problems converge very slowly — motivating preconditioning or momentum methods (e.g., conjugate gradient, Nesterov).
+The key reason is that every gradient update lies in the range of $$A^\top$$. Indeed,
+
+$$
+\mathbf{x}_{t+1}-\mathbf{x}_t
+=
+-\eta A^\top(A\mathbf{x}_t-\mathbf{b})
+\in \mathrm{range}(A^\top).
+$$
+
+Since $$\mathbf{x}_0=0\in \mathrm{range}(A^\top)$$, it follows by induction that
+$$
+\mathbf{x}_t\in \mathrm{range}(A^\top)
+\qquad \text{for all } t\ge 0.
+$$
+
+On the other hand, from the SVD analysis in the previous section, all least-squares solutions can be written as
+
+$$
+\mathbf{x}
+=
+\mathbf{x}^\dagger+\mathbf{z},
+\qquad
+\mathbf{z}\in \mathrm{Null}(A),
+$$
+
+where $$\mathbf{x}^\dagger=A^+\mathbf{b}$$ is the minimum-norm least-squares solution.
+
+Now recall the fundamental orthogonal decomposition
+$$
+\mathbb{R}^n
+=
+\mathrm{range}(A^\top)\oplus \mathrm{Null}(A).
+$$
+Therefore, among all least-squares solutions, the unique one that lies entirely in $$\mathrm{range}(A^\top)$$ is precisely $$\mathbf{x}^\dagger$$. Since gradient descent initialized at zero never leaves $$\mathrm{range}(A^\top)$$, if it converges to a least-squares solution, that limit must be
+$$
+\mathbf{x}^\dagger=A^+\mathbf{b}.
+$$
+
+This shows that zero initialization induces an implicit regularization effect: **although the objective itself does not explicitly prefer one least-squares solution over another, gradient descent selects the minimum-norm one through its optimization trajectory**.
+
+### 4.1 Why Initialization Matters
+
+The conclusion above depends crucially on the initialization.  If gradient descent starts from a nonzero initial point $$\mathbf{x}_0$$, then its component in $$\mathrm{Null}(A)$$ is preserved throughout the iterations. Indeed, if
+
+$$
+\mathbf{x}_0=\mathbf{x}_0^{\parallel}+\mathbf{x}_0^{\perp},
+\qquad
+\mathbf{x}_0^{\parallel}\in \mathrm{range}(A^\top),
+\quad
+\mathbf{x}_0^{\perp}\in \mathrm{Null}(A),
+$$
+
+then
+
+$$
+A\mathbf{x}_0^{\perp}=0,
+\qquad
+A^\top A\mathbf{x}_0^{\perp}=0.
+$$
+
+Hence the null-space component is never changed by gradient descent. As a result, the limit point is generally not the minimum-norm solution, but rather the minimum-norm solution plus the initial null-space component.
+
 
 ---
 
-## 5. Ridge Regression (Tikhonov Regularization)
 
-When $$\mathbf{A}$$ is ill-conditioned or $$m < n$$, we add an $$\ell_2$$ penalty:
+## 5. Ridge Regression
 
-$$
-\hat{\mathbf{x}}_\lambda = \arg\min_{\mathbf{x}} \|\mathbf{A}\mathbf{x} - \mathbf{b}\|_2^2 + \lambda\|\mathbf{x}\|_2^2, \quad \lambda > 0.
-$$
-
-The (now uniquely defined) solution is
+Besides SVD and gradient descent, another common approach for handling ill-conditioned or rank-deficient least-squares problems is **ridge regression**. The basic idea is to replace the original least-squares problem with the regularized problem
 
 $$
-\boxed{\hat{\mathbf{x}}_\lambda = (\mathbf{A}^\top \mathbf{A} + \lambda \mathbf{I})^{-1} \mathbf{A}^\top \mathbf{b}.}
+\hat{\mathbf{x}}_\lambda
+=
+\arg\min_{\mathbf{x}}
+\left(
+\|A\mathbf{x}-\mathbf{b}\|_2^2
++
+\lambda \|\mathbf{x}\|_2^2
+\right),
 $$
 
-### SVD Perspective
-
-Using the SVD $$\mathbf{A} = \mathbf{U}\boldsymbol{\Sigma}\mathbf{V}^\top$$:
-
-$$
-\hat{\mathbf{x}}_\lambda = \sum_{i=1}^{n} \frac{\sigma_i}{\sigma_i^2 + \lambda} (\mathbf{u}_i^\top \mathbf{b})\, \mathbf{v}_i.
-$$
-
-Compare with the unregularized SVD solution: each coefficient $$1/\sigma_i$$ is replaced by $$\sigma_i/(\sigma_i^2 + \lambda)$$. For large $$\sigma_i$$ the change is negligible; for small $$\sigma_i \ll \sqrt{\lambda}$$, the coefficient is shrunk toward zero. Ridge regression thus **damps the contribution of low-energy directions**, reducing variance at the cost of introducing bias.
-
-### Bias–Variance Tradeoff
-
-Assuming $$\mathbf{b} = \mathbf{A}\mathbf{x}^* + \boldsymbol{\epsilon}$$ with $$\boldsymbol{\epsilon} \sim \mathcal{N}(\mathbf{0}, \sigma^2 \mathbf{I})$$:
+where $$\lambda>0$$ is the regularization parameter. The additional term $$\lambda\|\mathbf{x}\|_2^2$$ discourages solutions with large norm. 
+The solution can be written in closed form as
 
 $$
-\mathbb{E}[\hat{\mathbf{x}}_\lambda] - \mathbf{x}^* = -\lambda(\mathbf{A}^\top\mathbf{A} + \lambda\mathbf{I})^{-1}\mathbf{x}^* \quad \text{(bias)},
+\boxed{
+\hat{\mathbf{x}}_\lambda
+=
+(A^\top A+\lambda I)^{-1}A^\top \mathbf{b}.
+}
 $$
 
+<details class="proof-block">
+<summary class="proof-title">Proof (Click to expand)</summary>
+<div class="proof-content" markdown="1">
+  
+ Taking the gradient of the ridge objective and setting it to zero, we obtain
+ 
+ $$
+ 2A^\top(A\mathbf{x}-\mathbf{b})+2\lambda \mathbf{x}=0,
+ $$
+
+ which gives
+ 
+ $$
+ (A^\top A+\lambda I)\mathbf{x}=A^\top \mathbf{b}.
+ $$
+ 
+ Since $$\lambda>0$$, the matrix $$A^\top A+\lambda I$$ is symmetric positive definite and hence invertible. Therefore, the ridge solution admits the closed-form expression
+ 
+ $$
+ \boxed{
+ \hat{\mathbf{x}}_\lambda
+ =
+ (A^\top A+\lambda I)^{-1}A^\top \mathbf{b}.
+ }
+ $$
+ 
+This formula shows why ridge regression is useful in the rank-deficient setting: even if $$A^\top A$$ is singular, adding $$\lambda I$$ shifts the eigenvalues away from zero and makes the system invertible.
+
+<div class="proof-end">□</div>
+</div>
+</details>
+
+
+### 5.1 Connection to the Minimum-Norm Solution
+
+It is also useful to compare ridge regression with the minimum-norm solution from a constrained-optimization perspective.
+Recall that the minimum-norm solution can be defined as
+
 $$
-\mathrm{Var}(\hat{\mathbf{x}}_\lambda) = \sigma^2 (\mathbf{A}^\top\mathbf{A} + \lambda\mathbf{I})^{-1}\mathbf{A}^\top\mathbf{A}(\mathbf{A}^\top\mathbf{A} + \lambda\mathbf{I})^{-1}.
+\min_{\mathbf{x}\in\mathbb{R}^n}\|\mathbf{x}\|_2^2
+\qquad
+\text{subject to}
+\qquad
+A\mathbf{x}=\mathbf{b}.
 $$
 
-As $$\lambda \to 0$$ the bias vanishes and variance grows; as $$\lambda \to \infty$$ both bias and variance change in opposite directions. The optimal $$\lambda$$ balances the two — typically chosen by cross-validation.
+Using a Lagrange multiplier $$\boldsymbol{\lambda}$$, we define
+
+$$
+\mathcal{L}(\mathbf{x},\boldsymbol{\lambda})
+=
+\|\mathbf{x}\|_2^2+\boldsymbol{\lambda}^\top(A\mathbf{x}-\mathbf{b}).
+$$
+
+Thus, the minimum-norm solution is obtained by minimizing the norm under a hard equality constraint. By contrast, ridge regression does not enforce the constraint $$A\mathbf{x}=\mathbf{b}$$ exactly. Instead, it solves
+
+$$
+\mathcal{L}_\lambda(\mathbf{x})
+=
+\|A\mathbf{x}-\mathbf{b}\|_2^2+\lambda\|\mathbf{x}\|_2^2
+,
+$$
+
+which replaces the hard constraint by a soft penalty. In this sense, ridge regression introduces an explicit trade-off between data fitting and solution norm, whereas the minimum-norm formulation minimizes the norm among exact solutions.
+
+
+Rank deficiency alone is not the main reason to use ridge regression, since the minimum-norm solution already gives a natural canonical solution in that case. The real advantage of ridge appears in noisy or nearly singular settings. In exact or nearly noiseless settings, the minimum-norm solution is often the most faithful canonical solution to the original least-squares problem. In contrast, when $$A$$ or $$\mathbf{b}$$ is noisy, ridge regression is usually more robust, since it explicitly suppresses unstable small-singular-value directions by introducing a norm penalty. Thus, the minimum-norm solution is more natural from an analytical viewpoint, whereas ridge regression is often preferable from a practical viewpoint.
+
 
 ---
 
 ## Summary
 
-| Method | Complexity | Handles rank deficiency | Key property |
-|---|---|---|---|
-| Normal equations | $$O(mn^2 + n^3)$$ | No | Simple; unstable if ill-conditioned |
-| QR decomposition | $$O(mn^2)$$ | No | Numerically stable; standard in practice |
-| SVD | $$O(mn^2)$$ | **Yes** | Most general; reveals structure |
-| Gradient descent | $$O(mn)$$ per iter | No | Scalable; slow if $$\kappa$$ large |
-| Ridge regression | $$O(mn^2 + n^3)$$ | **Yes** | Regularization; bias–variance tradeoff |
+| Method | Key property |
+|---|---|
+| Normal equations | Closed form, but may be numerically unstable |
+| QR decomposition | Stable solver for the original LS problem |
+| SVD| Explicitly selects the minimum-norm solution |
+| Gradient descent | Implicitly selects the minimum-norm solution |
+| Ridge regression  | Explicit regularization for robustness; but not faithful to original objective|
