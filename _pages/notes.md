@@ -19,4 +19,5 @@ nav_order: 3
 - [Tail Sum and Intergal for Expectation](/assets/pdf/1_Tail_Sum_and_Integral_for_Expectation.pdf)
 - [Rotation Matrix in High Dimensional Space](/assets/pdf/RotationMatrix.pdf)
 - [Principal Angles in High Dimensional Space](/assets/pdf/PrincipalAngles.pdf)
+- [Power Iteration and Deflation](/assets/pdf/power_iteration.pdf)
 
