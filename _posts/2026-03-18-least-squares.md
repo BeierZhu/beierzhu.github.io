@@ -10,7 +10,7 @@ toc:
   beginning: true
 ---
 
-## 0. Least Squares Problem
+## 1. Least Squares Problem
 
 Suppose we want to solve a linear system $$A\mathbf{x}=\mathbf{b}$$ with $$A \in \mathbb{R}^{m \times n}$$, $$ \mathbf{b} \in \mathbb{R}^m$$ and $$m \geq n$$. 
 Since the system is typically overdetermined, it may not admit an exact solution. Instead, we seek a vector $$\hat{\mathbf{x}}$$ such that $$A\hat{\mathbf{x}} \approx \mathbf{b}$$.
@@ -26,7 +26,7 @@ Our focus is on their numerical stability and behavior under rank deficiency.
 
 ---
 
-## 1. Normal Equations and the Closed-Form Solution
+## 2. Normal Equations and the Closed-Form Solution
 Solving \eqref{eq:ls} leads to the **normal equations**:
 
 \begin{equation}\label{eq:normal-equations}
@@ -72,7 +72,7 @@ $$
 Even when $$A$$ has full column rank, the matrix may still be ill-conditioned, and forming $$A^\top A$$ further amplifies this issue. 
 To make this precise, we briefly recall the notion of the condition number.
 
-### 1.1 Condition Number
+### 2.1 Condition Number
 
 The main numerical issue of the normal equations is related to the **condition number**. For an invertible matrix $$A$$, the spectral condition number w.r.t $$\ell_2$$ norm is defined as
 
@@ -243,7 +243,7 @@ when $$0<\varepsilon\ll 1$$.
 
 ---
 
-## 2. QR Decomposition
+## 3. QR Decomposition
 
 
 There are various alternative techniques which avoid the direct construction of the normal matrix $$A^\top A$$, 
@@ -398,7 +398,7 @@ Therefore, QR factorization avoids the **squaring of the condition number** (rec
 
 ---
 
-## 3. Singular Value Decomposition (SVD)
+## 4. Singular Value Decomposition (SVD)
 
 When using QR factorization to solve a least-squares problem, we typically assume that 
 $$A$$ has full column rank. In practice, however, $$A$$ may be rank-deficient. 
@@ -545,7 +545,7 @@ Therefore, SVD is often the preferred tool when $$A$$ is singular or nearly sing
 
 ---
 
-## 4. Gradient Descent and Implicit Bias
+## 5. Gradient Descent and Implicit Bias
 
 In the rank-deficient setting, SVD provides a natural and explicit way to characterize all least-squares solutions and to identify the minimum-norm one. Interestingly, gradient descent offers another effective approach: although it does not explicitly impose a minimum-norm criterion, **with zero initialization it implicitly converges to the same solution**.
 
@@ -617,7 +617,7 @@ $$
 
 This shows that zero initialization induces an implicit regularization effect: **although the objective itself does not explicitly prefer one least-squares solution over another, gradient descent selects the minimum-norm one through its optimization trajectory**.
 
-### 4.1 Why Initialization Matters
+### 5.1 Why Initialization Matters
 
 The conclusion above depends crucially on the initialization.  If gradient descent starts from a nonzero initial point $$\mathbf{x}_0$$, then its component in $$\mathrm{Null}(A)$$ is preserved throughout the iterations. Indeed, if
 
@@ -643,7 +643,7 @@ Hence the null-space component is never changed by gradient descent. As a result
 ---
 
 
-## 5. Ridge Regression
+## 6. Ridge Regression
 
 Besides SVD and gradient descent, another common approach for handling ill-conditioned or rank-deficient least-squares problems is **ridge regression**. The basic idea is to replace the original least-squares problem with the regularized problem
 
@@ -702,7 +702,7 @@ This formula shows why ridge regression is useful in the rank-deficient setting:
 </details>
 
 
-### 5.1 Connection to the Minimum-Norm Solution
+### 6.1 Connection to the Minimum-Norm Solution
 
 It is also useful to compare ridge regression with the minimum-norm solution from a constrained-optimization perspective.
 Recall that the minimum-norm solution can be defined as
@@ -740,7 +740,7 @@ Rank deficiency alone is not the main reason to use ridge regression, since the 
 
 ---
 
-## Summary
+## 7. Summary
 
 | Method | Key property |
 |---|---|
@@ -749,3 +749,10 @@ Rank deficiency alone is not the main reason to use ridge regression, since the 
 | SVD| Explicitly selects the minimum-norm solution |
 | Gradient descent | Implicitly selects the minimum-norm solution |
 | Ridge regression  | Explicit regularization for robustness; but not faithful to original objective|
+
+---
+
+## 8. Reference
+1. Endre Suli and David F. Mayers. An introduction to numerical analysis. _Cambridge University press 2003._
+2. Tengyu Ma. [Lecture notes for machine learning theory](https://github.com/tengyuma/cs229m_notes/tree/main).
+
