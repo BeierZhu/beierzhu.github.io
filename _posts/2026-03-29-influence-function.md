@@ -872,7 +872,10 @@ $$
 Here, we empirically compare the above-mentioned Hessian estimation methods on 10-class MNIST using a logistic regression model. We train the model with L-BFGS and $$L_2$$ regularization of 0.01, with $$n=55{,}000$$ training samples and $$p=7{,}840$$ parameters. We arbitrarily select a misclassified test point $$\mathbf{z}_{\mathsf{test}}$$. Among all training points, we take the 500 points $$\mathbf z$$ with the largest values of $$\Delta_\ell(\mathbf z,\mathbf z_{\mathsf{test}})$$, and for each of them we compare the estimated value of $$-\frac1n\Delta_\ell(\mathbf z,\mathbf z_{\mathsf{test}})$$ under the different estimation methods, including the closed-form solution, with the true change in test loss obtained by removing that point and retraining the model.
 
 
-![Influence matches leave-one-out retraining.](/assets/img/hessian.png)
+<figure style="text-align: center;">
+  <img src="/assets/img/hessian.png" alt="Influence matches leave-one-out retraining." style="max-width: 100%; width: auto; height: auto;" />
+  <figcaption>Influence matches leave-one-out retraining.</figcaption>
+</figure>
 
 ---
 ## Reference
