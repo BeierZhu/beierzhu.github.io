@@ -2,7 +2,7 @@
 layout: post
 title: "Influence Functions and the Hessian Estimation"
 date: 2026-03-29
-description:  
+description:  This blog reviews influence functions as a practical tool for understanding how individual training points affect a model’s parameters, loss, and predictions. Starting from empirical risk minimization, it derives first-order approximations for deleting or perturbing a training sample, and discusses several ways to estimate the inverse Hessian in practice, including direct inversion, conjugate gradients, stochastic estimation, diagonal approximation, and outer-product approximation.
 tags: [machine learning]
 categories: [blog]
 math: true
@@ -215,7 +215,6 @@ S(\mathbf z,\mathbf z_{\mathsf{test}})
 H^{-1}_{\hat{\boldsymbol{\theta}}}
 \nabla_{\boldsymbol{\theta}}\ell(\mathbf{z},\hat{\boldsymbol{\theta}}).
 $$
-
 Then:
 
 - If $$S(\mathbf z,\mathbf z_{\mathsf{test}}) > 0$$, then
@@ -256,7 +255,6 @@ Under the local convexity assumption, $$H_{\hat{\boldsymbol\theta}}^{-1}$$ is po
 
 Next, we study how deleting a training point $$\mathbf{z}$$ changes the model output at a test point $$\mathbf{z}_\mathsf{test}$$.
 Let $$f(\mathbf{x}, \boldsymbol{\theta})$$ denote the model output. For simplicity, we first consider the scalar-output case, where $$f(\mathbf{x}, \boldsymbol{\theta}) \in \mathbb{R}$$.
-
 Let
 
 $$
@@ -549,8 +547,8 @@ $$
 \nabla_{\mathbf{x}}\nabla_{\boldsymbol{\theta}}\ell(\mathbf{z},\hat{\boldsymbol{\theta}})
 \in \mathbb{R}^{p\times d}.
 $$
-
 Substituting this into the perturbed parameter-change formula gives
+
 $$
 \frac{d\hat{\boldsymbol{\theta}}_{\epsilon,\mathbf{z}_{\boldsymbol{\delta}},-\mathbf{z}}}{d\epsilon}\bigg|_{\epsilon=0}
 \approx
@@ -732,18 +730,7 @@ H_{\hat{\boldsymbol{\theta}}}^{-1}\mathbf v.
 $$
 In practice, we choose $$t$$ large enough so that the recursion stabilizes, and to reduce variance, we repeat this procedure $$r$$ times and average the results.
 
-### 5.4 Diagonal approximation
-
-Previous methods (direct method, conjugate gradient and stochastic estimation) produce unbiased estimation of Hessian (or related computation).
-A much cheaper approximation is to retain only the diagonal of the Hessian or inverse Hessian:
-
-$$
-H_\hat{\boldsymbol{\theta}}^{-1}\approx \text{diag}(H_\hat{\boldsymbol{\theta}})^{-1}.
-$$
-
-This ignores cross-parameter interactions, so it is clearly less faithful than the full matrix. However, it is simple, memory-efficient, and often good enough when one only needs a rough ranking of influential points. In practice, we can further simplify the computation by restricting the estimation it to the last layer, reducing complexity from quadratic to essentially linear in the number of parameters.
-
-### 5.5 Outer-product approximation
+### 5.4 Outer-product approximation
 
 Another common surrogate is to replace the Hessian by an outer-product matrix:
 
@@ -867,15 +854,32 @@ $$
 </div>
 </details>
 
+### 5.5 Diagonal approximation
+
+Previous methods (direct method, conjugate gradient and stochastic estimation) produce unbiased estimation of Hessian (or related computation).
+A much cheaper approximation is to retain only the diagonal of the Hessian or inverse Hessian:
+
+$$
+H_\hat{\boldsymbol{\theta}}^{-1}\approx \text{diag}(H_\hat{\boldsymbol{\theta}})^{-1}.
+$$
+
+This ignores cross-parameter interactions, so it is clearly less faithful than the full matrix. However, it is simple, memory-efficient, and often good enough when one only needs a rough ranking of influential points. In practice, we can further simplify the computation by restricting the estimation it to the last layer, reducing complexity from quadratic to essentially linear in the number of parameters.
+
+
+
 ### 5.6 Validation
 
-Here, we empirically compare the above-mentioned Hessian estimation methods on 10-class MNIST using a logistic regression model. We train the model with L-BFGS and $$L_2$$ regularization of 0.01, with $$n=55{,}000$$ training samples and $$p=7{,}840$$ parameters. We arbitrarily select a misclassified test point $$\mathbf{z}_{\mathsf{test}}$$. Among all training points, we take the 500 points $$\mathbf z$$ with the largest values of $$\Delta_\ell(\mathbf z,\mathbf z_{\mathsf{test}})$$, and for each of them we compare the estimated value of $$-\frac1n\Delta_\ell(\mathbf z,\mathbf z_{\mathsf{test}})$$ under the different estimation methods, including the closed-form solution, with the true change in test loss obtained by removing that point and retraining the model.
+Here, we empirically compare the above-mentioned Hessian estimation methods on 10-class MNIST using a logistic regression model. We train the model with L-BFGS and $$L_2$$ regularization of 0.01, with $$n=55{,}000$$ training samples and $$p=7{,}840$$ parameters. We arbitrarily select a misclassified test point $$\mathbf{z}_{\mathsf{test}}$$. Among all training points, we take the 500 points $$\mathbf z$$ with the largest values of $$\Delta_\ell(\mathbf z,\mathbf z_{\mathsf{test}})$$, and for each of them we compare the estimated value of $$-\frac1n\Delta_\ell(\mathbf z,\mathbf z_{\mathsf{test}})$$ under the different estimation methods, with the true change in test loss obtained by removing that point and retraining the model.
 
 
 <figure style="text-align: center;">
   <img src="/assets/img/hessian.png" alt="Influence matches leave-one-out retraining." style="max-width: 100%; width: auto; height: auto;" />
   <figcaption>Influence matches leave-one-out retraining.</figcaption>
 </figure>
+
+
+The direct method and conjugate gradient (CG) align almost perfectly with the actual leave-one-out retraining results, showing that influence functions can be highly accurate when the Hessian inverse is computed reliably. Stochastic estimation and outer-product approximation still capture the overall trend, but with noticeably larger variance. In contrast, the diagonal approximation performs substantially worse, indicating that the off-diagonal structure of the Hessian is important even in this simple logistic-regression setting. Overall, the experiments reveal a clear trade-off between efficiency and accuracy: direct inversion and CG are the most accurate, stochastic and outer-product methods are reasonable approximations, and the diagonal approximation is too crude for precise prediction.
+
 
 ---
 ## Reference
