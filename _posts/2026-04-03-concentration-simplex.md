@@ -511,13 +511,11 @@ In other words, the coordinate-wise Hoeffding argument loses a full factor of $$
 
 #### 3.3.1 Choice of norm matters
 
-It is also worth noting that this gap is largely a consequence of measuring error in $$L_1$$ distance.  
-For $$L_1$$, the coordinate-wise Hoeffding argument must first reduce the event
+It is also worth noting that this gap is largely a consequence of measuring error in $$L_1$$ distance. For $$L_1$$, the coordinate-wise Hoeffding argument must first reduce the event
 $$
 \|\hat{\mathbf{p}}-\mathbf{p}\|_1 \ge \varepsilon
 $$
 to the existence of at least one coordinate deviation of size $$\varepsilon/K$$, which is exactly where the extra factor of $$K^2$$ in the exponent comes from.
-
 By contrast, if we measure the error in $$L_\infty$$ distance, then
 
 $$
@@ -543,20 +541,7 @@ So for $$L_\infty$$, the coordinate-wise argument is already of the correct orde
 ---
 ### 3.4 One-hot samples as a worst-case upper bound
 
-So far, Weissman's inequality applies to the most extreme simplex case, namely one-hot samples. 
-What if each sample is already a **soft** probability vector?
-Suppose now that
-
-$$
-X^{(1)},\dots,X^{(N)} \in \Delta^{K-1},
-\qquad
-\mathbf{p} = \mathbb{E}[X^{(n)}],
-\qquad
-\hat{\mathbf{p}}_\mathsf{soft} = \frac{1}{N}\sum_{n=1}^N X^{(n)}.
-$$
-
-In other words, each observation is itself a point in the simplex, rather than a one-hot vertex.
-To compare this setting with the categorical one-hot case, define a **hardened** sample
+To compare the general simplex samples with the categorical one-hot case, define a **hardened** sample
 
 $$
 Y^{(n)} \in \{\mathbf{e}_1,\dots,\mathbf{e}_K\}
