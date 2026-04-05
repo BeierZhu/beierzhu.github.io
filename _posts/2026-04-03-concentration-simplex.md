@@ -325,7 +325,7 @@ And for this problem, **Weissman's inequality** directly controls the $$L_1$$ er
 
 
 <div class="theorem-block">
-<div class="theorem-title">Theorem 1 Weissman's inequality for one-hot samples </div>
+<div class="theorem-title">Theorem 3 Weissman's inequality for one-hot samples </div>
 <div class="theorem-content" markdown="1">
 If $$X^{(1)},\dots,X^{(N)}$$ are i.i.d. one-hot samples from a categorical distribution $$\mathbf{p}$$, then for any $$\varepsilon > 0$$,
 
@@ -541,7 +541,7 @@ So for $$L_\infty$$, the coordinate-wise argument is already of the correct orde
 ---
 ### 3.4 One-hot samples as a worst-case upper bound
 
-To compare the general simplex samples with the categorical one-hot case, define a **hardened** sample
+To compare the general simplex samples (soft) with the categorical one-hot case, define a **hardened** sample
 
 $$
 Y^{(n)} \in \{\mathbf{e}_1,\dots,\mathbf{e}_K\}
@@ -567,7 +567,7 @@ So the hard and soft samples have the same mean, but the hard sample is more ext
 The key observation is that this hardening operation can only increase dispersion under convex losses.
 
 <div class="theorem-block">
-<div class="theorem-title">Theorem 1 </div>
+<div class="theorem-title">Theorem 4 </div>
 <div class="theorem-content" markdown="1">
   
 For any convex function $$\varphi:\mathbb{R}^K \to \mathbb{R}$$,
@@ -580,7 +580,11 @@ $$
 
 where
 $$
-\hat{\mathbf{p}}_{\mathsf{hard}} = \frac{1}{N}\sum_{n=1}^N Y^{(n)}.
+\hat{\mathbf{p}}_{\mathsf{hard}} = \frac{1}{N}\sum_{n=1}^N Y^{(n)}
+$$
+and
+$$
+\hat{\mathbf{p}}_{\mathsf{soft}} = \frac{1}{N}\sum_{n=1}^N X^{(n)}.
 $$
 
 </div>
@@ -642,9 +646,9 @@ $$
 $$
 shows that
 $$
-\mathbb{E}\!\left[\|\hat{\mathbf{p}}_{\mathrm{soft}}-\mathbf{p}\|_1\right]
+\mathbb{E}\!\left[\|\hat{\mathbf{p}}_{\mathsf{soft}}-\mathbf{p}\|_1\right]
 \le
-\mathbb{E}\!\left[\|\hat{\mathbf{p}}_{\mathrm{hard}}-\mathbf{p}\|_1\right].
+\mathbb{E}\!\left[\|\hat{\mathbf{p}}_{\mathsf{hard}}-\mathbf{p}\|_1\right].
 $$
 Therefore, although Weissman's inequality is stated for one-hot categorical samples, it should be viewed as a conservative worst-case reference for general simplex-valued samples.
 
