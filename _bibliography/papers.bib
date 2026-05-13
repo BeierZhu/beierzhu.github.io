@@ -1,3 +1,73 @@
+@article{wang2026parallel,
+      title={Parallel diffusion solver via residual dirichlet policy optimization}, 
+      author={Ruoyu Wang* and Ziyu Li* and Beier Zhu* and Liangyu Yuan and Hanwang Zhang and Xun Yang and Xiaojun Chang and Chi Zhang},
+      year={2026},
+      arxiv={2512.22796},
+      class={Diffusion Solver},
+      supclass={robust learning},
+      abbr={TPAMI},
+      journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+      code={https://github.com/BeierZhu/EPD},
+      video={https://www.bilibili.com/video/BV1sSeEzhEmp/?spm_id_from=333.1387.homepage.video_card.click&vd_source=aab02baa86c34f988b4134455c8c27c7},
+      abstract={Diffusion models (DMs) have achieved state-of-the-art generative performance but suffer from high sampling latency due to their sequential denoising nature. Existing solver-based acceleration methods often face significant image quality degradation under a low-latency budget, primarily due to accumulated truncation errors arising from the inability to capture high-curvature trajectory segments. In this paper, we propose the Ensemble Parallel Direction solver (dubbed as EPD-Solver), a novel ODE solver that mitigates these errors by incorporating multiple parallel gradient evaluations in each step. Motivated by the geometric insight that sampling trajectories are largely confined to a low-dimensional manifold, EPD-Solver leverages the Mean Value Theorem for vector-valued functions to approximate the integral solution more accurately. Importantly, since the additional gradient computations are independent, they can be fully parallelized, preserving low-latency sampling nature. We introduce a two-stage optimization framework. Initially, EPD-Solver optimizes a small set of learnable parameters via a distillation-based approach. We further propose a parameter-efficient Reinforcement Learning (RL) fine-tuning scheme that reformulates the solver as a stochastic Dirichlet policy. Unlike traditional methods that fine-tune the massive backbone, our RL approach operates strictly within the low-dimensional solver space, effectively mitigating reward hacking while enhancing performance in complex text-to-image (T2I) generation tasks. In addition, our method is flexible and can serve as a plugin (EPD-Plugin) to improve existing ODE samplers.},
+}
+
+@inproceedings{
+zhu2026robustifying,
+title={Robustifying vision-language models via test-time prompt adaptation},
+author={Xingyu Zhu and Huanshen Wu and Shuo Wang and Beier Zhu and Jiannan Ge and Jiaheng Zhang and Long Chen},
+booktitle={International Conference on Machine Learning},
+year={2026},
+class={Robust Adaptation for VLMs},
+supclass={multimodal learning},
+abbr={ICML},
+bibtex_show={true},
+abstract={Pre-trained Vision-Language Models (VLMs) such as CLIP achieve strong zero-shot generalization, but their performance degrades sharply under adversarial perturbations. Existing test-time adaptation methods typically rely on sample-level confidence heuristics, overlooking the intrinsic distributional structure of the data. This sample-centric approach limits robustness, as it fails to distinguish confident adversarial mispredictions from true semantic consistency. In this work, we observe that adversarial distortion is structurally brittle: while holistic representations are corrupted, semantic integrity is often preserved in the distribution of augmented views. Motivated by this insight, we propose RITA, a robust test-time prompt adaptation framework that shifts from sample-level estimates to distribution-level alignment. Specifically, RITA employs optimal transport to align the distribution of augmented visual features with textual prototypes, mitigating adversarial outliers and rectifying cross-modal semantic misalignment. Furthermore, we introduce a dynamic cache to progressively accumulate reliable cues from the test stream for online refinement. Extensive experiments demonstrate that RITA significantly improves adversarial robustness without compromising clean accuracy.},
+}
+
+@inproceedings{
+han2026omniperception,
+title={Omni-perception policy optimization for multimodal emotion reasoning},
+author={Zhiyuan Han and Beier Zhu^ and Wenwen Tong and Pengyang Shao and Peipei Song and Xinyi Wang and Jiangnan Chen and Lewei Lu and Xun Yang},
+booktitle={International Conference on Machine Learning},
+year={2026},
+class={MLLMs Reasoning},
+supclass={multimodal learning},
+abbr={ICML},
+bibtex_show={true},
+abstract={Recent Omni-MLLMs are driving a paradigm shift in multimodal emotion recognition from label-only prediction toward Multimodal Emotion Reasoning (MER), where models output both emotions and textual explanations grounded in visual, acoustic, and linguistic signals. However, we show that current emotion-oriented Omni-MLLMs still lack reliable omni-modal perception: they (i) underutilize multimodal cues in their reasoning trajectories and (ii) exhibit unfaithful behavior, often hallucinating modality-specific statements from other modalities. Building on these insights, we propose OPPO (Omni-Perception Policy Optimization), a reinforcement learning framework that explicitly optimizes multimodal perception. First, an Omni-Perception Reward decomposes ground-truth reasoning into fine-grained visual, acoustic, and emotion cues and rewards trajectories that semantically recover these cues. Second, an Omni-Perception Loss compares the policy under full and unimodally masked inputs, applying a KL penalty only to modality-specific evidence tokens to suppress cross-modal hallucination. We further introduce MEP-Bench, a diagnostic benchmark that quantifies utilization and faithfulness. Experiments show that OPPO achieves state-of-the-art performance on MER-UniBench and substantially improves utilization and faithfulness scores on MEP-Bench, highlighting the importance of sufficient and faithful omni perception for multimodal emotion reasoning.},
+}
+
+
+@inproceedings{
+Huang2026adaptive,
+title={AMA: adaptive memory via multi-agent collaboration},
+author={Weiquan Huang and Zixuan Wang and Hehai Lin and Sudong Wang and Bo Xu and Qian Li and Beier Zhu and Linyi Yang and Chengwei Qin},
+booktitle={Annual Meeting of the Association for Computational Linguistics, Findings},
+year={2026},
+class={LLM Agent},
+supclass={others},
+abbr={ACL},
+arxiv={2601.20352}, 
+bibtex_show={true},
+abstract={The rapid evolution of Large Language Model (LLM) agents has necessitated robust memory systems to support cohesive long-term interaction and complex reasoning. Benefiting from the strong capabilities of LLMs, recent research focus has shifted from simple context extension to the development of dedicated agentic memory systems. However, existing approaches typically rely on rigid retrieval granularity, accumulation-heavy maintenance strategies, and coarse-grained update mechanisms. These design choices create a persistent mismatch between stored information and task-specific reasoning demands, while leading to the unchecked accumulation of logical inconsistencies over time. To address these challenges, we propose Adaptive Memory via Multi-Agent Collaboration (AMA), a novel framework that leverages coordinated agents to manage memory across multiple granularities. AMA employs a hierarchical memory design that dynamically aligns retrieval granularity with task complexity. Specifically, the Constructor and Retriever jointly enable multi-granularity memory construction and adaptive query routing. The Judge verifies the relevance and consistency of retrieved content, triggering iterative retrieval when evidence is insufficient or invoking the Refresher upon detecting logical conflicts. The Refresher then enforces memory consistency by performing targeted updates or removing outdated entries. Extensive experiments on challenging long-context benchmarks show that AMA significantly outperforms state-of-the-art baselines while reducing token consumption by approximately 80\% compared to full-context methods, demonstrating its effectiveness in maintaining retrieval precision and long-term memory consistency.},
+}
+
+
+@inproceedings{
+zhu2026mitigating,
+title={Mitigating hallucinations in large vision-language models without performance degradation},
+author={Xingyu Zhu and Junfeng Fang and Shuo Wang and Beier Zhu and Zhicai Wang and Yonghui Yang and Xiangnan He},
+booktitle={Annual Meeting of the Association for Computational Linguistics},
+year={2026},
+class={MLLMs De-Hallucination},
+supclass={multimodal learning},
+abbr={ACL},
+arxiv={2604.20366}, 
+bibtex_show={true},
+abstract={Large Vision-Language Models (LVLMs) exhibit powerful generative capabilities but frequently produce hallucinations that compromise output reliability. Fine-tuning on annotated data devoid of hallucinations offers the most direct solution, while its high computational cost motivates recent representation-based methods, which focus on mitigating hallucinatory components within hidden representations. Though efficient, we empirically observe that these methods degrade general generation capacity due to incomplete extraction of hallucination components and non-selective parameter updates. To address these limitations, we propose MPD, a dual-stage framework for mitigating hallucinations without performance degradation. Specifically, our MPD relies on two essential factors: (1) semantic-aware component disentanglement to extract pure hallucination components, and (2) interpretable parameter updates that selectively modify parameters most relevant to hallucination. Extensive experiments demonstrate that MPD achieves state-of-the-art performance, reducing hallucinations by 23.4\% while maintaining 97.4\% of general generative capability as evaluated on LLaVA-Bench and MME, with no additional computational cost.},
+}
+
 @misc{zhao2026thinkingimagescontinuousactions,
       title={Thinking with images as continuous actions: numerical visual chain-of-thought}, 
       author={Kesen Zhao and Beier Zhu^ and Junbao Zhou and Xingyu Zhu and Zhongqi Yue and Hanwang Zhang},
@@ -20,6 +90,7 @@ year={2026},
 class={Diffusion Solver},
 supclass={robust learning},
 abbr={CVPR},
+code={https://github.com/851695e35/INDIS},
 bibtex_show={true},
 abstract={Diffusion and flow matching models generate high-fidelity data by simulating paths defined by Ordinary or Stochastic Differential Equations (ODEs/SDEs), starting from a tractable prior distribution. The probability flow ODE formulation enables the use of advanced numerical solvers to accelerate sampling. Orthogonal yet vital to solver design is the discretization strategy. While early approaches employed handcrafted heuristics and recent methods adopt optimization-based techniques, most existing strategies enforce a globally shared timestep schedule across all samples. This uniform treatment fails to account for instance-specific complexity in the generative process, potentially limiting performance. Motivated by controlled experiments on synthetic data, which reveals the suboptimality of global schedules under instance-specific dynamics, we propose an instance-aware discretization framework. Our method learns to adapt timestep allocations based on input-dependent priors, extending gradient-based discretization search to the conditional generative setting. Empirical results across diverse settings, including synthetic data, pixel-space diffusion, latent-space images and video flow matching models, demonstrate that our method consistently improves generation quality with marginal tuning cost compared to training and negligible inference overhead.},
 }
@@ -67,18 +138,7 @@ arxiv={2603.02945},
 abstract={Model merging aims to combine multiple ta expert models into a single model while preserving generalization across diverse tasks. However, interference among experts, especially when they are trained on different objectives, often leads to significant performance degradation. Despite recent progress, resolving this interference without data access, retraining, or architectural modification remains a fundamental challenge. This paper provides a theoretical analysis demonstrating that the input covariance of each task, which is a key factor for optimal merging, can be implicitly estimated from the parameter differences of its fine-tuned model, even in a fully data-free setting. Building on this insight, we introduce ACE-Merging, an Adaptive Covariance Estimation framework that effectively mitigates inter-task interference. Our approach features a principled, closed-form solution that contrasts with prior iterative or heuristic methods. Extensive experiments on both vision and language benchmarks demonstrate that ACE-Merging sets a new state-of-the-art among data-free methods. It consistently outperforms existing baselines; for example, ACE-Merging achieves an average absolute improvement of 4\% over the previous methods across seven tasks on GPT-2. Owing to its efficient closed-form formulation, ACE-Merging delivers superior performance with a modest computational cost, providing a practical and theoretically grounded solution for model merging.},
 }
 
-@unpublished{wang2025parallel,
-      title={Parallel diffusion solver via residual dirichlet policy optimization}, 
-      author={Ruoyu Wang* and Ziyu Li* and Beier Zhu* and Liangyu Yuan and Hanwang Zhang and Xun Yang and Xiaojun Chang and Chi Zhang},
-      year={2025},
-      arxiv={2512.22796},
-      class={Diffusion Solver},
-      supclass={robust learning},
-      abbr={arXiv},
-      code={https://github.com/BeierZhu/EPD},
-      video={https://www.bilibili.com/video/BV1sSeEzhEmp/?spm_id_from=333.1387.homepage.video_card.click&vd_source=aab02baa86c34f988b4134455c8c27c7},
-      abstract={Diffusion models (DMs) have achieved state-of-the-art generative performance but suffer from high sampling latency due to their sequential denoising nature. Existing solver-based acceleration methods often face significant image quality degradation under a low-latency budget, primarily due to accumulated truncation errors arising from the inability to capture high-curvature trajectory segments. In this paper, we propose the Ensemble Parallel Direction solver (dubbed as EPD-Solver), a novel ODE solver that mitigates these errors by incorporating multiple parallel gradient evaluations in each step. Motivated by the geometric insight that sampling trajectories are largely confined to a low-dimensional manifold, EPD-Solver leverages the Mean Value Theorem for vector-valued functions to approximate the integral solution more accurately. Importantly, since the additional gradient computations are independent, they can be fully parallelized, preserving low-latency sampling nature. We introduce a two-stage optimization framework. Initially, EPD-Solver optimizes a small set of learnable parameters via a distillation-based approach. We further propose a parameter-efficient Reinforcement Learning (RL) fine-tuning scheme that reformulates the solver as a stochastic Dirichlet policy. Unlike traditional methods that fine-tune the massive backbone, our RL approach operates strictly within the low-dimensional solver space, effectively mitigating reward hacking while enhancing performance in complex text-to-image (T2I) generation tasks. In addition, our method is flexible and can serve as a plugin (EPD-Plugin) to improve existing ODE samplers.},
-}
+
 
 @article{wang2026hybrid,
 title={Hybrid granularity distribution estimation for few-shot learning: statistics transfer from categories and instances},

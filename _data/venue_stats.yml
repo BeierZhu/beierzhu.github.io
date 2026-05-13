@@ -1,9 +1,18 @@
-- count: 12
-  first_corresponding: 7
-  venue: NeurIPS/ICLR
-- count: 11
+- count: 5
   first_corresponding: 4
-  venue: CVPR/ICCV
+  venue: NeurIPS
+- count: 7
+  first_corresponding: 3
+  venue: ICLR
+- count: 2
+  first_corresponding: 1
+  venue: ICML
+- count: 8
+  first_corresponding: 2
+  venue: CVPR
+- count: 3
+  first_corresponding: 2
+  venue: ICCV
 - count: 5
   first_corresponding: 3
   venue: AAAI
@@ -11,8 +20,14 @@
   first_corresponding: 2
   venue: MM
 - count: 2
+  first_corresponding: 0
+  venue: ACL
+- count: 1
+  first_corresponding: 1
+  venue: TPAMI
+- count: 2
   first_corresponding: 2
   venue: TIP
-- count: 7
-  first_corresponding: 6
+- count: 6
+  first_corresponding: 5
   venue: Others

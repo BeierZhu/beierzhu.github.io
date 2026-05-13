@@ -3,7 +3,7 @@ layout: page
 permalink: /publications/
 title: publications
 titledisplay: Publications
-description: Published 30+ papers in top venues on robust learning and multimodal learning, including 20+ as first or corresponding author.
+description: Published 40+ papers in top venues on robust learning and multimodal learning, including 20+ as first or corresponding author.
 nav: true
 nav_order: 2
 ---

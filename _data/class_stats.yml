@@ -14,29 +14,29 @@
   - name: Robustness
     count: 4
 - supclass: Multimodal Learning
-  total: 17
+  total: 20
   classes:
   - name: Image Generation
     count: 3
   - name: MLLMs De-Hallucination
-    count: 2
-  - name: MLLMs Reasoning
     count: 3
+  - name: MLLMs Reasoning
+    count: 4
   - name: MLLMs Safety
     count: 2
   - name: Robust Adaptation for VLMs
-    count: 5
+    count: 6
   - name: Video Generation
     count: 2
 - supclass: Others
-  total: 8
+  total: 9
   classes:
   - name: Face Alignment
     count: 1
   - name: Image Clustering
     count: 1
   - name: LLM Agent
-    count: 1
+    count: 2
   - name: Point Cloud
     count: 1
   - name: Power System
