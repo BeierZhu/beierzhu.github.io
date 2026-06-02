@@ -14,10 +14,10 @@
   - name: Robustness
     count: 4
 - supclass: Multimodal Learning
-  total: 20
+  total: 21
   classes:
   - name: Image Generation
-    count: 3
+    count: 4
   - name: MLLMs De-Hallucination
     count: 3
   - name: MLLMs Reasoning
