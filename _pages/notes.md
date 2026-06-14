@@ -10,6 +10,7 @@ nav_order: 3
 
 - [论文写作](/assets/pdf/论文写作.pdf)
 - [Suggested Reading List](/readinglist/)
+- [Score, Noise, Denoiser, and Velocity Predictions in Diffusion Models](/assets/pdf/Relationship_between_denoiser_score_and_velocity.pdf)
 - [Moment-Generating Function](/assets/pdf/MGF.pdf)
 - [Sub-Gaussian Random Variable and its Tail Bound](/assets/pdf/SubGaussian.pdf)
 - [Common Concentration Inequalities](/assets/pdf/Inequalities.pdf)
