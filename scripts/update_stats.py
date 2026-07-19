@@ -128,12 +128,11 @@ def compute_summary(papers):
         if p["award"] and p["award"] in AWARD_TYPES:
             award_counts[p["award"]] += 1
 
+    distinguished = sum(award_counts.get(a, 0) for a in AWARD_TYPES)
     return {
         "total": total,
         "first_corresponding": first_corresponding,
-        "oral": award_counts.get("Oral", 0),
-        "spotlight": award_counts.get("Spotlight", 0),
-        "highlight": award_counts.get("Highlight", 0),
+        "distinguished": distinguished,
     }
 
 
@@ -157,9 +156,7 @@ def main():
     print(f"\nUpdated {SUMMARY_FILE}:")
     print(f"  Total papers:            {summary['total']}")
     print(f"  First/corresponding:     {summary['first_corresponding']}")
-    print(f"  Oral:                    {summary['oral']}")
-    print(f"  Spotlight:               {summary['spotlight']}")
-    print(f"  Highlight:               {summary['highlight']}")
+    print(f"  Oral/Spotlight/Highlight: {summary['distinguished']}")
 
 
 if __name__ == "__main__":
