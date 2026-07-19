@@ -10,7 +10,7 @@ nav_order: 2
 
 <!-- _pages/publications.md -->
 
-<p class="post-description">Published {{ site.data.summary_stats.total }} papers in top venues on robust learning and multimodal learning, including {{ site.data.summary_stats.first_corresponding }} as first or corresponding author and {{ site.data.summary_stats.distinguished }} Oral/Spotlight/Highlight.</p>
+<p class="post-description">Published {{ site.data.summary_stats.total }} papers in top venues, including {{ site.data.summary_stats.first_corresponding }} as first or corresponding author and {{ site.data.summary_stats.distinguished }} Oral/Spotlight/Highlight.</p>
 
 <!-- Bibsearch Feature -->
 
