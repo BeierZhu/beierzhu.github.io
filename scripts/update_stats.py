@@ -5,6 +5,7 @@ from collections import defaultdict
 
 BIB_FILE = "_bibliography/papers.bib"
 STATS_FILE = "_data/venue_stats.yml"
+SUMMARY_FILE = "_data/summary_stats.yml"
 
 VENUE_GROUPS = {
     # "NeurIPS": "NeurIPS/ICLR/ICML",
@@ -17,6 +18,8 @@ VENUE_GROUPS = {
 EXCLUDE_VENUES = set()
 OTHER_VENUES = {"FCS", "arXiv", "Thesis", "TSG"}
 
+AWARD_TYPES = {"Oral", "Spotlight", "Highlight"}
+
 
 def parse_bib(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
@@ -28,11 +31,13 @@ def parse_bib(filepath):
     for entry in entries:
         abbr_match = re.search(r"abbr\s*=\s*\{([^}]+)\}", entry)
         author_match = re.search(r"author\s*=\s*\{([^}]+)\}", entry)
+        award_match = re.search(r"award\s*=\s*\{([^}]+)\}", entry)
 
         if abbr_match and author_match:
             abbr = abbr_match.group(1).strip()
             authors = author_match.group(1).strip()
-            papers.append({"abbr": abbr, "authors": authors})
+            award = award_match.group(1).strip() if award_match else None
+            papers.append({"abbr": abbr, "authors": authors, "award": award})
 
     return papers
 
@@ -114,12 +119,33 @@ def compute_stats(papers):
     return stats
 
 
+def compute_summary(papers):
+    total = len(papers)
+    first_corresponding = sum(1 for p in papers if is_first_or_corresponding(p["authors"]))
+
+    award_counts = defaultdict(int)
+    for p in papers:
+        if p["award"] and p["award"] in AWARD_TYPES:
+            award_counts[p["award"]] += 1
+
+    distinguished = sum(award_counts.get(a, 0) for a in AWARD_TYPES)
+    return {
+        "total": total,
+        "first_corresponding": first_corresponding,
+        "distinguished": distinguished,
+    }
+
+
 def main():
     papers = parse_bib(BIB_FILE)
     stats = compute_stats(papers)
+    summary = compute_summary(papers)
 
     with open(STATS_FILE, "w", encoding="utf-8") as f:
         yaml.dump(stats, f, default_flow_style=False, allow_unicode=True)
+
+    with open(SUMMARY_FILE, "w", encoding="utf-8") as f:
+        yaml.dump(summary, f, default_flow_style=False, allow_unicode=True)
 
     print(f"Updated {STATS_FILE}:")
     for s in stats:
@@ -127,9 +153,10 @@ def main():
             f"  {s['venue']}: {s['count']} papers, {s['first_corresponding']} 1st/corresponding"
         )
 
-    total_papers = sum(s["count"] for s in stats)
-    total_fc = sum(s["first_corresponding"] for s in stats)
-    print(f"  Total: {total_papers} papers, {total_fc} 1st/corresponding")
+    print(f"\nUpdated {SUMMARY_FILE}:")
+    print(f"  Total papers:            {summary['total']}")
+    print(f"  First/corresponding:     {summary['first_corresponding']}")
+    print(f"  Oral/Spotlight/Highlight: {summary['distinguished']}")
 
 
 if __name__ == "__main__":
