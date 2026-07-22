@@ -16,6 +16,7 @@ nav_order: 3
 - [Common Concentration Inequalities](/assets/pdf/Inequalities.pdf)
 - [Rademacher Complexity](/assets/pdf/Rademacher.pdf)
 - [Gumbel-Max, Gumbel-Softmax and Straight-Through](/assets/pdf/Gumbel_Max.pdf)
+- [Log-Derivative Trick](/assets/pdf/Log_Derivative_Trick.pdf)
 - [Sum and Mixture of Gaussians](/assets/pdf/2_Sum_and_Mixture_of_Gaussians.pdf)
 - [Tail Sum and Intergal for Expectation](/assets/pdf/1_Tail_Sum_and_Integral_for_Expectation.pdf)
 - [Rotation Matrix in High Dimensional Space](/assets/pdf/RotationMatrix.pdf)
