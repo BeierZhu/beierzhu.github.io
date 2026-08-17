@@ -50,7 +50,7 @@ Assume that the empirical risk is twice-differentiable and strictly convex in $$
 
 We ask the following counterfactual question:
 
-<p align="center"><code>What would happen if this training point were removed?`</code></p>
+<p align="center"><code>What would happen if this training point were removed?</code></p>
 
 ### 3.1 Parameter change
 
@@ -670,6 +670,261 @@ $$
 </details>
 
 We can solve this with conjugate gradient approaches that only require the evaluation of $$ H_\hat{\boldsymbol \theta} \mathbf{t}$$, which takes $$O(np)$$, without explicitly forming $$H_\hat{\boldsymbol \theta} $$. While an exact solution takes $$p$$ iterations, in practice we can get a good approximation with fewer iterations
+
+<details class="proof-block">
+<summary class="proof-title"> Conjugate gradient implementation (Click to expand)</summary>
+<div class="proof-content" markdown="1">
+
+**Motivation: Avoiding Repeated Corrections**
+
+Let $$f(\mathbf{x})=\frac{1}{2}\mathbf{x}^\top A\mathbf{x}-\mathbf{b}^\top\mathbf{x},$$,where $$A$$ is symmetric positive definite. To solve $$\mathbf{x}^\star=\arg\min_{\mathbf{x}} f(\mathbf{x}),$$ a natural approach is gradient descent with exact line search. Define  $$\mathbf{g}_k=\nabla f(\mathbf{x}_k)=A\mathbf{x}_k-\mathbf{b}$$. The update is
+
+$$
+\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha_k \mathbf{g}_k,
+$$
+
+where 
+
+$$
+\begin{aligned}
+\alpha_k
+&= \arg\min_\alpha f(\mathbf{x}_k - \alpha \mathbf{g}_k) \\
+&= \arg\min_\alpha
+\left[
+\frac{1}{2}\alpha^2 \mathbf{g}_k^\top A\mathbf{g}_k
+- \alpha (A\mathbf{x}_k  - \mathbf{b})^\top \mathbf{g}_k  
++ \mathrm{const.}
+\right] \\
+&=\arg\min_\alpha
+\left[
+\frac{1}{2}\alpha^2 \mathbf{g}_k^\top A\mathbf{g}_k
+- \alpha \mathbf{g}_k^\top \mathbf{g}_k  
++ \mathrm{const.}
+\right]\\
+&=\frac{\mathbf{g}_k^\top \mathbf{g}_k}{\mathbf{g}_k^\top A \mathbf{g}_k}.
+\end{aligned}
+$$
+
+Suppose we start from $$\mathbf{x}_0$$ and perform updates along $$\mathbf{g}_0, \ldots, \mathbf{g}_{k}$$, arriving at
+
+$$
+\mathbf{x}_{k+1}=\mathbf{x}_0-\sum_{i=0}^{k} \alpha_i \mathbf{g}_i,
+$$
+
+for some update coefficients $$\alpha_i$$. Expanding the objective gives
+
+$$
+\begin{aligned}
+f(\mathbf{x}_{k+1}) 
+&=
+f(\mathbf{x}_0)
+-
+\sum_{i=0}^{k}
+\alpha_i \mathbf{g}_i^\top (A\mathbf{x}_0 - \mathbf{b})
++
+\frac{1}{2}
+\sum_{i=0}^{k}
+\alpha_i^2 \mathbf{g}_i^\top A \mathbf{g}_i \\
+&\quad+
+\sum_{0 \le i < j \le k}
+\alpha_i \alpha_j \mathbf{g}_i^\top A\mathbf{g}_j.
+\end{aligned}
+$$
+
+The last term captures the interactions among different search directions. 
+Consequently, the optimal step size along one direction generally depends on the coefficients along the other directions. Thus, optimizing a new direction may change the optimal coefficient of a previously optimized direction, leading to repeated corrections.
+
+If the directions are mutually $$A$$-conjugate,
+$$
+\mathbf{g}_i^\top A\mathbf{g}_j = 0,
+ \forall i \neq j,
+$$
+all cross terms vanish. This motivates constructing mutually $$A$$-conjugate search directions instead.
+
+**From Gradient Descent to Conjugate Directions** 
+
+Ideally, we want each new search direction to be $$A$$-conjugate to all previously explored directions, i.e.,
+
+$$
+\boxed{
+\mathbf{d}_i^\top A\mathbf{d}_j = 0,
+\qquad \forall i \neq j.
+}
+$$
+
+In gradient descent, the update direction is always chosen as
+$$
+\mathbf{d}_k=-\mathbf{g}_k.
+$$
+To meet the $$A$$-conjugate, at timestep $$k+1$$, instead of directly following $$-\mathbf{g}_{k+1}$$, conjugate gradient constructs a modified search direction
+
+$$
+\mathbf{d}_{k+1}=-\mathbf{g}_{k+1} + \beta_k \mathbf{d}_k,
+$$
+
+We first choose $$\beta_k$$ to make the new direction $$A$$-conjugate to the most recent direction $$\mathbf{d}_k$$:
+
+$$
+\mathbf{d}_{k+1}^\top A \mathbf{d}_k= 0. 
+$$
+
+Therefore,
+
+$$
+(-\mathbf{g}_{k+1}+\beta_k\mathbf{d}_k)^\top A \mathbf{d}_k=0 \Rightarrow \beta_k = \frac{\mathbf{g}_{k+1}A\mathbf{d}_k}{\mathbf{d}_k^\top A \mathbf{d}_k}.
+$$
+
+Again, after deriving the update direction $$\mathbf{d}_{k+1}$$, we perform line search, such that 
+
+$$
+\mathbf{x}_{k+2} = \mathbf{x}_{k+1} + \alpha_{k+1} \mathbf{d}_{k+1}, \quad \mathrm{where} \quad \alpha_{k+1} = \arg\min_\alpha f(\mathbf{x}_{k+1} + \alpha \mathbf{d}_{k+1}) =-\frac{\mathbf{d}_{k+1}^\top \mathbf{g}_{k+1}}{\mathbf{d}_{k+1}^\top A\mathbf{d}_{k+1}} 
+$$
+
+Although this choice explicitly imposes only
+$$
+\mathbf{d}_{k+1}^\top A\mathbf{d}_k=0,
+$$
+the conjugate-gradient recurrence, together with exact line search, implies that $$\mathbf{d}_{k+1}$$ is automatically $$A$$-conjugate to all earlier search directions.
+
+**Assume that** the existing directions are mutually $$A$$-conjugate:
+
+$$
+\mathbf{d}_i^\top A\mathbf{d}_j=0,
+\qquad
+0\leq i<j\leq k.
+$$
+
+First, we show that $$\mathbf{g}_{k+1} \perp \mathbf{d}_k= 0: $$
+
+$$
+\mathbf{g}_{k+1}^\top\mathbf{d}_k=(A\mathbf{x}_{k+1}-\mathbf{b})^T\mathbf{d}_k=(\mathbf{g}_k+\alpha_k A\mathbf{d}_k)^\top \mathbf{d}_k=0.
+$$
+
+Then, we show that $$\mathbf{g}_{k+1} \perp \mathbf{d}_i= 0, \forall i<k: $$
+
+$$
+\mathbf{g}_{k+1}
+=
+\mathbf{g}_{i+1}+\sum_{j=i+1}^{k}\alpha_jA\mathbf{d}_j,
+$$
+
+we obtain
+
+$$
+\begin{aligned}
+\mathbf{g}_{k+1}^\top\mathbf{d}_i
+&=
+(\mathbf{g}_{i+1}+\sum_{j=i+1}^{k}\alpha_jA\mathbf{d}_j)^\top \mathbf{d}_i=0.
+\end{aligned}
+$$
+
+Therefore,
+
+$$
+\mathbf{g}_{k+1}^\top\mathbf{d}_i=0,
+\qquad
+i=0,\ldots,k.
+$$
+
+Moreover, since
+
+$$
+\mathbf{d}_i
+=
+-\mathbf{g}_i+\beta_{i-1}\mathbf{d}_{i-1},
+$$
+
+each previous gradient $$\mathbf{g}_i$$ lies in the span of the previous search directions. Hence,
+
+$$
+\mathbf{g}_{k+1}^\top\mathbf{g}_i=0,
+\qquad
+i=0,\ldots,k.
+$$
+
+Now consider any earlier direction $$\mathbf{d}_i$$ with $$i<k$$. We have
+
+$$
+\begin{aligned}
+\mathbf{d}_{k+1}^\top A\mathbf{d}_i
+=
+\left(
+-\mathbf{g}_{k+1}
++
+\beta_k\mathbf{d}_k
+\right)^\top
+A\mathbf{d}_i =
+-\mathbf{g}_{k+1}^\top A\mathbf{d}_i,
+\end{aligned}
+$$
+
+ 
+
+From the gradient update at iteration $$i$$,
+
+$$
+\mathbf{g}_{i+1}
+=
+\mathbf{g}_i+\alpha_iA\mathbf{d}_i
+\Rightarrow 
+A\mathbf{d}_i
+=
+\frac{
+\mathbf{g}_{i+1}-\mathbf{g}_i
+}{
+\alpha_i
+}.
+$$
+
+Therefore,
+
+$$
+\begin{aligned}
+\mathbf{d}_{k+1}^\top A\mathbf{d}_i
+=
+-\frac{1}{\alpha_i}
+\mathbf{g}_{k+1}^\top
+\left(
+\mathbf{g}_{i+1}-\mathbf{g}_i
+\right)
+=
+-\frac{1}{\alpha_i}
+\left(
+\mathbf{g}_{k+1}^\top\mathbf{g}_{i+1}
+-
+\mathbf{g}_{k+1}^\top\mathbf{g}_i
+\right)
+=0.
+\end{aligned}
+$$
+
+Together with the directly enforced condition
+
+$$
+\mathbf{d}_{k+1}^\top A\mathbf{d}_k=0,
+$$
+
+this proves that
+
+$$
+\mathbf{d}_{k+1}^\top A\mathbf{d}_i=0,
+\qquad
+i=0,\ldots,k.
+$$
+
+By induction, all conjugate-gradient search directions are mutually $$A$$-conjugate:
+
+$$
+\boxed{
+\mathbf{d}_i^\top A\mathbf{d}_j=0,
+\qquad
+\forall i\neq j.
+}
+$$
+
+<div class="proof-end">□</div>
+</div>
+</details>
 
 ### 5.3 Stochastic estimation
 
