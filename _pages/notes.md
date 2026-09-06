@@ -14,6 +14,7 @@ nav_order: 3
 - [Moment-Generating Function](/assets/pdf/MGF.pdf)
 - [Sub-Gaussian Random Variable and its Tail Bound](/assets/pdf/SubGaussian.pdf)
 - [Common Concentration Inequalities](/assets/pdf/Inequalities.pdf)
+- [Pinsker’s Inequality](/assets/pdf/Pinsker.pdf)
 - [Rademacher Complexity](/assets/pdf/Rademacher.pdf)
 - [Gumbel-Max, Gumbel-Softmax and Straight-Through](/assets/pdf/Gumbel_Max.pdf)
 - [Log-Derivative Trick](/assets/pdf/Log_Derivative_Trick.pdf)
