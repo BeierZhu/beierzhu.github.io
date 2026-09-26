@@ -1691,17 +1691,19 @@ ninja-keys::part(ninja-input-wrapper) {
 .selected-publications {
   position: relative;
 
-  .links {
-    a.btn {
-      padding-left: 0.4rem;
-      padding-right: 0.4rem;
-      padding-top: 0.05rem;
-      padding-bottom: 0.05rem;
-      font-size: 0.68rem;
-    }
-  }
-
   ol.bibliography {
+    > li {
+      .links {
+        a.btn {
+          padding-left: 0.28rem;
+          padding-right: 0.28rem;
+          padding-top: 0;
+          padding-bottom: 0;
+          font-size: 0.62rem;
+          line-height: 1.25;
+        }
+      }
+    }
 
     // Hide entries after the 8th one
     >li:nth-child(n+9) {
