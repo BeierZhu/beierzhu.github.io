@@ -1,3 +1,72 @@
+@inproceedings{zhao2026thinkingimagescontinuousactions,
+      title={Thinking with images as continuous actions: Numerical visual chain-of-thought}, 
+      author={Kesen Zhao and Beier Zhu^ and Junbao Zhou and Xingyu Zhu and Zhongqi Yue and Hanwang Zhang},
+      year={2026},
+      arxiv={2602.23959},
+      abbr={NeurIPS},
+      bibtex_show={true},
+      award={Oral},
+      class={MLLMs Reasoning},
+      supclass={multimodal learning},
+      code={https://github.com/kesenzhao/NV-CoT},
+      booktitle={Advances in Neural Information Processing Systems},
+      abstract={Recent multimodal large language models (MLLMs) increasingly rely on visual chain-of-thought to perform region-grounded reasoning over images. However, existing approaches ground regions via either textified coordinates-causing modality mismatch and semantic fragmentation or fixed-granularity patches that both limit precise region selection and often require non-trivial architectural changes. In this paper, we propose Numerical Visual Chain-of-Thought (NV-CoT), a framework that enables MLLMs to reason over images using continuous numerical coordinates. NV-CoT expands the MLLM action space from discrete vocabulary tokens to a continuous Euclidean space, allowing models to directly generate bounding-box coordinates as actions with only minimal architectural modification. The framework supports both supervised fine-tuning and reinforcement learning. In particular, we replace categorical token policies with a Gaussian (or Laplace) policy over coordinates and introduce stochasticity via reparameterized sampling, making NV-CoT fully compatible with GRPO-style policy optimization. Extensive experiments on three benchmarks against eight representative visual reasoning baselines demonstrate that NV-CoT significantly improves localization precision and final answer accuracy, while also accelerating training convergence, validating the effectiveness of continuous-action visual reasoning in MLLMs.}
+}
+
+@inproceedings{
+anonymous2026beyond,
+title={Beyond {SFT}-to-{RL}: Pre-alignment via black-box on-policy distillation for multimodal {RL}},
+author={Sudong Wang and Weiquan Huang and Xiaomin Yu and Zuhao Yang and Hehai Lin and Keming Wu and Chaojun Xiao and Chen Chen, Wenxuan Wang and Beier Zhu and Yunjian Zhang and Chengwei Qin},
+abbr={NeurIPS},
+booktitle={Advances in Neural Information Processing Systems},
+year={2026},
+projectpage={https://xiao4579.github.io/PRISM/},
+arxiv={2604.28123},
+code={https://github.com/XIAO4579/PRISM},
+bibtex_show={true},
+abstract={The standard post-training recipe for large multimodal models (LMMs) applies supervised fine-tuning (SFT) on curated demonstrations followed by reinforcement learning with verifiable rewards (RLVR). However, SFT introduces distributional drift that neither preserves the model's original capabilities nor faithfully matches the supervision distribution. This problem is further amplified in multimodal reasoning, where perception errors and reasoning failures follow distinct drift patterns that compound during subsequent RL. We introduce \textbf{PRISM}, a three-stage pipeline that mitigates this drift by inserting an explicit distribution-alignment stage between SFT and RLVR. Building on the principle of on-policy distillation (OPD), PRISM casts alignment as a black-box, response-level adversarial game between the policy and a Mixture-of-Experts (MoE) discriminator with dedicated perception and reasoning experts, providing disentangled corrective signals that steer the policy toward the supervision distribution without requiring access to teacher logits. While 1.26M public demonstrations suffice for broad SFT initialization, distribution alignment demands higher-fidelity supervision; we therefore curate 113K additional demonstrations from Gemini~3 Flash, featuring dense visual grounding and step-by-step reasoning on the hardest unsolved problems. Experiments on Qwen3-VL show that PRISM consistently improves downstream RLVR performance across multiple RL algorithms (GRPO, DAPO, GSPO) and diverse multimodal benchmarks, improving average accuracy by +4.4 and +6.0 points over the SFT-to-RLVR baseline on 4B and 8B, respectively.}
+}
+
+@inproceedings{
+anonymous2026toporefine,
+title={TopoRefine: Topology-aware correspondence and residual refinement for training-free subject-consistent generation},
+author={Zhanxin Gao and Zexin Ti and Chen Zhao and Beier Zhu and Xiantao Hu and Yanhao Ge and Jian Yang and Ying Tai},
+booktitle={Advances in Neural Information Processing Systems},
+abbr={NeurIPS},
+abstract={Subject-consistent generation (SCG) aims to preserve subject identity across diverse text-driven contexts. Recent training-free methods move beyond global sharing via correspondence-aware identity transfer. However, semantic-driven correspondence may transfer identity features to appearance-similar but structurally incompatible regions. Meanwhile, extended attention, commonly used in existing methods, enhances identity consistency but may perturb the emerging target structure, from global pose and layout to local structural details. Together, these issues can cause reference-pose over-copying, local structural artifacts, and degraded structural fidelity. We view training-free SCG as controlled identity injection, where the pretrained model determines the target structure, while the reference image provides subject identity. We propose TopoRefine, a training-free framework with Topology-aware Subject Correspondence (TSC) and Residual Identity Refinement (RIR). TSC regularizes semantic matching with subject-internal geodesic relations for structurally compatible identity transfer, while RIR injects reference identity as a foreground-gated, magnitude-aligned residual to preserve the emerging target structure. Both qualitative and quantitative results show that TopoRefine improves subject consistency while better preserving target-driven structure.},
+year={2026},
+bibtex_show={true},
+}
+
+@article{zhu2026generalized,
+  title={Generalized logit adjustment: Improved fine-tuning by mitigating label bias in zero-shot vision models},
+  author={Zhu, Beier and Sun, Qianru and Yang, Xun and Zhang, Hanwang},
+  journal={International Journal of Computer Vision},
+  volume={134},
+  bibtex_show={true},
+  abbr={IJCV},
+  number={9},
+  pages={426},
+  class={Imbalanced Learning},
+  supclass={robust learning},
+  pdf={https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=12291&context=sis_research},
+  year={2026},
+  abstract={Foundation models like CLIP allow zero-shot transfer on various tasks without additional training data. Yet, the zero-shot
+performance is less competitive than a fully supervised one. Thus, fine-tuning and ensembling are also commonly adopted
+to better fit the downstream tasks. However, we argue that such prior work has overlooked the inherent biases in foundation
+models. Due to the highly imbalanced Web-scale training set, foundation models are inevitably skewed toward frequent
+semantics, and thus the subsequent fine-tuning or ensembling is still biased. In this study, we systematically examine the
+biases in foundation models and demonstrate the efficacy of our proposed Generalized Logit Adjustment (GLA) method.
+Note that bias estimation in foundation models is challenging, as most pre-train data cannot be explicitly accessed like
+in traditional long-tailed classification tasks. To this end, GLA offers two alternative methods for debiasing: the first is an
+optimization-based bias estimation built on Bayes optimal criterion, and the second identifies label bias through an eigenvector
+derived from a matrix of zero-shot predictions. As our work resolves a fundamental flaw in the pre-training, the proposed
+GLA demonstrates significant improvements across a diverse range of tasks: it achieves 1.5 pp accuracy gains on ImageNet,
+a large average improvement (1.9−4.4 pp) on 11 few-shot datasets, 2.4 pp gains on long-tailed classification.},
+website={https://link.springer.com/article/10.1007/s11263-026-03012-w}
+ }
+
+
 @inproceedings{
 huang2026layer,
 title={Layer roles matter: Mitigating modality imbalance in multimodal emotion reasoning via adaptive layer profiling},
@@ -5,10 +74,29 @@ author={Pengyu Huang and Peipei Song and Beier Zhu^ and Zhiyuan Han and Jinpeng 
 booktitle={ACM International Conference on Multimedia},
 year={2026},
 abbr={MM},
+award={Oral},
+projectpage={https://pengyuhuang1.github.io/LAMR/},
+code={https://github.com/PengyuHuang1/LAMR},
 class={MLLMs Reasoning},
 supclass={multimodal learning},
 abstract={Multimodal Emotion Reasoning (MER) requires perceiving and integrating emotion cues from multiple modalities. Recent advances increasingly leverage Multimodal Large Language Models (MLLMs) to enhance reasoning capacity. However, due to the inherent heterogeneity in conveying emotions across modalities, these models often suffer from modality imbalance and confront flawed emotion understanding. In this paper, we conduct an in-depth analysis on MER models and uncover two key empirical insights. (i) In MER, modality imbalance manifests two distinct failure modes---unimodal over-reliance and insufficient cross-modal utilization, which call for different intervention strategies. (ii) MLLM layers exhibit implicit functional hierarchies in multimodal emotion processing, playing separable roles in stabilizing unimodal representations and integrating cross-modal information. Motivated by these observations, we propose a Layer-Aware Modality Rebalancing (LAMR) framework by explicitly aligning intervention strategies with layer roles. Specifically, we first introduce two quantized metrics for adaptive layer role profiling. In each layer, Modality Entropy (ME) measures the dispersion of modality contributions, and Cross-modal Intensity (CMI) captures the strength of cross-modal interactions. Then, we respectively enhance modality equilibrium in stabilization layers and cross-modal propagation in integration layers. Extensive experiments on two comprehensive MER benchmarks demonstrate that LAMR effectively mitigates modality imbalance and improves emotion reasoning across diverse MLLM backbones, without additional training.}
 }
+
+
+@article{cui2025generalized,
+  bibtex_show={true},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+  arxiv={2503.08038},
+  title={Generalized kullback-leibler divergence loss},
+  author={Cui, Jiequan and Zhu, Beier and Xu, Qingshan and Tian, Zhuotao and Qi, Xiaojuan and Yu, Bei and Zhang, Hanwang and Hong, Richang},
+  class={Robustness},
+  supclass={robust learning},
+  year={2026},
+  abbr={TPAMI},
+  code={https://github.com/jiequancui/DKL},
+  abstract={In this paper, we delve deeper into the Kullback-Leibler (KL) Divergence loss and mathematically prove that it is equivalent to the Decoupled Kullback-Leibler (DKL) Divergence loss that consists of (1) a weighted Mean Square Error (wMSE) loss and (2) a Cross-Entropy loss incorporating soft labels. Thanks to the decoupled structure of DKL loss, we have identified two areas for improvement. Firstly, we address the limitation of KL loss in scenarios like knowledge distillation by breaking its asymmetric optimization property along with a smoother weight function. This modification effectively alleviates convergence challenges in optimization, particularly for classes with high predicted scores in soft labels. Secondly, we introduce class-wise global information into KL/DKL to reduce bias arising from individual samples. With these two enhancements, we derive the Generalized Kullback-Leibler (GKL) Divergence loss and evaluate its effectiveness by conducting experiments on CIFAR-10/100, ImageNet, and vision-language datasets, focusing on adversarial training, and knowledge distillation tasks. Specifically, we achieve new state-of-the-art adversarial robustness on the public leaderboard -- RobustBench and competitive knowledge distillation performance across CIFAR/ImageNet models and CLIP models, demonstrating the substantial practical merits.}
+}
+
 
 @article{chen2025detailtrainingfreeenhancertexttoimage,
       title={Detail++: Training-free detail enhancer for text-to-image diffusion models}, 
@@ -21,7 +109,7 @@ abstract={Multimodal Emotion Reasoning (MER) requires perceiving and integrating
       abstract={Recent advances in text-to-image (T2I) generation have led to impressive visual results. However, these models still face significant challenges when handling complex prompt, particularly those involving multiple subjects with distinct attributes. Inspired by the human drawing process, which first outlines the composition and then incrementally adds details, we propose Detail++, a training-free framework that introduces a novel Progressive Detail Injection (PDI) strategy to address this limitation. Specifically, we decompose a complex prompt into a sequence of simplified sub-prompts, guiding the generation process in stages. This staged generation leverages the inherent layout-controlling capacity of self-attention to first ensure global composition, followed by precise refinement. To achieve accurate binding between attributes and corresponding subjects, we exploit cross-attention mechanisms and further introduce a Centroid Alignment Loss at test time to reduce binding noise and enhance attribute consistency. Extensive experiments on T2I-CompBench and a newly constructed style composition benchmark demonstrate that Detail++ significantly outperforms existing methods, particularly in scenarios involving multiple objects and complex stylistic conditions.},
       journal={IEEE Transactions on Image Processing},
       code={https://github.com/clf28/Detail-plus-plus/tree/main},
-      website={https://detail-plus-plus.github.io/},
+      projectpage={https://detail-plus-plus.github.io/},
       }
 
 
@@ -65,7 +153,7 @@ abbr={ICML},
 bibtex_show={true},
 arxiv={2606.25325}, 
 code={https://github.com/ZhiyuanHan-Aaron/OPPO},
-website={https://zjycutieee.github.io/OPPO-page/},
+projectpage={https://zjycutieee.github.io/OPPO-page/},
 abstract={Recent Omni-MLLMs are driving a paradigm shift in multimodal emotion recognition from label-only prediction toward Multimodal Emotion Reasoning (MER), where models output both emotions and textual explanations grounded in visual, acoustic, and linguistic signals. However, we show that current emotion-oriented Omni-MLLMs still lack reliable omni-modal perception: they (i) underutilize multimodal cues in their reasoning trajectories and (ii) exhibit unfaithful behavior, often hallucinating modality-specific statements from other modalities. Building on these insights, we propose OPPO (Omni-Perception Policy Optimization), a reinforcement learning framework that explicitly optimizes multimodal perception. First, an Omni-Perception Reward decomposes ground-truth reasoning into fine-grained visual, acoustic, and emotion cues and rewards trajectories that semantically recover these cues. Second, an Omni-Perception Loss compares the policy under full and unimodally masked inputs, applying a KL penalty only to modality-specific evidence tokens to suppress cross-modal hallucination. We further introduce MEP-Bench, a diagnostic benchmark that quantifies utilization and faithfulness. Experiments show that OPPO achieves state-of-the-art performance on MER-UniBench and substantially improves utilization and faithfulness scores on MEP-Bench, highlighting the importance of sufficient and faithful omni perception for multimodal emotion reasoning.},
 }
 
@@ -81,6 +169,8 @@ supclass={others},
 abbr={ACL},
 arxiv={2601.20352}, 
 bibtex_show={true},
+code={https://github.com/Sherlockwz/AMA},
+projectpage={https://sherlockwz.github.io/AMA/},
 abstract={The rapid evolution of Large Language Model (LLM) agents has necessitated robust memory systems to support cohesive long-term interaction and complex reasoning. Benefiting from the strong capabilities of LLMs, recent research focus has shifted from simple context extension to the development of dedicated agentic memory systems. However, existing approaches typically rely on rigid retrieval granularity, accumulation-heavy maintenance strategies, and coarse-grained update mechanisms. These design choices create a persistent mismatch between stored information and task-specific reasoning demands, while leading to the unchecked accumulation of logical inconsistencies over time. To address these challenges, we propose Adaptive Memory via Multi-Agent Collaboration (AMA), a novel framework that leverages coordinated agents to manage memory across multiple granularities. AMA employs a hierarchical memory design that dynamically aligns retrieval granularity with task complexity. Specifically, the Constructor and Retriever jointly enable multi-granularity memory construction and adaptive query routing. The Judge verifies the relevance and consistency of retrieved content, triggering iterative retrieval when evidence is insufficient or invoking the Refresher upon detecting logical conflicts. The Refresher then enforces memory consistency by performing targeted updates or removing outdated entries. Extensive experiments on challenging long-context benchmarks show that AMA significantly outperforms state-of-the-art baselines while reducing token consumption by approximately 80\% compared to full-context methods, demonstrating its effectiveness in maintaining retrieval precision and long-term memory consistency.},
 }
 
@@ -100,18 +190,6 @@ bibtex_show={true},
 abstract={Large Vision-Language Models (LVLMs) exhibit powerful generative capabilities but frequently produce hallucinations that compromise output reliability. Fine-tuning on annotated data devoid of hallucinations offers the most direct solution, while its high computational cost motivates recent representation-based methods, which focus on mitigating hallucinatory components within hidden representations. Though efficient, we empirically observe that these methods degrade general generation capacity due to incomplete extraction of hallucination components and non-selective parameter updates. To address these limitations, we propose MPD, a dual-stage framework for mitigating hallucinations without performance degradation. Specifically, our MPD relies on two essential factors: (1) semantic-aware component disentanglement to extract pure hallucination components, and (2) interpretable parameter updates that selectively modify parameters most relevant to hallucination. Extensive experiments demonstrate that MPD achieves state-of-the-art performance, reducing hallucinations by 23.4\% while maintaining 97.4\% of general generative capability as evaluated on LLaVA-Bench and MME, with no additional computational cost.},
 }
 
-@misc{zhao2026thinkingimagescontinuousactions,
-      title={Thinking with images as continuous actions: Numerical visual chain-of-thought}, 
-      author={Kesen Zhao and Beier Zhu^ and Junbao Zhou and Xingyu Zhu and Zhongqi Yue and Hanwang Zhang},
-      year={2026},
-      arxiv={2602.23959},
-      abbr={arXiv},
-      bibtex_show={true},
-      class={MLLMs Reasoning},
-      supclass={multimodal learning},
-      code={https://github.com/kesenzhao/NV-CoT},
-      abstract={Recent multimodal large language models (MLLMs) increasingly rely on visual chain-of-thought to perform region-grounded reasoning over images. However, existing approaches ground regions via either textified coordinates-causing modality mismatch and semantic fragmentation or fixed-granularity patches that both limit precise region selection and often require non-trivial architectural changes. In this paper, we propose Numerical Visual Chain-of-Thought (NV-CoT), a framework that enables MLLMs to reason over images using continuous numerical coordinates. NV-CoT expands the MLLM action space from discrete vocabulary tokens to a continuous Euclidean space, allowing models to directly generate bounding-box coordinates as actions with only minimal architectural modification. The framework supports both supervised fine-tuning and reinforcement learning. In particular, we replace categorical token policies with a Gaussian (or Laplace) policy over coordinates and introduce stochasticity via reparameterized sampling, making NV-CoT fully compatible with GRPO-style policy optimization. Extensive experiments on three benchmarks against eight representative visual reasoning baselines demonstrate that NV-CoT significantly improves localization precision and final answer accuracy, while also accelerating training convergence, validating the effectiveness of continuous-action visual reasoning in MLLMs.}
-}
 
 @inproceedings{
 zhu2026principled,
@@ -481,18 +559,6 @@ In this survey, we provide an overview of the three biases prevalent in visual c
   website={https://openaccess.thecvf.com/content/CVPR2025/html/Jiang_Devils_in_Middle_Layers_of_Large_Vision-Language_Models_Interpreting_Detecting_CVPR_2025_paper.html}
 }
 
-@unpublished{cui2025generalized,
-  bibtex_show={true}, 
-  arxiv={2503.08038},
-  title={Generalized kullback-leibler divergence loss},
-  author={Cui, Jiequan and Zhu, Beier and Xu, Qingshan and Tian, Zhuotao and Qi, Xiaojuan and Yu, Bei and Zhang, Hanwang and Hong, Richang},
-  class={Robustness},
-  supclass={robust learning},
-  year={2025},
-  abbr={arXiv},
-  code={https://github.com/jiequancui/DKL},
-  abstract={In this paper, we delve deeper into the Kullback-Leibler (KL) Divergence loss and mathematically prove that it is equivalent to the Decoupled Kullback-Leibler (DKL) Divergence loss that consists of (1) a weighted Mean Square Error (wMSE) loss and (2) a Cross-Entropy loss incorporating soft labels. Thanks to the decoupled structure of DKL loss, we have identified two areas for improvement. Firstly, we address the limitation of KL loss in scenarios like knowledge distillation by breaking its asymmetric optimization property along with a smoother weight function. This modification effectively alleviates convergence challenges in optimization, particularly for classes with high predicted scores in soft labels. Secondly, we introduce class-wise global information into KL/DKL to reduce bias arising from individual samples. With these two enhancements, we derive the Generalized Kullback-Leibler (GKL) Divergence loss and evaluate its effectiveness by conducting experiments on CIFAR-10/100, ImageNet, and vision-language datasets, focusing on adversarial training, and knowledge distillation tasks. Specifically, we achieve new state-of-the-art adversarial robustness on the public leaderboard -- RobustBench and competitive knowledge distillation performance across CIFAR/ImageNet models and CLIP models, demonstrating the substantial practical merits.}
-}
 
 @article{beier2024towards,
   title={Towards unbiased, accurate and robust fine-tuning of zero-shot vision models},

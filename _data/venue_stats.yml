@@ -1,5 +1,5 @@
-- count: 5
-  first_corresponding: 4
+- count: 8
+  first_corresponding: 5
   venue: NeurIPS
 - count: 7
   first_corresponding: 3
@@ -22,12 +22,15 @@
 - count: 2
   first_corresponding: 0
   venue: ACL
-- count: 1
+- count: 2
   first_corresponding: 1
   venue: TPAMI
+- count: 1
+  first_corresponding: 1
+  venue: IJCV
 - count: 3
   first_corresponding: 2
   venue: TIP
-- count: 6
-  first_corresponding: 5
+- count: 4
+  first_corresponding: 4
   venue: Others

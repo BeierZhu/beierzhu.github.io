@@ -92,6 +92,7 @@ def compute_stats(papers):
         "MM",
         "ACL",
         "TPAMI",
+        "IJCV",
         "TIP",
         "Others",
     ]
@@ -121,7 +122,9 @@ def compute_stats(papers):
 
 def compute_summary(papers):
     total = len(papers)
-    first_corresponding = sum(1 for p in papers if is_first_or_corresponding(p["authors"]))
+    first_corresponding = sum(
+        1 for p in papers if is_first_or_corresponding(p["authors"])
+    )
 
     award_counts = defaultdict(int)
     for p in papers:
