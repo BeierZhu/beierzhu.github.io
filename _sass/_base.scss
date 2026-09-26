@@ -933,12 +933,12 @@ footer.sticky-bottom {
         a.btn {
           color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
-          padding-left: 0.6rem;
-          padding-right: 0.6rem;
-          padding-top: 0.1rem;
-          padding-bottom: 0.1rem;
+          padding-left: 0.28rem;
+          padding-right: 0.28rem;
+          padding-top: 0;
+          padding-bottom: 0;
           margin-left: 0;
-          font-size: 0.75rem;
+          font-size: 0.68rem;
 
           &:hover {
             color: var(--global-theme-color);
@@ -1123,11 +1123,12 @@ footer.sticky-bottom {
           a.btn {
             color: var(--global-text-color);
             border: 1px solid var(--global-text-color);
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 0.25rem;
-            padding-bottom: 0.25rem;
+            padding-left: 0.28rem;
+            padding-right: 0.28rem;
+            padding-top: 0;
+            padding-bottom: 0;
             margin-left: 0;
+            font-size: 0.68rem;
 
             &:hover {
               color: var(--global-theme-color);
@@ -1692,19 +1693,6 @@ ninja-keys::part(ninja-input-wrapper) {
   position: relative;
 
   ol.bibliography {
-    > li {
-      .links {
-        a.btn {
-          padding-left: 0.28rem;
-          padding-right: 0.28rem;
-          padding-top: 0;
-          padding-bottom: 0;
-          font-size: 0.62rem;
-          line-height: 1.25;
-        }
-      }
-    }
-
     // Hide entries after the 8th one
     >li:nth-child(n+9) {
       display: none;
