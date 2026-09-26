@@ -1,3 +1,36 @@
+- supclass: LLMs & VLMs
+  total: 20
+  classes:
+  - name: Affective Intelligence
+    count: 3
+  - name: Agent
+    count: 2
+  - name: Hallucination Mitigation
+    count: 3
+  - name: Model Merging
+    count: 1
+  - name: Reasoning
+    count: 3
+  - name: Robust Adaptation
+    count: 6
+  - name: Safety
+    count: 2
+- supclass: Diffusion Models
+  total: 11
+  classes:
+  - name: Diffusion Theory
+    count: 4
+  - name: Image Generation
+    count: 5
+  - name: Video Generation
+    count: 2
+- supclass: Learning Foundations
+  total: 11
+  classes:
+  - name: Generalization & Robustness
+    count: 4
+  - name: Imbalanced & Fair Learning
+    count: 7
 - supclass: Others
   total: 7
   classes:

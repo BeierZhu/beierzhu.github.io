@@ -1773,8 +1773,8 @@ ninja-keys::part(ninja-input-wrapper) {
 .stats-tables-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin: 1.5rem 0;
+  gap: 1.25rem;
+  margin: 1.25rem 0;
   align-items: flex-start;
 }
 
@@ -1785,13 +1785,14 @@ ninja-keys::part(ninja-input-wrapper) {
   table {
     width: auto;
     border-collapse: collapse;
-    font-size: 1rem;
+    font-size: 0.85rem;
 
     caption {
       caption-side: top;
       font-weight: normal;
-      padding-bottom: 0.5rem;
+      padding-bottom: 0.3rem;
       text-align: left;
+      font-size: 0.9rem;
     }
 
     caption b {
@@ -1800,10 +1801,10 @@ ninja-keys::part(ninja-input-wrapper) {
 
     th,
     td {
-      padding: 0.3rem 1rem;
+      padding: 0.2rem 0.6rem;
       text-align: center;
       border: 1px solid var(--global-divider-color);
-      font-size: 1rem;
+      font-size: 0.85rem;
     }
 
     th {

@@ -12,11 +12,17 @@ from pathlib import Path
 BIB_FILE = Path(__file__).parent.parent / "_bibliography" / "papers.bib"
 OUTPUT_FILE = Path(__file__).parent.parent / "_data" / "class_stats.yml"
 
-SUPCLASS_ORDER = ["LLMs & VLMs", "Diffusion Models", "Learning Foundations", "others"]
+SUPCLASS_ORDER = [
+    "llms & vlms",
+    "diffusion models",
+    "learning foundations",
+    "others",
+]
+
 SUPCLASS_DISPLAY = {
-    "LLMs & VLMs": "LLMs & VLMs",
-    "Diffusion Models": "Diffusion Models",
-    "Learning Foundations": "Learning Foundations",
+    "llms & vlms": "LLMs & VLMs",
+    "diffusion models": "Diffusion Models",
+    "learning foundations": "Learning Foundations",
     "others": "Others",
 }
 
