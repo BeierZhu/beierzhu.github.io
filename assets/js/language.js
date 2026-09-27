@@ -96,7 +96,8 @@
   }
 
   function applySiteLanguage(language, persist) {
-    const nextLanguage = language === 'zh' ? 'zh' : 'en';
+    const requestedLanguage = language || document.documentElement.dataset.language || readLanguage();
+    const nextLanguage = requestedLanguage === 'zh' ? 'zh' : 'en';
     const dictionary = translations[nextLanguage];
     document.documentElement.dataset.language = nextLanguage;
     document.documentElement.lang = nextLanguage === 'zh' ? 'zh-CN' : 'en';

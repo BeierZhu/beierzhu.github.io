@@ -100,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
     expanded = !expanded;
     if (expanded) {
       pubSection.classList.add('expanded');
-      toggleBtn.textContent = 'Show Less';
     } else {
       pubSection.classList.remove('expanded');
     }
