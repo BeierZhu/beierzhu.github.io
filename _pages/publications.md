@@ -15,7 +15,9 @@ nav_order: 2
 
 <!-- Bibsearch Feature -->
 
- <i class="fa-solid fa-handshake" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> and <i class="fa-solid fa-envelope" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> denote equal contribution and corresponding authorship. You can find full list of my publications on my [Google Scholar](https://scholar.google.com/citations?hl=en&user=jHczmjwAAAAJ). 
+ <i class="fa-solid fa-handshake" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i>
+ <span class="language-content language-inline" data-language-content="en">and <i class="fa-solid fa-envelope" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> denote equal contribution and corresponding authorship. You can find full list of my publications on my <a href="https://scholar.google.com/citations?hl=en&amp;user=jHczmjwAAAAJ">Google Scholar</a>.</span>
+ <span class="language-content language-inline" data-language-content="zh">和 <i class="fa-solid fa-envelope" style="font-size: 0.7em; vertical-align: super; margin-left: 1px;"></i> 表示共同贡献和通讯作者。可以在 <a href="https://scholar.google.com/citations?hl=en&amp;user=jHczmjwAAAAJ">Google Scholar</a> 查看我的完整论文列表。</span>
 
 <div class="stats-tables-container">
 <div class="venue-stats-table">
