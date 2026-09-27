@@ -6,6 +6,7 @@
     en: {
       'nav.about': 'about',
       'nav.publications': 'publications',
+      'nav.patents': 'patents',
       'nav.notes': 'notes',
       'nav.blog': 'blog',
       'home.professor': 'Professor',
@@ -16,6 +17,7 @@
       'home.viewMore': 'View More Publications',
       'home.showLess': 'Show Less',
       'page.publications': 'Publications',
+      'page.patents': 'Patents',
       'page.notes': 'Notes',
       'page.blog': 'Blog',
       'page.references': 'References',
@@ -44,7 +46,8 @@
     },
     zh: {
       'nav.about': '关于',
-      'nav.publications': '发表论文',
+      'nav.publications': '论文',
+      'nav.patents': '专利',
       'nav.notes': '笔记',
       'nav.blog': '博客',
       'home.professor': '教授',
@@ -55,6 +58,7 @@
       'home.viewMore': '查看更多论文',
       'home.showLess': '收起',
       'page.publications': '发表论文',
+      'page.patents': '专利',
       'page.notes': '笔记',
       'page.blog': '博客',
       'page.references': '参考文献',

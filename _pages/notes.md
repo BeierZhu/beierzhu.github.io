@@ -7,7 +7,7 @@ description: Personal notes and research insights.
 description_en: Personal notes and research insights.
 description_zh: 个人笔记与研究心得。
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 - [论文写作](/assets/pdf/论文写作.pdf)

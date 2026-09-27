@@ -6,6 +6,8 @@ layout: default
     <h2 class="post-title">
       {% if page.permalink == '/publications/' %}
         <span data-i18n="page.publications">{{ page.titledisplay }}</span>
+      {% elsif page.permalink == '/patents/' %}
+        <span data-i18n="page.patents">{{ page.titledisplay }}</span>
       {% elsif page.permalink == '/notes/' %}
         <span data-i18n="page.notes">{{ page.titledisplay }}</span>
       {% else %}
