@@ -25,9 +25,9 @@ social: true # includes social icons at the bottom of the page
 </div>
 
 <div class="language-content language-block" data-language-content="zh">
-<p><b>经历</b>：我目前是<a href="https://en.ustc.edu.cn/">中国科学技术大学</a>（USTC）教授。在加入 USTC 之前，我曾是<a href="https://mreallab.github.io/">MReaL Lab</a>研究员，就职于<a href="https://www.ntu.edu.sg/">南洋理工大学</a>（NTU），并与<a href="https://personal.ntu.edu.sg/hanwangzhang/">Hanwang Zhang 教授</a>合作。我在<a href="https://www.ntu.edu.sg/">南洋理工大学</a>获得博士学位，获<a href="https://aisingapore.org/research/phd-fellowship-programme/">AISG PhD</a>项目资助。此前，我于 2016 年和 2019 年分别获得<a href="https://www.tsinghua.edu.cn/en/">清华大学</a>学士和硕士学位。</p>
+<p><b>经历</b>：我目前是<a href="https://en.ustc.edu.cn/">中国科学技术大学</a>教授。我曾是<a href="https://mreallab.github.io/">MReaL Lab</a>研究员，就职于<a href="https://www.ntu.edu.sg/">南洋理工大学</a>，并与<a href="https://personal.ntu.edu.sg/hanwangzhang/">张含望教授</a>合作。我在<a href="https://www.ntu.edu.sg/">南洋理工大学</a>获得博士学位，获<a href="https://aisingapore.org/research/phd-fellowship-programme/">AISG PhD</a>项目资助。此前，我于 2016 年和 2019 年分别获得<a href="https://www.tsinghua.edu.cn/en/">清华大学</a>学士和硕士学位。</p>
 
-<p><b>研究方向</b>：我的研究主要集中在<b>基础模型</b>，尤其关注多模态推理、智能体智能、情感智能、可控且高效的扩散生成，以及可靠的模型适配。同时，我也研究<b>鲁棒学习和有原则的优化方法</b>，这些方向为改进基础模型提供理论基础。</p>
+<p><b>研究方向</b>：我的研究主要集中在<b>大模型</b>，尤其关注多模态推理、智能体智能、情感智能、可控且高效的扩散生成，以及可靠的模型适配。同时，我也研究<b>鲁棒机器学习和优化方法</b>，这些方向为改进基础模型提供理论基础。</p>
 </div>
 
  
@@ -47,10 +47,15 @@ social: true # includes social icons at the bottom of the page
 {% assign news = site.news | reverse %}
 {% for item in news limit: site.news_limit %}
   <tr>
-    <td style="width: 20%">{{ item.date | date: "%b, %Y" }}</td>
+    <td style="width: 20%">
+      <span class="language-content language-inline" data-language-content="en">{{ item.date | date: "%b, %Y" }}</span>
+      <span class="language-content language-inline" data-language-content="zh">{{ item.date | date: "%Y年%-m月" }}</span>
+    </td>
     <td>
       {% if item.inline %}
-        {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+        {% assign news_key = item.path | remove: '_news/' | remove: '.md' %}
+        <span class="language-content language-inline" data-language-content="en">{{ item.content | remove: '<p>' | remove: '</p>' | emojify }}</span>
+        <span class="language-content language-inline" data-language-content="zh">{{ site.data.news_zh[news_key] | emojify }}</span>
       {% else %}
         <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
       {% endif %}
