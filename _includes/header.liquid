@@ -5,19 +5,23 @@
       {% if page.permalink != '/' %}
         <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
           {% if site.title == 'blank' %}
-            {% if site.first_name %}
-              <span class="font-weight-bold">
-                {{- site.first_name -}}
-              </span>
-            {% endif %}
-            {% if site.middle_name %}
-              {{- site.middle_name -}}
-            {% endif %}
-            {% if site.last_name %}
-              {{- site.last_name -}}
-            {% endif %}
+            <span class="language-content language-inline" data-language-content="en">
+              {% if site.first_name %}
+                <span class="font-weight-bold">
+                  {{- site.first_name -}}
+                </span>
+              {% endif %}
+              {% if site.middle_name %}
+                {{- site.middle_name -}}
+              {% endif %}
+              {% if site.last_name %}
+                {{- site.last_name -}}
+              {% endif %}
+            </span>
+            <span class="language-content language-inline" data-language-content="zh">朱贝尔</span>
           {% else %}
-            {{- site.title -}}
+            <span class="language-content language-inline" data-language-content="en">{{- site.title -}}</span>
+            <span class="language-content language-inline" data-language-content="zh">朱贝尔</span>
           {% endif %}
         </a>
       {% elsif site.enable_navbar_social %}
