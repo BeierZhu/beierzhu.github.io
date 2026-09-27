@@ -34,5 +34,6 @@ module.exports = {
       /^definition-/,
       /^theorem-/,
     ],
+    greedy: [/data-language/],
   },
 };
