@@ -527,7 +527,8 @@ ul.task-list input[type="checkbox"] {
 }
 
 #light-toggle,
-#search-toggle {
+#search-toggle,
+#language-toggle {
   padding: 0;
   border: 0;
   background-color: inherit;
@@ -535,6 +536,37 @@ ul.task-list input[type="checkbox"] {
 
   &:hover {
     color: var(--global-hover-color);
+  }
+}
+
+.language-toggle-container {
+  display: flex;
+  align-items: center;
+  margin-left: 0.35rem;
+
+  #language-toggle {
+    min-width: 1.8rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+}
+
+// Client-side bilingual content
+.language-content[data-language-content="zh"] {
+  display: none;
+}
+
+html[data-language="zh"] {
+  .language-content[data-language-content="en"] {
+    display: none;
+  }
+
+  .language-content.language-block[data-language-content="zh"] {
+    display: block;
+  }
+
+  .language-content.language-inline[data-language-content="zh"] {
+    display: inline;
   }
 }
 

@@ -10,7 +10,8 @@ nav_order: 2
 
 <!-- _pages/publications.md -->
 
-<p class="post-description">Published {{ site.data.summary_stats.total }} papers in top venues, including {{ site.data.summary_stats.first_corresponding }} as first or corresponding author and {{ site.data.summary_stats.distinguished }} Oral/Spotlight/Highlight.</p>
+<p class="post-description language-content language-block" data-language-content="en">Published {{ site.data.summary_stats.total }} papers in top venues, including {{ site.data.summary_stats.first_corresponding }} as first or corresponding author and {{ site.data.summary_stats.distinguished }} Oral/Spotlight/Highlight.</p>
+<p class="post-description language-content language-block" data-language-content="zh">已发表 {{ site.data.summary_stats.total }} 篇论文，其中 {{ site.data.summary_stats.first_corresponding }} 篇为第一作者或通讯作者，{{ site.data.summary_stats.distinguished }} 篇获得 Oral/Spotlight/Highlight。</p>
 
 <!-- Bibsearch Feature -->
 
@@ -19,11 +20,15 @@ nav_order: 2
 <div class="stats-tables-container">
 <div class="venue-stats-table">
 <table>
-  <caption>By Venue and Authorship</caption>
+  <caption data-i18n="publications.byVenue">By Venue and Authorship</caption>
   <tr class="total-row">
-      <td><b>Venue</b></td>
-      <td><b>Papers</b></td>
-      <td><b>1<sup>st</sup> and <i class="fa-solid fa-envelope"></i></b></td>
+      <td><b data-i18n="publications.venue">Venue</b></td>
+      <td><b data-i18n="publications.papers">Papers</b></td>
+      <td><b>
+        <span class="language-content language-inline" data-language-content="en">1<sup>st</sup> and</span>
+        <span class="language-content language-inline" data-language-content="zh">第一作者及</span>
+        <i class="fa-solid fa-envelope"></i>
+      </b></td>
     </tr>
   <tbody>
     {% assign total_count = 0 %}
@@ -38,7 +43,7 @@ nav_order: 2
     </tr>
     {% endfor %}
     <tr class="total-row">
-      <td><b>Total</b></td>
+       <td><b data-i18n="publications.total">Total</b></td>
       <td><b>{{ total_count }}</b></td>
       <td><b>{{ total_fc }}</b></td>
     </tr>
@@ -48,11 +53,11 @@ nav_order: 2
 
 <div class="class-stats-table">
 <table>
-  <caption>By Research Topic</caption>
+  <caption data-i18n="publications.byTopic">By Research Topic</caption>
   <tr class="total-row">
-    <td><b>Category</b></td>
-    <td><b>Topic</b></td>
-    <td><b>Papers</b></td>
+    <td><b data-i18n="publications.category">Category</b></td>
+    <td><b data-i18n="publications.topic">Topic</b></td>
+    <td><b data-i18n="publications.papers">Papers</b></td>
   </tr>
   <tbody>
     {% for supclass in site.data.class_stats %}

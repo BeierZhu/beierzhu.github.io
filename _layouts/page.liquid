@@ -3,7 +3,13 @@ layout: default
 ---
 <div class="post">
   <header class="post-header">
-    <h2 class="post-title">{{ page.titledisplay }}</h2>
+    <h2 class="post-title">
+      {% if page.permalink == '/publications/' %}
+        <span data-i18n="page.publications">{{ page.titledisplay }}</span>
+      {% else %}
+        {{ page.titledisplay }}
+      {% endif %}
+    </h2>
     <p class="post-description">{{ page.description }}</p>
   </header>
 
@@ -12,7 +18,7 @@ layout: default
   </article>
 
   {% if page.related_publications %}
-    <h2>References</h2>
+    <h2><span data-i18n="page.references">References</span></h2>
     <div class="publications">
       {% bibliography --cited_in_order %}
     </div>
