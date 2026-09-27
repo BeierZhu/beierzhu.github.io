@@ -4,6 +4,8 @@ permalink: /notes/
 title: notes
 titledisplay: Notes
 description: Personal notes and research insights.
+description_en: Personal notes and research insights.
+description_zh: 个人笔记与研究心得。
 nav: true
 nav_order: 3
 ---

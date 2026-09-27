@@ -3,9 +3,14 @@ layout: default
 ---
 <div class="post">
   <header class="post-header">
-    <h2 class="post-title">{{ page.titledisplay }}</h2>
+    <h2 class="post-title"><span data-i18n="page.blog">{{ page.titledisplay }}</span></h2>
     {% if page.description %}
-      <p class="post-description">{{ page.description }}</p>
+      {% if page.description_en or page.description_zh %}
+        <p class="post-description language-content language-block" data-language-content="en">{{ page.description_en | default: page.description }}</p>
+        <p class="post-description language-content language-block" data-language-content="zh">{{ page.description_zh | default: page.description_en | default: page.description }}</p>
+      {% else %}
+        <p class="post-description">{{ page.description }}</p>
+      {% endif %}
     {% endif %}
   </header>
 
