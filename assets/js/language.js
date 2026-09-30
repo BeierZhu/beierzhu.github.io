@@ -43,6 +43,7 @@
       'bib.poster': 'Poster',
       'bib.slides': 'Slides',
       'bib.website': 'Website',
+      'bib.patentNumber': 'Publication No.',
     },
     zh: {
       'nav.about': '关于',
@@ -84,6 +85,7 @@
       'bib.poster': '海报',
       'bib.slides': '幻灯片',
       'bib.website': '网站',
+      'bib.patentNumber': '申请公布号',
     },
   };
 

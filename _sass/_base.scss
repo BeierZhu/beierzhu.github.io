@@ -551,6 +551,13 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+@media (max-width: 576px) {
+  #navbarNav .navbar-nav .language-toggle-container {
+    align-self: flex-end;
+    margin-right: 0;
+  }
+}
+
 // Client-side bilingual content
 .language-content[data-language-content="zh"] {
   display: none;
