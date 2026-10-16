@@ -126,6 +126,13 @@
       }
     });
 
+    document.querySelectorAll('[data-language-href-en][data-language-href-zh]').forEach(function (element) {
+      const href = element.getAttribute('data-language-href-' + nextLanguage);
+      if (href) {
+        element.setAttribute('href', href);
+      }
+    });
+
     const toggle = document.getElementById('language-toggle');
     if (toggle) {
       const label = toggle.querySelector('[data-language-label]');
