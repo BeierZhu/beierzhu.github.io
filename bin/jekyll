@@ -9,4 +9,9 @@ if [[ ! -f "$cxx_runtime" ]]; then
 fi
 
 export LD_LIBRARY_PATH="$(dirname "$cxx_runtime")${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+
+# Match the deployment prebuild so local previews have the same pinned fonts.
+project_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+python3 "$project_root/scripts/fetch_site_fonts.py"
+
 exec bundle exec jekyll "$@"
