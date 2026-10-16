@@ -1,8 +1,8 @@
 - supclass: LLMs & VLMs
-  total: 20
+  total: 21
   classes:
   - name: Affective Intelligence
-    count: 3
+    count: 4
   - name: Agent
     count: 2
   - name: Hallucination Mitigation

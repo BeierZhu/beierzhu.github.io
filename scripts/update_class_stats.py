@@ -38,8 +38,9 @@ def parse_bib(filepath):
         if not entry.strip():
             continue
 
-        supclass_match = re.search(r"supclass\s*=\s*\{([^}]+)\}", entry)
-        class_match = re.search(r"class\s*=\s*\{([^}]+)\}", entry)
+        # Match whole field names so "class" cannot match inside "supclass".
+        supclass_match = re.search(r"\bsupclass\s*=\s*\{([^}]+)\}", entry)
+        class_match = re.search(r"\bclass\s*=\s*\{([^}]+)\}", entry)
 
         supclass = (
             supclass_match.group(1).strip().lower() if supclass_match else "others"
