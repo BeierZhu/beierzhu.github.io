@@ -228,6 +228,7 @@ exclude:
   - .local/
   - .agents/
   - .cache/
+  - .pythonlibs/
   - bin/
   - CONTRIBUTING.md
   - CUSTOMIZE.md
