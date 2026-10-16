@@ -1,3 +1,18 @@
+@misc{huang2026evolving,
+  title         = {Evolving Support Priorities in Empathetic Reinforcement Learning},
+  author        = {Huang, Pengyu and Han, Zhiyuan and Tong, Wenwen and Guo, Hewei and Chen, Jiangnan and Chen, Sirui and Lu, Lewei and Zhu, Beier^ and Yang, Xun},
+  year          = {2026},
+  arxiv        = {2609.34249},
+  supclass={LLMs & VLMs},
+  class={Affective Intelligence},
+  bibtex_show={true},
+  projectpage={https://asa13opp.github.io/CARE-project-page/},
+  code={https://github.com/Asa13opp/CARE},
+  abbr={Preprint},
+  abstract={We identify a fundamental mismatch in empathetic reinforcement learning: support priorities evolve with the dialogue state, yet existing methods typically optimize predefined reward specifications that remain fixed across turns. To model these evolving support priorities, we organize empathetic support along cognitive, affective, and proactive empathy, and propose Context-Adaptive Rubric Evolution (CARE). At each turn, CARE generates a context-adaptive rubric by adjusting both the weights of these three empathy dimensions and their fine-grained evaluation criteria. The rubric generator is trained with turn-level rubric supervision and human preference data through supervised fine-tuning followed by preference-based reinforcement learning, and then serves as an adaptive reward interface for online empathetic RL. Integrated with both RLVER and MICA, CARE achieves state-of-the-art performance across SentientBench, EQBench3, and EMPA under three independent LLM judges. Notably, on EMPA, CARE improves EPM-Idx over the strongest baseline by at least 13 points under all three judges, including an increase from 28.11 to 83.54 under Gemini-2.5-Pro. Further analyses show that learned rubric priorities systematically vary across dialogue stages and user emotions, demonstrating that CARE adapts what is rewarded as support needs evolve.}
+}
+
+
 @inproceedings{zhao2026thinkingimagescontinuousactions,
       title={Thinking with images as continuous actions: Numerical visual chain-of-thought}, 
       author={Kesen Zhao and Beier Zhu^ and Junbao Zhou and Xingyu Zhu and Zhongqi Yue and Hanwang Zhang},
@@ -9,6 +24,7 @@
       class={Reasoning},
       supclass={LLMs & VLMs},
       code={https://github.com/kesenzhao/NV-CoT},
+      projectpage={https://kesenzhao.github.io/NV-CoT/}
       booktitle={Advances in Neural Information Processing Systems},
       abstract={Recent multimodal large language models (MLLMs) increasingly rely on visual chain-of-thought to perform region-grounded reasoning over images. However, existing approaches ground regions via either textified coordinates-causing modality mismatch and semantic fragmentation or fixed-granularity patches that both limit precise region selection and often require non-trivial architectural changes. In this paper, we propose Numerical Visual Chain-of-Thought (NV-CoT), a framework that enables MLLMs to reason over images using continuous numerical coordinates. NV-CoT expands the MLLM action space from discrete vocabulary tokens to a continuous Euclidean space, allowing models to directly generate bounding-box coordinates as actions with only minimal architectural modification. The framework supports both supervised fine-tuning and reinforcement learning. In particular, we replace categorical token policies with a Gaussian (or Laplace) policy over coordinates and introduce stochasticity via reparameterized sampling, making NV-CoT fully compatible with GRPO-style policy optimization. Extensive experiments on three benchmarks against eight representative visual reasoning baselines demonstrate that NV-CoT significantly improves localization precision and final answer accuracy, while also accelerating training convergence, validating the effectiveness of continuous-action visual reasoning in MLLMs.}
 }
