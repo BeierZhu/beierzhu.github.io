@@ -1,1 +1,2 @@
 - [Jekyll native runtime](jekyll-native-runtime.md) — MiniRacer's isolated loader needs an explicit C++ runtime search path on this Nix environment.
+- [Preview routing checks](preview-routing.md) — a successful local screenshot alone does not prove the user's selected Preview endpoint is reachable.
