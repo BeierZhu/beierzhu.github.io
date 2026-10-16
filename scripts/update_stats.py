@@ -16,7 +16,7 @@ VENUE_GROUPS = {
 }
 
 EXCLUDE_VENUES = set()
-OTHER_VENUES = {"FCS", "arXiv", "Thesis", "TSG"}
+OTHER_VENUES = {"FCS", "arXiv", "Preprint", "Thesis", "TSG"}
 
 AWARD_TYPES = {"Oral", "Spotlight", "Highlight"}
 
