@@ -225,6 +225,9 @@ kramdown:
 include: ["_pages"]
 exclude:
   - "*.ipynb"
+  - .local/
+  - .agents/
+  - .cache/
   - bin/
   - CONTRIBUTING.md
   - CUSTOMIZE.md

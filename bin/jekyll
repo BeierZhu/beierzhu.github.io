@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# MiniRacer loads V8 in an isolated namespace and needs an explicit C++ library path.
+cxx_runtime="$(g++ -print-file-name=libstdc++.so.6)"
+if [[ ! -f "$cxx_runtime" ]]; then
+  echo "Cannot find the GCC C++ runtime required by MiniRacer." >&2
+  exit 1
+fi
+
+export LD_LIBRARY_PATH="$(dirname "$cxx_runtime")${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+exec bundle exec jekyll "$@"

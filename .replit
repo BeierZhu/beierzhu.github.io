@@ -3,21 +3,14 @@ run = "node index.js"
 
 [nix]
 channel = "stable-24_05"
-packages = ["ruby_3_3", "vim"]
+packages = ["ruby_3_3", "vim", "gcc"]
 
 [deployment]
 run = ["sh", "-c", "node index.js"]
 
 [[ports]]
-localPort = 886
-
-[[ports]]
-localPort = 4000
-externalPort = 80
-
-[[ports]]
 localPort = 5000
-externalPort = 5000
+externalPort = 80
 
 [agent]
 expertMode = true
@@ -38,10 +31,10 @@ args = "Jekyll Server"
 name = "Jekyll Server"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cd /home/runner/workspace && bundle exec jekyll serve --host 0.0.0.0 --port 5000 --trace"
-waitForPort = 5000
-
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd /home/runner/workspace && bash bin/jekyll serve --host 0.0.0.0 --port 5000 --trace"
+waitForPort = 5000
