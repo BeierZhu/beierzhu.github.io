@@ -1,0 +1,40 @@
+bash bin/jekyll build
+Verified 29 local font and license assets.
+/home/runner/workspace/.local/share/gem/ruby/3.3.0/gems/citeproc-ruby-1.1.14/lib/citeproc/ruby.rb:1: warning: observer was loaded from the standard library, but will no longer be part of the default gems since Ruby 3.4.0. Add observer to your Gemfile or gemspec. Also contact author of citeproc-ruby-1.1.14 to add observer into its gemspec.
+Configuration file: /home/runner/workspace/_config.yml
+            Source: /home/runner/workspace
+       Destination: /home/runner/workspace/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+       Jekyll Feed: Generating feed for posts
+       Imagemagick: Searching files in /home/runner/workspace/assets/img/
+       Imagemagick: Adding static file /home/runner/workspace/_site/assets/img/hessian-480.webp
+       Imagemagick: Adding static file /home/runner/workspace/_site/assets/img/hessian-800.webp
+       Imagemagick: Adding static file /home/runner/workspace/_site/assets/img/hessian-1400.webp
+       Imagemagick: Adding static file /home/runner/workspace/_site/assets/img/profile-480.webp
+       Imagemagick: Adding static file /home/runner/workspace/_site/assets/img/profile-800.webp
+       Imagemagick: Adding static file /home/runner/workspace/_site/assets/img/profile-1400.webp
+       Imagemagick: Generated 0 file(s)
+         AutoPages: Disabled/Not configured in site.config.
+        Pagination: Complete, processed 1 pagination page(s)
+          Conflict: The following destination is shared by multiple files.
+                    The written file may end up with unexpected contents.
+                    /home/runner/workspace/_site/assets/img/profile-1400.webp
+                     - /home/runner/workspace/assets/img/profile-1400.webp
+                     - /home/runner/workspace/_site/assets/img/profile-1400.webp
+                    
+          Conflict: The following destination is shared by multiple files.
+                    The written file may end up with unexpected contents.
+                    /home/runner/workspace/_site/assets/img/profile-480.webp
+                     - /home/runner/workspace/assets/img/profile-480.webp
+                     - /home/runner/workspace/_site/assets/img/profile-480.webp
+                    
+          Conflict: The following destination is shared by multiple files.
+                    The written file may end up with unexpected contents.
+                    /home/runner/workspace/_site/assets/img/profile-800.webp
+                     - /home/runner/workspace/assets/img/profile-800.webp
+                     - /home/runner/workspace/_site/assets/img/profile-800.webp
+                    
+                    done in 2.041 seconds.
+ Auto-regeneration: disabled. Use --watch to enable.
+~/workspace$ 
