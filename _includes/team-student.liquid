@@ -23,5 +23,10 @@
       <span class="team-student-label" data-i18n="teams.email">Email</span>
       <a href="mailto:{{ include.student.email | escape }}">{{ include.student.email | escape }}</a>
     </p>
+    <p class="team-student-meta team-student-research">
+      <span class="team-student-label" data-i18n="teams.research">Research</span>
+      <span class="language-content language-inline" data-language-content="en">{{ include.student.research.en | escape }}</span>
+      <span class="language-content language-inline" data-language-content="zh">{{ include.student.research.zh | escape }}</span>
+    </p>
   </div>
 </article>

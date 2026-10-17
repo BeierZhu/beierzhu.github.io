@@ -1,6 +1,7 @@
 {
   "degree": "phd",
   "name": { "en": "PhD Student 3", "zh": "博士生示例三" },
+  "research": { "en": "Robust Learning", "zh": "鲁棒学习" },
   "enrollment": "2024-09",
   "email": "phd03@example.com",
   "photo": "/assets/img/teams/placeholder.svg",

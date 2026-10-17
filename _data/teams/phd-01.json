@@ -1,6 +1,7 @@
 {
   "degree": "phd",
   "name": { "en": "PhD Student 1", "zh": "博士生示例一" },
+  "research": { "en": "Multimodal Reasoning", "zh": "多模态推理" },
   "enrollment": "2026-09",
   "email": "phd01@example.com",
   "photo": "/assets/img/teams/placeholder.svg",

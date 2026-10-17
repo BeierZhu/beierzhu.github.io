@@ -1,6 +1,7 @@
 {
   "degree": "master",
   "name": { "en": "Master Student 3", "zh": "硕士生示例三" },
+  "research": { "en": "Model Adaptation", "zh": "模型适配" },
   "enrollment": "2026-03",
   "email": "master03@example.com",
   "photo": "/assets/img/teams/placeholder.svg"

@@ -1,6 +1,7 @@
 {
   "degree": "master",
   "name": { "en": "Master Student 1", "zh": "硕士生示例一" },
+  "research": { "en": "Affective Intelligence", "zh": "情感智能" },
   "enrollment": "2026-09",
   "email": "master01@example.com",
   "photo": "/assets/img/teams/placeholder.svg",

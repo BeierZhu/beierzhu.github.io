@@ -28,6 +28,14 @@ class TeamsDataTests(unittest.TestCase):
                     re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", student["email"])
                 )
 
+    def test_each_student_has_bilingual_research(self):
+        for filepath in self.files:
+            with self.subTest(student=filepath.name):
+                student = json.loads(filepath.read_text(encoding="utf-8"))
+                for language in ("en", "zh"):
+                    self.assertIsInstance(student["research"][language], str)
+                    self.assertTrue(student["research"][language].strip())
+
     def test_photos_are_existing_local_assets(self):
         for filepath in self.files:
             with self.subTest(student=filepath.name):
