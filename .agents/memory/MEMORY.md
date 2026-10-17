@@ -1,3 +1,4 @@
 - [Jekyll native runtime](jekyll-native-runtime.md) — MiniRacer's isolated loader needs an explicit C++ runtime search path on this Nix environment.
 - [Preview routing checks](preview-routing.md) — a successful local screenshot alone does not prove the user's selected Preview endpoint is reachable.
 - [Publication statistics](publication-statistics.md) — user-defined grouping: Preprint belongs under Others in the venue summary table.
+- [Browser verification](browser-verification.md) — native collapsed content can retain layout dimensions; browser probes must keep all runtime state outside the workspace.

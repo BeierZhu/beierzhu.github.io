@@ -32,9 +32,33 @@ class TeamsDataTests(unittest.TestCase):
         for filepath in self.files:
             with self.subTest(student=filepath.name):
                 student = json.loads(filepath.read_text(encoding="utf-8"))
+                if student.get("graduated") is True:
+                    continue
                 for language in ("en", "zh"):
                     self.assertIsInstance(student["research"][language], str)
                     self.assertTrue(student["research"][language].strip())
+
+    def test_graduation_status_is_a_boolean_when_provided(self):
+        for filepath in self.files:
+            with self.subTest(student=filepath.name):
+                student = json.loads(filepath.read_text(encoding="utf-8"))
+                if "graduated" in student:
+                    self.assertIsInstance(student["graduated"], bool)
+
+    def test_graduated_students_have_a_year_and_bilingual_destination(self):
+        for filepath in self.files:
+            with self.subTest(student=filepath.name):
+                student = json.loads(filepath.read_text(encoding="utf-8"))
+                if student.get("graduated") is not True:
+                    continue
+                year = student["graduation_year"]
+                self.assertIs(type(year), int)
+                self.assertTrue(1000 <= year <= 9999)
+                self.assertGreaterEqual(year, int(student["enrollment"][:4]))
+                for language in ("en", "zh"):
+                    destination = student["graduation_destination"][language]
+                    self.assertIsInstance(destination, str)
+                    self.assertTrue(destination.strip())
 
     def test_photos_are_existing_local_assets(self):
         for filepath in self.files:

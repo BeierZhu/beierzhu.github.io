@@ -1,5 +1,6 @@
 {
   "degree": "phd",
+  "graduated": false,
   "name": { "en": "PhD Student 2", "zh": "博士生示例二" },
   "research": { "en": "Diffusion Models", "zh": "扩散模型" },
   "enrollment": "2025-09",

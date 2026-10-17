@@ -19,7 +19,7 @@ description: Our graduate students.
     <div class="teams-grid">
       {% for entry in sorted_teams %}
         {% assign student = entry[1] %}
-        {% if student.degree == 'phd' %}
+        {% if student.degree == 'phd' and student.graduated != true %}
           {% include team-student.liquid student=student %}
         {% endif %}
       {% endfor %}
@@ -33,10 +33,28 @@ description: Our graduate students.
     <div class="teams-grid">
       {% for entry in sorted_teams %}
         {% assign student = entry[1] %}
-        {% if student.degree == 'master' %}
+        {% if student.degree == 'master' and student.graduated != true %}
           {% include team-student.liquid student=student %}
         {% endif %}
       {% endfor %}
     </div>
   </section>
+  <details class="teams-section teams-alumni" id="teams-alumni">
+    <summary class="teams-section-title">
+      <span data-i18n="teams.alumni">Alumni</span>
+    </summary>
+    {% assign has_alumni = false %}
+    <div class="teams-grid">
+      {% for entry in sorted_teams %}
+        {% assign student = entry[1] %}
+        {% if student.graduated == true %}
+          {% assign has_alumni = true %}
+          {% include team-student.liquid student=student %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% unless has_alumni %}
+      <p data-i18n="teams.noAlumni">No alumni listed yet.</p>
+    {% endunless %}
+  </details>
 </div>

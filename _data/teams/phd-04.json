@@ -1,5 +1,6 @@
 {
   "degree": "phd",
+  "graduated": false,
   "name": { "en": "PhD Student 4", "zh": "博士生示例四" },
   "research": { "en": "Efficient Learning", "zh": "高效学习" },
   "enrollment": "2026-09",

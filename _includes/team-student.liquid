@@ -33,9 +33,22 @@
         </a>
       {% endif %}
     </nav>
-    <p class="team-student-research">
-      <span class="language-content language-inline" data-language-content="en">{{ include.student.research.en | escape }}</span>
-      <span class="language-content language-inline" data-language-content="zh">{{ include.student.research.zh | escape }}</span>
-    </p>
+    {% if include.student.graduated == true %}
+      <div class="team-student-research team-student-graduation">
+        <p>
+          <span data-i18n="teams.graduated">Graduated</span>
+          <span>{{ include.student.graduation_year | escape }}</span>
+        </p>
+        <p>
+          <span class="language-content language-inline" data-language-content="en">{{ include.student.graduation_destination.en | escape }}</span>
+          <span class="language-content language-inline" data-language-content="zh">{{ include.student.graduation_destination.zh | escape }}</span>
+        </p>
+      </div>
+    {% else %}
+      <p class="team-student-research">
+        <span class="language-content language-inline" data-language-content="en">{{ include.student.research.en | escape }}</span>
+        <span class="language-content language-inline" data-language-content="zh">{{ include.student.research.zh | escape }}</span>
+      </p>
+    {% endif %}
   </div>
 </article>

@@ -1,5 +1,6 @@
 {
   "degree": "master",
+  "graduated": false,
   "name": { "en": "Master Student 2", "zh": "硕士生示例二" },
   "research": { "en": "Agentic Intelligence", "zh": "智能体智能" },
   "enrollment": "2025-09",
