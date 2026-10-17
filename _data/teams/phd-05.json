@@ -1,0 +1,10 @@
+{
+  "degree": "phd",
+  "graduated": false,
+  "name": { "en": "Guanchen Lu", "zh": "卢冠辰" },
+  "research": { "en": "AI4Science", "zh": "AI4Science" },
+  "enrollment": "2024-09",
+  "email": "lucaspaul@mail.ustc.edu.cn",
+  "photo": "/assets/img/teams/lgc.jpg",
+  "google_scholar": "https://scholar.google.com/citations?user=TyciCqkAAAAJ&hl=zh-CN",
+}

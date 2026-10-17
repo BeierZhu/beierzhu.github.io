@@ -2,8 +2,8 @@
   "degree": "phd",
   "graduated": false,
   "name": { "en": "Yunqing Shang", "zh": "尚云青" },
-  "research": { "en": "Omni-LLM, AI for Healthcare", "zh": "全模态大模型，AI医疗" },
-  "enrollment": "2026-09",
+  "research": { "en": "Omni-LLM, Mental Health LLM", "zh": "全模态大模型，心理大模型" },
+  "enrollment": "2024-09",
   "email": "shang_yq@mail.ustc.edu.cn",
   "photo": "/assets/img/teams/syq.jpg"
 }

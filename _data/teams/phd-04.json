@@ -1,10 +1,10 @@
 {
   "degree": "phd",
   "graduated": false,
-  "name": { "en": "PhD Student 4", "zh": "博士生示例四" },
-  "research": { "en": "Efficient Learning", "zh": "高效学习" },
-  "enrollment": "2026-09",
-  "email": "phd04@example.com",
-  "photo": "/assets/img/teams/placeholder.svg",
-  "google_scholar": ""
+  "name": { "en": "Yangyang Xu", "zh": "徐阳阳" },
+  "research": { "en": "Mental Health LLM", "zh": "心理大模型" },
+  "enrollment": "2024-09",
+  "email": "yangyangxu@mail.ustc.edu.cn",
+  "photo": "/assets/img/teams/xyy.jpg",
+  "google_scholar": "https://scholar.google.com/citations?user=h8zh40QAAAAJ&hl=zh-CN"
 }

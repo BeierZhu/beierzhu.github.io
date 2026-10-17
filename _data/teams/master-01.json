@@ -1,11 +1,9 @@
 {
   "degree": "master",
   "graduated": false,
-  "name": { "en": "Master Student 1", "zh": "硕士生示例一" },
+  "name": { "en": "Yanran Song", "zh": "宋嫣然" },
   "research": { "en": "Affective Intelligence", "zh": "情感智能" },
-  "enrollment": "2026-09",
-  "email": "master01@example.com",
-  "photo": "/assets/img/teams/placeholder.svg",
-  "homepage": "https://example.com",
-  "google_scholar": "https://scholar.google.com/"
+  "enrollment": "2025-09",
+  "email": "songyanran@mail.ustc.edu.cn",
+  "photo": "/assets/img/teams/syr.jpg",
 }

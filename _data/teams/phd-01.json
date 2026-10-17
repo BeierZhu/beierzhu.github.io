@@ -4,7 +4,7 @@
   "graduation_year": 2026,
   "graduation_destination": { "en": "Example University (Postdoc)", "zh": "示例大学（博士后）" },
   "name": { "zh": "韩知渊", "en": "Zhiyuan Han" },
-  "research": { "en": "Omni-LLM, Affective Intelligence, RSI", "zh": "全模态大模型，情感计算，自进化" },
+  "research": { "en": "Omni-LLM, Affective Intelligence, RSI", "zh": "全模态大模型，情感智能，自进化" },
   "enrollment": "2023-09",
   "email": "aaronhan@mail.ustc.edu.cn",
   "photo": "/assets/img/teams/hzy.jpg",

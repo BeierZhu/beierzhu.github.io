@@ -1,9 +1,10 @@
 {
   "degree": "master",
   "graduated": false,
-  "name": { "en": "Master Student 2", "zh": "硕士生示例二" },
-  "research": { "en": "Agentic Intelligence", "zh": "智能体智能" },
+  "name": { "en": "Xiaoyu Shi", "zh": "石笑语" },
+  "research": { "en": "Agentic Intelligence, Omni-MLLM", "zh": "情感智能，全模态大模型" },
   "enrollment": "2025-09",
-  "email": "master02@example.com",
-  "photo": "/assets/img/teams/placeholder.svg"
+  "email": "xyshi12@ustc.mail.edu.cn",
+  "photo": "/assets/img/teams/sxy.jpg",
+  "homepage": "https://github.com/ym778/ym123",
 }

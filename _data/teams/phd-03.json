@@ -1,10 +1,11 @@
 {
   "degree": "phd",
   "graduated": false,
-  "name": { "en": "PhD Student 3", "zh": "博士生示例三" },
-  "research": { "en": "Robust Learning", "zh": "鲁棒学习" },
-  "enrollment": "2024-09",
-  "email": "phd03@example.com",
-  "photo": "/assets/img/teams/placeholder.svg",
-  "homepage": ""
+  "name": { "en": "Kaiyun Yang", "zh": "杨凯云" },
+  "research": { "en": "MLLM, RSI", "zh": "多模态大模型，自进化" },
+  "enrollment": "2023-09",
+  "email": "yangkaiyun@mail.ustc.edu.cn",
+  "photo": "/assets/img/teams/yky.jpg",
+  "homepage": "https://openreview.net/profile?id=~Kaiyun_Yang1",
+  "google_scholar": "https://scholar.google.com/citations?user=wwx7GUYAAAAJ&hl=zh-CN"
 }

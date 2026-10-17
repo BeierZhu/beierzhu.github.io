@@ -1,9 +1,10 @@
 {
   "degree": "master",
   "graduated": false,
-  "name": { "en": "Master Student 3", "zh": "硕士生示例三" },
-  "research": { "en": "Model Adaptation", "zh": "模型适配" },
-  "enrollment": "2026-03",
-  "email": "master03@example.com",
-  "photo": "/assets/img/teams/placeholder.svg"
+  "name": { "en": "Yiming Zhang", "zh": "张一鸣" },
+  "research": { "en": "Affective Intelligence, Omni-LLM", "zh": "情感智能，全模态大模型" },
+  "enrollment": "2025-09",
+  "email": "zhangyiming123@mail.ustc.edu.cn",
+  "photo": "/assets/img/teams/zym.jpg",
+  
 }
