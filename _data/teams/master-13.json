@@ -1,0 +1,9 @@
+{
+  "degree": "master",
+  "graduated": false,
+  "name": { "en": "Yunshuo Shi", "zh": "石云硕" },
+  "research": { "en": "Diffusion Model, Embodied AI", "zh": "扩散模型，具身后训练" },
+  "enrollment": "2027-09",
+  "email": "yunshuoshi7@gmail.com",
+  "photo": "/assets/img/teams/sys.jpg",
+}

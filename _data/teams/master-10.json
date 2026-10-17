@@ -1,0 +1,9 @@
+{
+  "degree": "master",
+  "graduated": false,
+  "name": { "en": "Yong Shen", "zh": "沈勇" },
+  "research": { "en": "MLLM, Post-Training", "zh": "多模态大模型, 后训练" },
+  "enrollment": "2027-09",
+  "email": "shenyong@mail.ustc.edu.cn",
+  "photo": "/assets/img/teams/sy.jpg",
+}

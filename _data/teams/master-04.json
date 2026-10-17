@@ -1,10 +1,9 @@
 {
   "degree": "master",
   "graduated": false,
-  "name": { "en": "Yiming Zhang", "zh": "张一鸣" },
-  "research": { "en": "Affective Intelligence, Omni-LLM", "zh": "情感智能，全模态大模型" },
-  "enrollment": "2025-09",
-  "email": "zhangyiming123@mail.ustc.edu.cn",
-  "photo": "/assets/img/teams/zym.jpg",
-  
+  "name": { "en": "Yuwen Chen", "zh": "陈宇文" },
+  "research": { "en": "Affective Intelligence, Omni-MLLM", "zh": "情感智能, 全模态大模型" },
+  "enrollment": "2026-09",
+  "email": "cyw221035@mail.ustc.edu.cn ",
+  "photo": "/assets/img/teams/cyw.jpg",
 }

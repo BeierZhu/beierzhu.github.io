@@ -1,0 +1,9 @@
+{
+  "degree": "master",
+  "graduated": false,
+  "name": { "en": "Yesi Tai", "zh": "叶斯泰" },
+  "research": { "en": "MLLM", "zh": "多模态大模型" },
+  "enrollment": "2027-09",
+  "email": "yst0705@mail.ustc.edu.cn",
+  "photo": "/assets/img/teams/yst.jpg",
+}

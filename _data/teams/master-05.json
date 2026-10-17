@@ -1,0 +1,11 @@
+{
+  "degree": "master",
+  "graduated": false,
+  "name": { "en": "Ningning Wang", "zh": "王宁宁" },
+  "research": { "en": "Neo-Omni, MLLM Post-Training", "zh": "原生多模态，大模型后训练" },
+  "enrollment": "2026-09",
+  "email": "nn.wang@mail.ustc.edu.cn",
+  "photo": "/assets/img/teams/wnn.jpg",
+"homepage": "https://openreview.net/profile?id=~Ningning_Wang3",
+"google_scholar": "https://scholar.google.com/citations?user=36loOMgAAAAJ&hl=zh-CN"
+}
