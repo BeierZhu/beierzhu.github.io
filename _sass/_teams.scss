@@ -56,42 +56,15 @@
 }
 
 .team-student-name {
-  display: flex;
-  flex-direction: column;
   margin: 1rem 0 0;
+  max-width: 100%;
   color: var(--global-text-color);
   font-size: 1.04rem;
   font-weight: 600;
   line-height: 1.38;
-  overflow-wrap: anywhere;
-
-  .team-student-name-link {
-    display: flex;
-    flex-direction: column;
-    color: inherit;
-    text-decoration: none;
-
-    &:hover {
-      color: var(--global-hover-color);
-    }
-  }
-}
-
-html[data-language] .team-student-name .language-content[data-language-content] {
-  display: block;
-}
-
-html[data-language="en"] .team-student-name .language-content[data-language-content="en"],
-html[data-language="zh"] .team-student-name .language-content[data-language-content="zh"] {
-  order: -1;
-}
-
-html[data-language="en"] .team-student-name .language-content[data-language-content="zh"],
-html[data-language="zh"] .team-student-name .language-content[data-language-content="en"] {
-  margin-top: 0.35rem;
-  font-size: 0.9em;
-  font-weight: 400;
-  opacity: 0.65;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .team-student-enrollment {
