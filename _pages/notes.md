@@ -11,7 +11,7 @@ nav_order: 4
 ---
 
 - [论文写作](/assets/pdf/论文写作.pdf)
-- [情感智能大模型](/assets/pdf/论文写作.pdf)
+- [情感智能大模型](/assets/pdf/affective.pdf)
 - [Suggested Reading List](/readinglist/)
 - [Score, Noise, Denoiser, and Velocity Predictions in Diffusion Models](/assets/pdf/Relationship_between_denoiser_score_and_velocity.pdf)
 - [Moment-Generating Function](/assets/pdf/MGF.pdf)
