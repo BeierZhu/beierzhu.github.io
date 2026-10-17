@@ -10,55 +10,66 @@
 
 .teams-section-title {
   margin: 0 0 1rem;
-  padding-bottom: 0.55rem;
-  border-bottom: 1px solid rgba(117, 117, 117, 0.22);
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--global-theme-color) 24%, transparent);
   color: var(--global-theme-color);
-  font-size: 1.2rem;
+  font-size: 1.16rem;
   font-weight: 600;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.025em;
 }
 
 .teams-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: 1.45rem;
-  row-gap: 1.25rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 1.15rem;
+  row-gap: 1.4rem;
 }
 
 .team-student {
   display: flex;
+  flex-direction: column;
   min-width: 0;
   align-items: center;
-  gap: 0.9rem;
-  padding: 0.7rem 0;
+  min-height: 100%;
+  padding: 1.35rem 1rem 1.15rem;
+  text-align: center;
 }
 
 .team-student-photo {
   display: block;
-  width: 4.6rem;
-  height: 4.6rem;
-  flex: 0 0 4.6rem;
+  width: 7.1rem;
+  height: 7.1rem;
+  flex: 0 0 7.1rem;
   border-radius: 50%;
   object-fit: cover;
-  background-color: rgba(117, 117, 117, 0.1);
+  background-color: color-mix(in srgb, var(--global-theme-color) 9%, var(--global-bg-color));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--global-theme-color) 8%, transparent);
 }
 
 .team-student-details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   min-width: 0;
 }
 
 .team-student-name {
-  margin: 0 0 0.45rem;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 0;
   color: var(--global-text-color);
-  font-size: 1rem;
+  font-size: 1.04rem;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.38;
   overflow-wrap: anywhere;
 
-  a {
+  .team-student-name-link {
+    display: flex;
+    flex-direction: column;
     color: inherit;
-    text-decoration-color: rgba(117, 117, 117, 0.45);
-    text-underline-offset: 0.16em;
+    text-decoration: none;
 
     &:hover {
       color: var(--global-hover-color);
@@ -66,31 +77,72 @@
   }
 }
 
-.team-student-meta {
+html[data-language] .team-student-name .language-content[data-language-content] {
+  display: block;
+}
+
+html[data-language="en"] .team-student-name .language-content[data-language-content="en"],
+html[data-language="zh"] .team-student-name .language-content[data-language-content="zh"] {
+  order: -1;
+}
+
+html[data-language="en"] .team-student-name .language-content[data-language-content="zh"],
+html[data-language="zh"] .team-student-name .language-content[data-language-content="en"] {
+  margin-top: 0.35rem;
+  font-size: 0.9em;
+  font-weight: 400;
+  opacity: 0.65;
+}
+
+.team-student-enrollment {
+  margin: 0.4rem 0 0;
+  color: var(--global-text-color);
+  font-size: 0.86rem;
+  line-height: 1.4;
+  opacity: 0.72;
+}
+
+.team-student-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.15rem 0.35rem;
-  margin: 0.18rem 0 0;
-  color: var(--global-text-color);
-  font-size: 0.82rem;
-  line-height: 1.45;
-  overflow-wrap: anywhere;
+  min-height: 2.1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1.05rem;
+  margin-top: 0.55rem;
 }
 
-.team-student-label {
+.team-student-icon-link {
+  display: inline-flex;
+  width: 1.9rem;
+  height: 1.9rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
   color: var(--global-text-color);
-  opacity: 0.68;
-}
-
-.team-student-email a {
-  min-width: 0;
-  color: var(--global-text-color);
-  overflow-wrap: anywhere;
-  word-break: break-word;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: color 160ms ease, background-color 160ms ease;
 
   &:hover {
     color: var(--global-hover-color);
+    background-color: color-mix(in srgb, var(--global-theme-color) 9%, transparent);
   }
+
+  &:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 2px;
+  }
+}
+
+.team-student-research {
+  width: 100%;
+  margin: auto 0 0;
+  padding-top: 0.85rem;
+  color: var(--global-text-color);
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 991.98px) {
@@ -110,17 +162,26 @@
   }
 
   .teams-grid {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 0.35rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 
   .team-student {
-    gap: 0.85rem;
+    padding: 1rem 0.65rem 0.9rem;
   }
 
   .team-student-photo {
-    width: 4.25rem;
-    height: 4.25rem;
-    flex-basis: 4.25rem;
+    width: 5.2rem;
+    height: 5.2rem;
+    flex-basis: 5.2rem;
+  }
+
+  .team-student-name {
+    font-size: 0.94rem;
+  }
+
+  .team-student-enrollment,
+  .team-student-research {
+    font-size: 0.8rem;
   }
 }

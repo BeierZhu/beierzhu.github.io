@@ -59,12 +59,15 @@ Preferred communication style: Simple, everyday language.
 The Teams page is populated from `_data/teams/*.json`, one file per student.
 Duplicate an existing file to add a student; files are displayed in filename order within each degree group.
 Use `"degree": "phd"` or `"degree": "master"`.
-`name.en` and `name.zh` provide the English and Chinese names.
-`research.en` and `research.zh` provide the research direction displayed below the email in each language.
+`name.en` and `name.zh` provide the English and Chinese names, both displayed with the active language first.
+`research.en` and `research.zh` provide the research direction displayed at the bottom of the card in each language.
 `enrollment` is a `"YYYY-MM"` string; the page formats it for each language.
 `email` supplies the mail link, and `photo` is a site-local path, for example `/assets/img/teams/student.jpg`.
-`homepage` is optional: omit it or set it to `""` for an unlinked name.
-The initial six students, emails, photos and example.com homepage links are placeholders, not real members.
+Email is displayed as an envelope icon, not as visible address text.
+`homepage` is optional: omit it or set it to `""` to hide the homepage icon and leave the name unlinked.
+`google_scholar` is an optional full Google Scholar profile URL: omit it or set it to `""` to hide its icon.
+Cards are centered vertically with circular portraits and four columns on desktop, reducing columns on smaller screens.
+The initial seven students, emails, photos, example.com homepage links, and generic Google Scholar links are placeholders, not real members.
 Updating these files and rebuilding automatically updates the layout.
 
 ### CDN Resources

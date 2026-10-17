@@ -56,6 +56,17 @@ class TeamsDataTests(unittest.TestCase):
                     self.assertIn(url.scheme, ("http", "https"))
                     self.assertTrue(url.netloc)
 
+    def test_optional_google_scholar_accepts_only_absolute_web_urls(self):
+        for filepath in self.files:
+            with self.subTest(student=filepath.name):
+                student = json.loads(filepath.read_text(encoding="utf-8"))
+                scholar = student.get("google_scholar", "")
+                self.assertIsInstance(scholar, str)
+                if scholar.strip():
+                    url = urlparse(scholar)
+                    self.assertIn(url.scheme, ("http", "https"))
+                    self.assertTrue(url.netloc)
+
 
 if __name__ == "__main__":
     unittest.main()

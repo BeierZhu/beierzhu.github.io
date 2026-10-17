@@ -5,5 +5,6 @@
   "enrollment": "2026-09",
   "email": "master01@example.com",
   "photo": "/assets/img/teams/placeholder.svg",
-  "homepage": "https://example.com"
+  "homepage": "https://example.com",
+  "google_scholar": "https://scholar.google.com/"
 }
