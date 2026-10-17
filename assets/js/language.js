@@ -24,7 +24,7 @@
       'page.teams': 'Teams',
       'teams.phd': 'PhD',
       'teams.master': 'Master',
-      'teams.enrollment': 'Enrolled',
+      'teams.enrollment': 'Intake',
       'teams.email': 'Email',
       'teams.homepage': 'Homepage',
       'teams.scholar': 'Google Scholar',

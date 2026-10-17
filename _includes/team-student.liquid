@@ -9,7 +9,8 @@
     </h3>
     <p class="team-student-enrollment">
       {% assign enrollment_date = include.student.enrollment | append: '-01' %}
-      <span class="language-content language-inline" data-language-content="en">{{ enrollment_date | date: "%B %Y" | escape }}</span>
+      <span data-i18n="teams.enrollment">Intake</span>
+      <span class="language-content language-inline" data-language-content="en">{{ enrollment_date | date: "%b. %Y" | escape }}</span>
       <span class="language-content language-inline" data-language-content="zh">{{ enrollment_date | date: "%Y年%-m月" | escape }}</span>
     </p>
     <nav class="team-student-links" aria-label="Student links">
