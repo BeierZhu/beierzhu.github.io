@@ -1,13 +1,14 @@
 {
   "degree": "phd",
-  "graduated": true,
+  "graduated": false,
   "graduation_year": 2026,
   "graduation_destination": { "en": "Example University (Postdoc)", "zh": "示例大学（博士后）" },
-  "name": { "en": "PhD Student 1", "zh": "博士生示例一" },
-  "research": { "en": "Multimodal Reasoning", "zh": "多模态推理" },
-  "enrollment": "2026-09",
-  "email": "phd01@example.com",
-  "photo": "/assets/img/teams/placeholder.svg",
-  "homepage": "https://example.com",
-  "google_scholar": "https://scholar.google.com/"
+  "name": { "en": "韩知渊", "zh": "Zhiyuan Han" },
+  "research": { "en": "MLLM, Affective Intelligence, RSI", "zh": "多模态大模型，情感计算，自进化" },
+  "enrollment": "2023-09",
+  "email": "aaronhan@mail.ustc.edu.cn",
+  "photo": "/assets/img/teams/hzy.jpg",
+  "homepage": "https://openreview.net/profile?id=%7EZhiyuan_Han2",
+  "google_scholar": "https://scholar.google.com/citations?user=g3puITMAAAAJ&hl=zh-CN"
 }
+n

@@ -133,6 +133,11 @@
   font-weight: 500;
   line-height: 1.45;
   overflow-wrap: anywhere;
+
+  &:not(.team-student-graduation) {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -173,5 +178,9 @@
   .team-student-enrollment,
   .team-student-research {
     font-size: 0.8rem;
+  }
+
+  .team-student-research:not(.team-student-graduation) {
+    font-size: 0.75rem;
   }
 }
