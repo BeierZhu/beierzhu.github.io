@@ -1,0 +1,42 @@
+---
+layout: page
+permalink: /teams/
+title: teams
+titledisplay: Teams
+nav: true
+nav_order: 6
+description_en: Our graduate students.
+description_zh: 团队研究生。
+description: Our graduate students.
+---
+
+{% assign sorted_teams = site.data.teams | sort %}
+<div class="teams">
+  <section class="teams-section" aria-labelledby="teams-phd-heading">
+    <h2 class="teams-section-title" id="teams-phd-heading">
+      <span data-i18n="teams.phd">PhD</span>
+    </h2>
+    <div class="teams-grid">
+      {% for entry in sorted_teams %}
+        {% assign student = entry[1] %}
+        {% if student.degree == 'phd' %}
+          {% include team-student.liquid student=student %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="teams-section" aria-labelledby="teams-master-heading">
+    <h2 class="teams-section-title" id="teams-master-heading">
+      <span data-i18n="teams.master">Master</span>
+    </h2>
+    <div class="teams-grid">
+      {% for entry in sorted_teams %}
+        {% assign student = entry[1] %}
+        {% if student.degree == 'master' %}
+          {% include team-student.liquid student=student %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+</div>

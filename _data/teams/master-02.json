@@ -1,0 +1,7 @@
+{
+  "degree": "master",
+  "name": { "en": "Master Student 2", "zh": "硕士生示例二" },
+  "enrollment": "2025-09",
+  "email": "master02@example.com",
+  "photo": "/assets/img/teams/placeholder.svg"
+}

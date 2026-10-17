@@ -16,3 +16,11 @@ Use the user's actual screenshot to identify available workspace controls. An ac
 **Why:** The user's workspace screenshot showed no Run/Stop control despite a running workflow. Repeated directions based solely on generic documentation did not match their interface.
 
 **How to apply:** Do not invent a button location. If the screenshot shows Shell but no Run/Stop control, provide the verified project build command as an alternative.
+
+## Verify page content, not only status
+
+An HTTP 200 can be a WEBrick directory listing rather than the requested page.
+
+**Why:** A standalone Liquid source page retained its extension in the generated index, so the server returned a directory listing despite a successful build and HTTP 200.
+
+**How to apply:** Use HTML or Markdown source extensions for standalone pages; reserve Liquid extensions for layouts/includes. Check the generated HTML index and expected rendered content before declaring a route working.

@@ -54,6 +54,18 @@ Preferred communication style: Simple, everyday language.
 
 ## External Dependencies
 
+### Editing team members
+
+The Teams page is populated from `_data/teams/*.json`, one file per student.
+Duplicate an existing file to add a student; files are displayed in filename order within each degree group.
+Use `"degree": "phd"` or `"degree": "master"`.
+`name.en` and `name.zh` provide the English and Chinese names.
+`enrollment` is a `"YYYY-MM"` string; the page formats it for each language.
+`email` supplies the mail link, and `photo` is a site-local path, for example `/assets/img/teams/student.jpg`.
+`homepage` is optional: omit it or set it to `""` for an unlinked name.
+The initial six students, emails, photos and example.com homepage links are placeholders, not real members.
+Updating these files and rebuilding automatically updates the layout.
+
 ### CDN Resources
 - **MDBootstrap**: CSS framework loaded from jsdelivr CDN
 - **Google Fonts**: Roboto and Roboto Slab font families

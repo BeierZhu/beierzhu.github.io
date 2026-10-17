@@ -10,6 +10,8 @@ layout: default
         <span data-i18n="page.patents">{{ page.titledisplay }}</span>
       {% elsif page.permalink == '/notes/' %}
         <span data-i18n="page.notes">{{ page.titledisplay }}</span>
+      {% elsif page.permalink == '/teams/' %}
+        <span data-i18n="page.teams">{{ page.titledisplay }}</span>
       {% else %}
         {{ page.titledisplay }}
       {% endif %}

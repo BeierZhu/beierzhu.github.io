@@ -1,0 +1,27 @@
+<article class="team-student">
+  <img class="team-student-photo" src="{{ include.student.photo | relative_url | escape }}" alt="" loading="lazy">
+  <div class="team-student-details">
+    <h3 class="team-student-name">
+      {% assign student_homepage = include.student.homepage | default: '' | strip %}
+      {% if student_homepage != '' %}
+        <a href="{{ student_homepage | escape }}" target="_blank" rel="noopener noreferrer">
+          <span class="language-content language-inline" data-language-content="en">{{ include.student.name.en | escape }}</span>
+          <span class="language-content language-inline" data-language-content="zh">{{ include.student.name.zh | escape }}</span>
+        </a>
+      {% else %}
+        <span class="language-content language-inline" data-language-content="en">{{ include.student.name.en | escape }}</span>
+        <span class="language-content language-inline" data-language-content="zh">{{ include.student.name.zh | escape }}</span>
+      {% endif %}
+    </h3>
+    <p class="team-student-meta">
+      {% assign enrollment_date = include.student.enrollment | append: '-01' %}
+      <span class="team-student-label" data-i18n="teams.enrollment">Enrollment</span>
+      <span class="language-content language-inline" data-language-content="en">{{ enrollment_date | date: "%B %Y" | escape }}</span>
+      <span class="language-content language-inline" data-language-content="zh">{{ enrollment_date | date: "%Y年%-m月" | escape }}</span>
+    </p>
+    <p class="team-student-meta team-student-email">
+      <span class="team-student-label" data-i18n="teams.email">Email</span>
+      <a href="mailto:{{ include.student.email | escape }}">{{ include.student.email | escape }}</a>
+    </p>
+  </div>
+</article>
