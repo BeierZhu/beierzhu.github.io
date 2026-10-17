@@ -45,10 +45,14 @@
         </p>
       </div>
     {% else %}
-      <p class="team-student-research">
-        <span class="language-content language-inline" data-language-content="en">{{ include.student.research.en | escape }}</span>
-        <span class="language-content language-inline" data-language-content="zh">{{ include.student.research.zh | escape }}</span>
-      </p>
+      <div class="team-student-research">
+        <div class="language-content language-block" data-language-content="en">
+          {% include team-research-topics.liquid text=include.student.research.en %}
+        </div>
+        <div class="language-content language-block" data-language-content="zh">
+          {% include team-research-topics.liquid text=include.student.research.zh %}
+        </div>
+      </div>
     {% endif %}
   </div>
 </article>

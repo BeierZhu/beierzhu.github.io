@@ -135,9 +135,18 @@
   overflow-wrap: anywhere;
 
   &:not(.team-student-graduation) {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
     font-size: 0.8rem;
     font-weight: 400;
   }
+}
+
+.team-student-research-topic {
+  display: block;
 }
 
 @media (max-width: 991.98px) {

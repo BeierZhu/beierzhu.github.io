@@ -61,6 +61,7 @@ Duplicate an existing file to add a student; files are displayed in filename ord
 Use `"degree": "phd"` or `"degree": "master"`.
 `name.en` and `name.zh` provide the English and Chinese names. Display only the active language's name on one line, without a hyperlink.
 `research.en` and `research.zh` provide the research direction displayed at the bottom of the card in each language.
+Separate research topics with English or Chinese commas (`,` / `，`). Each nonempty trimmed topic appears on its own centered line without the comma; the topic block is vertically centered within the shared research area for that row.
 `graduated` is a JSON boolean: `false` (or omitted for older records) keeps the student in PhD/Master; `true` moves them exclusively to the collapsible Alumni section at the end, which is closed initially.
 Graduated students must supply `graduation_year` (a four-digit integer) and `graduation_destination.en` / `.zh` (bilingual text). These replace the research direction at the bottom of the alumni card; research is not required for alumni.
 PhD Student 1 is marked graduated with a 2026 graduation year and an explicitly fictional destination as an example.

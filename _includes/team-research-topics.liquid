@@ -1,0 +1,7 @@
+{% assign research_topics = include.text | replace: '，', ',' | split: ',' %}
+{% for raw_topic in research_topics %}
+  {% assign research_topic = raw_topic | strip %}
+  {% unless research_topic == '' %}
+    <span class="team-student-research-topic">{{ research_topic | escape }}</span>
+  {% endunless %}
+{% endfor %}
