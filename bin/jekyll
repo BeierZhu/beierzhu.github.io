@@ -10,8 +10,28 @@ fi
 
 export LD_LIBRARY_PATH="$(dirname "$cxx_runtime")${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 
+# ImageMagick's libraries require a newer C++ ABI than MiniRacer's runtime.
+# Isolate its child process so it uses its own Nix-provided library paths.
+imagemagick_convert="$(command -v convert || true)"
+if [[ -z "$imagemagick_convert" ]]; then
+  echo "Cannot find ImageMagick's convert command." >&2
+  exit 1
+fi
+
+imagemagick_wrapper_dir="$(mktemp -d)"
+trap 'rm -rf "$imagemagick_wrapper_dir"' EXIT
+cat > "$imagemagick_wrapper_dir/convert" <<'WRAPPER'
+#!/usr/bin/env bash
+set -euo pipefail
+unset LD_LIBRARY_PATH
+exec "$JEKYLL_IMAGEMAGICK_CONVERT" "$@"
+WRAPPER
+chmod +x "$imagemagick_wrapper_dir/convert"
+export JEKYLL_IMAGEMAGICK_CONVERT="$imagemagick_convert"
+export PATH="$imagemagick_wrapper_dir:$PATH"
+
 # Match the deployment prebuild so local previews have the same pinned fonts.
 project_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 python3 "$project_root/scripts/fetch_site_fonts.py"
 
-exec bundle exec jekyll "$@"
+bundle exec jekyll "$@"
