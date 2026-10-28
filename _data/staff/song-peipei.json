@@ -1,0 +1,18 @@
+{
+  "name": {
+    "en": "Peipei Song",
+    "zh": "宋培培"
+  },
+  "role": {
+    "en": "Associate Researcher",
+    "zh": "副研究员"
+  },
+  "photo": "/assets/img/teams/songpeipei.jpg",
+  "email": "beta.songpp@gmail.com",
+  "homepage": "https://songpipi.github.io/",
+  "google_scholar": "https://scholar.google.com/citations?user=aiIZ_MYAAAAJ",
+  "research": {
+    "en": "Multimodal Intelligence, Affective Intelligence",
+    "zh": "多模态智能，情感智能"
+  }
+}

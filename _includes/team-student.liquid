@@ -7,17 +7,24 @@
       <span class="language-content language-inline" data-language-content="en">{{ include.student.name.en | escape }}</span>
       <span class="language-content language-inline" data-language-content="zh">{{ include.student.name.zh | escape }}</span>
     </h3>
-    <p class="team-student-enrollment">
-      {% assign enrollment_date = include.student.enrollment | append: '-01' %}
-      <span class="language-content language-inline" data-language-content="en">
-        {{ enrollment_date | date: "%b. %Y" | escape }}
-        <span data-i18n="teams.enrollment">Intake</span>
-      </span>
-      <span class="language-content language-inline" data-language-content="zh">
-        <span data-i18n="teams.enrollment">入学时间</span>
-        {{ enrollment_date | date: "%Y年%-m月" | escape }}
-      </span>
-    </p>
+    {% if include.student.role %}
+      <p class="team-student-enrollment">
+        <span class="language-content language-inline" data-language-content="en">{{ include.student.role.en | escape }}</span>
+        <span class="language-content language-inline" data-language-content="zh">{{ include.student.role.zh | escape }}</span>
+      </p>
+    {% else %}
+      <p class="team-student-enrollment">
+        {% assign enrollment_date = include.student.enrollment | append: '-01' %}
+        <span class="language-content language-inline" data-language-content="en">
+          {{ enrollment_date | date: "%b. %Y" | escape }}
+          <span data-i18n="teams.enrollment">Intake</span>
+        </span>
+        <span class="language-content language-inline" data-language-content="zh">
+          <span data-i18n="teams.enrollment">入学时间</span>
+          {{ enrollment_date | date: "%Y年%-m月" | escape }}
+        </span>
+      </p>
+    {% endif %}
     <nav class="team-student-links" aria-label="Student links">
       {% if include.student.email and include.student.email != '' %}
         <a class="team-student-icon-link" href="mailto:{{ include.student.email | escape }}" title="Email">

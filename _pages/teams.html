@@ -5,13 +5,26 @@ title: teams
 titledisplay: Teams
 nav: true
 nav_order: 6
-description_en: Our graduate students.
-description_zh: 团队研究生。
-description: Our graduate students.
+description_en: Our staff and graduate students.
+description_zh: 团队教职员工及研究生。
+description: Our staff and graduate students.
 ---
 
 {% assign sorted_teams = site.data.teams | sort %}
+{% assign sorted_staff = site.data.staff | sort %}
 <div class="teams">
+  <section class="teams-section" aria-labelledby="teams-staff-heading">
+    <h2 class="teams-section-title" id="teams-staff-heading">
+      <span data-i18n="teams.staff">Staff</span>
+    </h2>
+    <div class="teams-grid">
+      {% for entry in sorted_staff %}
+        {% assign staff_member = entry[1] %}
+        {% include team-student.liquid student=staff_member %}
+      {% endfor %}
+    </div>
+  </section>
+
   <section class="teams-section" aria-labelledby="teams-phd-heading">
     <h2 class="teams-section-title" id="teams-phd-heading">
       <span data-i18n="teams.phd">PhD</span>
