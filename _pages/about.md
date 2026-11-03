@@ -53,9 +53,7 @@ social: true # includes social icons at the bottom of the page
     </td>
     <td>
       {% if item.inline %}
-        {% assign news_key = item.path | remove: '_news/' | remove: '.md' %}
-        <span class="language-content language-inline" data-language-content="en">{{ item.content | remove: '<p>' | remove: '</p>' | emojify }}</span>
-        <span class="language-content language-inline" data-language-content="zh">{{ site.data.news_zh[news_key] | emojify }}</span>
+        {% include news-content.liquid item=item %}
       {% else %}
         <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
       {% endif %}

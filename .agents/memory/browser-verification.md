@@ -14,3 +14,9 @@ Keep temporary Chromium profiles and XDG configuration/cache directories outside
 **Why:** A temporary browser profile alone does not redirect crash-report settings; Chromium otherwise writes under the workspace configuration directory and triggers Jekyll regeneration.
 
 **How to apply:** Explicitly direct temporary browser configuration, cache, and profile storage into temporary directories when launching browser probes.
+
+Select Chromium debugging targets by page type, never by their position in the target list.
+
+**Why:** This environment can expose a built-in extension's background document before the actual browser page. Attaching to the first target then makes navigation checks inspect the extension rather than the application.
+
+**How to apply:** Filter debugging targets to ordinary page documents, excluding extension URLs, before sending navigation or DOM inspection commands.

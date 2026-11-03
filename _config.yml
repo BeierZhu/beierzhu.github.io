@@ -186,8 +186,6 @@ newsletter:
 
 collections:
   news:
-    defaults:
-      layout: post
     output: true
     permalink: /:collection/:title/
   projects:
@@ -274,6 +272,11 @@ plugins:
 
 # Sitemap settings
 defaults:
+  - scope:
+      path: ""
+      type: news
+    values:
+      layout: default
   - scope:
       path: "assets"
     values:

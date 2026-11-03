@@ -30,6 +30,10 @@ Preferred communication style: Simple, everyday language.
 - `_site/`: Generated static HTML output (should not be edited directly)
 - `assets/`: Static assets including CSS, JavaScript, images, and PDFs
 
+### Editing bilingual news
+
+Each `_news/*.md` file is the single source for a news item. Keep `title`, `date` and `inline: true` in its YAML front matter. Put the English text in `content_en: >-` and the Chinese text in `content_zh: >-`, indenting the following content lines by two spaces. Both fields support Markdown links and existing inline HTML. After the closing `---`, keep `{% include news-content.liquid item=page %}` for the individual news URL. The homepage and reusable news list read these same fields and the existing language toggle selects which is visible. Do not add a separate translation data file.
+
 ### Frontend Stack
 - **Bootstrap 4.6.2**: CSS framework for responsive layout
 - **MDB (Material Design for Bootstrap)**: Additional Material Design styling
