@@ -10,30 +10,48 @@ related_posts: false
 toc:
   beginning: true
 _styles: |
-  .benchmark-preview-table table { min-width: 680px; margin-bottom: 0; }
+  .benchmark-preview-table table { min-width: 800px; margin-bottom: 0; }
   .benchmark-preview-table th { white-space: nowrap; }
   .benchmark-preview-table td { vertical-align: top; }
-  .benchmark-preview-table td:nth-child(2) { min-width: 20rem; }
-  .benchmark-preview-table td:not(:nth-child(2)) { white-space: nowrap; }
+  .benchmark-preview-table td:nth-child(3) { min-width: 20rem; }
+  .benchmark-preview-table td:not(:nth-child(3)) { white-space: nowrap; }
+  .benchmark-reference summary { cursor: pointer; color: var(--global-theme-color); }
+  .benchmark-citation { width: 16rem; max-width: 70vw; margin-top: .5rem; white-space: normal; font-size: .85rem; line-height: 1.6; }
 ---
 
 
-## Table 1：通用推理
+## 1. 通用推理
 
-<div class="table-responsive benchmark-preview-table" markdown="1">
-
-| 名称 | 简介 | 规模 | 评测指标 | SoTA |
-| :--- | :--- | :--- | :--- | :--- |
-| **Pile** [[1]](#ref-pile) | 由 **22 个多领域子数据集**组成的大规模英文文本语料库，涵盖学术论文、书籍、代码、网页、法律文档及在线对话等，主要用于评估语言模型的**跨领域语言建模能力**。（2020 年发布） | 825 GB | PPL / BPB | — |
-
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+        <th scope="col">SoTA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <details class="benchmark-reference">
+            <summary title="点击展开或收起引用"><strong>Pile</strong></summary>
+            <div class="benchmark-citation">[1] Gao et al. <em>The Pile: An 800GB Dataset of Diverse Text for Language Modeling.</em> arXiv:2101.00027. <a href="https://arxiv.org/abs/2101.00027">论文链接</a>。</div>
+          </details>
+        </td>
+        <td>2020 年</td>
+        <td>由 <strong>22 个多领域子数据集</strong>组成的大规模英文文本语料库，涵盖学术论文、书籍、代码、网页、法律文档及在线对话等，主要用于评估语言模型的<strong>跨领域语言建模能力</strong>。</td>
+        <td>825 GB</td>
+        <td>PPL / BPB</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-### 如何理解这两个指标？
-
-- **PPL（Perplexity，困惑度）**：衡量模型预测文本的能力。在相同的分词方式和评测设置下，数值越低，通常意味着模型对文本的预测越好。
-- **BPB（Bits Per Byte，每字节比特数）**：按字节归一化的平均编码长度，数值越低越好。相比按 token 计算的指标，它减少了不同分词方式对归一化单位的影响。
-
-> **阅读提示：** Pile 主要考察跨领域语言建模能力，并不是直接用答题正确率衡量的推理题集。表中的“—”表示原笔记未提供对应的 SoTA 数值。
 
 ### 参考文献
 
