@@ -11,12 +11,14 @@ toc:
   beginning: true
 _styles: |
   .benchmark-preview-table table { width: 100%; min-width: 800px; table-layout: fixed; margin-bottom: 0; }
-  .benchmark-preview-table th { white-space: nowrap; text-align: left; vertical-align: middle; padding: .5rem 0; border-top: 1px solid var(--global-divider-color); border-bottom: 1px solid var(--global-divider-color); }
+  .benchmark-preview-table thead { background-image: linear-gradient(var(--global-divider-color), var(--global-divider-color)), linear-gradient(var(--global-divider-color), var(--global-divider-color)); background-size: 100% 1px; background-position: top, bottom; background-repeat: no-repeat; }
+  .benchmark-preview-table th { white-space: nowrap; text-align: left; vertical-align: middle; padding: .5rem 0; border: 0; }
   .benchmark-preview-table td { vertical-align: top; }
   .benchmark-data-row td:not(:nth-child(3)) { white-space: nowrap; }
-  .benchmark-citation-toggle { padding: 0; border: 0; background: none; color: var(--global-theme-color); font: inherit; font-weight: bold; text-decoration: none; cursor: pointer; }
-  .benchmark-citation-row[hidden] { display: none; }
-  .benchmark-citation-row td { padding: .75rem; box-shadow: inset 0 1px 0 var(--global-divider-color); white-space: normal; overflow-wrap: anywhere; font-size: .85rem; line-height: 1.6; }
+  .benchmark-citation-toggle, .benchmark-datasets-toggle { padding: 0; border: 0; background: none; color: var(--global-theme-color); font: inherit; font-weight: bold; text-decoration: none; cursor: pointer; }
+  .benchmark-citation-row[hidden], .benchmark-datasets-row[hidden] { display: none; }
+  .benchmark-citation-row td, .benchmark-datasets-row td { padding: .75rem; box-shadow: inset 0 1px 0 var(--global-divider-color); white-space: normal; overflow-wrap: anywhere; font-size: .85rem; line-height: 1.6; }
+  .benchmark-dataset-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .35rem 1rem; margin: 0; padding: 0; list-style: none; }
 ---
 
 
@@ -46,9 +48,37 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="pile-citation" title="展开或收起引用">Pile</button>
         </td>
         <td>2020 年</td>
-        <td>由 <strong>22 个多领域子数据集</strong>组成的大规模英文文本语料库，涵盖学术论文、书籍、代码、网页、法律文档及在线对话等，主要用于评估语言模型的<strong>跨领域语言建模能力</strong>。</td>
+        <td>由 <strong><button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="pile-datasets" title="展开或收起22个子数据集名称">22</button> 个多领域子数据集</strong>组成的大规模英文文本语料库，涵盖学术论文、书籍、代码、网页、法律文档及在线对话等，主要用于评估语言模型的<strong>跨领域语言建模能力</strong>。</td>
         <td>825 GB</td>
         <td>PPL / BPB</td>
+      </tr>
+      <tr id="pile-datasets" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <ul class="benchmark-dataset-list">
+            <li>Pile-CC</li>
+            <li>PubMed Central</li>
+            <li>Books3</li>
+            <li>OpenWebText2</li>
+            <li>ArXiv</li>
+            <li>Github</li>
+            <li>FreeLaw</li>
+            <li>Stack Exchange</li>
+            <li>USPTO Backgrounds</li>
+            <li>PubMed Abstracts</li>
+            <li>Gutenberg (PG-19)</li>
+            <li>OpenSubtitles</li>
+            <li>Wikipedia (en)</li>
+            <li>DM Mathematics</li>
+            <li>Ubuntu IRC</li>
+            <li>BookCorpus2</li>
+            <li>EuroParl</li>
+            <li>HackerNews</li>
+            <li>YoutubeSubtitles</li>
+            <li>PhilPapers</li>
+            <li>NIH ExPorter</li>
+            <li>Enron Emails</li>
+          </ul>
+        </td>
       </tr>
       <tr id="pile-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Gao et al. <em>The Pile: An 800GB Dataset of Diverse Text for Language Modeling.</em> arXiv:2101.00027. <a href="https://arxiv.org/abs/2101.00027">论文链接</a>。</td>

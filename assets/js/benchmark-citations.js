@@ -1,9 +1,9 @@
-document.querySelectorAll(".benchmark-citation-toggle").forEach((button) => {
-  const citationRow = document.getElementById(button.getAttribute("aria-controls"));
-  if (!citationRow) return;
+document.querySelectorAll(".benchmark-citation-toggle, .benchmark-datasets-toggle").forEach((button) => {
+  const detailRow = document.getElementById(button.getAttribute("aria-controls"));
+  if (!detailRow) return;
 
   button.addEventListener("click", () => {
-    citationRow.hidden = !citationRow.hidden;
-    button.setAttribute("aria-expanded", String(!citationRow.hidden));
+    detailRow.hidden = !detailRow.hidden;
+    button.setAttribute("aria-expanded", String(!detailRow.hidden));
   });
 });
