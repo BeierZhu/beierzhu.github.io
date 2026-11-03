@@ -119,6 +119,23 @@ _styles: |
       <tr id="natural-questions-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Kwiatkowski et al. <em>Natural Questions: A Benchmark for Question Answering Research.</em> TACL, 2019. <a href="https://aclanthology.org/Q19-1026/">论文链接</a>。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td>
+          <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="triviaqa-citation" title="展开或收起引用">TriviaQA</button>
+        </td>
+        <td>2017 年</td>
+        <td>问题由<strong>知识问答爱好者编写</strong>，配有从 Wikipedia 和网页收集的证据文档。问题与证据之间常存在词汇差异，需要整合多句话定位答案，评估模型的<strong>事实知识、阅读理解与跨句推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="triviaqa-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td title="Unfiltered 版本">10,832</td>
+        <td>EM / F1</td>
+      </tr>
+      <tr id="triviaqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/triviaqa-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="triviaqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Joshi et al. <em>TriviaQA: A Large Scale Distantly Supervised Challenge Dataset for Reading Comprehension.</em> ACL, 2017. <a href="https://aclanthology.org/P17-1147/">论文链接</a> · <a href="https://nlp.cs.washington.edu/triviaqa/">数据集主页</a>。规模采用 <a href="https://huggingface.co/datasets/mandarjoshi/trivia_qa/viewer/unfiltered/test">Unfiltered 版本</a>。</td>
+      </tr>
     </tbody>
   </table>
 </div>
