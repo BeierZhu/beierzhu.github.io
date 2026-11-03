@@ -1,12 +1,14 @@
 ---
 layout: post
-title: "大模型测评基准梳理I：纯文本基准"
+title: "大模型测评基准I：纯文本基准"
 date: 2026-11-03
 permalink: /blog/2026/text-only-benchmarks/
-description: "按任务定位、数据规模与评测指标梳理纯文本基准，本次先以 Pile 为例。"
+description: "本文旨在系统梳理主流基准，便于个人查阅参考。"
 tags: [大模型, 测评基准]
 categories: [blog]
 related_posts: false
+toc:
+  beginning: true
 _styles: |
   .benchmark-preview-table table { min-width: 680px; margin-bottom: 0; }
   .benchmark-preview-table th { white-space: nowrap; }
@@ -15,7 +17,6 @@ _styles: |
   .benchmark-preview-table td:not(:nth-child(2)) { white-space: nowrap; }
 ---
 
-纯文本基准覆盖的能力并不完全相同：有些考察知识与推理，有些则关注模型对文本的预测能力。整理时，除了数据集名称，还需要一起看它的**任务定位、数据规模和评测指标**。
 
 ## Table 1：通用推理
 
