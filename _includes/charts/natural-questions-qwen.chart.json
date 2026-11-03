@@ -1,0 +1,5 @@
+[
+  { "model": "Qwen-7B", "em": 17.4 },
+  { "model": "Qwen2.5-7B-Instruct", "em": 19.3 },
+  { "model": "Qwen3-8B", "em": 19.9 }
+]

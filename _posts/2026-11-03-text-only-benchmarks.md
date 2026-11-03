@@ -17,11 +17,15 @@ _styles: |
   .benchmark-preview-table tbody tr { background-image: linear-gradient(var(--global-divider-color), var(--global-divider-color)); background-size: 100% 1px; background-position: bottom; background-repeat: no-repeat; }
   .benchmark-data-row td { padding-top: .4rem; padding-bottom: .4rem; }
   .benchmark-data-row td:not(:nth-child(3)) { white-space: nowrap; }
-  .benchmark-citation-toggle, .benchmark-datasets-toggle { padding: 0; border: 0; background: none; color: var(--global-theme-color); font: inherit; font-weight: bold; text-decoration: none; cursor: pointer; }
+  .benchmark-citation-toggle, .benchmark-datasets-toggle, .benchmark-performance-toggle { padding: 0; border: 0; background: none; color: var(--global-theme-color); font: inherit; font-weight: bold; text-decoration: none; cursor: pointer; }
   .benchmark-citation-toggle { max-width: 100%; white-space: normal; text-align: left; }
-  .benchmark-citation-row[hidden], .benchmark-datasets-row[hidden] { display: none; }
+  .benchmark-citation-row[hidden], .benchmark-datasets-row[hidden], .benchmark-performance-row[hidden] { display: none; }
   .benchmark-citation-row td, .benchmark-datasets-row td { padding: .75rem; white-space: normal; overflow-wrap: anywhere; font-size: .85rem; line-height: 1.6; }
   .benchmark-dataset-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .35rem 1rem; margin: 0; padding: 0; list-style: none; }
+  .benchmark-performance-row td { padding: .75rem; white-space: normal; }
+  .benchmark-performance-panel { position: sticky; left: 0; width: min(100%, calc(100vw - 60px)); }
+  .benchmark-performance-chart { width: 100%; height: 430px; }
+  .benchmark-performance-status { margin: .5rem 0; font-size: .85rem; }
 ---
 
 
@@ -91,9 +95,14 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="natural-questions-citation" title="展开或收起引用">Natural Questions</button>
         </td>
         <td>2019 年</td>
-        <td>大规模阅读理解与开放域问答基准，问题来自<strong>真实 Google 搜索查询</strong>，要求模型结合 Wikipedia 文档定位长答案并提取短答案，同时判断文档中是否存在答案，评估模型的<strong>长文档理解、答案定位与问答能力</strong>。</td>
+        <td>问题来自<strong>真实 Google 搜索查询</strong>，要求模型结合 Wikipedia 文档定位长答案并提取短答案，同时判断文档中是否存在答案，评估模型的<strong>长文档理解、答案定位与问答能力</strong>。</td>
         <td>7,842</td>
-        <td>P / R / F1</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="natural-questions-performance" title="展开或收起 Qwen 系列模型的 EM 柱状图">EM</button></td>
+      </tr>
+      <tr id="natural-questions-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/natural-questions-qwen.liquid %}
+        </td>
       </tr>
       <tr id="natural-questions-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Kwiatkowski et al. <em>Natural Questions: A Benchmark for Question Answering Research.</em> TACL, 2019. <a href="https://aclanthology.org/Q19-1026/">论文链接</a>。</td>
@@ -104,3 +113,9 @@ _styles: |
 
 
 <script src="{{ '/assets/js/benchmark-citations.js' | relative_url }}" defer></script>
+<script>
+  window.buildNaturalQuestionsQwenOption = (
+    {% include charts/natural-questions-qwen.chart.js %}
+  );
+</script>
+<script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>
