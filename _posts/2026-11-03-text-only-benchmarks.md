@@ -33,6 +33,9 @@ _styles: |
   .benchmark-example:last-child { padding-bottom: 0; border-bottom: 0; }
   .benchmark-example p { margin-bottom: .4rem; }
   .benchmark-example p:last-child { margin-bottom: 0; }
+  .benchmark-example-correct { background-color: rgba(97, 169, 189, .25); }
+  .benchmark-example-result-correct { color: #198754; font-weight: bold; }
+  .benchmark-example-result-incorrect { color: #bd4147; font-weight: bold; }
 ---
 
 
@@ -135,6 +138,23 @@ _styles: |
       </tr>
       <tr id="triviaqa-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Joshi et al. <em>TriviaQA: A Large Scale Distantly Supervised Challenge Dataset for Reading Comprehension.</em> ACL, 2017. <a href="https://aclanthology.org/P17-1147/">论文链接</a> · <a href="https://nlp.cs.washington.edu/triviaqa/">数据集主页</a>。规模采用 <a href="https://huggingface.co/datasets/mandarjoshi/trivia_qa/viewer/unfiltered/test">Unfiltered 版本</a>。</td>
+      </tr>
+      <tr class="benchmark-data-row">
+        <td>
+          <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="piqa-citation" title="展开或收起引用">PIQA</button>
+        </td>
+        <td>2019 年</td>
+        <td>围绕<strong>日常生活中的物理常识与操作任务</strong>，给定一个目标（Goal）和两个候选方案，要求选出更合理、可行的方案。评估模型对<strong>物体属性、工具用途及物理交互</strong>的理解与常识推理能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="piqa-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>3,084</td>
+        <td>Accuracy</td>
+      </tr>
+      <tr id="piqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/piqa-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="piqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Bisk et al. <em>PIQA: Reasoning about Physical Commonsense in Natural Language.</em> AAAI, 2020（预印本于 2019 年发布）。<a href="https://arxiv.org/abs/1911.11641">论文链接</a> · <a href="https://yonatanbisk.com/piqa/">数据集主页</a>。</td>
       </tr>
     </tbody>
   </table>
