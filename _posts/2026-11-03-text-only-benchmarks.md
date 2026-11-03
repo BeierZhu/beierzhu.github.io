@@ -27,10 +27,9 @@ _styles: |
     <colgroup>
       <col style="width: 7%">
       <col style="width: 10%">
-      <col style="width: 57%">
+      <col style="width: 63%">
       <col style="width: 8%">
       <col style="width: 12%">
-      <col style="width: 6%">
     </colgroup>
     <thead>
       <tr>
@@ -39,7 +38,6 @@ _styles: |
         <th scope="col">简介</th>
         <th scope="col">规模</th>
         <th scope="col">评测指标</th>
-        <th scope="col">SoTA</th>
       </tr>
     </thead>
     <tbody>
@@ -51,10 +49,9 @@ _styles: |
         <td>由 <strong>22 个多领域子数据集</strong>组成的大规模英文文本语料库，涵盖学术论文、书籍、代码、网页、法律文档及在线对话等，主要用于评估语言模型的<strong>跨领域语言建模能力</strong>。</td>
         <td>825 GB</td>
         <td>PPL / BPB</td>
-        <td>—</td>
       </tr>
       <tr id="pile-citation" class="benchmark-citation-row" hidden>
-        <td colspan="6">Gao et al. <em>The Pile: An 800GB Dataset of Diverse Text for Language Modeling.</em> arXiv:2101.00027. <a href="https://arxiv.org/abs/2101.00027">论文链接</a>。</td>
+        <td colspan="5">Gao et al. <em>The Pile: An 800GB Dataset of Diverse Text for Language Modeling.</em> arXiv:2101.00027. <a href="https://arxiv.org/abs/2101.00027">论文链接</a>。</td>
       </tr>
     </tbody>
   </table>
