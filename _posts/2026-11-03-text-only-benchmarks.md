@@ -10,13 +10,13 @@ related_posts: false
 toc:
   beginning: true
 _styles: |
-  .benchmark-preview-table table { min-width: 800px; margin-bottom: 0; }
+  .benchmark-preview-table table { width: 100%; min-width: 800px; table-layout: fixed; margin-bottom: 0; }
   .benchmark-preview-table th { white-space: nowrap; }
   .benchmark-preview-table td { vertical-align: top; }
-  .benchmark-preview-table td:nth-child(3) { min-width: 20rem; }
-  .benchmark-preview-table td:not(:nth-child(3)) { white-space: nowrap; }
-  .benchmark-reference summary { cursor: pointer; color: var(--global-theme-color); }
-  .benchmark-citation { width: 16rem; max-width: 70vw; margin-top: .5rem; white-space: normal; font-size: .85rem; line-height: 1.6; }
+  .benchmark-data-row td:not(:nth-child(3)) { white-space: nowrap; }
+  .benchmark-citation-toggle { padding: 0; border: 0; background: none; color: var(--global-theme-color); font: inherit; font-weight: bold; text-decoration: none; cursor: pointer; }
+  .benchmark-citation-row[hidden] { display: none; }
+  .benchmark-citation-row td { padding: .75rem; box-shadow: inset 0 1px 0 var(--global-divider-color); white-space: normal; overflow-wrap: anywhere; font-size: .85rem; line-height: 1.6; }
 ---
 
 
@@ -24,6 +24,14 @@ _styles: |
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table>
+    <colgroup>
+      <col style="width: 7%">
+      <col style="width: 10%">
+      <col style="width: 57%">
+      <col style="width: 8%">
+      <col style="width: 12%">
+      <col style="width: 6%">
+    </colgroup>
     <thead>
       <tr>
         <th scope="col">名称</th>
@@ -35,12 +43,9 @@ _styles: |
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr class="benchmark-data-row">
         <td>
-          <details class="benchmark-reference">
-            <summary title="点击展开或收起引用"><strong>Pile</strong></summary>
-            <div class="benchmark-citation">[1] Gao et al. <em>The Pile: An 800GB Dataset of Diverse Text for Language Modeling.</em> arXiv:2101.00027. <a href="https://arxiv.org/abs/2101.00027">论文链接</a>。</div>
-          </details>
+          <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="pile-citation" title="展开或收起引用">Pile</button>
         </td>
         <td>2020 年</td>
         <td>由 <strong>22 个多领域子数据集</strong>组成的大规模英文文本语料库，涵盖学术论文、书籍、代码、网页、法律文档及在线对话等，主要用于评估语言模型的<strong>跨领域语言建模能力</strong>。</td>
@@ -48,11 +53,12 @@ _styles: |
         <td>PPL / BPB</td>
         <td>—</td>
       </tr>
+      <tr id="pile-citation" class="benchmark-citation-row" hidden>
+        <td colspan="6">Gao et al. <em>The Pile: An 800GB Dataset of Diverse Text for Language Modeling.</em> arXiv:2101.00027. <a href="https://arxiv.org/abs/2101.00027">论文链接</a>。</td>
+      </tr>
     </tbody>
   </table>
 </div>
 
 
-### 参考文献
-
-<p id="ref-pile">[1] Gao et al. <a href="https://arxiv.org/abs/2101.00027">The Pile: An 800GB Dataset of Diverse Text for Language Modeling</a>. arXiv:2101.00027.</p>
+<script src="{{ '/assets/js/benchmark-citations.js' | relative_url }}" defer></script>
