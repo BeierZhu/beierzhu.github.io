@@ -2,3 +2,4 @@
 - [Preview routing checks](preview-routing.md) — a successful local screenshot alone does not prove the user's selected Preview endpoint is reachable.
 - [Publication statistics](publication-statistics.md) — user-defined grouping: Preprint belongs under Others in the venue summary table.
 - [Browser verification](browser-verification.md) — native collapsed content can retain layout dimensions; browser probes must keep all runtime state outside the workspace.
+- [Benchmark blog style](benchmark-blog-style.md) — 用户认可简洁对比表格及按需展开补充信息的呈现方式，后续条目沿用此风格。
