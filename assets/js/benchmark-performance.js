@@ -45,12 +45,22 @@
     let pending;
 
     function showChart() {
-      if (handle || pending) return;
+      if (row.hidden) return;
+      if (handle) {
+        // A hidden table row reports zero dimensions. Rebuild the chart's
+        // layout after the reopened row has regained its visible dimensions.
+        requestAnimationFrame(() => {
+          if (!row.hidden && handle) handle.update(data);
+        });
+        return;
+      }
+      if (pending) return;
       status.hidden = false;
       status.textContent = "正在加载图表…";
 
       pending = (async () => {
         const runtime = await loadRuntime(container);
+        await new Promise(requestAnimationFrame);
         if (row.hidden) return;
         handle = await runtime.render({
           el: container,

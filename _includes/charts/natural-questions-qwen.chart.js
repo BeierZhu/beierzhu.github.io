@@ -6,10 +6,10 @@ function buildOption(data) {
   return {
     title: [
       {
-        text: "Qwen3-8B 在所列模型中 EM 最高",
-        subtext: "Natural Questions · Qwen 系列 7B / 8B · EM (%) ↑"
+        text: "Natural Questions · Qwen 系列 7B / 8B",
+        subtext: "EM (%) ↑"
       },
-      { text: "数据由用户提供；测评设置与日期未提供。" }
+      { text: "", show: false }
     ],
     xAxis: {
       type: "category",

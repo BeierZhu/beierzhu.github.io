@@ -9,6 +9,12 @@ For native collapsed details, verify the open state and actual browser visibilit
 
 **How to apply:** Check visibility before and after actual activation, and verify localized content in the expanded state.
 
+For collapsible charts, compare the rendered plot and label geometry over repeated open/close cycles, not only the outer container dimensions or chart-node count.
+
+**Why:** An earlier check confirmed the container width and absence of duplicate chart nodes, but missed a visibly compressed chart on reopening.
+
+**How to apply:** Compare SVG dimensions, bar bounds, and label font sizes on the first and subsequent opens at both desktop and mobile widths.
+
 Keep temporary Chromium profiles and XDG configuration/cache directories outside the Jekyll workspace.
 
 **Why:** A temporary browser profile alone does not redirect crash-report settings; Chromium otherwise writes under the workspace configuration directory and triggers Jekyll regeneration.
