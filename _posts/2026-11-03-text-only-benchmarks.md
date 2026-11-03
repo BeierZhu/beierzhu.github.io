@@ -17,15 +17,22 @@ _styles: |
   .benchmark-preview-table tbody tr { background-image: linear-gradient(var(--global-divider-color), var(--global-divider-color)); background-size: 100% 1px; background-position: bottom; background-repeat: no-repeat; }
   .benchmark-data-row td { padding-top: .4rem; padding-bottom: .4rem; }
   .benchmark-data-row td:not(:nth-child(3)) { white-space: nowrap; }
-  .benchmark-citation-toggle, .benchmark-datasets-toggle, .benchmark-performance-toggle { padding: 0; border: 0; background: none; color: var(--global-theme-color); font: inherit; font-weight: bold; text-decoration: none; cursor: pointer; }
+  .benchmark-citation-toggle, .benchmark-datasets-toggle, .benchmark-performance-toggle, .benchmark-examples-toggle { padding: 0; border: 0; background: none; color: var(--global-theme-color); font: inherit; font-weight: bold; text-decoration: none; cursor: pointer; }
   .benchmark-citation-toggle { max-width: 100%; white-space: normal; text-align: left; }
-  .benchmark-citation-row[hidden], .benchmark-datasets-row[hidden], .benchmark-performance-row[hidden] { display: none; }
+  .benchmark-citation-row[hidden], .benchmark-datasets-row[hidden], .benchmark-performance-row[hidden], .benchmark-examples-row[hidden] { display: none; }
   .benchmark-citation-row td, .benchmark-datasets-row td { padding: .75rem; white-space: normal; overflow-wrap: anywhere; font-size: .85rem; line-height: 1.6; }
   .benchmark-dataset-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .35rem 1rem; margin: 0; padding: 0; list-style: none; }
   .benchmark-performance-row td { padding: .75rem; white-space: normal; }
   .benchmark-performance-panel { position: sticky; left: 0; width: min(100%, calc(100vw - 60px)); }
   .benchmark-performance-chart { width: 100%; height: 430px; }
   .benchmark-performance-status { margin: .5rem 0; font-size: .85rem; }
+  .benchmark-examples-row td { padding: .75rem; white-space: normal; overflow-wrap: anywhere; }
+  .benchmark-examples-panel { position: sticky; left: 0; width: min(100%, calc(100vw - 60px)); font-size: .95rem; line-height: 1.65; }
+  .benchmark-example { padding: .75rem 0; border-bottom: 1px solid var(--global-divider-color); }
+  .benchmark-example:first-child { padding-top: 0; }
+  .benchmark-example:last-child { padding-bottom: 0; border-bottom: 0; }
+  .benchmark-example p { margin-bottom: .4rem; }
+  .benchmark-example p:last-child { margin-bottom: 0; }
 ---
 
 
@@ -95,9 +102,14 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="natural-questions-citation" title="展开或收起引用">Natural Questions</button>
         </td>
         <td>2019 年</td>
-        <td>问题来自<strong>真实 Google 搜索查询</strong>，要求模型结合 Wikipedia 文档定位长答案并提取短答案，同时判断文档中是否存在答案，评估模型的<strong>长文档理解、答案定位与问答能力</strong>。</td>
+        <td>问题来自<strong>真实 Google 搜索查询</strong>，要求模型结合 Wikipedia 文档定位长答案并提取短答案，同时判断文档中是否存在答案，评估模型的<strong>长文档理解、答案定位与问答能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="natural-questions-examples" title="展开或收起三个文字样例">[样例]</button></td>
         <td>7,842</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="natural-questions-performance" title="展开或收起 Qwen 系列模型的 EM 柱状图">EM</button></td>
+      </tr>
+      <tr id="natural-questions-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/natural-questions-examples.liquid %}
+        </td>
       </tr>
       <tr id="natural-questions-performance" class="benchmark-performance-row" hidden>
         <td colspan="5">
