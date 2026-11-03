@@ -11,7 +11,7 @@ toc:
   beginning: true
 _styles: |
   .benchmark-preview-table table { width: 100%; min-width: 800px; table-layout: fixed; margin-bottom: 0; }
-  .benchmark-preview-table th { white-space: nowrap; text-align: center; vertical-align: middle; padding: .5rem 0; border-top: 1px solid var(--global-text-color); border-bottom: 1px solid var(--global-text-color); }
+  .benchmark-preview-table th { white-space: nowrap; text-align: left; vertical-align: middle; padding: .5rem 0; border-top: 1px solid var(--global-divider-color); border-bottom: 1px solid var(--global-divider-color); }
   .benchmark-preview-table td { vertical-align: top; }
   .benchmark-data-row td:not(:nth-child(3)) { white-space: nowrap; }
   .benchmark-citation-toggle { padding: 0; border: 0; background: none; color: var(--global-theme-color); font: inherit; font-weight: bold; text-decoration: none; cursor: pointer; }
