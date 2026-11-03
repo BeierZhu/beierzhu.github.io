@@ -3,7 +3,7 @@ run = "node index.js"
 
 [nix]
 channel = "stable-24_05"
-packages = ["ruby_3_3", "vim", "gcc"]
+packages = ["freetype", "gcc", "gumbo", "harfbuzz", "jbig2dec", "libjpeg_turbo", "mupdf", "openjpeg", "ruby_3_3", "swig", "vim", "xcbuild"]
 
 [deployment]
 run = ["sh", "-c", "node index.js"]

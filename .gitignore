@@ -1,4 +1,5 @@
 _site
+/.agents/outputs/
 .bundle
 .sass-cache
 .jekyll-cache
