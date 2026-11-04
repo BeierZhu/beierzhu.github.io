@@ -391,6 +391,28 @@ _styles: |
       <tr id="agieval-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Zhong et al. <em>AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models.</em> arXiv:2304.06364, 2023. <a href="https://arxiv.org/abs/2304.06364">论文链接</a> · <a href="https://github.com/ruixiangcui/AGIEval">官方仓库</a> · <a href="https://github.com/ruixiangcui/AGIEval/tree/main/data/v1">原版数据</a>。规模按原论文 §3.3.1 的 8,062 道评测题统计；仓库后续版本及输入变体的文件条数可能不同。指标按原论文区分：选择题使用 Accuracy，填空题使用 EM / F1。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td>
+          <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ceval-citation" title="展开或收起引用">C-Eval</button>
+        </td>
+        <td>2023 年</td>
+        <td>C-Eval（Chinese Evaluation Suite）是面向<strong>中文语境</strong>的综合性学科四选一评测基准，覆盖 STEM、人文、社会科学等 <strong>52 个学科</strong>，包含<strong>初中、高中、大学和专业</strong>四个难度层级。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ceval-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td title="52个学科的test划分合计；不含dev和val。">12,342</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="ceval-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
+      </tr>
+      <tr id="ceval-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/ceval-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="ceval-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/ceval-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="ceval-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Huang et al. <em>C-Eval: A Multi-Level Multi-Discipline Chinese Evaluation Suite for Foundation Models.</em> NeurIPS, 2023. <a href="https://arxiv.org/abs/2305.08322">论文链接</a> · <a href="https://cevalbenchmark.com/">官方网站</a> · <a href="https://huggingface.co/datasets/ceval/ceval-exam">数据集</a>。规模为 52 个学科的 test 划分合计 12,342 题，不含 dev 和 val；13,948 为所有划分的总题数。</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -420,6 +442,9 @@ _styles: |
   );
   window.buildMMLUProQwenOption = (
     {% include charts/mmlu-pro-qwen.chart.js %}
+  );
+  window.buildCEvalQwenOption = (
+    {% include charts/ceval-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>
