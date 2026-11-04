@@ -754,6 +754,26 @@ _styles: |
       <tr id="chatbot-arena-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Zheng et al. <em>Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.</em> NeurIPS, 2023。<a href="https://arxiv.org/abs/2306.05685">论文链接</a> · <a href="https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge">官方仓库</a> · <a href="https://huggingface.co/datasets/lmsys/chatbot_arena_conversations">早期公开对话数据</a>。30K 指该论文公开的约 3 万条带有人类偏好标注的对话，并非固定测试题数或当前平台累计规模。Win Rate 表示两两对战胜率；Elo 是基于对战结果估计的相对评分，不是百分比。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ifeval-citation" title="展开或收起引用">IFEval</button></td>
+        <td>2023 年</td>
+        <td>IFEval（Instruction-Following Eval）是面向大语言模型<strong>指令遵循能力</strong>的评测基准，包含 <strong>541 个带有可验证指令的 Prompt</strong>，覆盖 <strong>25 类约束</strong>，包括关键词、语言、长度、格式及标点等，重点评估模型对<strong>明确、可验证指令的执行能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ifeval-examples" title="展开或收起指令样例">[样例]</button></td>
+        <td>541</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="ifeval-performance" title="展开或收起 Qwen 系列模型的 IFEval 得分柱状图">Accuracy</button></td>
+      </tr>
+      <tr id="ifeval-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/ifeval-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="ifeval-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/ifeval-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="ifeval-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Zhou et al. <em>Instruction-Following Evaluation for Large Language Models.</em> 2023。<a href="https://arxiv.org/abs/2311.07911">论文链接</a> · <a href="https://github.com/google-research/google-research/tree/master/instruction_following_eval">官方仓库</a> · <a href="https://github.com/google-research/google-research/blob/master/instruction_following_eval/data/input_data.jsonl">评测题目</a>。规模按官方公开的 541 个 Prompt 计，覆盖 25 类可验证指令。评测区分 Prompt 级与 Instruction 级准确率，并提供 strict 与 loose 两种判定方式；此处图表不额外指定具体口径。样例对应官方数据 key 2637。</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -816,6 +836,9 @@ _styles: |
   );
   window.buildMTBenchQwenOption = (
     {% include charts/mt-bench-qwen.chart.js %}
+  );
+  window.buildIFEvalQwenOption = (
+    {% include charts/ifeval-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>
