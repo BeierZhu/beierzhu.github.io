@@ -212,7 +212,7 @@ _styles: |
         </td>
         <td>2022 年</td>
         <td>由研究社区协作构建的<strong>综合能力评测合集</strong>，论文收录 <strong>204 个任务</strong>，覆盖语言理解、数学、常识推理、代码、多语言与社会偏差等领域。包含静态题目与可编程交互任务，用于考察模型的<strong>多维能力、泛化表现与规模增长规律</strong>。</td>
-        <td title="不同子任务提供不同数量的评测样本，部分任务支持程序化生成；没有统一测试集规模。">依任务而定</td>
+        <td title="不同子任务提供不同数量的评测样本，部分任务支持程序化生成；没有统一测试集规模。">1-2M</td>
         <td title="各任务使用首选指标（如 Accuracy、EM、BLEU、ROUGE），按该任务设定的低分和高分基准归一化，再跨任务取平均。">归一化均分</td>
       </tr>
       <tr id="big-bench-citation" class="benchmark-citation-row" hidden>
@@ -223,8 +223,8 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="big-bench-lite-citation" title="展开或收起引用">BIG-Bench Lite</button>
         </td>
         <td>2022 年</td>
-        <td>BIG-Bench 的<strong>轻量代表性子集</strong>，精选 <strong><button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="big-bench-lite-tasks" title="展开或收起24个任务名称">24</button> 个 JSON 格式任务</strong>，覆盖推理、代码、多语言及偏差测量等能力。不包含需要复杂交互的可编程任务，便于以<strong>更低评测成本</strong>比较模型的综合表现；与 BIG-Bench Hard（BBH）不同。</td>
-        <td title="24 是任务数量，不是测试样本数量；各子任务的样本数和评测采样设置不同。">依任务而定</td>
+        <td>BIG-Bench 的<strong>轻量代表性子集</strong>，精选 <strong><button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="big-bench-lite-tasks" title="展开或收起24个任务名称">24</button> 个 JSON 格式任务</strong>，覆盖推理、代码、多语言及偏差测量等能力。不包含需要复杂交互的可编程任务，便于以<strong>更低评测成本</strong>比较模型的综合表现</td>
+        <td title="24 是任务数量，不是测试样本数量；各子任务的样本数和评测采样设置不同。">5K</td>
         <td title="沿用各任务的首选指标，经任务内归一化后对24个任务取平均。">归一化均分</td>
       </tr>
       <tr id="big-bench-lite-tasks" class="benchmark-datasets-row" hidden>
@@ -234,6 +234,28 @@ _styles: |
       </tr>
       <tr id="big-bench-lite-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">BIG-bench authors. <em>Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models.</em> TMLR, 2023（预印本于 2022 年发布），§2.2 / Table 1. <a href="https://arxiv.org/abs/2206.04615">论文链接</a> · <a href="https://github.com/google/BIG-bench#big-bench-lite-leaderboard">官方说明</a>。Lite 与完整 BIG-Bench 共用论文来源，任务数为 24；测试样本量仍需按具体任务和采样设置确定。</td>
+      </tr>
+      <tr class="benchmark-data-row">
+        <td>
+          <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="bbh-citation" title="展开或收起引用">BBH</button>
+        </td>
+        <td>2022 年</td>
+        <td>BIG-Bench Hard，从 BIG-Bench 中筛选出 <strong><button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="bbh-tasks" title="展开或收起23类任务名称">23</button> 类高难度任务</strong>，原研究中的模型尚未超过这些任务的人类平均表现。覆盖逻辑、算术、符号与常识推理，重点考察<strong>多步推理能力</strong>，常用于研究<strong>思维链（CoT）提示</strong>的效果。</td>
+        <td title="官方27个任务变体数据文件合计的评测样本数，不含few-shot提示样例。">6,511</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="bbh-performance" title="展开或收起 Qwen 系列模型的 EM 柱状图">EM</button></td>
+      </tr>
+      <tr id="bbh-tasks" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/bbh-tasks.liquid %}
+        </td>
+      </tr>
+      <tr id="bbh-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/bbh-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="bbh-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Suzgun et al. <em>Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can Solve Them.</em> arXiv:2210.09261, 2022. <a href="https://arxiv.org/abs/2210.09261">论文链接</a> · <a href="https://github.com/suzgunmirac/BIG-Bench-Hard">官方仓库</a>。23 类任务中，逻辑演绎和物体交换追踪各含 3、5、7 个对象的变体，共 27 个数据文件、6,511 条评测样本。指标按生成答案与标准答案的完全匹配（EM）计算正确率，再跨任务汇总。</td>
       </tr>
     </tbody>
   </table>
@@ -250,6 +272,9 @@ _styles: |
   );
   window.buildHellaSwagQwenOption = (
     {% include charts/hellaswag-qwen.chart.js %}
+  );
+  window.buildBBHQwenOption = (
+    {% include charts/bbh-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>
