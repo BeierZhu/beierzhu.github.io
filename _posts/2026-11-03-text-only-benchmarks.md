@@ -262,6 +262,53 @@ _styles: |
 </div>
 
 
+## 2. 多学科知识
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="多学科知识基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 54%">
+      <col style="width: 12%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td>
+          <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="arc-citation" title="展开或收起引用">ARC</button>
+        </td>
+        <td>2018 年</td>
+        <td>来自<strong>中小学科学考试的多项选择题</strong>，包含 Easy（ARC-E）与 Challenge（ARC-C）两个子集。Challenge 收录检索和词共现基线均无法答对的题目，重点考察模型的<strong>科学知识运用与推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="arc-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td><small title="分别为 ARC-Challenge 和 ARC-Easy 的测试集规模。">ARC-C: 1,172<br>ARC-E: 2,376</small></td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="arc-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
+      </tr>
+      <tr id="arc-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/arc-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="arc-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/arc-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="arc-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Clark et al. <em>Think you have Solved Question Answering? Try ARC, the AI2 Reasoning Challenge.</em> arXiv:1803.05457, 2018. <a href="https://arxiv.org/abs/1803.05457">论文链接</a> · <a href="https://huggingface.co/datasets/allenai/ai2_arc/viewer/ARC-Challenge/test">ARC-C 测试集</a> · <a href="https://huggingface.co/datasets/allenai/ai2_arc/viewer/ARC-Easy/test">ARC-E 测试集</a>。</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <script src="{{ '/assets/js/benchmark-citations.js' | relative_url }}" defer></script>
 <script>
   window.buildNaturalQuestionsQwenOption = (
@@ -275,6 +322,9 @@ _styles: |
   );
   window.buildBBHQwenOption = (
     {% include charts/bbh-qwen.chart.js %}
+  );
+  window.buildARCQwenOption = (
+    {% include charts/arc-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>

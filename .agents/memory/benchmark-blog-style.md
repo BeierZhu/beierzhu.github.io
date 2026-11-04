@@ -14,3 +14,9 @@ description: User-approved editorial presentation for the Chinese text-only benc
 **Why:** 用户要求“规模默认都是测试集规模”，并要求将 Pile 改为 Pile-test、更新其规模，去掉 Natural Questions 的“测试集”标注。
 
 **How to apply:** 新增或修订条目时先核实所用测试划分，再填写对应规模。对于没有统一测试规模的多任务合集，标明“依任务而定”，在简介中另列任务数，不用任务数量代替测试样本数量。
+
+用户给出的模型分数未说明子集或提示设置时，不仅凭数值擅自加上这些标签。
+
+**Why:** 同一基准可能包含不同子集；ARC 的 Easy 和 Challenge 不能在未确认时混为同一评测口径。
+
+**How to apply:** 元数据中分别注明子集规模，图表保留用户提供的模型名称、顺序和分数，待用户明确后再标注具体评测条件。
