@@ -379,6 +379,18 @@ _styles: |
       <tr id="mmlu-pro-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Wang et al. <em>MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark.</em> arXiv:2406.01574, 2024. <a href="https://arxiv.org/abs/2406.01574">论文链接</a> · <a href="https://github.com/TIGER-AI-Lab/MMLU-Pro">官方仓库</a> · <a href="https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/viewer/default/test">测试集</a>。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td>
+          <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="agieval-citation" title="展开或收起引用">AGIEval</button>
+        </td>
+        <td>2023 年</td>
+        <td>以<strong>人类标准化考试</strong>为基础构建的综合评测基准，涵盖中国高考、SAT、LSAT、数学竞赛及公务员考试等，覆盖<strong>语言理解、数学推理、逻辑推理和多学科知识</strong>（客观选择题和填空题）。</td>
+        <td title="原论文统计的评测样本规模。">8,062</td>
+        <td title="按原论文：选择题使用Accuracy，填空题使用EM和F1。">Accuracy<br>EM / F1</td>
+      </tr>
+      <tr id="agieval-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Zhong et al. <em>AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models.</em> arXiv:2304.06364, 2023. <a href="https://arxiv.org/abs/2304.06364">论文链接</a> · <a href="https://github.com/ruixiangcui/AGIEval">官方仓库</a> · <a href="https://github.com/ruixiangcui/AGIEval/tree/main/data/v1">原版数据</a>。规模按原论文 §3.3.1 的 8,062 道评测题统计；仓库后续版本及输入变体的文件条数可能不同。指标按原论文区分：选择题使用 Accuracy，填空题使用 EM / F1。</td>
+      </tr>
     </tbody>
   </table>
 </div>
