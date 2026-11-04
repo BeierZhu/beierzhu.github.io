@@ -482,7 +482,54 @@ _styles: |
         </td>
       </tr>
       <tr id="truthfulqa-citation" class="benchmark-citation-row" hidden>
-        <td colspan="5">Lin, Hilton, and Evans. <em>TruthfulQA: Measuring How Models Mimic Human Falsehoods.</em> ACL, 2022（预印本于 2021 年发布）。<a href="https://arxiv.org/abs/2109.07958">论文链接</a> · <a href="https://github.com/sylinrl/TruthfulQA">官方仓库</a> · <a href="https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv">评测题目</a>。基准包含 817 个问题、38 个类别。除生成任务的 Truthfulness 外，该基准也提供 MC1 / MC2 等选择题指标；图表保留所给分数，不额外指定评测子任务。</td>
+        <td colspan="5">Lin, Hilton, and Evans. <em>TruthfulQA: Measuring How Models Mimic Human Falsehoods.</em> ACL, 2022（预印本于 2021 年发布）。<a href="https://arxiv.org/abs/2109.07958">论文链接</a> · <a href="https://github.com/sylinrl/TruthfulQA">官方仓库</a> · <a href="https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv">评测题目</a>。</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+## 4. 数学推理
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="数学推理基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 54%">
+      <col style="width: 12%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="gsm8k-citation" title="展开或收起引用">GSM8K</button></td>
+        <td>2021 年</td>
+        <td>GSM8K（Grade School Math 8K）是<strong>小学数学应用题基准</strong>，主要评估模型的<strong>多步算术推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="gsm8k-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>1,319</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="gsm8k-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
+      </tr>
+      <tr id="gsm8k-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/gsm8k-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="gsm8k-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/gsm8k-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="gsm8k-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Cobbe et al. <em>Training Verifiers to Solve Math Word Problems.</em> 2021。<a href="https://arxiv.org/abs/2110.14168">论文链接</a> · <a href="https://github.com/openai/grade-school-math">官方仓库</a> · <a href="https://github.com/openai/grade-school-math/blob/master/grade_school_math/data/test.jsonl">评测题目</a>。规模采用官方测试划分的 1,319 道题，不含 7,473 道训练题；准确率按最终答案评估。</td>
       </tr>
     </tbody>
   </table>
@@ -522,6 +569,9 @@ _styles: |
   );
   window.buildTruthfulQAQwenOption = (
     {% include charts/truthfulqa-qwen.chart.js %}
+  );
+  window.buildGSM8KQwenOption = (
+    {% include charts/gsm8k-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>
