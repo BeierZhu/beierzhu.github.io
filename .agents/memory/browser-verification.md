@@ -15,6 +15,12 @@ For collapsible charts, compare the rendered plot and label geometry over repeat
 
 **How to apply:** Compare SVG dimensions, bar bounds, and label font sizes on the first and subsequent opens at both desktop and mobile widths.
 
+For initially hidden MathJax examples, wait for typesetting and the fonts requested by the first visible render before comparing formula geometry.
+
+**Why:** Opening hidden math can initiate font loading after the page load event. Measuring immediately can make normal font substitution look like a show/hide layout regression.
+
+**How to apply:** Await MathJax startup, reveal the example, allow a rendering frame, await document.fonts.ready, and allow another frame before comparing formula bounds.
+
 Keep temporary Chromium profiles and XDG configuration/cache directories outside the Jekyll workspace.
 
 **Why:** A temporary browser profile alone does not redirect crash-report settings; Chromium otherwise writes under the workspace configuration directory and triggers Jekyll regeneration.

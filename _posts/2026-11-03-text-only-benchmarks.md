@@ -311,9 +311,14 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="theoremqa-citation" title="展开或收起引用">TheoremQA</button>
         </td>
         <td>2023 年</td>
-        <td>面向大学阶段的<strong>定理驱动型科学问答基准</strong>，涵盖数学、物理、电子工程与计算机科学、金融四大领域，包含约 <strong>354 个定理和 800 道问题</strong>，重点评估模型运用专业定理解决跨学科科学问题的<strong>知识与推理能力</strong>。</td>
+        <td>面向大学阶段的<strong>定理驱动型科学问答基准</strong>，涵盖数学、物理、电子工程与计算机科学、金融四大领域，包含约 <strong>354 个定理和 800 道问题</strong>，重点评估模型运用专业定理解决跨学科科学问题的<strong>知识与推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="theoremqa-examples" title="展开或收起文字样例">[样例]</button></td>
         <td>800</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="theoremqa-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
+      </tr>
+      <tr id="theoremqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/theoremqa-examples.liquid %}
+        </td>
       </tr>
       <tr id="theoremqa-performance" class="benchmark-performance-row" hidden>
         <td colspan="5">
