@@ -744,6 +744,16 @@ _styles: |
       <tr id="mt-bench-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Zheng et al. <em>Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.</em> NeurIPS, 2023。<a href="https://arxiv.org/abs/2306.05685">论文链接</a> · <a href="https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge">官方仓库</a> · <a href="https://github.com/lm-sys/FastChat/blob/main/fastchat/llm_judge/data/mt_bench/question.jsonl">评测题目</a>。规模按 80 组两轮问题计，共 160 个轮次；Judge Score 为模型裁判评分，满分 10 分，不是百分比。样例题目对应 question_id 155，回答与省略部分按截图展示。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="chatbot-arena-citation" title="展开或收起引用">Chatbot Arena</button></td>
+        <td>2023 年</td>
+        <td>Chatbot Arena 是基于<strong>匿名模型两两对战</strong>的众包人类偏好评测平台，用户同时与两个匿名模型交互并选择更优回答，用于评估模型在<strong>真实开放式对话场景中的人类偏好</strong>。</td>
+        <td>30K</td>
+        <td>Win Rate<br>Elo</td>
+      </tr>
+      <tr id="chatbot-arena-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Zheng et al. <em>Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.</em> NeurIPS, 2023。<a href="https://arxiv.org/abs/2306.05685">论文链接</a> · <a href="https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge">官方仓库</a> · <a href="https://huggingface.co/datasets/lmsys/chatbot_arena_conversations">早期公开对话数据</a>。30K 指该论文公开的约 3 万条带有人类偏好标注的对话，并非固定测试题数或当前平台累计规模。Win Rate 表示两两对战胜率；Elo 是基于对战结果估计的相对评分，不是百分比。</td>
+      </tr>
     </tbody>
   </table>
 </div>
