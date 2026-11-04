@@ -34,6 +34,8 @@ _styles: |
   .benchmark-example:last-child { padding-bottom: 0; border-bottom: 0; }
   .benchmark-example p { margin-bottom: .4rem; }
   .benchmark-example p:last-child { margin-bottom: 0; }
+  .benchmark-example .highlight { margin: 0; max-width: 100%; }
+  .benchmark-example pre { max-width: 100%; overflow-x: auto; white-space: pre; }
   .benchmark-example-correct { background-color: rgba(97, 169, 189, .25); }
   .benchmark-example-result-correct { color: #198754; font-weight: bold; }
   .benchmark-example-result-incorrect { color: #bd4147; font-weight: bold; }
@@ -555,6 +557,53 @@ _styles: |
   </table>
 </div>
 
+<br>
+
+## 5. 代码生成
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="代码生成基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 54%">
+      <col style="width: 12%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="humaneval-citation" title="展开或收起引用">HumanEval</button></td>
+        <td>2021 年</td>
+        <td>人工编写的 <strong>Python 函数生成基准</strong>，要求模型根据自然语言描述实现函数，并通过<strong>单元测试</strong>验证代码的<strong>功能正确性</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="humaneval-examples" title="展开或收起代码样例">[样例]</button></td>
+        <td>164</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="humaneval-performance" title="展开或收起 Qwen 系列模型的 Pass@1 柱状图">Pass@1</button></td>
+      </tr>
+      <tr id="humaneval-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/humaneval-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="humaneval-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/humaneval-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="humaneval-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Chen et al. <em>Evaluating Large Language Models Trained on Code.</em> 2021。<a href="https://arxiv.org/abs/2107.03374">论文链接</a> · <a href="https://github.com/openai/human-eval">官方仓库</a> · <a href="https://github.com/openai/human-eval/blob/master/data/HumanEval.jsonl.gz">评测题目</a>。Pass@1 表示单次生成的代码通过该题全部单元测试的比例；样例为 HumanEval/121，包含题目说明与参考实现。</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <script src="{{ '/assets/js/benchmark-citations.js' | relative_url }}" defer></script>
 <script>
   window.buildNaturalQuestionsQwenOption = (
@@ -595,6 +644,9 @@ _styles: |
   );
   window.buildMATHQwenOption = (
     {% include charts/math-qwen.chart.js %}
+  );
+  window.buildHumanEvalQwenOption = (
+    {% include charts/humaneval-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>
