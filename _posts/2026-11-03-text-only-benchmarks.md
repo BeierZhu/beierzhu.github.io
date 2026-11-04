@@ -600,6 +600,26 @@ _styles: |
       <tr id="humaneval-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Chen et al. <em>Evaluating Large Language Models Trained on Code.</em> 2021。<a href="https://arxiv.org/abs/2107.03374">论文链接</a> · <a href="https://github.com/openai/human-eval">官方仓库</a> · <a href="https://github.com/openai/human-eval/blob/master/data/HumanEval.jsonl.gz">评测题目</a>。Pass@1 表示单次生成的代码通过该题全部单元测试的比例；样例为 HumanEval/121，包含题目说明与参考实现。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mbpp-citation" title="展开或收起引用">MBPP</button></td>
+        <td>2021 年</td>
+        <td>MBPP（Mostly Basic Programming Problems）是面向<strong>入门程序员</strong>的 Python 代码生成基准，要求模型根据自然语言描述生成函数，并通过<strong>单元测试</strong>验证正确性。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mbpp-examples" title="展开或收起代码样例">[样例]</button></td>
+        <td>500</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="mbpp-performance" title="展开或收起 Qwen 系列模型的 Pass@1 柱状图">Pass@1</button></td>
+      </tr>
+      <tr id="mbpp-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/mbpp-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="mbpp-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/mbpp-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="mbpp-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Austin et al. <em>Program Synthesis with Large Language Models.</em> 2021。<a href="https://arxiv.org/abs/2108.07732">论文链接</a> · <a href="https://github.com/google-research/google-research/tree/master/mbpp">官方仓库</a> · <a href="https://github.com/google-research/google-research/blob/master/mbpp/mbpp.jsonl">评测题目</a>。规模采用原始 MBPP 的 500 道测试题（task_id 11–510），不混入训练、验证及提示示例，也不采用 sanitized 子集规模；样例对应 task_id 56，示例实现按截图展示。</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -647,6 +667,9 @@ _styles: |
   );
   window.buildHumanEvalQwenOption = (
     {% include charts/humaneval-qwen.chart.js %}
+  );
+  window.buildMBPPQwenOption = (
+    {% include charts/mbpp-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>
