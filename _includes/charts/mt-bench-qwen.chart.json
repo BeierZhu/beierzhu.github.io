@@ -1,0 +1,5 @@
+[
+  { "model": "Qwen1.5-7B", "score": 7.60 },
+  { "model": "Qwen2-7B", "score": 8.41 },
+  { "model": "Qwen2.5-7B", "score": 8.75 }
+]

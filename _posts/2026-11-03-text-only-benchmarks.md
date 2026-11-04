@@ -701,6 +701,53 @@ _styles: |
   </table>
 </div>
 
+<br>
+
+## 7. 对话与人类偏好评测
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="对话与人类偏好评测基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 54%">
+      <col style="width: 12%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mt-bench-citation" title="展开或收起引用">MT-Bench</button></td>
+        <td>2023 年</td>
+        <td>面向<strong>开放式对话</strong>的大语言模型评测基准，包含 <strong>80 组两轮问题</strong>，覆盖写作、角色扮演、信息抽取、推理、数学、代码、STEM 与人文社科等 <strong>8 类任务</strong>，重点评估模型的<strong>多轮对话与指令遵循能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mt-bench-examples" title="展开或收起两轮对话样例">[样例]</button></td>
+        <td>80</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="mt-bench-performance" title="展开或收起 Qwen 系列模型的 Judge Score 柱状图">Judge Score</button></td>
+      </tr>
+      <tr id="mt-bench-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/mt-bench-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="mt-bench-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/mt-bench-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="mt-bench-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Zheng et al. <em>Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.</em> NeurIPS, 2023。<a href="https://arxiv.org/abs/2306.05685">论文链接</a> · <a href="https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge">官方仓库</a> · <a href="https://github.com/lm-sys/FastChat/blob/main/fastchat/llm_judge/data/mt_bench/question.jsonl">评测题目</a>。规模按 80 组两轮问题计，共 160 个轮次；Judge Score 为模型裁判评分，满分 10 分，不是百分比。样例题目对应 question_id 155，回答与省略部分按截图展示。</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <script src="{{ '/assets/js/benchmark-citations.js' | relative_url }}" defer></script>
 <script>
   window.buildNaturalQuestionsQwenOption = (
@@ -756,6 +803,9 @@ _styles: |
   );
   window.buildGPQADiamondQwenOption = (
     {% include charts/gpqa-diamond-qwen.chart.js %}
+  );
+  window.buildMTBenchQwenOption = (
+    {% include charts/mt-bench-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>

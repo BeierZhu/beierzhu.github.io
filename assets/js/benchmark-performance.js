@@ -43,6 +43,8 @@
     const data = JSON.parse(document.getElementById(container.dataset.chartData).textContent);
     const valueKey = container.dataset.chartValueKey || "em";
     const metric = container.dataset.chartMetric || "EM";
+    const valueSuffix = container.dataset.chartValueSuffix ?? "%";
+    const decimals = container.dataset.chartDecimals;
     let handle;
     let pending;
 
@@ -77,7 +79,8 @@
         status.hidden = false;
         status.textContent = "图表加载失败，请收起后重试。模型 " + metric + "：" +
           data.map((item) => item.model + " " +
-            (Number.isInteger(item[valueKey]) ? item[valueKey].toFixed(1) : String(item[valueKey])) + "%").join("；");
+            (decimals !== undefined ? Number(item[valueKey]).toFixed(Number(decimals)) :
+              (Number.isInteger(item[valueKey]) ? item[valueKey].toFixed(1) : String(item[valueKey]))) + valueSuffix).join("；");
       }).finally(() => {
         pending = null;
       });
