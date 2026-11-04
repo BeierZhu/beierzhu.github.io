@@ -328,6 +328,28 @@ _styles: |
       <tr id="theoremqa-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Chen et al. <em>TheoremQA: A Theorem-driven Question Answering dataset.</em> EMNLP, 2023. <a href="https://arxiv.org/abs/2305.12524">论文链接</a> · <a href="https://github.com/TIGER-AI-Lab/TheoremQA">官方仓库</a> · <a href="https://huggingface.co/datasets/TIGER-Lab/TheoremQA">数据集</a>。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td>
+          <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmlu-citation" title="展开或收起引用">MMLU</button>
+        </td>
+        <td>2020 年</td>
+        <td>MMLU（Massive Multitask Language Understanding）是一个涵盖 <strong>57 个学科四选一题目</strong>的综合知识评测基准，用于评估大语言模型在 STEM、人文、社会科学及专业领域的<strong>知识与理解能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mmlu-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>14,042</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="mmlu-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
+      </tr>
+      <tr id="mmlu-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/mmlu-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="mmlu-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/mmlu-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="mmlu-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Hendrycks et al. <em>Measuring Massive Multitask Language Understanding.</em> ICLR, 2021（预印本于 2020 年发布）。<a href="https://arxiv.org/abs/2009.03300">论文链接</a> · <a href="https://github.com/hendrycks/test">官方仓库</a> · <a href="https://huggingface.co/datasets/cais/mmlu/viewer/all/test">测试集</a>。</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -351,6 +373,9 @@ _styles: |
   );
   window.buildTheoremQAQwenOption = (
     {% include charts/theoremqa-qwen.chart.js %}
+  );
+  window.buildMMLUQwenOption = (
+    {% include charts/mmlu-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>

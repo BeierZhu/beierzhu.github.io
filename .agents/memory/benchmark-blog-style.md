@@ -20,3 +20,9 @@ description: User-approved editorial presentation for the Chinese text-only benc
 **Why:** 同一基准可能包含不同子集；ARC 的 Easy 和 Challenge 不能在未确认时混为同一评测口径。
 
 **How to apply:** 元数据中分别注明子集规模，图表保留用户提供的模型名称、顺序和分数，待用户明确后再标注具体评测条件。
+
+图表与加载失败时显示的分数文本都保留用户提供的数值精度，不为统一样式强制舍入为一位小数。
+
+**Why:** 用户提供的成绩可能混合一位与两位小数；统一舍入会改变原始数值。
+
+**How to apply:** 在数据、柱顶标签、悬浮提示、无障碍说明和失败提示中保持一致，整数仍可沿用一位小数的展示风格。

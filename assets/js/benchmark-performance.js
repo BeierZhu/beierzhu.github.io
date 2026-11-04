@@ -76,7 +76,8 @@
         console.error("Benchmark chart failed:", error);
         status.hidden = false;
         status.textContent = "图表加载失败，请收起后重试。模型 " + metric + "：" +
-          data.map((item) => item.model + " " + item[valueKey].toFixed(1) + "%").join("；");
+          data.map((item) => item.model + " " +
+            (Number.isInteger(item[valueKey]) ? item[valueKey].toFixed(1) : String(item[valueKey])) + "%").join("；");
       }).finally(() => {
         pending = null;
       });
