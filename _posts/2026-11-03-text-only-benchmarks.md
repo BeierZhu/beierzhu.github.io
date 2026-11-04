@@ -639,6 +639,53 @@ _styles: |
   </table>
 </div>
 
+<br>
+
+## 6. 专家级科学推理
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="专家级科学推理基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 54%">
+      <col style="width: 12%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="gpqa-citation" title="展开或收起引用">GPQA</button></td>
+        <td>2023 年</td>
+        <td>GPQA（Graduate-Level Google-Proof Q&amp;A Benchmark）是由<strong>领域专家</strong>编写的<strong>研究生级科学问答四选一基准</strong>，涵盖生物、物理和化学，重点评估<strong>专业科学知识与推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="gpqa-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>448</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="gpqa-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
+      </tr>
+      <tr id="gpqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/gpqa-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="gpqa-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/gpqa-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="gpqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Rein et al. <em>GPQA: A Graduate-Level Google-Proof Q&amp;A Benchmark.</em> COLM, 2024（预印本于 2023 年发布）。<a href="https://arxiv.org/abs/2311.12022">论文链接</a> · <a href="https://github.com/idavidrein/gpqa">官方仓库</a> · <a href="https://huggingface.co/datasets/idavidrein/gpqa">数据集</a>。规模采用 GPQA Main 的 448 道题，不与 198 道题的 Diamond 子集混用；图中成绩保留给定模型名称与分数，不据此推断具体子集或提示设置。</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <script src="{{ '/assets/js/benchmark-citations.js' | relative_url }}" defer></script>
 <script>
   window.buildNaturalQuestionsQwenOption = (
@@ -688,6 +735,9 @@ _styles: |
   );
   window.buildLiveCodeBenchQwenOption = (
     {% include charts/livecodebench-qwen.chart.js %}
+  );
+  window.buildGPQAQwenOption = (
+    {% include charts/gpqa-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>

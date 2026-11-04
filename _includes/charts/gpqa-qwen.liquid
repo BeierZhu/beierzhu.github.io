@@ -1,0 +1,19 @@
+<div class="benchmark-performance-panel">
+  <div
+    id="gpqa-qwen-chart"
+    class="benchmark-performance-chart"
+    role="img"
+    aria-label="GPQA Accuracy：Qwen1.5-7B 27.8%，Qwen2-7B 34.3%，Qwen2.5-7B 36.4%，Qwen3-8B 44.44%。"
+    data-benchmark-chart
+    data-chart-builder="buildGPQAQwenOption"
+    data-chart-data="gpqa-qwen-data"
+    data-chart-value-key="accuracy"
+    data-chart-metric="Accuracy"
+    data-runtime-url="https://replit-cdn.com/atta-chart-preview/atta-chart-preview.418e3c54b56c.js"
+    data-runtime-integrity="sha256-QY48VLVshImVaPsSP2GDBwpciPdwJa9nI6qgzia8U2k="
+  ></div>
+  <p class="benchmark-performance-status" role="status" aria-live="polite">正在加载图表…</p>
+  <script type="application/json" id="gpqa-qwen-data">
+    {% include charts/gpqa-qwen.chart.json %}
+  </script>
+</div>
