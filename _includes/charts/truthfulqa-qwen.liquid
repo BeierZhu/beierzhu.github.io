@@ -1,0 +1,19 @@
+<div class="benchmark-performance-panel">
+  <div
+    id="truthfulqa-qwen-chart"
+    class="benchmark-performance-chart"
+    role="img"
+    aria-label="TruthfulQA 模型得分：Qwen1.5-7B 51.1%，Qwen2-7B 54.2%，Qwen2.5-7B 56.4%。"
+    data-benchmark-chart
+    data-chart-builder="buildTruthfulQAQwenOption"
+    data-chart-data="truthfulqa-qwen-data"
+    data-chart-value-key="score"
+    data-chart-metric="得分"
+    data-runtime-url="https://replit-cdn.com/atta-chart-preview/atta-chart-preview.418e3c54b56c.js"
+    data-runtime-integrity="sha256-QY48VLVshImVaPsSP2GDBwpciPdwJa9nI6qgzia8U2k="
+  ></div>
+  <p class="benchmark-performance-status" role="status" aria-live="polite">正在加载图表…</p>
+  <script type="application/json" id="truthfulqa-qwen-data">
+    {% include charts/truthfulqa-qwen.chart.json %}
+  </script>
+</div>

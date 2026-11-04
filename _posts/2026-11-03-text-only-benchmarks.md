@@ -439,6 +439,55 @@ _styles: |
   </table>
 </div>
 
+<br>
+
+## 3. 事实真实性与可靠性评测
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="事实真实性与可靠性评测基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 54%">
+      <col style="width: 12%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td>
+          <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="truthfulqa-citation" title="展开或收起引用">TruthfulQA</button>
+        </td>
+        <td>2021 年</td>
+        <td>专门针对<strong>人类常见误解</strong>设计的问答基准，覆盖健康、法律、金融、政治等 <strong>38 个类别</strong>，通过容易引发常见误解的问题，评估模型回答的<strong>真实性与准确性</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="truthfulqa-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>817</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="truthfulqa-performance" title="展开或收起 Qwen 系列模型的得分柱状图">Truthfulness</button></td>
+      </tr>
+      <tr id="truthfulqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/truthfulqa-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="truthfulqa-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/truthfulqa-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="truthfulqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Lin, Hilton, and Evans. <em>TruthfulQA: Measuring How Models Mimic Human Falsehoods.</em> ACL, 2022（预印本于 2021 年发布）。<a href="https://arxiv.org/abs/2109.07958">论文链接</a> · <a href="https://github.com/sylinrl/TruthfulQA">官方仓库</a> · <a href="https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv">评测题目</a>。基准包含 817 个问题、38 个类别。除生成任务的 Truthfulness 外，该基准也提供 MC1 / MC2 等选择题指标；图表保留所给分数，不额外指定评测子任务。</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <script src="{{ '/assets/js/benchmark-citations.js' | relative_url }}" defer></script>
 <script>
   window.buildNaturalQuestionsQwenOption = (
@@ -470,6 +519,9 @@ _styles: |
   );
   window.buildCMMLUQwenOption = (
     {% include charts/cmmlu-qwen.chart.js %}
+  );
+  window.buildTruthfulQAQwenOption = (
+    {% include charts/truthfulqa-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>
