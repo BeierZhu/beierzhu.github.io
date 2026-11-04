@@ -778,6 +778,46 @@ _styles: |
   </table>
 </div>
 
+## 8. 安全性与对齐评测
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="安全性与对齐评测基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 54%">
+      <col style="width: 12%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="do-not-answer-citation" title="展开或收起引用">Do-Not-Answer</button></td>
+        <td>2023 年</td>
+        <td>面向大语言模型<strong>安全防护能力</strong>的评测基准，仅包含<strong>不应被模型直接遵从的有害或风险性问题</strong>，覆盖隐私与敏感信息泄露、恶意用途、歧视与仇恨、错误信息及人机交互风险等 <strong>5 大领域</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="do-not-answer-examples" title="展开或收起安全评测问题样例">[样例]</button></td>
+        <td>939</td>
+        <td>Accuracy</td>
+      </tr>
+      <tr id="do-not-answer-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/do-not-answer-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="do-not-answer-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Wang et al. <em>Do-Not-Answer: Evaluating Safeguards in LLMs.</em> Findings of EACL, 2024（预印本发布于 2023 年）。<a href="https://arxiv.org/abs/2308.13387">预印本</a> · <a href="https://aclanthology.org/2024.findings-eacl.61/">正式论文</a> · <a href="https://github.com/Libr-AI/do-not-answer">官方仓库</a>。规模按英文原版的 939 条指令计，覆盖 5 个风险领域、12 类危害；不包含后续中文扩展集。此处 Accuracy 指安全回答比例，即未产生有害回答的占比，而非对这些风险请求给出实质性答案的比例。</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <script src="{{ '/assets/js/benchmark-citations.js' | relative_url }}" defer></script>
 <script>
   window.buildNaturalQuestionsQwenOption = (
