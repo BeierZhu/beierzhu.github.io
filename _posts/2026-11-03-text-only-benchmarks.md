@@ -362,6 +362,23 @@ _styles: |
       <tr id="mmlu-redux-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Gema et al. <em>Are We Done with MMLU?</em> NAACL-HLT, 2025（预印本于 2024 年发布）。<a href="https://arxiv.org/abs/2406.04127">论文链接</a> · <a href="https://github.com/aryopg/mmlu-redux">官方仓库</a> · <a href="https://huggingface.co/datasets/edinburgh-dawg/mmlu-redux-2.0">数据集</a>。规模按 MMLU-Redux 2.0 统计，包含 57 个学科、每科 100 条测试样本；6.49% 是对原 MMLU 题目错误比例的估计。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td>
+          <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmlu-pro-citation" title="展开或收起引用">MMLU-Pro</button>
+        </td>
+        <td>2024 年</td>
+        <td>MMLU 的增强版，覆盖 <strong>14 个学科领域</strong>，通过引入更复杂的问题、将选项从 <strong>4 个增加至 10 个</strong>，并过滤简单及存在噪声的题目，提高评测的<strong>区分度</strong>。</td>
+        <td>12,032</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="mmlu-pro-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
+      </tr>
+      <tr id="mmlu-pro-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/mmlu-pro-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="mmlu-pro-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Wang et al. <em>MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark.</em> arXiv:2406.01574, 2024. <a href="https://arxiv.org/abs/2406.01574">论文链接</a> · <a href="https://github.com/TIGER-AI-Lab/MMLU-Pro">官方仓库</a> · <a href="https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/viewer/default/test">测试集</a>。</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -388,6 +405,9 @@ _styles: |
   );
   window.buildMMLUQwenOption = (
     {% include charts/mmlu-qwen.chart.js %}
+  );
+  window.buildMMLUProQwenOption = (
+    {% include charts/mmlu-pro-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>
