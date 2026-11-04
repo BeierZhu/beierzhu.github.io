@@ -13,4 +13,4 @@ description: User-approved editorial presentation for the Chinese text-only benc
 
 **Why:** 用户要求“规模默认都是测试集规模”，并要求将 Pile 改为 Pile-test、更新其规模，去掉 Natural Questions 的“测试集”标注。
 
-**How to apply:** 新增或修订条目时先核实所用测试划分，再填写对应规模。
+**How to apply:** 新增或修订条目时先核实所用测试划分，再填写对应规模。对于没有统一测试规模的多任务合集，标明“依任务而定”，在简介中另列任务数，不用任务数量代替测试样本数量。
