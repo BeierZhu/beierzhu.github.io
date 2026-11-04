@@ -350,6 +350,18 @@ _styles: |
       <tr id="mmlu-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Hendrycks et al. <em>Measuring Massive Multitask Language Understanding.</em> ICLR, 2021（预印本于 2020 年发布）。<a href="https://arxiv.org/abs/2009.03300">论文链接</a> · <a href="https://github.com/hendrycks/test">官方仓库</a> · <a href="https://huggingface.co/datasets/cais/mmlu/viewer/all/test">测试集</a>。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td>
+          <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmlu-redux-citation" title="展开或收起引用">MMLU-Redux</button>
+        </td>
+        <td>2024 年</td>
+        <td>对 MMLU 进行<strong>人工审核与重新标注</strong>的修正版，旨在纠正错误答案与歧义题目；抽样发现约 <strong>6.49%</strong> 的题目存在错误。</td>
+        <td title="MMLU-Redux 2.0：57个学科，每科100条测试样本。">5,700</td>
+        <td>Accuracy</td>
+      </tr>
+      <tr id="mmlu-redux-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Gema et al. <em>Are We Done with MMLU?</em> NAACL-HLT, 2025（预印本于 2024 年发布）。<a href="https://arxiv.org/abs/2406.04127">论文链接</a> · <a href="https://github.com/aryopg/mmlu-redux">官方仓库</a> · <a href="https://huggingface.co/datasets/edinburgh-dawg/mmlu-redux-2.0">数据集</a>。规模按 MMLU-Redux 2.0 统计，包含 57 个学科、每科 100 条测试样本；6.49% 是对原 MMLU 题目错误比例的估计。</td>
+      </tr>
     </tbody>
   </table>
 </div>
