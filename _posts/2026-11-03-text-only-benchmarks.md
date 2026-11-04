@@ -531,6 +531,26 @@ _styles: |
       <tr id="gsm8k-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Cobbe et al. <em>Training Verifiers to Solve Math Word Problems.</em> 2021。<a href="https://arxiv.org/abs/2110.14168">论文链接</a> · <a href="https://github.com/openai/grade-school-math">官方仓库</a> · <a href="https://github.com/openai/grade-school-math/blob/master/grade_school_math/data/test.jsonl">评测题目</a>。规模采用官方测试划分的 1,319 道题，不含 7,473 道训练题；准确率按最终答案评估。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="math-citation" title="展开或收起引用">MATH</button></td>
+        <td>2021 年</td>
+        <td>MATH（Mathematics Aptitude Test of Heuristics）是<strong>高中竞赛数学评测基准</strong>，覆盖代数、几何、数论、组合与概率等 <strong>7 个数学领域</strong>，包含 <strong>5 个难度等级</strong>，主要评估模型的<strong>复杂数学推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="math-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>5,000</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="math-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
+      </tr>
+      <tr id="math-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/math-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="math-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/math-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="math-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Hendrycks et al. <em>Measuring Mathematical Problem Solving With the MATH Dataset.</em> NeurIPS, 2021。<a href="https://arxiv.org/abs/2103.03874">论文链接</a> · <a href="https://github.com/hendrycks/math">官方仓库</a> · <a href="https://huggingface.co/datasets/qwedsacf/competition_math">数据集</a>。规模采用原始 MATH 的 5,000 道测试题，不含 7,500 道训练题；准确率按最终答案评估。</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -572,6 +592,9 @@ _styles: |
   );
   window.buildGSM8KQwenOption = (
     {% include charts/gsm8k-qwen.chart.js %}
+  );
+  window.buildMATHQwenOption = (
+    {% include charts/math-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>
