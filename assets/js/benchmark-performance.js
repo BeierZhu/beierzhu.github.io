@@ -41,6 +41,8 @@
     const container = row.querySelector("[data-benchmark-chart]");
     const status = row.querySelector(".benchmark-performance-status");
     const data = JSON.parse(document.getElementById(container.dataset.chartData).textContent);
+    const valueKey = container.dataset.chartValueKey || "em";
+    const metric = container.dataset.chartMetric || "EM";
     let handle;
     let pending;
 
@@ -73,8 +75,8 @@
       })().catch((error) => {
         console.error("Benchmark chart failed:", error);
         status.hidden = false;
-        status.textContent = "图表加载失败，请收起后重试。模型 EM：" +
-          data.map((item) => item.model + " " + item.em.toFixed(1) + "%").join("；");
+        status.textContent = "图表加载失败，请收起后重试。模型 " + metric + "：" +
+          data.map((item) => item.model + " " + item[valueKey].toFixed(1) + "%").join("；");
       }).finally(() => {
         pending = null;
       });

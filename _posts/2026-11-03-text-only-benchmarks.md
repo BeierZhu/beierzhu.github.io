@@ -36,6 +36,10 @@ _styles: |
   .benchmark-example-correct { background-color: rgba(97, 169, 189, .25); }
   .benchmark-example-result-correct { color: #198754; font-weight: bold; }
   .benchmark-example-result-incorrect { color: #bd4147; font-weight: bold; }
+  .benchmark-winogrande-example { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .5rem 1rem; }
+  .benchmark-winogrande-example p { margin-bottom: 0; }
+  .benchmark-winogrande-choices { white-space: nowrap; }
+  @media (max-width: 575px) { .benchmark-winogrande-example { grid-template-columns: minmax(0, 1fr); } }
 ---
 
 
@@ -144,7 +148,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="piqa-citation" title="展开或收起引用">PIQA</button>
         </td>
         <td>2019 年</td>
-        <td>围绕<strong>日常生活中的物理常识与操作任务</strong>，给定一个目标（Goal）和两个候选方案，要求选出更合理、可行的方案。评估模型对<strong>物体属性、工具用途及物理交互</strong>的理解与常识推理能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="piqa-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>围绕<strong>日常生活中的物理常识与操作任务</strong>，给定一个目标和两个候选方案，要求选出更合理、可行的方案。评估模型对<strong>物体属性、工具用途及物理交互</strong>的理解与常识推理能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="piqa-examples" title="展开或收起文字样例">[样例]</button></td>
         <td>3,084</td>
         <td>Accuracy</td>
       </tr>
@@ -156,6 +160,28 @@ _styles: |
       <tr id="piqa-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Bisk et al. <em>PIQA: Reasoning about Physical Commonsense in Natural Language.</em> AAAI, 2020（预印本于 2019 年发布）。<a href="https://arxiv.org/abs/1911.11641">论文链接</a> · <a href="https://yonatanbisk.com/piqa/">数据集主页</a>。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td>
+          <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="winogrande-citation" title="展开或收起引用">WinoGrande</button>
+        </td>
+        <td>2019 年</td>
+        <td>以<strong>指代消解</strong>为核心，给定句子与两个候选对象，要求根据语境补全空缺、确定正确指代。采用<strong>对抗过滤</strong>减少词语关联等数据偏差，评估模型的<strong>常识推理与语境理解能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="winogrande-examples" title="展开或收起两个文字样例">[样例]</button></td>
+        <td>1,767</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="winogrande-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
+      </tr>
+      <tr id="winogrande-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/winogrande-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="winogrande-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/winogrande-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="winogrande-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Sakaguchi et al. <em>WinoGrande: An Adversarial Winograd Schema Challenge at Scale.</em> AAAI, 2020（预印本于 2019 年发布）。<a href="https://arxiv.org/abs/1907.10641">论文链接</a> · <a href="https://huggingface.co/datasets/allenai/winogrande/viewer/winogrande_xl/test">数据集</a>。</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -165,6 +191,9 @@ _styles: |
 <script>
   window.buildNaturalQuestionsQwenOption = (
     {% include charts/natural-questions-qwen.chart.js %}
+  );
+  window.buildWinoGrandeQwenOption = (
+    {% include charts/winogrande-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>
