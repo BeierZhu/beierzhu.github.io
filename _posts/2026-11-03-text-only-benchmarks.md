@@ -165,7 +165,8 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="winogrande-citation" title="展开或收起引用">WinoGrande</button>
         </td>
         <td>2019 年</td>
-        <td>以<strong>指代消解</strong>为核心，给定句子与两个候选对象，要求根据语境补全空缺、确定正确指代。采用<strong>对抗过滤</strong>减少词语关联等数据偏差，评估模型的<strong>常识推理与语境理解能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="winogrande-examples" title="展开或收起两个文字样例">[样例]</button></td>
+        <td>以<strong>指代消解</strong>（判断代词
+          如 it、she 指代句中的哪个人或物）为核心，给定句子与两个候选对象，要求根据语境补全空缺、确定正确指代。采用<strong>对抗过滤</strong>减少词语关联等数据偏差，评估模型的<strong>常识推理与语境理解能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="winogrande-examples" title="展开或收起两个文字样例">[样例]</button></td>
         <td>1,767</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="winogrande-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
       </tr>
@@ -182,6 +183,28 @@ _styles: |
       <tr id="winogrande-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Sakaguchi et al. <em>WinoGrande: An Adversarial Winograd Schema Challenge at Scale.</em> AAAI, 2020（预印本于 2019 年发布）。<a href="https://arxiv.org/abs/1907.10641">论文链接</a> · <a href="https://huggingface.co/datasets/allenai/winogrande/viewer/winogrande_xl/test">数据集</a>。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td>
+          <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="hellaswag-citation" title="展开或收起引用">HellaSwag</button>
+        </td>
+        <td>2019 年</td>
+        <td>围绕<strong>日常活动与事件续写</strong>，给定一段情境描述，从四个候选续写中选择最合理的后续情节。干扰选项通过<strong>对抗过滤</strong>筛选，语法自然但语义不合常理，评估模型的<strong>事件预测、情境理解与常识推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="hellaswag-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>10,003</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="hellaswag-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
+      </tr>
+      <tr id="hellaswag-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/hellaswag-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="hellaswag-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/hellaswag-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="hellaswag-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Zellers et al. <em>HellaSwag: Can a Machine Really Finish Your Sentence?</em> ACL, 2019. <a href="https://arxiv.org/abs/1905.07830">论文链接</a> · <a href="https://rowanzellers.com/hellaswag/">数据集主页</a> · <a href="https://huggingface.co/datasets/Rowan/hellaswag/viewer/default/test">数据集</a>。</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -194,6 +217,9 @@ _styles: |
   );
   window.buildWinoGrandeQwenOption = (
     {% include charts/winogrande-qwen.chart.js %}
+  );
+  window.buildHellaSwagQwenOption = (
+    {% include charts/hellaswag-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>
