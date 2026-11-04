@@ -413,6 +413,28 @@ _styles: |
       <tr id="ceval-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Huang et al. <em>C-Eval: A Multi-Level Multi-Discipline Chinese Evaluation Suite for Foundation Models.</em> NeurIPS, 2023. <a href="https://arxiv.org/abs/2305.08322">论文链接</a> · <a href="https://cevalbenchmark.com/">官方网站</a> · <a href="https://huggingface.co/datasets/ceval/ceval-exam">数据集</a>。规模为 52 个学科的 test 划分合计 12,342 题，不含 dev 和 val；13,948 为所有划分的总题数。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td>
+          <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="cmmlu-citation" title="展开或收起引用">CMMLU</button>
+        </td>
+        <td>2023 年</td>
+        <td>面向中文语境的综合性多学科知识评测基准，覆盖 STEM、人文、社会科学及其他领域的 <strong>67 个学科</strong>。相比 C-Eval，CMMLU 更注重<strong>中国特有的文化与区域知识</strong>，涵盖中国饮食文化、驾驶规则、古汉语等特色主题，并兼顾全球通用知识，用于评估模型在中文语境下的<strong>知识储备与推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="cmmlu-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td title="官方仓库data/test的67个学科CSV合计，不含dev。">11,582</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="cmmlu-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
+      </tr>
+      <tr id="cmmlu-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/cmmlu-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="cmmlu-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/cmmlu-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="cmmlu-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Li et al. <em>CMMLU: Measuring Massive Multitask Language Understanding in Chinese.</em> arXiv:2306.09212, 2023. <a href="https://arxiv.org/abs/2306.09212">论文链接</a> · <a href="https://github.com/haonan-li/CMMLU">官方仓库</a> · <a href="https://github.com/haonan-li/CMMLU/tree/master/data/test">测试集</a>。规模按官方仓库 data/test 中 67 个学科的 CSV 样本统计，合计 11,582 题，不含用于少样本提示的 dev 划分。</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -445,6 +467,9 @@ _styles: |
   );
   window.buildCEvalQwenOption = (
     {% include charts/ceval-qwen.chart.js %}
+  );
+  window.buildCMMLUQwenOption = (
+    {% include charts/cmmlu-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>

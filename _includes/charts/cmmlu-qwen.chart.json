@@ -1,0 +1,5 @@
+[
+  { "model": "Qwen-7B", "accuracy": 62.2 },
+  { "model": "Qwen1.5-7B", "accuracy": 73.1 },
+  { "model": "Qwen2-7B", "accuracy": 83.9 }
+]
