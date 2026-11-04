@@ -1,0 +1,6 @@
+[
+  { "model": "Qwen1.5-7B", "pass_at_1": 6.0 },
+  { "model": "Qwen2-7B", "pass_at_1": 26.6 },
+  { "model": "Qwen2.5-7B", "pass_at_1": 28.7 },
+  { "model": "Qwen3-8B", "pass_at_1": 57.5 }
+]

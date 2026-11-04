@@ -620,6 +620,21 @@ _styles: |
       <tr id="mbpp-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Austin et al. <em>Program Synthesis with Large Language Models.</em> 2021。<a href="https://arxiv.org/abs/2108.07732">论文链接</a> · <a href="https://github.com/google-research/google-research/tree/master/mbpp">官方仓库</a> · <a href="https://github.com/google-research/google-research/blob/master/mbpp/mbpp.jsonl">评测题目</a>。规模采用原始 MBPP 的 500 道测试题（task_id 11–510），不混入训练、验证及提示示例，也不采用 sanitized 子集规模；样例对应 task_id 56，示例实现按截图展示。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="livecodebench-citation" title="展开或收起引用">LiveCode<wbr>Bench</button></td>
+        <td>2024 年</td>
+        <td>针对 HumanEval 的<strong>数据污染、难度饱和</strong>等问题，从 LeetCode、AtCoder 和 Codeforces 持续收集新竞赛题目，通过<strong>时间划分</strong>降低数据污染风险，并扩展至<strong>代码修复、执行预测及测试输出预测</strong>等任务。</td>
+        <td>511</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="livecodebench-performance" title="展开或收起 Qwen 系列模型的 Pass@1 柱状图">Pass@1</button></td>
+      </tr>
+      <tr id="livecodebench-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/livecodebench-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="livecodebench-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Jain et al. <em>LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code.</em> 2024。<a href="https://arxiv.org/abs/2403.07974">论文链接</a> · <a href="https://livecodebench.github.io/">项目主页</a> · <a href="https://github.com/LiveCodeBench/LiveCodeBench#dataset-versions">官方仓库与版本说明</a>。规模采用代码生成任务的 release_v2：511 道题，题目发布时间覆盖 2023 年 5 月至 2024 年 5 月；该基准持续更新，其他版本规模不同。此处规模说明不代表图中模型成绩采用同一版本或时间窗口。</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -670,6 +685,9 @@ _styles: |
   );
   window.buildMBPPQwenOption = (
     {% include charts/mbpp-qwen.chart.js %}
+  );
+  window.buildLiveCodeBenchQwenOption = (
+    {% include charts/livecodebench-qwen.chart.js %}
   );
 </script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>
