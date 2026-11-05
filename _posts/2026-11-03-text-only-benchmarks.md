@@ -556,9 +556,14 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="aime-citation" title="展开或收起引用">AIME</button></td>
         <td>2024 年<br>2025 年</td>
-        <td>AIME（American Invitational Mathematics Examination，美国数学邀请赛）是<strong>高中竞赛数学评测</strong>，题目涉及代数、几何、数论与组合等领域，答案为 <strong>0–999 的整数</strong>，主要评估模型的<strong>高难度数学推理能力</strong>。此处分别展示 <strong>AIME 2024 与 AIME 2025</strong> 的成绩。</td>
+        <td>AIME（American Invitational Mathematics Examination，美国数学邀请赛）是<strong>高中竞赛数学评测</strong>，题目涉及代数、几何、数论与组合等领域，答案为 <strong>0–999 的整数</strong>，主要评估模型的<strong>高难度数学推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="aime-examples" title="展开或收起 AIME 真题样例">[样例]</button></td>
         <td>30 / 年</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="aime-performance" title="展开或收起 Qwen3-8B 在 AIME 2024 与 AIME 2025 的得分柱状图">Accuracy</button></td>
+      </tr>
+      <tr id="aime-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/aime-examples.liquid %}
+        </td>
       </tr>
       <tr id="aime-performance" class="benchmark-performance-row" hidden>
         <td colspan="5">
