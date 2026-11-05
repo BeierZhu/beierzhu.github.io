@@ -553,6 +553,21 @@ _styles: |
       <tr id="math-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Hendrycks et al. <em>Measuring Mathematical Problem Solving With the MATH Dataset.</em> NeurIPS, 2021。<a href="https://arxiv.org/abs/2103.03874">论文链接</a> · <a href="https://github.com/hendrycks/math">官方仓库</a> · <a href="https://huggingface.co/datasets/qwedsacf/competition_math">数据集</a>。规模采用原始 MATH 的 5,000 道测试题，不含 7,500 道训练题；准确率按最终答案评估。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="aime-citation" title="展开或收起引用">AIME</button></td>
+        <td>2024 年<br>2025 年</td>
+        <td>AIME（American Invitational Mathematics Examination，美国数学邀请赛）是<strong>高中竞赛数学评测</strong>，题目涉及代数、几何、数论与组合等领域，答案为 <strong>0–999 的整数</strong>，主要评估模型的<strong>高难度数学推理能力</strong>。此处分别展示 <strong>AIME 2024 与 AIME 2025</strong> 的成绩。</td>
+        <td>30 / 年</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="aime-performance" title="展开或收起 Qwen3-8B 在 AIME 2024 与 AIME 2025 的得分柱状图">Accuracy</button></td>
+      </tr>
+      <tr id="aime-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/aime-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="aime-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5"><em>American Invitational Mathematics Examination (AIME).</em> <a href="https://maa.org/student-programs/amc/american-invitational-mathematics-examination-aime/">MAA 官方介绍</a> · <a href="https://huggingface.co/datasets/HuggingFaceH4/aime_2024">AIME 2024 公开题集</a> · <a href="https://huggingface.co/datasets/math-ai/aime25">AIME 2025 公开题集</a>。年份指本条采用的试题版本，而非赛事创办时间；每年合并 AIME I 与 AIME II 各 15 道题，共 30 道题。准确率按最终整数答案评估；图表分别保留两届成绩，不合并平均，也不额外指定采样次数或推理设置。</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -778,6 +793,7 @@ _styles: |
   </table>
 </div>
 
+<br>
 ## 8. 安全性与对齐评测
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
@@ -858,6 +874,9 @@ _styles: |
   );
   window.buildMATHQwenOption = (
     {% include charts/math-qwen.chart.js %}
+  );
+  window.buildAIMEQwenOption = (
+    {% include charts/aime-qwen.chart.js %}
   );
   window.buildHumanEvalQwenOption = (
     {% include charts/humaneval-qwen.chart.js %}
