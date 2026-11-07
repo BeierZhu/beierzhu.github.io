@@ -3,7 +3,7 @@ layout: post
 title: "大模型测评基准I：纯文本基准"
 date: 2026-11-03
 permalink: /blog/2026/text-only-benchmarks/
-description: "本文旨在系统梳理主流基准，便于个人查阅参考。"
+description: "梳理主流纯文本基准，便于个人查阅参考。"
 tags: [大模型, 测评基准]
 categories: [blog]
 related_posts: false
