@@ -46,6 +46,9 @@ _styles: |
   .benchmark-subtask-table th:first-child { width: 22%; }
   .benchmark-subtask-table th:nth-child(2) { width: 38%; }
   .benchmark-subtask-table th:nth-child(3) { width: 40%; }
+  .benchmark-subtask-table.seed-bench-dimensions-table th:first-child { width: 32%; }
+  .benchmark-subtask-table.seed-bench-dimensions-table th:nth-child(2) { width: 20%; }
+  .benchmark-subtask-table.seed-bench-dimensions-table th:nth-child(3) { width: 48%; }
   .benchmark-subtask-table tbody:last-child tr:last-child th, .benchmark-subtask-table tbody:last-child tr:last-child td { border-bottom: 0; }
 ---
 
@@ -137,9 +140,37 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="seed-bench-citation" title="展开或收起引用">SEED-Bench</button></td>
         <td>2023 年</td>
-        <td>面向多模态大语言模型的<b>图像与视频理解</b>评测基准，涵盖场景理解、物体识别、空间关系、视觉推理、动作识别、动作预测及过程理解等 <b>12 个评测维度</b>。采用人工验证的<b>四选一选择题</b>，评估模型的视觉感知、空间推理与时序理解能力。</td>
+        <td><b>图像与视频理解</b>评测基准，涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="seed-bench-dimensions" title="展开或收起12个评测维度">12 个评测维度</button>。采用人工验证的<b>四选一选择题</b>，评估模型的视觉感知、空间推理与时序理解能力。</td>
         <td class="benchmark-count-cell">19,242</td>
         <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="seed-bench-dimensions" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <table class="benchmark-subtask-table seed-bench-dimensions-table" aria-label="SEED-Bench 的 12 个评测维度">
+            <caption>SEED-Bench 的 12 个评测维度</caption>
+            <thead>
+              <tr><th scope="col">评测维度</th><th scope="col">中文名称</th><th scope="col">评测内容</th></tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="3"><b>一、空间理解（Spatial Understanding）：9 个</b></td></tr>
+              <tr><td>1. Scene Understanding</td><td>场景理解</td><td>理解图像整体场景和语义</td></tr>
+              <tr><td>2. Instance Identity</td><td>物体识别</td><td>识别物体类别或判断其是否存在</td></tr>
+              <tr><td>3. Instance Attribute</td><td>物体属性</td><td>识别物体的颜色、形状、材质等</td></tr>
+              <tr><td>4. Instance Location</td><td>物体定位</td><td>判断指定物体在图像中的位置</td></tr>
+              <tr><td>5. Instance Counting</td><td>物体计数</td><td>统计指定类别物体的数量</td></tr>
+              <tr><td>6. Spatial Relation</td><td>空间关系</td><td>判断物体之间的相对位置</td></tr>
+              <tr><td>7. Instance Interaction</td><td>物体交互</td><td>理解人物或物体之间的交互关系</td></tr>
+              <tr><td>8. Visual Reasoning</td><td>视觉推理</td><td>结合图像信息与常识进行推理</td></tr>
+              <tr><td>9. Text Recognition</td><td>文字识别</td><td>识别并理解图像中的文字</td></tr>
+            </tbody>
+            <tbody>
+              <tr><td colspan="3"><b>二、时序理解（Temporal Understanding）：3 个</b></td></tr>
+              <tr><td>10. Action Recognition</td><td>动作识别</td><td>识别视频中的具体动作</td></tr>
+              <tr><td>11. Action Prediction</td><td>动作预测</td><td>根据已有视频预测后续动作</td></tr>
+              <tr><td>12. Procedure Understanding</td><td>过程理解</td><td>识别视频中的关键动作及其先后顺序</td></tr>
+            </tbody>
+          </table>
+        </td>
       </tr>
       <tr id="seed-bench-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
