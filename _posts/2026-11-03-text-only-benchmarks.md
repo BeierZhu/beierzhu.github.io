@@ -717,6 +717,31 @@ _styles: |
       <tr id="gpqa-diamond-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Rein et al. <em>GPQA: A Graduate-Level Google-Proof Q&amp;A Benchmark.</em> COLM, 2024（预印本于 2023 年发布）。<a href="https://arxiv.org/abs/2311.12022">论文链接</a> · <a href="https://github.com/idavidrein/gpqa">官方仓库</a> · <a href="https://huggingface.co/datasets/idavidrein/gpqa/viewer/gpqa_diamond">Diamond 数据集</a>。规模采用 GPQA Diamond 的 198 道题，与 GPQA Main 的 448 道题分别列示。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="supergpqa-citation" title="展开或收起引用">SuperGPQA</button></td>
+        <td>2025 年</td>
+        <td>SuperGPQA 是覆盖 <strong>13 个大学科门类</strong>、<strong>285 个研究生级细分学科</strong>的大规模多学科问答基准，包含约 <strong>2.65 万道选择题</strong>，平均每题 <strong>9.67 个选项</strong>。数据经<strong>人类专家与大模型协同筛选</strong>，重点评估模型在长尾专业领域的<strong>知识理解与复杂推理能力</strong>。<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="supergpqa-disciplines" title="展开或收起13个学科门类">13 个学科门类</button> · <button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="supergpqa-examples" title="展开或收起研究生级问答样例">[样例]</button></td>
+        <td>26,529</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="supergpqa-performance" title="展开或收起 Qwen 系列模型得分柱状图">得分（%）</button></td>
+      </tr>
+      <tr id="supergpqa-disciplines" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/supergpqa-disciplines.liquid %}
+        </td>
+      </tr>
+      <tr id="supergpqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/supergpqa-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="supergpqa-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/supergpqa-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="supergpqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">Du et al. <em>SuperGPQA: Scaling LLM Evaluation across 285 Graduate Disciplines.</em> 2025。<a href="https://arxiv.org/abs/2502.14739">论文</a> · <a href="https://github.com/SuperGPQA/SuperGPQA">官方仓库</a> · <a href="https://huggingface.co/datasets/m-a-p/SuperGPQA">数据集</a> </td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -897,6 +922,9 @@ _styles: |
   );
   window.buildGPQADiamondQwenOption = (
     {% include charts/gpqa-diamond-qwen.chart.js %}
+  );
+  window.buildSuperGPQAQwenOption = (
+    {% include charts/supergpqa-qwen.chart.js %}
   );
   window.buildMTBenchQwenOption = (
     {% include charts/mt-bench-qwen.chart.js %}
