@@ -658,7 +658,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="cruxeval-citation" title="展开或收起引用">CRUXEval</button></td>
         <td>2024 年</td>
-        <td>CRUXEval（Code Reasoning, Understanding, and eXecution Evaluation）是面向 Python 代码理解与执行推理的基准，包含<b>简短 Python 函数及其输入输出对</b>，设置 CRUXEval-I（给定代码和输出反推输入）与 CRUXEval-O（给定代码和输入预测输出）两项任务。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="cruxeval-examples" title="展开或收起代码样例">[样例]</button></td>
+        <td> 面向 Python 代码理解与执行推理的基准，包含<b>简短 Python 函数及其输入输出对</b>，设置 CRUXEval-I（给定代码和输出反推输入）与 CRUXEval-O（给定代码和输入预测输出）两项任务。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="cruxeval-examples" title="展开或收起代码样例">[样例]</button></td>
         <td>800</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="cruxeval-performance" title="展开或收起 Qwen 系列模型的 CRUXEval-O Accuracy 柱状图">CRUXEval-O</button></td>
       </tr>
