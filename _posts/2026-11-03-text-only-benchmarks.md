@@ -34,7 +34,7 @@ _styles: |
   .benchmark-example:last-child { padding-bottom: 0; border-bottom: 0; }
   .benchmark-example p { margin-bottom: .4rem; }
   .benchmark-example p:last-child { margin-bottom: 0; }
-  .benchmark-preview-table b, .benchmark-examples-panel b { font-weight: bold; }
+  .benchmark-preview-table b, .benchmark-examples-panel b { font-weight: 500; }
   .benchmark-example .highlight { margin: 0; max-width: 100%; }
   .benchmark-example pre { max-width: 100%; overflow-x: auto; white-space: pre; }
   .benchmark-example-correct { background-color: rgba(97, 169, 189, .25); }
@@ -580,7 +580,7 @@ _styles: |
 
 <br>
 
-## 5. 代码生成
+## 5. 代码能力
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="代码生成基准">
@@ -659,7 +659,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="cruxeval-citation" title="展开或收起引用">CRUXEval</button></td>
         <td>2024 年</td>
-        <td>CRUXEval（Code Reasoning, Understanding, and eXecution Evaluation）是面向 Python 代码理解与执行推理的基准，包含 <b>800 个简短 Python 函数及其输入输出对</b>，设置 CRUXEval-I（给定代码和输出反推输入）与 CRUXEval-O（给定代码和输入预测输出）两项任务，重点评估模型的<b>代码理解、程序执行模拟与逻辑推理能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="cruxeval-examples" title="展开或收起代码样例">[样例]</button></td>
+        <td>CRUXEval（Code Reasoning, Understanding, and eXecution Evaluation）是面向 Python 代码理解与执行推理的基准，包含<b>简短 Python 函数及其输入输出对</b>，设置 CRUXEval-I（给定代码和输出反推输入）与 CRUXEval-O（给定代码和输入预测输出）两项任务。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="cruxeval-examples" title="展开或收起代码样例">[样例]</button></td>
         <td>800</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="cruxeval-performance" title="展开或收起 Qwen 系列模型的 CRUXEval-O Accuracy 柱状图">CRUXEval-O</button></td>
       </tr>
