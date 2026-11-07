@@ -656,6 +656,26 @@ _styles: |
       <tr id="livecodebench-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Jain et al. <em>LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code.</em> 2024。<a href="https://arxiv.org/abs/2403.07974">论文链接</a> · <a href="https://livecodebench.github.io/">项目主页</a> · <a href="https://github.com/LiveCodeBench/LiveCodeBench#dataset-versions">官方仓库与版本说明</a>。规模采用代码生成任务的 release_v2：511 道题，题目发布时间覆盖 2023 年 5 月至 2024 年 5 月；该基准持续更新，其他版本规模不同。此处规模说明不代表图中模型成绩采用同一版本或时间窗口。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="cruxeval-citation" title="展开或收起引用">CRUXEval</button></td>
+        <td>2024 年</td>
+        <td>CRUXEval（Code Reasoning, Understanding, and eXecution Evaluation）是面向 Python 代码理解与执行推理的基准，包含 <b>800 个简短 Python 函数及其输入输出对</b>，设置 CRUXEval-I（给定代码和输出反推输入）与 CRUXEval-O（给定代码和输入预测输出）两项任务，重点评估模型的<b>代码理解、程序执行模拟与逻辑推理能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="cruxeval-examples" title="展开或收起代码样例">[样例]</button></td>
+        <td>800</td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="cruxeval-performance" title="展开或收起 Qwen 系列模型的 CRUXEval-O Accuracy 柱状图">CRUXEval-O</button></td>
+      </tr>
+      <tr id="cruxeval-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/cruxeval-examples.liquid %}
+        </td>
+      </tr>
+      <tr id="cruxeval-performance" class="benchmark-performance-row" hidden>
+        <td colspan="5">
+          {% include charts/cruxeval-qwen.liquid %}
+        </td>
+      </tr>
+      <tr id="cruxeval-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">CRUXEval（Code Reasoning, Understanding, and eXecution Evaluation），2024 年发表。包含 CRUXEval-I（Input Prediction）和 CRUXEval-O（Output Prediction）两项任务；样例展示同一 Python 函数的输出预测与输入反推。</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -917,6 +937,9 @@ _styles: |
   );
   window.buildLiveCodeBenchQwenOption = (
     {% include charts/livecodebench-qwen.chart.js %}
+  );
+  window.buildCRUXEvalQwenOption = (
+    {% include charts/cruxeval-qwen.chart.js %}
   );
   window.buildGPQAQwenOption = (
     {% include charts/gpqa-qwen.chart.js %}
