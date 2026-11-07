@@ -51,7 +51,6 @@ _styles: |
 
 ## 1. 综合视觉理解
 
-本文按照《大模型测评基准I：纯文本基准》的结构，逐项整理视觉文本评测基准的简介、规模、评测指标、样例与模型表现。
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="视觉文本基准">
@@ -75,9 +74,9 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mme-citation" title="展开或收起引用">MME</button></td>
         <td>2023 年</td>
-        <td>MME（Multimodal Large Language Model Evaluation）是面向多模态大语言模型的综合图像理解评测基准，包含感知（Perception）和认知（Cognition）两大维度、共 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mme-subtasks" title="展开或收起14项子任务">14 项子任务</button>，涵盖物体识别、计数、位置、颜色、OCR、电影海报、名人、场景、地标与艺术作品识别，以及常识推理、数值计算、文本翻译和代码推理。所有题目均采用 Yes/No 二分类形式，每张图像对应一正一负两道问题，通过 Accuracy 和 Accuracy+ 评估模型的视觉感知与推理能力。</td>
-        <td class="benchmark-count-cell">1,187 张图像<br>2,374 道 Yes/No 题</td>
-        <td class="benchmark-metric-cell">Accuracy / Accuracy+</td>
+        <td>包含感知（Perception）和认知（Cognition）两大维度、共 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mme-subtasks" title="展开或收起14项子任务">14 项子任务</button>。所有题目均采用 Yes/No 二分类形式，每张图像对应一正一负两道问题，最终以汇总分数 Score 衡量模型表现。</td>
+        <td class="benchmark-count-cell">图像：1,187 <br>问题：2,374 </td>
+        <td class="benchmark-metric-cell">Score</td>
       </tr>
       <tr id="mme-subtasks" class="benchmark-datasets-row" hidden>
         <td colspan="5">
@@ -120,7 +119,20 @@ _styles: |
         </td>
       </tr>
       <tr id="mme-citation" class="benchmark-citation-row" hidden>
-        <td colspan="5">Fu et al. <em>MME: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models.</em> arXiv:2306.13394, 2023。<a href="https://arxiv.org/abs/2306.13394">论文链接</a>。</td>
+        <td colspan="5">
+          Fu et al. <em>MME: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models.</em> arXiv:2306.13394, 2023。<a href="https://arxiv.org/abs/2306.13394">论文链接</a>。
+          <p>最终得分为 Accuracy 与 Accuracy+ 的总和（Score = Accuracy + Accuracy+，Sum）；Accuracy 是单题准确率，Accuracy+ 是同一图像对应两题均答对的比例。</p>
+          <table class="benchmark-subtask-table" aria-label="MME 各评测维度的最高分">
+            <thead>
+              <tr><th scope="col">评测维度</th><th scope="col">子任务数量</th><th scope="col">最高分</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Perception（感知）</td><td>10</td><td>2,000</td></tr>
+              <tr><td>Cognition（认知）</td><td>4</td><td>800</td></tr>
+              <tr><td>Overall（合计）</td><td>14</td><td>2,800</td></tr>
+            </tbody>
+          </table>
+        </td>
       </tr>
     </tbody>
   </table>
