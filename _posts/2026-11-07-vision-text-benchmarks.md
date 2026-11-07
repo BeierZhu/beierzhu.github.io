@@ -17,6 +17,8 @@ _styles: |
   .benchmark-preview-table tbody tr { background-image: linear-gradient(var(--global-divider-color), var(--global-divider-color)); background-size: 100% 1px; background-position: bottom; background-repeat: no-repeat; }
   .benchmark-data-row td { padding-top: .4rem; padding-bottom: .4rem; }
   .benchmark-data-row td:not(:nth-child(3)) { white-space: nowrap; }
+  .benchmark-data-row td.benchmark-count-cell { white-space: normal; }
+  .benchmark-data-row td.benchmark-metric-cell { white-space: normal; }
   .benchmark-citation-toggle, .benchmark-datasets-toggle, .benchmark-performance-toggle, .benchmark-examples-toggle { padding: 0; border: 0; background: none; color: var(--global-theme-color); font: inherit; font-weight: normal; text-decoration: none; cursor: pointer; }
   .benchmark-citation-toggle { max-width: 100%; white-space: normal; text-align: left; }
   .benchmark-citation-row[hidden], .benchmark-datasets-row[hidden], .benchmark-performance-row[hidden], .benchmark-examples-row[hidden] { display: none; }
@@ -39,9 +41,15 @@ _styles: |
   .benchmark-example-correct { background-color: rgba(97, 169, 189, .25); }
   .benchmark-example-result-correct { color: #198754; font-weight: bold; }
   .benchmark-example-result-incorrect { color: #bd4147; font-weight: bold; }
+  .benchmark-preview-table .benchmark-subtask-table { width: 100%; min-width: 0; margin: 0; table-layout: fixed; }
+  .benchmark-subtask-table th, .benchmark-subtask-table td { padding: .4rem .55rem; border: 0; border-bottom: 1px solid var(--global-divider-color); text-align: left; vertical-align: top; white-space: normal; }
+  .benchmark-subtask-table th:first-child { width: 22%; }
+  .benchmark-subtask-table th:nth-child(2) { width: 38%; }
+  .benchmark-subtask-table th:nth-child(3) { width: 40%; }
+  .benchmark-subtask-table tbody:last-child tr:last-child th, .benchmark-subtask-table tbody:last-child tr:last-child td { border-bottom: 0; }
 ---
 
-## 1. 视觉文本基准
+## 1. 综合视觉理解
 
 本文按照《大模型测评基准I：纯文本基准》的结构，逐项整理视觉文本评测基准的简介、规模、评测指标、样例与模型表现。
 
@@ -64,8 +72,52 @@ _styles: |
       </tr>
     </thead>
     <tbody>
-      <tr class="benchmark-placeholder-row">
-        <td colspan="5" style="padding: 1rem 0; text-align: center;">视觉文本基准条目将在后续逐项添加。</td>
+      <tr class="benchmark-data-row">
+        <td>MME</td>
+        <td>—</td>
+        <td>MME（Multimodal Large Language Model Evaluation）是面向多模态大语言模型的综合图像理解评测基准，包含感知（Perception）和认知（Cognition）两大维度、共 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mme-subtasks" title="展开或收起14项子任务">14 项子任务</button>，涵盖物体识别、计数、位置、颜色、OCR、电影海报、名人、场景、地标与艺术作品识别，以及常识推理、数值计算、文本翻译和代码推理。所有题目均采用 Yes/No 二分类形式，每张图像对应一正一负两道问题，通过 Accuracy 和 Accuracy+ 评估模型的视觉感知与推理能力。</td>
+        <td class="benchmark-count-cell">1,187 张图像<br>2,374 道 Yes/No 题</td>
+        <td class="benchmark-metric-cell">Accuracy / Accuracy+</td>
+      </tr>
+      <tr id="mme-subtasks" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <table class="benchmark-subtask-table" aria-label="MME 的 14 项子任务">
+            <caption>MME 的 14 项子任务</caption>
+            <thead>
+              <tr>
+                <th scope="col">类别</th>
+                <th scope="col">子任务</th>
+                <th scope="col">中文名称</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="rowgroup" rowspan="10">Perception</th>
+                <td>Existence</td>
+                <td>物体存在性识别</td>
+              </tr>
+              <tr><td>Count</td><td>物体计数</td></tr>
+              <tr><td>Position</td><td>物体位置识别</td></tr>
+              <tr><td>Color</td><td>颜色识别</td></tr>
+              <tr><td>OCR</td><td>光学字符识别</td></tr>
+              <tr><td>Poster</td><td>电影海报识别</td></tr>
+              <tr><td>Celebrity</td><td>名人识别</td></tr>
+              <tr><td>Scene</td><td>场景识别</td></tr>
+              <tr><td>Landmark</td><td>地标识别</td></tr>
+              <tr><td>Artwork</td><td>艺术作品识别</td></tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th scope="rowgroup" rowspan="4">Cognition</th>
+                <td>Commonsense Reasoning</td>
+                <td>常识推理</td>
+              </tr>
+              <tr><td>Numerical Calculation</td><td>数值计算</td></tr>
+              <tr><td>Text Translation</td><td>文本翻译</td></tr>
+              <tr><td>Code Reasoning</td><td>代码推理</td></tr>
+            </tbody>
+          </table>
+        </td>
       </tr>
     </tbody>
   </table>
