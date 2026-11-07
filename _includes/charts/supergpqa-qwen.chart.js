@@ -6,7 +6,7 @@ function buildOption(data) {
 
   return {
     title: [
-      { text: "SuperGPQA · Qwen 系列 7B–8B", subtext: "得分（%）↑" },
+      { text: "SuperGPQA · Qwen 系列 7B–8B", subtext: "Accuracy (%) ↑" },
       { text: "", show: false }
     ],
     xAxis: {
@@ -28,12 +28,12 @@ function buildOption(data) {
         if (!params) return "";
         var item = Array.isArray(params) ? params[0] : params;
         if (!item || item.value == null) return "";
-        return item.name + "<br>得分: " + formatScore(item.value);
+        return item.name + "<br>Accuracy: " + formatScore(item.value);
       }
     },
     series: [
       {
-        name: "得分",
+        name: "Accuracy",
         type: "bar",
         data: data.map(function (row) { return row.score; }),
         itemStyle: { color: "#61A9BD" },

@@ -720,9 +720,9 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="supergpqa-citation" title="展开或收起引用">SuperGPQA</button></td>
         <td>2025 年</td>
-        <td>SuperGPQA 是覆盖 <strong>13 个大学科门类</strong>、<strong>285 个研究生级细分学科</strong>的大规模多学科问答基准，包含约 <strong>2.65 万道选择题</strong>，平均每题 <strong>9.67 个选项</strong>。数据经<strong>人类专家与大模型协同筛选</strong>，重点评估模型在长尾专业领域的<strong>知识理解与复杂推理能力</strong>。<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="supergpqa-disciplines" title="展开或收起13个学科门类">13 个学科门类</button> · <button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="supergpqa-examples" title="展开或收起研究生级问答样例">[样例]</button></td>
+        <td>SuperGPQA 是覆盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="supergpqa-disciplines" title="展开或收起13个学科门类">13 个大学科门类</button>、<strong>285 个研究生级细分学科</strong>的大规模多学科问答基准，包含约 <strong>2.65 万道选择题</strong>，平均每题 <strong>9.67 个选项</strong>。数据经<strong>人类专家与大模型协同筛选</strong>，重点评估模型在长尾专业领域的<strong>知识理解与复杂推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="supergpqa-examples" title="展开或收起研究生级问答样例">[样例]</button></td>
         <td>26,529</td>
-        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="supergpqa-performance" title="展开或收起 Qwen 系列模型得分柱状图">得分（%）</button></td>
+        <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="supergpqa-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
       </tr>
       <tr id="supergpqa-disciplines" class="benchmark-datasets-row" hidden>
         <td colspan="5">
