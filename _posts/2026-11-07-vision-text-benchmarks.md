@@ -140,7 +140,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="seed-bench-citation" title="展开或收起引用">SEED-Bench</button></td>
         <td>2023 年</td>
-        <td><b>图像与视频理解</b>评测基准，涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="seed-bench-dimensions" title="展开或收起12个评测维度">12 个评测维度</button>。采用人工验证的<b>四选一选择题</b>，评估模型的视觉感知、空间推理与时序理解能力。</td>
+        <td><b>图像与视频理解</b>评测基准，涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="seed-bench-dimensions" title="展开或收起12个评测维度">12 个评测维度</button>。采用人工验证的<b>四选一选择题</b>，评估模型的视觉感知、空间推理与时序理解能力。相比MME，SEED-Bench 样本数量更多，覆盖范围更广。</td>
         <td class="benchmark-count-cell">19,242</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -178,6 +178,31 @@ _styles: |
           <a href="https://arxiv.org/abs/2307.16125">论文链接</a> ·
           <a href="https://github.com/AILab-CVC/SEED-Bench">官方仓库</a>。
           <p>注：规模采用原论文 Table 1 的 19,242 道选择题，包含 9 个图像空间理解维度与 3 个视频时序理解维度。原论文采用候选答案似然排序确定预测选项，并以 Accuracy 评估。</p>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="textvqa-citation" title="展开或收起引用">TextVQA</button></td>
+        <td>2019 年</td>
+        <td>面向自然场景中包含文字的图像问答基准，要求模型结合<b>图像视觉信息与文字内容</b>回答开放式问题；答案既可直接来自图中文字，也可通过视觉与文本联合推理获得，主要评估<b>场景文字识别、视觉定位与跨模态推理</b>能力。<br><button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="textvqa-example" title="展开或收起样例">[样例]</button></td>
+        <td class="benchmark-count-cell">5,734</td>
+        <td class="benchmark-metric-cell">VQA Accuracy</td>
+      </tr>
+      <tr id="textvqa-example" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <div class="benchmark-example">
+              <p><b>Image：</b>飞机尾部带有文字的图片</p>
+              <p><b>Question：</b>What does it say near the star on the tail of the plane?</p>
+              <p><b>Answer：</b>jet</p>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr id="textvqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Singh et al. <em>Towards VQA Models That Can Read.</em> CVPR, 2019.
+          <a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Singh_Towards_VQA_Models_That_Can_Read_CVPR_2019_paper.pdf">论文链接</a> ·
+          <a href="https://textvqa.org/">数据集主页</a>。
         </td>
       </tr>
     </tbody>
