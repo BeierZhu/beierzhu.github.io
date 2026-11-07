@@ -56,7 +56,7 @@ _styles: |
 
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
-  <table aria-label="视觉文本基准">
+  <table aria-label="综合视觉理解基准">
     <colgroup>
       <col style="width: 12%">
       <col style="width: 10%">
@@ -180,23 +180,37 @@ _styles: |
           <p>注：规模采用原论文 Table 1 的 19,242 道选择题，包含 9 个图像空间理解维度与 3 个视频时序理解维度。原论文采用候选答案似然排序确定预测选项，并以 Accuracy 评估。</p>
         </td>
       </tr>
+    </tbody>
+  </table>
+</div>
+
+## 2. 文本密集型视觉理解
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="文本密集型视觉理解基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 54%">
+      <col style="width: 12%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="textvqa-citation" title="展开或收起引用">TextVQA</button></td>
         <td>2019 年</td>
-        <td>面向自然场景中包含文字的图像问答基准，要求模型结合<b>图像视觉信息与文字内容</b>回答开放式问题；答案既可直接来自图中文字，也可通过视觉与文本联合推理获得，主要评估<b>场景文字识别、视觉定位与跨模态推理</b>能力。<br><button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="textvqa-example" title="展开或收起样例">[样例]</button></td>
+        <td>面向自然场景中包含文字的图像问答基准，要求模型结合<b>图像视觉信息与文字内容</b>回答开放式问题；答案既可直接来自图中文字，也可通过视觉与文本联合推理获得，主要评估<b>场景文字识别、视觉定位与跨模态推理</b>能力。</td>
         <td class="benchmark-count-cell">5,734</td>
         <td class="benchmark-metric-cell">VQA Accuracy</td>
-      </tr>
-      <tr id="textvqa-example" class="benchmark-examples-row" hidden>
-        <td colspan="5">
-          <div class="benchmark-examples-panel">
-            <div class="benchmark-example">
-              <p><b>Image：</b>飞机尾部带有文字的图片</p>
-              <p><b>Question：</b>What does it say near the star on the tail of the plane?</p>
-              <p><b>Answer：</b>jet</p>
-            </div>
-          </div>
-        </td>
       </tr>
       <tr id="textvqa-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
