@@ -137,24 +137,9 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="seed-bench-citation" title="展开或收起引用">SEED-Bench</button></td>
         <td>2023 年</td>
-        <td>面向多模态大语言模型的<b>图像与视频理解</b>评测基准，涵盖场景理解、物体识别、空间关系、视觉推理、动作识别、动作预测及过程理解等 <b>12 个评测维度</b>。采用人工验证的<b>四选一选择题</b>，评估模型的视觉感知、空间推理与时序理解能力。<br><button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="seed-bench-example" title="展开或收起样例">[样例]（图像理解）</button></td>
+        <td>面向多模态大语言模型的<b>图像与视频理解</b>评测基准，涵盖场景理解、物体识别、空间关系、视觉推理、动作识别、动作预测及过程理解等 <b>12 个评测维度</b>。采用人工验证的<b>四选一选择题</b>，评估模型的视觉感知、空间推理与时序理解能力。</td>
         <td class="benchmark-count-cell">19,242</td>
         <td class="benchmark-metric-cell">Accuracy</td>
-      </tr>
-      <tr id="seed-bench-example" class="benchmark-examples-row" hidden>
-        <td colspan="5">
-          <div class="benchmark-examples-panel">
-            <div class="benchmark-example">
-              <p><b>Question:</b> What is the material of the table?</p>
-              <ol type="A">
-                <li>Marble</li>
-                <li>Wood</li>
-                <li>Glass</li>
-                <li>Plastic</li>
-              </ol>
-            </div>
-          </div>
-        </td>
       </tr>
       <tr id="seed-bench-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
