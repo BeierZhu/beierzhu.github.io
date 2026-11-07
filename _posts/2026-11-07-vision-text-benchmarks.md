@@ -134,6 +134,36 @@ _styles: |
           </table>
         </td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="seed-bench-citation" title="展开或收起引用">SEED-Bench</button></td>
+        <td>2023 年</td>
+        <td>面向多模态大语言模型的<b>图像与视频理解</b>评测基准，涵盖场景理解、物体识别、空间关系、视觉推理、动作识别、动作预测及过程理解等 <b>12 个评测维度</b>。采用人工验证的<b>四选一选择题</b>，评估模型的视觉感知、空间推理与时序理解能力。<br><button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="seed-bench-example" title="展开或收起样例">[样例]（图像理解）</button></td>
+        <td class="benchmark-count-cell">19,242</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="seed-bench-example" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <div class="benchmark-example">
+              <p><b>Question:</b> What is the material of the table?</p>
+              <ol type="A">
+                <li>Marble</li>
+                <li>Wood</li>
+                <li>Glass</li>
+                <li>Plastic</li>
+              </ol>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr id="seed-bench-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Li et al. <em>SEED-Bench: Benchmarking Multimodal LLMs with Generative Comprehension.</em> arXiv:2307.16125, 2023.
+          <a href="https://arxiv.org/abs/2307.16125">论文链接</a> ·
+          <a href="https://github.com/AILab-CVC/SEED-Bench">官方仓库</a>。
+          <p>注：规模采用原论文 Table 1 的 19,242 道选择题，包含 9 个图像空间理解维度与 3 个视频时序理解维度。原论文采用候选答案似然排序确定预测选项，并以 Accuracy 评估。</p>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
