@@ -34,7 +34,6 @@ _styles: |
   .benchmark-example:last-child { padding-bottom: 0; border-bottom: 0; }
   .benchmark-example p { margin-bottom: .4rem; }
   .benchmark-example p:last-child { margin-bottom: 0; }
-  .benchmark-preview-table b, .benchmark-examples-panel b { font-weight: 500; }
   .benchmark-example .highlight { margin: 0; max-width: 100%; }
   .benchmark-example pre { max-width: 100%; overflow-x: auto; white-space: pre; }
   .benchmark-example-correct { background-color: rgba(97, 169, 189, .25); }
