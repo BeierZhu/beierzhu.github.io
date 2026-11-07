@@ -34,6 +34,7 @@ _styles: |
   .benchmark-example:last-child { padding-bottom: 0; border-bottom: 0; }
   .benchmark-example p { margin-bottom: .4rem; }
   .benchmark-example p:last-child { margin-bottom: 0; }
+  .benchmark-preview-table b, .benchmark-examples-panel b { font-weight: bold; }
   .benchmark-example .highlight { margin: 0; max-width: 100%; }
   .benchmark-example pre { max-width: 100%; overflow-x: auto; white-space: pre; }
   .benchmark-example-correct { background-color: rgba(97, 169, 189, .25); }
@@ -72,7 +73,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="pile-citation" title="展开或收起引用">Pile-test</button>
         </td>
         <td>2020 年</td>
-        <td>The Pile 的独立测试集，覆盖 <strong><button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="pile-datasets" title="展开或收起22个子数据集名称">22</button> 个多领域子数据集</strong>，涵盖学术论文、书籍、代码、网页、法律文档及在线对话等，主要用于评估语言模型的<strong>跨领域语言建模能力</strong>。</td>
+        <td>The Pile 的独立测试集，覆盖 <b><button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="pile-datasets" title="展开或收起22个子数据集名称">22</button> 个多领域子数据集</b>，涵盖学术论文、书籍、代码、网页、法律文档及在线对话等，主要用于评估语言模型的<b>跨领域语言建模能力</b>。</td>
         <td>214,584</td>
         <td>PPL / BPB</td>
       </tr>
@@ -112,7 +113,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="natural-questions-citation" title="展开或收起引用">Natural Questions</button>
         </td>
         <td>2019 年</td>
-        <td>问题来自<strong>真实 Google 搜索查询</strong>，要求模型结合 Wikipedia 文档定位长答案并提取短答案，同时判断文档中是否存在答案，评估模型的<strong>长文档理解、答案定位与问答能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="natural-questions-examples" title="展开或收起三个文字样例">[样例]</button></td>
+        <td>问题来自<b>真实 Google 搜索查询</b>，要求模型结合 Wikipedia 文档定位长答案并提取短答案，同时判断文档中是否存在答案，评估模型的<b>长文档理解、答案定位与问答能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="natural-questions-examples" title="展开或收起三个文字样例">[样例]</button></td>
         <td>7,842</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="natural-questions-performance" title="展开或收起 Qwen 系列模型的 EM 柱状图">EM</button></td>
       </tr>
@@ -134,7 +135,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="triviaqa-citation" title="展开或收起引用">TriviaQA</button>
         </td>
         <td>2017 年</td>
-        <td>问题由<strong>知识问答爱好者编写</strong>，配有从 Wikipedia 和网页收集的证据文档。问题与证据之间常存在词汇差异，需要整合多句话定位答案，评估模型的<strong>事实知识、阅读理解与跨句推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="triviaqa-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>问题由<b>知识问答爱好者编写</b>，配有从 Wikipedia 和网页收集的证据文档。问题与证据之间常存在词汇差异，需要整合多句话定位答案，评估模型的<b>事实知识、阅读理解与跨句推理能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="triviaqa-examples" title="展开或收起文字样例">[样例]</button></td>
         <td title="Unfiltered 版本">10,832</td>
         <td>EM / F1</td>
       </tr>
@@ -151,7 +152,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="piqa-citation" title="展开或收起引用">PIQA</button>
         </td>
         <td>2019 年</td>
-        <td>围绕<strong>日常生活中的物理常识与操作任务</strong>，给定一个目标和两个候选方案，要求选出更合理、可行的方案。评估模型对<strong>物体属性、工具用途及物理交互</strong>的理解与常识推理能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="piqa-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>围绕<b>日常生活中的物理常识与操作任务</b>，给定一个目标和两个候选方案，要求选出更合理、可行的方案。评估模型对<b>物体属性、工具用途及物理交互</b>的理解与常识推理能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="piqa-examples" title="展开或收起文字样例">[样例]</button></td>
         <td>3,084</td>
         <td>Accuracy</td>
       </tr>
@@ -168,8 +169,8 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="winogrande-citation" title="展开或收起引用">WinoGrande</button>
         </td>
         <td>2019 年</td>
-        <td>以<strong>指代消解</strong>（判断代词
-          如 it、she 指代句中的哪个人或物）为核心，给定句子与两个候选对象，要求根据语境补全空缺、确定正确指代。采用<strong>对抗过滤</strong>减少词语关联等数据偏差，评估模型的<strong>常识推理与语境理解能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="winogrande-examples" title="展开或收起两个文字样例">[样例]</button></td>
+        <td>以<b>指代消解</b>（判断代词
+          如 it、she 指代句中的哪个人或物）为核心，给定句子与两个候选对象，要求根据语境补全空缺、确定正确指代。采用<b>对抗过滤</b>减少词语关联等数据偏差，评估模型的<b>常识推理与语境理解能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="winogrande-examples" title="展开或收起两个文字样例">[样例]</button></td>
         <td>1,767</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="winogrande-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
       </tr>
@@ -191,7 +192,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="hellaswag-citation" title="展开或收起引用">HellaSwag</button>
         </td>
         <td>2019 年</td>
-        <td>围绕<strong>日常活动与事件续写</strong>，给定一段情境描述，从四个候选续写中选择最合理的后续情节。干扰选项通过<strong>对抗过滤</strong>筛选，语法自然但语义不合常理，评估模型的<strong>事件预测、情境理解与常识推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="hellaswag-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>围绕<b>日常活动与事件续写</b>，给定一段情境描述，从四个候选续写中选择最合理的后续情节。干扰选项通过<b>对抗过滤</b>筛选，语法自然但语义不合常理，评估模型的<b>事件预测、情境理解与常识推理能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="hellaswag-examples" title="展开或收起文字样例">[样例]</button></td>
         <td>10,003</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="hellaswag-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
       </tr>
@@ -213,7 +214,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="big-bench-citation" title="展开或收起引用">BIG-Bench</button>
         </td>
         <td>2022 年</td>
-        <td>由研究社区协作构建的<strong>综合能力评测合集</strong>，论文收录 <strong>204 个任务</strong>，覆盖语言理解、数学、常识推理、代码、多语言与社会偏差等领域。包含静态题目与可编程交互任务，用于考察模型的<strong>多维能力、泛化表现与规模增长规律</strong>。</td>
+        <td>由研究社区协作构建的<b>综合能力评测合集</b>，论文收录 <b>204 个任务</b>，覆盖语言理解、数学、常识推理、代码、多语言与社会偏差等领域。包含静态题目与可编程交互任务，用于考察模型的<b>多维能力、泛化表现与规模增长规律</b>。</td>
         <td title="不同子任务提供不同数量的评测样本，部分任务支持程序化生成；没有统一测试集规模。">1-2M</td>
         <td title="各任务使用首选指标（如 Accuracy、EM、BLEU、ROUGE），按该任务设定的低分和高分基准归一化，再跨任务取平均。">归一化均分</td>
       </tr>
@@ -225,7 +226,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="big-bench-lite-citation" title="展开或收起引用">BIG-Bench Lite</button>
         </td>
         <td>2022 年</td>
-        <td>BIG-Bench 的<strong>轻量代表性子集</strong>，精选 <strong><button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="big-bench-lite-tasks" title="展开或收起24个任务名称">24</button> 个 JSON 格式任务</strong>，覆盖推理、代码、多语言及偏差测量等能力。不包含需要复杂交互的可编程任务，便于以<strong>更低评测成本</strong>比较模型的综合表现</td>
+        <td>BIG-Bench 的<b>轻量代表性子集</b>，精选 <b><button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="big-bench-lite-tasks" title="展开或收起24个任务名称">24</button> 个 JSON 格式任务</b>，覆盖推理、代码、多语言及偏差测量等能力。不包含需要复杂交互的可编程任务，便于以<b>更低评测成本</b>比较模型的综合表现</td>
         <td title="24 是任务数量，不是测试样本数量；各子任务的样本数和评测采样设置不同。">5K</td>
         <td title="沿用各任务的首选指标，经任务内归一化后对24个任务取平均。">归一化均分</td>
       </tr>
@@ -242,7 +243,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="bbh-citation" title="展开或收起引用">BBH</button>
         </td>
         <td>2022 年</td>
-        <td>BIG-Bench Hard，从 BIG-Bench 中筛选出 <strong><button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="bbh-tasks" title="展开或收起23类任务名称">23</button> 类高难度任务</strong>，原研究中的模型尚未超过这些任务的人类平均表现。覆盖逻辑、算术、符号与常识推理，重点考察<strong>多步推理能力</strong>，常用于研究<strong>思维链（CoT）提示</strong>的效果。</td>
+        <td>BIG-Bench Hard，从 BIG-Bench 中筛选出 <b><button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="bbh-tasks" title="展开或收起23类任务名称">23</button> 类高难度任务</b>，原研究中的模型尚未超过这些任务的人类平均表现。覆盖逻辑、算术、符号与常识推理，重点考察<b>多步推理能力</b>，常用于研究<b>思维链（CoT）提示</b>的效果。</td>
         <td title="官方27个任务变体数据文件合计的评测样本数，不含few-shot提示样例。">6,511</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="bbh-performance" title="展开或收起 Qwen 系列模型的 EM 柱状图">EM</button></td>
       </tr>
@@ -291,7 +292,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="arc-citation" title="展开或收起引用">ARC-C</button>
         </td>
         <td>2018 年</td>
-        <td>来自<strong>中小学科学考试的多项选择题</strong>（4 选项 QA）。ARC-Challenge 收录检索和词共现基线均无法答对的题目，重点考察模型的<strong>科学知识运用与推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="arc-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>来自<b>中小学科学考试的多项选择题</b>（4 选项 QA）。ARC-Challenge 收录检索和词共现基线均无法答对的题目，重点考察模型的<b>科学知识运用与推理能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="arc-examples" title="展开或收起文字样例">[样例]</button></td>
         <td>1,172</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="arc-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
       </tr>
@@ -313,7 +314,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="theoremqa-citation" title="展开或收起引用">TheoremQA</button>
         </td>
         <td>2023 年</td>
-        <td>面向大学阶段的<strong>定理驱动型科学问答基准</strong>，涵盖数学、物理、电子工程与计算机科学、金融四大领域，包含约 <strong>354 个定理和 800 道问题</strong>，重点评估模型运用专业定理解决跨学科科学问题的<strong>知识与推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="theoremqa-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>面向大学阶段的<b>定理驱动型科学问答基准</b>，涵盖数学、物理、电子工程与计算机科学、金融四大领域，包含约 <b>354 个定理和 800 道问题</b>，重点评估模型运用专业定理解决跨学科科学问题的<b>知识与推理能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="theoremqa-examples" title="展开或收起文字样例">[样例]</button></td>
         <td>800</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="theoremqa-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
       </tr>
@@ -335,7 +336,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmlu-citation" title="展开或收起引用">MMLU</button>
         </td>
         <td>2020 年</td>
-        <td>MMLU（Massive Multitask Language Understanding）是一个涵盖 <strong>57 个学科四选一题目</strong>的综合知识评测基准，用于评估大语言模型在 STEM、人文、社会科学及专业领域的<strong>知识与理解能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mmlu-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>MMLU（Massive Multitask Language Understanding）是一个涵盖 <b>57 个学科四选一题目</b>的综合知识评测基准，用于评估大语言模型在 STEM、人文、社会科学及专业领域的<b>知识与理解能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mmlu-examples" title="展开或收起文字样例">[样例]</button></td>
         <td>14,042</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="mmlu-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
       </tr>
@@ -357,7 +358,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmlu-redux-citation" title="展开或收起引用">MMLU-Redux</button>
         </td>
         <td>2024 年</td>
-        <td>对 MMLU 进行<strong>人工审核与重新标注</strong>的修正版，旨在纠正错误答案与歧义题目；抽样发现约 <strong>6.49%</strong> 的题目存在错误。</td>
+        <td>对 MMLU 进行<b>人工审核与重新标注</b>的修正版，旨在纠正错误答案与歧义题目；抽样发现约 <b>6.49%</b> 的题目存在错误。</td>
         <td title="MMLU-Redux 2.0：57个学科，每科100条测试样本。">5,700</td>
         <td>Accuracy</td>
       </tr>
@@ -369,7 +370,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmlu-pro-citation" title="展开或收起引用">MMLU-Pro</button>
         </td>
         <td>2024 年</td>
-        <td>MMLU 的增强版，覆盖 <strong>14 个学科领域</strong>，通过引入更复杂的问题、将选项从 <strong>4 个增加至 10 个</strong>，并过滤简单及存在噪声的题目，提高评测的<strong>区分度</strong>。</td>
+        <td>MMLU 的增强版，覆盖 <b>14 个学科领域</b>，通过引入更复杂的问题、将选项从 <b>4 个增加至 10 个</b>，并过滤简单及存在噪声的题目，提高评测的<b>区分度</b>。</td>
         <td>12,032</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="mmlu-pro-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
       </tr>
@@ -386,7 +387,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="agieval-citation" title="展开或收起引用">AGIEval</button>
         </td>
         <td>2023 年</td>
-        <td>以<strong>人类标准化考试</strong>为基础构建的综合评测基准，涵盖中国高考、SAT、LSAT、数学竞赛及公务员考试等，覆盖<strong>语言理解、数学推理、逻辑推理和多学科知识</strong>（客观选择题和填空题）。</td>
+        <td>以<b>人类标准化考试</b>为基础构建的综合评测基准，涵盖中国高考、SAT、LSAT、数学竞赛及公务员考试等，覆盖<b>语言理解、数学推理、逻辑推理和多学科知识</b>（客观选择题和填空题）。</td>
         <td title="原论文统计的评测样本规模。">8,062</td>
         <td title="按原论文：选择题使用Accuracy，填空题使用EM和F1。">Accuracy<br>EM / F1</td>
       </tr>
@@ -398,7 +399,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ceval-citation" title="展开或收起引用">C-Eval</button>
         </td>
         <td>2023 年</td>
-        <td>C-Eval（Chinese Evaluation Suite）是面向<strong>中文语境</strong>的综合性学科四选一评测基准，覆盖 STEM、人文、社会科学等 <strong>52 个学科</strong>，包含<strong>初中、高中、大学和专业</strong>四个难度层级。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ceval-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>C-Eval（Chinese Evaluation Suite）是面向<b>中文语境</b>的综合性学科四选一评测基准，覆盖 STEM、人文、社会科学等 <b>52 个学科</b>，包含<b>初中、高中、大学和专业</b>四个难度层级。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ceval-examples" title="展开或收起文字样例">[样例]</button></td>
         <td title="52个学科的test划分合计；不含dev和val。">12,342</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="ceval-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
       </tr>
@@ -420,7 +421,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="cmmlu-citation" title="展开或收起引用">CMMLU</button>
         </td>
         <td>2023 年</td>
-        <td>面向中文语境的综合性多学科知识评测基准，覆盖 STEM、人文、社会科学及其他领域的 <strong>67 个学科</strong>。相比 C-Eval，CMMLU 更注重<strong>中国特有的文化与区域知识</strong>，涵盖中国饮食文化、驾驶规则、古汉语等特色主题，并兼顾全球通用知识，用于评估模型在中文语境下的<strong>知识储备与推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="cmmlu-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>面向中文语境的综合性多学科知识评测基准，覆盖 STEM、人文、社会科学及其他领域的 <b>67 个学科</b>。相比 C-Eval，CMMLU 更注重<b>中国特有的文化与区域知识</b>，涵盖中国饮食文化、驾驶规则、古汉语等特色主题，并兼顾全球通用知识，用于评估模型在中文语境下的<b>知识储备与推理能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="cmmlu-examples" title="展开或收起文字样例">[样例]</button></td>
         <td title="官方仓库data/test的67个学科CSV合计，不含dev。">11,582</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="cmmlu-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
       </tr>
@@ -469,7 +470,7 @@ _styles: |
           <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="truthfulqa-citation" title="展开或收起引用">TruthfulQA</button>
         </td>
         <td>2021 年</td>
-        <td>专门针对<strong>人类常见误解</strong>设计的问答基准，覆盖健康、法律、金融、政治等 <strong>38 个类别</strong>，通过容易引发常见误解的问题，评估模型回答的<strong>真实性与准确性</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="truthfulqa-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>专门针对<b>人类常见误解</b>设计的问答基准，覆盖健康、法律、金融、政治等 <b>38 个类别</b>，通过容易引发常见误解的问题，评估模型回答的<b>真实性与准确性</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="truthfulqa-examples" title="展开或收起文字样例">[样例]</button></td>
         <td>817</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="truthfulqa-performance" title="展开或收起 Qwen 系列模型的得分柱状图">Truthfulness</button></td>
       </tr>
@@ -516,7 +517,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="gsm8k-citation" title="展开或收起引用">GSM8K</button></td>
         <td>2021 年</td>
-        <td>GSM8K（Grade School Math 8K）是<strong>小学数学应用题基准</strong>，主要评估模型的<strong>多步算术推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="gsm8k-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>GSM8K（Grade School Math 8K）是<b>小学数学应用题基准</b>，主要评估模型的<b>多步算术推理能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="gsm8k-examples" title="展开或收起文字样例">[样例]</button></td>
         <td>1,319</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="gsm8k-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
       </tr>
@@ -536,7 +537,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="math-citation" title="展开或收起引用">MATH</button></td>
         <td>2021 年</td>
-        <td>MATH（Mathematics Aptitude Test of Heuristics）是<strong>高中竞赛数学评测基准</strong>，覆盖代数、几何、数论、组合与概率等 <strong>7 个数学领域</strong>，包含 <strong>5 个难度等级</strong>，主要评估模型的<strong>复杂数学推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="math-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>MATH（Mathematics Aptitude Test of Heuristics）是<b>高中竞赛数学评测基准</b>，覆盖代数、几何、数论、组合与概率等 <b>7 个数学领域</b>，包含 <b>5 个难度等级</b>，主要评估模型的<b>复杂数学推理能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="math-examples" title="展开或收起文字样例">[样例]</button></td>
         <td>5,000</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="math-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
       </tr>
@@ -556,7 +557,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="aime-citation" title="展开或收起引用">AIME</button></td>
         <td>2024 年<br>2025 年</td>
-        <td>AIME（American Invitational Mathematics Examination，美国数学邀请赛）是<strong>高中竞赛数学评测</strong>，题目涉及代数、几何、数论与组合等领域，答案为 <strong>0–999 的整数</strong>，主要评估模型的<strong>高难度数学推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="aime-examples" title="展开或收起 AIME 真题样例">[样例]</button></td>
+        <td>AIME（American Invitational Mathematics Examination，美国数学邀请赛）是<b>高中竞赛数学评测</b>，题目涉及代数、几何、数论与组合等领域，答案为 <b>0–999 的整数</b>，主要评估模型的<b>高难度数学推理能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="aime-examples" title="展开或收起 AIME 真题样例">[样例]</button></td>
         <td>30 / 年</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="aime-performance" title="展开或收起 Qwen3-8B 在 AIME 2024 与 AIME 2025 的得分柱状图">Accuracy</button></td>
       </tr>
@@ -603,7 +604,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="humaneval-citation" title="展开或收起引用">HumanEval</button></td>
         <td>2021 年</td>
-        <td>人工编写的 <strong>Python 函数生成基准</strong>，要求模型根据自然语言描述实现函数，并通过<strong>单元测试</strong>验证代码的<strong>功能正确性</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="humaneval-examples" title="展开或收起代码样例">[样例]</button></td>
+        <td>人工编写的 <b>Python 函数生成基准</b>，要求模型根据自然语言描述实现函数，并通过<b>单元测试</b>验证代码的<b>功能正确性</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="humaneval-examples" title="展开或收起代码样例">[样例]</button></td>
         <td>164</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="humaneval-performance" title="展开或收起 Qwen 系列模型的 Pass@1 柱状图">Pass@1</button></td>
       </tr>
@@ -623,7 +624,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mbpp-citation" title="展开或收起引用">MBPP</button></td>
         <td>2021 年</td>
-        <td>MBPP（Mostly Basic Programming Problems）是面向<strong>入门程序员</strong>的 Python 代码生成基准，要求模型根据自然语言描述生成函数，并通过<strong>单元测试</strong>验证正确性。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mbpp-examples" title="展开或收起代码样例">[样例]</button></td>
+        <td>MBPP（Mostly Basic Programming Problems）是面向<b>入门程序员</b>的 Python 代码生成基准，要求模型根据自然语言描述生成函数，并通过<b>单元测试</b>验证正确性。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mbpp-examples" title="展开或收起代码样例">[样例]</button></td>
         <td>500</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="mbpp-performance" title="展开或收起 Qwen 系列模型的 Pass@1 柱状图">Pass@1</button></td>
       </tr>
@@ -643,7 +644,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="livecodebench-citation" title="展开或收起引用">LiveCode<wbr>Bench</button></td>
         <td>2024 年</td>
-        <td>针对 HumanEval 的<strong>数据污染、难度饱和</strong>等问题，从 LeetCode、AtCoder 和 Codeforces 持续收集新竞赛题目，通过<strong>时间划分</strong>降低数据污染风险，并扩展至<strong>代码修复、执行预测及测试输出预测</strong>等任务。</td>
+        <td>针对 HumanEval 的<b>数据污染、难度饱和</b>等问题，从 LeetCode、AtCoder 和 Codeforces 持续收集新竞赛题目，通过<b>时间划分</b>降低数据污染风险，并扩展至<b>代码修复、执行预测及测试输出预测</b>等任务。</td>
         <td>511</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="livecodebench-performance" title="展开或收起 Qwen 系列模型的 Pass@1 柱状图">Pass@1</button></td>
       </tr>
@@ -685,7 +686,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="gpqa-citation" title="展开或收起引用">GPQA</button></td>
         <td>2023 年</td>
-        <td>GPQA（Graduate-Level Google-Proof Q&amp;A Benchmark）是由<strong>领域专家</strong>编写的<strong>研究生级科学问答四选一基准</strong>，涵盖生物、物理和化学，重点评估<strong>专业科学知识与推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="gpqa-examples" title="展开或收起文字样例">[样例]</button></td>
+        <td>GPQA（Graduate-Level Google-Proof Q&amp;A Benchmark）是由<b>领域专家</b>编写的<b>研究生级科学问答四选一基准</b>，涵盖生物、物理和化学，重点评估<b>专业科学知识与推理能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="gpqa-examples" title="展开或收起文字样例">[样例]</button></td>
         <td>448</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="gpqa-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
       </tr>
@@ -705,7 +706,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="gpqa-diamond-citation" title="展开或收起引用">GPQA Diamond</button></td>
         <td>2023 年</td>
-        <td>GPQA 的<strong>高质量困难子集</strong>，要求领域专家认可答案且多数非专家无法正确作答，重点评估<strong>高难度科学推理能力</strong>。</td>
+        <td>GPQA 的<b>高质量困难子集</b>，要求领域专家认可答案且多数非专家无法正确作答，重点评估<b>高难度科学推理能力</b>。</td>
         <td>198</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="gpqa-diamond-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
       </tr>
@@ -720,7 +721,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="supergpqa-citation" title="展开或收起引用">SuperGPQA</button></td>
         <td>2025 年</td>
-        <td>SuperGPQA 是覆盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="supergpqa-disciplines" title="展开或收起13个学科门类">13 个大学科门类</button>、<strong>285 个研究生级细分学科</strong>的大规模多学科问答基准，包含约 <strong>2.65 万道选择题</strong>，平均每题 <strong>9.67 个选项</strong>。数据经<strong>人类专家与大模型协同筛选</strong>，重点评估模型在长尾专业领域的<strong>知识理解与复杂推理能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="supergpqa-examples" title="展开或收起研究生级问答样例">[样例]</button></td>
+        <td>SuperGPQA 是覆盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="supergpqa-disciplines" title="展开或收起13个学科门类">13 个大学科门类</button>、<b>285 个研究生级细分学科</b>的大规模多学科问答基准，包含约 <b>2.65 万道选择题</b>，平均每题 <b>9.67 个选项</b>。数据经<b>人类专家与大模型协同筛选</b>，重点评估模型在长尾专业领域的<b>知识理解与复杂推理能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="supergpqa-examples" title="展开或收起研究生级问答样例">[样例]</button></td>
         <td>26,529</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="supergpqa-performance" title="展开或收起 Qwen 系列模型的 Accuracy 柱状图">Accuracy</button></td>
       </tr>
@@ -772,7 +773,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mt-bench-citation" title="展开或收起引用">MT-Bench</button></td>
         <td>2023 年</td>
-        <td>面向<strong>开放式对话</strong>的大语言模型评测基准，包含 <strong>80 组两轮问题</strong>，覆盖写作、角色扮演、信息抽取、推理、数学、代码、STEM 与人文社科等 <strong>8 类任务</strong>，重点评估模型的<strong>多轮对话与指令遵循能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mt-bench-examples" title="展开或收起两轮对话样例">[样例]</button></td>
+        <td>面向<b>开放式对话</b>的大语言模型评测基准，包含 <b>80 组两轮问题</b>，覆盖写作、角色扮演、信息抽取、推理、数学、代码、STEM 与人文社科等 <b>8 类任务</b>，重点评估模型的<b>多轮对话与指令遵循能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mt-bench-examples" title="展开或收起两轮对话样例">[样例]</button></td>
         <td>80</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="mt-bench-performance" title="展开或收起 Qwen 系列模型的 Judge Score 柱状图">Judge Score</button></td>
       </tr>
@@ -792,7 +793,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="chatbot-arena-citation" title="展开或收起引用">Chatbot Arena</button></td>
         <td>2023 年</td>
-        <td>Chatbot Arena 是基于<strong>匿名模型两两对战</strong>的众包人类偏好评测平台，用户同时与两个匿名模型交互并选择更优回答，用于评估模型在<strong>真实开放式对话场景中的人类偏好</strong>。</td>
+        <td>Chatbot Arena 是基于<b>匿名模型两两对战</b>的众包人类偏好评测平台，用户同时与两个匿名模型交互并选择更优回答，用于评估模型在<b>真实开放式对话场景中的人类偏好</b>。</td>
         <td>30K</td>
         <td>Win Rate<br>Elo</td>
       </tr>
@@ -802,7 +803,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ifeval-citation" title="展开或收起引用">IFEval</button></td>
         <td>2023 年</td>
-        <td>IFEval（Instruction-Following Eval）是面向大语言模型<strong>指令遵循能力</strong>的评测基准，包含 <strong>541 个带有可验证指令的 Prompt</strong>，覆盖 <strong>25 类约束</strong>，包括关键词、语言、长度、格式及标点等，重点评估模型对<strong>明确、可验证指令的执行能力</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ifeval-examples" title="展开或收起指令样例">[样例]</button></td>
+        <td>IFEval（Instruction-Following Eval）是面向大语言模型<b>指令遵循能力</b>的评测基准，包含 <b>541 个带有可验证指令的 Prompt</b>，覆盖 <b>25 类约束</b>，包括关键词、语言、长度、格式及标点等，重点评估模型对<b>明确、可验证指令的执行能力</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ifeval-examples" title="展开或收起指令样例">[样例]</button></td>
         <td>541</td>
         <td><button type="button" class="benchmark-performance-toggle" aria-expanded="false" aria-controls="ifeval-performance" title="展开或收起 Qwen 系列模型的 IFEval 得分柱状图">Accuracy</button></td>
       </tr>
@@ -827,7 +828,7 @@ _styles: |
 ## 8. 安全性与对齐评测
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
-  <table aria-label="安全性与对齐评测基准">
+  <table aria-label="安全性评测基准">
     <colgroup>
       <col style="width: 12%">
       <col style="width: 10%">
@@ -848,7 +849,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="do-not-answer-citation" title="展开或收起引用">Do-Not-Answer</button></td>
         <td>2023 年</td>
-        <td>面向大语言模型<strong>安全防护能力</strong>的评测基准，仅包含<strong>不应被模型直接遵从的有害或风险性问题</strong>，覆盖隐私与敏感信息泄露、恶意用途、歧视与仇恨、错误信息及人机交互风险等 <strong>5 大领域</strong>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="do-not-answer-examples" title="展开或收起安全评测问题样例">[样例]</button></td>
+        <td>面向大语言模型<b>安全防护能力</b>的评测基准，仅包含<b>不应被模型直接遵从的有害或风险性问题</b>，覆盖隐私与敏感信息泄露、恶意用途、歧视与仇恨、错误信息及人机交互风险等 <b>5 大领域</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="do-not-answer-examples" title="展开或收起安全评测问题样例">[样例]</button></td>
         <td>939</td>
         <td>Accuracy</td>
       </tr>

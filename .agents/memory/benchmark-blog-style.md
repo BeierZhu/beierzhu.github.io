@@ -32,3 +32,9 @@ description: User-approved editorial presentation for the Chinese text-only benc
 **Why:** 用户提供的成绩可能混合一位与两位小数；统一舍入会改变原始数值。
 
 **How to apply:** 在数据、柱顶标签、悬浮提示、无障碍说明和失败提示中保持一致，整数仍可沿用一位小数的展示风格。
+
+该基准博客正文与样例中的加粗标记使用 `<b>`，不使用 `<strong>`。
+
+**Why:** 用户要求将本博客内容中的 `<strong>` 加粗标签换成 `<b>`。
+
+**How to apply:** 新增或修改该博客及其样例时，用 `<b>` 表示视觉加粗。
