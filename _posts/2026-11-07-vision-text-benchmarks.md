@@ -74,7 +74,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mme-citation" title="展开或收起引用">MME</button></td>
         <td>2023 年</td>
-        <td>包含感知（Perception）和认知（Cognition）两大维度、共 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mme-subtasks" title="展开或收起14项子任务">14 项子任务</button>。所有题目均采用 Yes/No 二分类形式，每张图像对应一正一负两道问题，最终以汇总分数 Score 衡量模型表现。</td>
+        <td>包含<b>感知（Perception）和认知（Cognition）</b>两大维度、共 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mme-subtasks" title="展开或收起14项子任务">14 项子任务</button>。所有题目均采用 <b>Yes/No 二分类</b>形式，每张图像对应一正一负两道问题，最终以汇总分数 <b>Score</b> 衡量模型表现。</td>
         <td class="benchmark-count-cell">图像：1,187 <br>问题：2,374 </td>
         <td class="benchmark-metric-cell">Score</td>
       </tr>
