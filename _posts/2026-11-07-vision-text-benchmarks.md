@@ -400,7 +400,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="okvqa-citation" title="展开或收起引用">OK-VQA</button></td>
         <td>2019 年</td>
-        <td>面向外部知识的视觉问答基准，要求模型结合图像内容与外部世界知识回答问题。涵盖科学技术、历史、体育、地理、动植物等 <b>10 类知识领域</b>，采用开放式问答（Open-ended QA）。</td>
+        <td>面向外部知识的视觉问答基准，要求模型结合图像内容与外部世界知识回答问题。涵盖科学技术、历史、体育、地理、动植物等 <b>10 类知识领域</b>，采用开放式问答（Open-ended QA）。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="okvqa-examples" title="展开或收起OK-VQA样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：14,031<br>问题：14,055</td>
         <td class="benchmark-metric-cell">VQA Accuracy</td>
       </tr>
@@ -408,6 +408,13 @@ _styles: |
         <td colspan="5">
           Marino et al. <em>OK-VQA: A Visual Question Answering Benchmark Requiring External Knowledge.</em> CVPR, 2019.
           <a href="https://arxiv.org/abs/1906.00067">arXiv:1906.00067</a>。
+        </td>
+      </tr>
+      <tr id="okvqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/okvqa-example.png' | relative_url }}" alt="OK-VQA 样例截图，询问图中教堂最常在星期几开放，答案为 Sunday" loading="lazy">
+          </div>
         </td>
       </tr>
     </tbody>
