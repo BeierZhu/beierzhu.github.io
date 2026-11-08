@@ -293,9 +293,21 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="docvqa-citation" title="展开或收起引用">DocVQA</button></td>
         <td>2021 年</td>
-        <td>面向真实文档图像的<b>文档视觉问答</b>基准，给定文档图像和自然语言问题，要求模型从文档中定位并抽取答案。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="docvqa-examples" title="展开或收起DocVQA样例">[样例]</button></td>
+        <td>面向真实文档图像的<b>文档视觉问答</b>基准，图像来自<b>工业文献档案库</b>，覆盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="docvqa-industries" title="展开或收起5个行业">5 个行业</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="docvqa-examples" title="展开或收起DocVQA样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：1,287 <br>问题：5,188</td>
         <td class="benchmark-metric-cell">ANLS / Accuracy</td>
+      </tr>
+      <tr id="docvqa-industries" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <p>工业文献档案库覆盖以下 5 个行业：</p>
+          <ul class="benchmark-dataset-list">
+            <li>Tobacco：烟草</li>
+            <li>Food：食品</li>
+            <li>Drug：药品</li>
+            <li>Fossil Fuel：化石燃料</li>
+            <li>Chemical：化工</li>
+          </ul>
+        </td>
       </tr>
       <tr id="docvqa-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
