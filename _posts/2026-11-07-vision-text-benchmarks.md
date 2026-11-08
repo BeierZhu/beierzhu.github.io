@@ -241,5 +241,47 @@ _styles: |
   </table>
 </div>
 
+## 3. 图表理解与数据推理
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="图表理解与数据推理基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 48%">
+      <col style="width: 18%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="chartqa-citation" title="展开或收起引用">ChartQA</button></td>
+        <td>2022 年</td>
+        <td>面向真实世界图表的视觉问答基准，要求模型结合图表中的<b>文本标签、图例及颜色、位置等视觉属性</b>回答开放式问题，重点考察数据检索、视觉理解以及多步数学与逻辑推理能力。</td>
+        <td class="benchmark-count-cell">测试集图表：625（ChartQA-H）+ 987（ChartQA-M）<br>问题：2,500</td>
+        <td class="benchmark-metric-cell">Relaxed Accuracy</td>
+      </tr>
+      <tr id="chartqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Masry et al. <em>ChartQA: A Benchmark for Question Answering about Charts with Visual and Logical Reasoning.</em> Findings of ACL, 2022.
+          <a href="https://arxiv.org/abs/2203.10244">论文链接</a>。
+          <p><b>数据集构成：</b>ChartQA-H 包含 9,608 个由人工编写的问答对；ChartQA-M 包含 23,111 个基于人工撰写图表摘要、由 T5 自动生成的问答对。全数据集共 20,882 张真实世界图表，来源包括 Statista、Pew Research、Our World in Data（OWID）和 OECD。</p>
+          <p><b>问题类型：</b>Data Retrieval（13.0%）、Visual（10.7%）、Compositional（43.0%）、Visual &amp; Compositional（33.3%）。</p>
+          <p><b>Relaxed Accuracy：</b>数值答案与标准答案的误差在 5% 以内即视为正确；非数值答案采用 Exact Match。</p>
+          <p>ChartQA 不仅要求读取图表文本或数值，也考察结合视觉属性与底层数据进行组合推理，例如比较数据差异、计算平均值或寻找最大值。</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <script src="{{ '/assets/js/benchmark-citations.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/benchmark-performance.js' | relative_url }}" defer></script>
