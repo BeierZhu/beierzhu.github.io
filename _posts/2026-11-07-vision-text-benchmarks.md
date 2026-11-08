@@ -31,7 +31,7 @@ _styles: |
   .benchmark-performance-status { margin: .5rem 0; font-size: .85rem; }
   .benchmark-examples-row td { padding: .75rem; white-space: normal; overflow-wrap: anywhere; }
   .benchmark-examples-panel { position: sticky; left: 0; width: min(100%, calc(100vw - 60px)); font-size: .95rem; line-height: 1.65; }
-  .benchmark-example-image { display: block; width: 100%; height: auto; }
+  .benchmark-example-image { display: block; width: auto; max-width: 100%; height: auto; }
   .benchmark-example { padding: .75rem 0; border-bottom: 1px solid var(--global-divider-color); }
   .benchmark-example:first-child { padding-top: 0; }
   .benchmark-example:last-child { padding-bottom: 0; border-bottom: 0; }
