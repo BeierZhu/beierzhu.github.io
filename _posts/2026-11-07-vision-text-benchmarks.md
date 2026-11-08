@@ -184,6 +184,7 @@ _styles: |
   </table>
 </div>
 
+<b>
 ## 2. 文本密集型视觉理解
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
@@ -208,15 +209,56 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="textvqa-citation" title="展开或收起引用">TextVQA</button></td>
         <td>2019 年</td>
-        <td>面向自然场景中包含文字的图像问答基准，要求模型结合<b>图像视觉信息与文字内容</b>回答开放式问题；答案既可直接来自图中文字，也可通过视觉与文本联合推理获得，主要评估<b>场景文字识别、视觉定位与跨模态推理</b>能力。</td>
+        <td>面向自然场景中包含文字的图像问答基准，要求模型结合<b>图像视觉信息与文字内容</b>回答开放式问题。</td>
         <td class="benchmark-count-cell">5,734</td>
-        <td class="benchmark-metric-cell">VQA Accuracy</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="textvqa-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
           Singh et al. <em>Towards VQA Models That Can Read.</em> CVPR, 2019.
           <a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Singh_Towards_VQA_Models_That_Can_Read_CVPR_2019_paper.pdf">论文链接</a> ·
           <a href="https://textvqa.org/">数据集主页</a>。
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+## 3. 文档视觉问答（Document VQA）
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="文档视觉问答基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 54%">
+      <col style="width: 12%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="docvqa-citation" title="展开或收起引用">DocVQA</button></td>
+        <td>2021 年</td>
+        <td>面向真实文档图像的<b>文档视觉问答</b>基准，给定文档图像和自然语言问题，要求模型从文档中定位并抽取答案，同时理解表格、表单、列表、图表及页面布局等结构信息，评估模型的文档文字识别、布局理解与视觉问答能力。</td>
+        <td class="benchmark-count-cell">5,188</td>
+        <td class="benchmark-metric-cell">ANLS / Accuracy</td>
+      </tr>
+      <tr id="docvqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Mathew et al. <em>DocVQA: A Dataset for VQA on Document Images.</em> WACV, 2021.
+          <a href="https://arxiv.org/abs/2007.00398">论文链接</a>。
+          <p><b>数据规模：</b>测试集 5,188 个问题、1,287 张图像；完整数据集 50,000 个问题、12,767 张图像。数据划分：Train / Val / Test = 80% / 10% / 10%。</p>
+          <p><b>ANLS（Average Normalized Levenshtein Similarity）：</b>基于编辑距离计算预测答案与标准答案的相似度，降低 OCR 拼写错误等细微差异带来的惩罚。</p>
+          <p><b>Accuracy：</b>预测答案与任意一个 Ground Truth 完全匹配的比例。</p>
         </td>
       </tr>
     </tbody>
