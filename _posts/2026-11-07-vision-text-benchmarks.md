@@ -378,7 +378,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="vqav2-citation" title="展开或收起引用">VQAv2</button></td>
         <td>2017 年</td>
-        <td>通用开放式视觉问答基准，给定图像和自然语言问题，要求模型结合视觉信息、语言理解与常识知识生成答案。通过为同一问题收集语义相似但答案不同的互补图像，降低数据集中的语言先验偏差，促使模型依赖图像内容进行推理。</td>
+        <td>通用开放式视觉问答基准，给定图像和自然语言问题，要求模型结合视觉信息、语言理解与常识知识生成答案。通过为同一问题收集语义相似但答案不同的互补图像，降低数据集中的语言先验偏差，促使模型依赖图像内容进行推理。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="vqav2-examples" title="展开或收起VQAv2样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：81,434<br>问题：447,793</td>
         <td class="benchmark-metric-cell">VQA Accuracy</td>
       </tr>
@@ -388,6 +388,13 @@ _styles: |
           <a href="https://openaccess.thecvf.com/content_cvpr_2017/papers/Goyal_Making_the_V_in_CVPR_2017_paper.pdf">论文链接</a> ·
           <a href="https://visualqa.org/download.html">数据集主页</a>。
           <p><b>数据集构成：</b>VQAv2.0 完整数据集包含 204,721 张 COCO 图像、1,105,904 个问题和 11,059,040 个人工标注答案。训练集包含 443,757 个问题，验证集包含 214,354 个问题，测试集包含 447,793 个问题。</p>
+        </td>
+      </tr>
+      <tr id="vqav2-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/vqav2-example.png' | relative_url }}" alt="VQAv2 样例截图，展示关于戴眼镜的人、孩子位置、雨伞方向和床上儿童数量的问答" loading="lazy">
+          </div>
         </td>
       </tr>
     </tbody>
