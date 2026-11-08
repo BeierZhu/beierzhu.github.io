@@ -401,11 +401,31 @@ _styles: |
         </td>
       </tr>
       <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="vizwiz-citation" title="展开或收起引用">VizWiz</button></td>
+        <td>2018 年</td>
+        <td>面向视障人士的真实场景视觉问答基准，由视障用户使用手机拍摄图片并口述问题。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="vizwiz-examples" title="展开或收起VizWiz样例">[样例]</button></td>
+        <td class="benchmark-count-cell">问题：31,173</td>
+        <td class="benchmark-metric-cell">VQA Accuracy / CIDEr / BLEU-4 / METEOR；AP（可回答性）</td>
+      </tr>
+      <tr id="vizwiz-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Gurari et al. <em>VizWiz Grand Challenge: Answering Visual Questions from Blind People.</em> CVPR, 2018.
+          <a href="https://arxiv.org/abs/1802.08218">论文链接</a>。
+        </td>
+      </tr>
+      <tr id="vizwiz-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/vizwiz-example.png' | relative_url }}" alt="VizWiz 样例截图，展示视障用户询问化妆品是否含防晒成分以及识别十欧元纸币" loading="lazy">
+          </div>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="gqa-citation" title="展开或收起引用">GQA</button></td>
         <td>2019 年</td>
-        <td>基于 Visual Genome 场景图自动生成的<b>组合式视觉问答</b>数据集，通过遍历物体、属性及关系构造多样化问题，并为每题提供描述推理过程的 Functional Program，重点考察物体识别、关系理解与多步组合推理能力。通过平衡答案分布降低统计偏差。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="gqa-examples" title="展开或收起GQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：113K<br>原始问题：22.67M<br>平衡后问题：1.7M</td>
-        <td class="benchmark-metric-cell">Accuracy、Consistency 等</td>
+        <td>基于 Visual Genome 场景图自动生成的<b>组合式视觉问答</b>数据集，通过遍历物体、属性及关系构造多样化问题。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="gqa-examples" title="展开或收起GQA样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像：113K<br>原始问题：22.67M</td>
+        <td class="benchmark-metric-cell">Accuracy </td>
       </tr>
       <tr id="gqa-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
