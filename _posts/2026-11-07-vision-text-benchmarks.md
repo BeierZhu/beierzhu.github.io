@@ -150,7 +150,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="seed-bench-citation" title="展开或收起引用">SEED-Bench</button></td>
         <td>2023 年</td>
         <td><b>图像与视频理解</b>评测基准，涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="seed-bench-dimensions" title="展开或收起12个评测维度">12 个评测维度</button>。采用人工验证的<b>四选一选择题</b>，评估模型的视觉感知、空间推理与时序理解能力。相比MME，SEED-Bench 样本数量更多，覆盖范围更广。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="seed-bench-examples" title="展开或收起SEED-Bench样例">[样例]</button></td>
-        <td class="benchmark-count-cell">问题：19,242</td>
+        <td class="benchmark-count-cell">问题：19K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="seed-bench-dimensions" class="benchmark-datasets-row" hidden>
