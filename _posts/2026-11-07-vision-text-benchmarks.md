@@ -225,7 +225,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ai2d-citation" title="展开或收起引用">AI2D</button></td>
         <td>2016 年</td>
-        <td>面向小学科学示意图的视觉问答基准，<b>采用四选一选择题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ai2d-examples" title="展开或收起AI2D样例">[样例]</button></td>
+        <td>小学科学示意图的视觉问答基准，<b>采用四选一选择题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ai2d-examples" title="展开或收起AI2D样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：5,000+<br>问题：15,000+</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -247,7 +247,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="textvqa-citation" title="展开或收起引用">TextVQA</button></td>
         <td>2019 年</td>
-        <td>面向自然场景中包含文字的图像问答基准，<b>回答开放式问题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="textvqa-examples" title="展开或收起TextVQA样例">[样例]</button></td>
+        <td>自然场景中包含文字的图像问答基准，<b>回答开放式问题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="textvqa-examples" title="展开或收起TextVQA样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：3,289 <br>问题：5,734</td>
         <td class="benchmark-metric-cell">VQA Accuracy</td>
       </tr>
@@ -269,7 +269,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ocr-vqa-citation" title="展开或收起引用">OCR-VQA</button></td>
         <td>2019 年</td>
-        <td>面向书籍封面的<b>文字驱动视觉问答</b>基准，<b>回答开放式问题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ocr-vqa-examples" title="展开或收起OCR-VQA样例">[样例]</button></td>
+        <td>书籍封面的<b>文字驱动视觉问答</b>基准，<b>回答开放式问题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ocr-vqa-examples" title="展开或收起OCR-VQA样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：约 20.8K<br>问题： 100K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -293,7 +293,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="docvqa-citation" title="展开或收起引用">DocVQA</button></td>
         <td>2021 年</td>
-        <td>面向真实文档图像的<b>文档视觉问答</b>基准，图像来自<b>工业文献档案库</b>，覆盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="docvqa-industries" title="展开或收起5个行业">5 个行业</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="docvqa-examples" title="展开或收起DocVQA样例">[样例]</button></td>
+        <td>真实文档图像的<b>文档视觉问答</b>基准，图像来自<b>工业文献档案库</b>，覆盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="docvqa-industries" title="展开或收起5个行业">5 个行业</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="docvqa-examples" title="展开或收起DocVQA样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：1,287 <br>问题：5,188</td>
         <td class="benchmark-metric-cell">ANLS / Accuracy</td>
       </tr>
@@ -328,7 +328,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="chartqa-citation" title="展开或收起引用">ChartQA</button></td>
         <td>2022 年</td>
-        <td>面向真实世界图表的视觉问答基准，<b>回答开放式问题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="chartqa-examples" title="展开或收起ChartQA样例">[样例]</button></td>
+        <td>真实世界图表的视觉问答基准，<b>回答开放式问题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="chartqa-examples" title="展开或收起ChartQA样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像： 1.6K <br>问题：2,500</td>
         <td class="benchmark-metric-cell">Relaxed Accuracy</td>
       </tr>
@@ -347,6 +347,47 @@ _styles: |
           <div class="benchmark-examples-panel">
             <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/chartqa-example.png' | relative_url }}" alt="ChartQA 样例截图，询问巴西经济评价意见差异最大的年份及橙色折线峰值" loading="lazy">
           </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+## 3. 传统视觉问答
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="传统视觉问答基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 48%">
+      <col style="width: 18%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="vqav2-citation" title="展开或收起引用">VQAv2</button></td>
+        <td>2017 年</td>
+        <td>通用开放式视觉问答基准，给定图像和自然语言问题，要求模型结合视觉信息、语言理解与常识知识生成答案。通过为同一问题收集语义相似但答案不同的互补图像，降低数据集中的语言先验偏差，促使模型依赖图像内容进行推理。</td>
+        <td class="benchmark-count-cell">图像：81,434<br>问题：447,793</td>
+        <td class="benchmark-metric-cell">VQA Accuracy</td>
+      </tr>
+      <tr id="vqav2-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Goyal et al. <em>Making the V in VQA Matter: Elevating the Role of Image Understanding in Visual Question Answering.</em> CVPR, 2017.
+          <a href="https://openaccess.thecvf.com/content_cvpr_2017/papers/Goyal_Making_the_V_in_CVPR_2017_paper.pdf">论文链接</a> ·
+          <a href="https://visualqa.org/download.html">数据集主页</a>。
+          <p><b>数据集构成：</b>VQAv2.0 完整数据集包含 204,721 张 COCO 图像、1,105,904 个问题和 11,059,040 个人工标注答案。训练集包含 443,757 个问题，验证集包含 214,354 个问题，测试集包含 447,793 个问题。</p>
         </td>
       </tr>
     </tbody>
