@@ -185,10 +185,10 @@ _styles: |
 </div>
 
 <b>
-## 2. 文本与图表视觉理解
+## 2. 文本、图表与示意图理解
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
-  <table aria-label="文本与图表视觉理解基准">
+  <table aria-label="文本、图表与示意图理解基准">
     <colgroup>
       <col style="width: 12%">
       <col style="width: 10%">
@@ -206,6 +206,21 @@ _styles: |
       </tr>
     </thead>
     <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ai2d-citation" title="展开或收起引用">AI2D</button></td>
+        <td>2016 年</td>
+        <td>面向科学示意图的视觉问答基准，要求模型理解图中的<b>物体、文本标签、箭头及其关系</b>，并结合科学知识回答问题，考察复杂图表理解与关系推理能力。</td>
+        <td class="benchmark-count-cell">图像：5,000+<br>问题：15,000+</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="ai2d-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Kembhavi et al. <em>A Diagram Is Worth A Dozen Images.</em> CVPR, 2016. arXiv:1603.07396.
+          <a href="https://arxiv.org/abs/1603.07396">论文链接</a>。
+          <p><b>任务形式：</b>输入科学示意图与自然语言问题，输出四个候选选项中的正确答案。主要考察图表元素识别、实体关系理解与科学知识推理。</p>
+          <p><b>数据规模：</b>包含 5,000+ 张科学示意图和 15,000+ 道问答题；其中训练集 4,000 张图像，测试集 1,000 张图像。</p>
+        </td>
+      </tr>
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="textvqa-citation" title="展开或收起引用">TextVQA</button></td>
         <td>2019 年</td>
