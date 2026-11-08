@@ -50,6 +50,9 @@ _styles: |
   .benchmark-subtask-table.seed-bench-dimensions-table th:first-child { width: 32%; }
   .benchmark-subtask-table.seed-bench-dimensions-table th:nth-child(2) { width: 20%; }
   .benchmark-subtask-table.seed-bench-dimensions-table th:nth-child(3) { width: 48%; }
+  .benchmark-subtask-table.okvqa-categories-table th:first-child { width: 8%; }
+  .benchmark-subtask-table.okvqa-categories-table th:nth-child(2) { width: 55%; }
+  .benchmark-subtask-table.okvqa-categories-table th:nth-child(3) { width: 37%; }
   .benchmark-subtask-table tbody:last-child tr:last-child th, .benchmark-subtask-table tbody:last-child tr:last-child td { border-bottom: 0; }
 ---
 
@@ -400,9 +403,35 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="okvqa-citation" title="展开或收起引用">OK-VQA</button></td>
         <td>2019 年</td>
-        <td>面向外部知识的视觉问答基准，要求模型结合图像内容与外部世界知识回答问题。涵盖科学技术、历史、体育、地理、动植物等 <b>10 类知识领域</b>，采用开放式问答（Open-ended QA）。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="okvqa-examples" title="展开或收起OK-VQA样例">[样例]</button></td>
+        <td>面向<b>外部知识(Outside Knowledge VQA)</b>的视觉问答基准，要求模型结合图像内容与外部世界知识回答问题。涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="okvqa-categories" title="展开或收起10类知识领域">10 类知识领域</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="okvqa-examples" title="展开或收起OK-VQA样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：14,031<br>问题：14,055</td>
         <td class="benchmark-metric-cell">VQA Accuracy</td>
+      </tr>
+      <tr id="okvqa-categories" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <table class="benchmark-subtask-table okvqa-categories-table" aria-label="OK-VQA 的 10 类知识领域">
+            <caption>OK-VQA 的 10 类知识领域</caption>
+            <thead>
+              <tr>
+                <th scope="col">序号</th>
+                <th scope="col">英文类别</th>
+                <th scope="col">中文含义</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">1</th><td>Vehicles and Transportation</td><td>交通工具与运输</td></tr>
+              <tr><th scope="row">2</th><td>Brands, Companies and Products</td><td>品牌、公司与产品</td></tr>
+              <tr><th scope="row">3</th><td>Objects, Materials and Clothing</td><td>物体、材料与服装</td></tr>
+              <tr><th scope="row">4</th><td>Sports and Recreation</td><td>体育与休闲活动</td></tr>
+              <tr><th scope="row">5</th><td>Cooking and Food</td><td>烹饪与食物</td></tr>
+              <tr><th scope="row">6</th><td>Geography, History, Language and Culture</td><td>地理、历史、语言与文化</td></tr>
+              <tr><th scope="row">7</th><td>People and Everyday Life</td><td>人物与日常生活</td></tr>
+              <tr><th scope="row">8</th><td>Plants and Animals</td><td>植物与动物</td></tr>
+              <tr><th scope="row">9</th><td>Science and Technology</td><td>科学与技术</td></tr>
+              <tr><th scope="row">10</th><td>Weather and Climate</td><td>天气与气候</td></tr>
+            </tbody>
+          </table>
+        </td>
       </tr>
       <tr id="okvqa-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
