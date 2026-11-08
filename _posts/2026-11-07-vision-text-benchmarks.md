@@ -31,6 +31,7 @@ _styles: |
   .benchmark-performance-status { margin: .5rem 0; font-size: .85rem; }
   .benchmark-examples-row td { padding: .75rem; white-space: normal; overflow-wrap: anywhere; }
   .benchmark-examples-panel { position: sticky; left: 0; width: min(100%, calc(100vw - 60px)); font-size: .95rem; line-height: 1.65; }
+  .benchmark-example-image { display: block; width: 100%; height: auto; }
   .benchmark-example { padding: .75rem 0; border-bottom: 1px solid var(--global-divider-color); }
   .benchmark-example:first-child { padding-top: 0; }
   .benchmark-example:last-child { padding-bottom: 0; border-bottom: 0; }
@@ -52,6 +53,7 @@ _styles: |
   .benchmark-subtask-table tbody:last-child tr:last-child th, .benchmark-subtask-table tbody:last-child tr:last-child td { border-bottom: 0; }
 ---
 
+<b>
 ## 1. 综合视觉理解
 
 
@@ -77,7 +79,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mme-citation" title="展开或收起引用">MME</button></td>
         <td>2023 年</td>
-        <td>包含<b>感知（Perception）和认知（Cognition）</b>两大维度、共 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mme-subtasks" title="展开或收起14项子任务">14 项子任务</button>。所有题目均采用 <b>Yes/No 二分类</b>形式，每张图像对应一正一负两道问题，最终以汇总分数 <b>Score</b> 衡量模型表现。</td>
+        <td>包含<b>感知和认知</b>两大维度、共 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mme-subtasks" title="展开或收起14项子任务">14 项子任务</button>。所有题目均采用 <b>Yes/No 二分类</b>形式，每张图像对应一正一负两道问题，最终以汇总分数 <b>Score</b> 衡量模型表现。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mme-examples" title="展开或收起MME文字样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：1,187 <br>问题：2,374 </td>
         <td class="benchmark-metric-cell">Score</td>
       </tr>
@@ -135,6 +137,13 @@ _styles: |
               <tr><td>Overall（合计）</td><td>14</td><td>2,800</td></tr>
             </tbody>
           </table>
+        </td>
+      </tr>
+      <tr id="mme-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/mme-example.png' | relative_url }}" alt="MME 样例截图，展示感知、OCR 与认知任务中的 Yes/No 问题" loading="lazy">
+          </div>
         </td>
       </tr>
       <tr class="benchmark-data-row">
