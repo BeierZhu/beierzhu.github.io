@@ -210,46 +210,22 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="textvqa-citation" title="展开或收起引用">TextVQA</button></td>
         <td>2019 年</td>
         <td>面向自然场景中包含文字的图像问答基准，要求模型结合<b>图像视觉信息与文字内容</b>回答开放式问题。</td>
-        <td class="benchmark-count-cell">5,734</td>
-        <td class="benchmark-metric-cell">Accuracy</td>
+        <td class="benchmark-count-cell">图像：3,289 <br>问题：5,734</td>
+        <td class="benchmark-metric-cell">VQA Accuracy</td>
       </tr>
       <tr id="textvqa-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
           Singh et al. <em>Towards VQA Models That Can Read.</em> CVPR, 2019.
           <a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Singh_Towards_VQA_Models_That_Can_Read_CVPR_2019_paper.pdf">论文链接</a> ·
           <a href="https://textvqa.org/">数据集主页</a>。
+          <p>规模按 TextVQA 0.5.1 测试集统计。</p>
         </td>
       </tr>
-    </tbody>
-  </table>
-</div>
-
-## 3. 文档视觉问答（Document VQA）
-
-<div class="table-responsive benchmark-preview-table" markdown="0">
-  <table aria-label="文档视觉问答基准">
-    <colgroup>
-      <col style="width: 12%">
-      <col style="width: 10%">
-      <col style="width: 54%">
-      <col style="width: 12%">
-      <col style="width: 12%">
-    </colgroup>
-    <thead>
-      <tr>
-        <th scope="col">名称</th>
-        <th scope="col">发布时间</th>
-        <th scope="col">简介</th>
-        <th scope="col">规模</th>
-        <th scope="col">评测指标</th>
-      </tr>
-    </thead>
-    <tbody>
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="docvqa-citation" title="展开或收起引用">DocVQA</button></td>
         <td>2021 年</td>
         <td>面向真实文档图像的<b>文档视觉问答</b>基准，给定文档图像和自然语言问题，要求模型从文档中定位并抽取答案，同时理解表格、表单、列表、图表及页面布局等结构信息，评估模型的文档文字识别、布局理解与视觉问答能力。</td>
-        <td class="benchmark-count-cell">5,188</td>
+        <td class="benchmark-count-cell">图像：1,287 <br>问题：5,188</td>
         <td class="benchmark-metric-cell">ANLS / Accuracy</td>
       </tr>
       <tr id="docvqa-citation" class="benchmark-citation-row" hidden>
