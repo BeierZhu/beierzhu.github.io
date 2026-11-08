@@ -328,8 +328,8 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="chartqa-citation" title="展开或收起引用">ChartQA</button></td>
         <td>2022 年</td>
-        <td>面向真实世界图表的视觉问答基准，要求模型结合图表中的<b>文本标签、图例及颜色、位置等视觉属性</b>回答开放式问题，重点考察数据检索、视觉理解以及多步数学与逻辑推理能力。</td>
-        <td class="benchmark-count-cell">测试集图表：625（ChartQA-H）+ 987（ChartQA-M）<br>问题：2,500</td>
+        <td>面向真实世界图表的视觉问答基准，<b>回答开放式问题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="chartqa-examples" title="展开或收起ChartQA样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像： 1.6K <br>问题：2,500</td>
         <td class="benchmark-metric-cell">Relaxed Accuracy</td>
       </tr>
       <tr id="chartqa-citation" class="benchmark-citation-row" hidden>
@@ -340,6 +340,13 @@ _styles: |
           <p><b>问题类型：</b>Data Retrieval（13.0%）、Visual（10.7%）、Compositional（43.0%）、Visual &amp; Compositional（33.3%）。</p>
           <p><b>Relaxed Accuracy：</b>数值答案与标准答案的误差在 5% 以内即视为正确；非数值答案采用 Exact Match。</p>
           <p>ChartQA 不仅要求读取图表文本或数值，也考察结合视觉属性与底层数据进行组合推理，例如比较数据差异、计算平均值或寻找最大值。</p>
+        </td>
+      </tr>
+      <tr id="chartqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/chartqa-example.png' | relative_url }}" alt="ChartQA 样例截图，询问巴西经济评价意见差异最大的年份及橙色折线峰值" loading="lazy">
+          </div>
         </td>
       </tr>
     </tbody>
