@@ -92,6 +92,10 @@ jobs:
           value: ${{ github.repository }}
       - name: Prepare self-hosted fonts
         run: python3 scripts/fetch_site_fonts.py
+      - name: Install ImageMagick
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
       - name: Check MiniRacer and ImageMagick runtimes
         run: bash tests/test_jekyll_native_runtime.sh
       - name: Install and Build 🔧
