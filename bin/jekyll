@@ -32,6 +32,51 @@ export PATH="$imagemagick_wrapper_dir:$PATH"
 
 # Match the deployment prebuild so local previews have the same pinned fonts.
 project_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+if [[ "${1:-}" == "--native-runtime-check" ]]; then
+  if [[ $# -ne 1 ]]; then
+    echo "The native runtime check does not accept additional arguments." >&2
+    exit 2
+  fi
+
+  if [[ ":${LD_LIBRARY_PATH:-}:" != *":$(dirname "$cxx_runtime"):"* ]]; then
+    echo "MiniRacer's required GCC runtime path is missing from LD_LIBRARY_PATH." >&2
+    exit 1
+  fi
+
+  bundle exec ruby -e '
+    require "mini_racer"
+    result = MiniRacer::Context.new.eval("40 + 2")
+    abort "MiniRacer JavaScript evaluation returned #{result.inspect}, expected 42" unless result == 42
+  '
+  echo "MiniRacer JavaScript evaluation passed."
+
+  photo="$project_root/assets/img/profile.jpg"
+  webp="$imagemagick_wrapper_dir/native-runtime-check.webp"
+  convert_log="$imagemagick_wrapper_dir/native-runtime-check.log"
+  if ! convert "$photo" -resize '64x64>' "$webp" >"$convert_log" 2>&1; then
+    cat "$convert_log" >&2
+    if grep -q 'CXXABI_1\.3\.15' "$convert_log"; then
+      echo "Detected an ImageMagick CXXABI_1.3.15 runtime conflict." >&2
+    fi
+    echo "ImageMagick failed to convert a real photo to WebP with MiniRacer's runtime path active." >&2
+    exit 1
+  fi
+
+  python3 - "$webp" <<'PY'
+import pathlib
+import sys
+
+image = pathlib.Path(sys.argv[1]).read_bytes()
+if len(image) < 12 or image[:4] != b"RIFF" or image[8:12] != b"WEBP":
+    raise SystemExit("ImageMagick output is not a valid WebP file.")
+if int.from_bytes(image[4:8], "little") + 8 != len(image):
+    raise SystemExit("ImageMagick output has an invalid WebP RIFF length.")
+PY
+  echo "ImageMagick WebP conversion passed for assets/img/profile.jpg."
+  exit 0
+fi
+
 python3 "$project_root/scripts/fetch_site_fonts.py"
 
 bundle exec jekyll "$@"

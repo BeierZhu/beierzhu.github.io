@@ -6,7 +6,9 @@ on:
       - main
     paths:
       - "assets/**"
+      - "bin/**"
       - "scripts/fetch_site_fonts.py"
+      - "tests/**"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -35,7 +37,9 @@ on:
       - main
     paths:
       - "assets/**"
+      - "bin/**"
       - "scripts/fetch_site_fonts.py"
+      - "tests/**"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -88,6 +92,8 @@ jobs:
           value: ${{ github.repository }}
       - name: Prepare self-hosted fonts
         run: python3 scripts/fetch_site_fonts.py
+      - name: Check MiniRacer and ImageMagick runtimes
+        run: bash tests/test_jekyll_native_runtime.sh
       - name: Install and Build 🔧
         run: |
           pip3 install --upgrade jupyter
