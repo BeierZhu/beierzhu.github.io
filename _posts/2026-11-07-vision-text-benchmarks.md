@@ -269,7 +269,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ocr-vqa-citation" title="展开或收起引用">OCR-VQA</button></td>
         <td>2019 年</td>
-        <td>面向书籍封面的<b>文字驱动视觉问答</b>基准，要求模型通过 OCR 识别封面文字并结合视觉信息回答书名、作者、类别、出版年份和版本等问题。</td>
+        <td>面向书籍封面的<b>文字驱动视觉问答</b>基准，要求模型通过 OCR 识别封面文字并结合视觉信息回答书名、作者、类别、出版年份和版本等问题。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ocr-vqa-examples" title="展开或收起OCR-VQA样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：约 20.8K<br>问题：约 100K（测试集）</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -281,6 +281,13 @@ _styles: |
           <p><b>数据集构成：</b>OCR-VQA-200K 包含 207,572 张书籍封面图像和 1,002,146 个问答对，平均每张图像对应 4.83 个问题；包含 117,378 位作者、203,471 个书名、32 种图书类别和 320,794 个不同答案。Train / Val / Test 按 80% / 10% / 10% 划分，测试集约 100K 个问答对。</p>
           <p><b>问题类型：</b>Book Title（书名）、Author Name（作者）、Book Genre（类别）、Year（出版年份）和 Edition（版本）。书名、作者和类别是主要任务；年份与版本仅在部分封面中出现。问题基于模板生成，并经人工改写以增加表达多样性。</p>
           <p><b>评测指标：</b>Accuracy，即预测正确的问题占比。论文报告的最佳基线模型 BLOCK+CNN+W2V 整体准确率为 48.3%；二分类问题为 58.2%，书籍类别识别为 22.0%，作者识别为 42.9%。</p>
+        </td>
+      </tr>
+      <tr id="ocr-vqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/ocr-vqa-example.png' | relative_url }}" alt="OCR-VQA 样例截图，识别书籍封面并回答书名、作者和类别" loading="lazy">
+          </div>
         </td>
       </tr>
       <tr class="benchmark-data-row">
