@@ -269,8 +269,8 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ocr-vqa-citation" title="展开或收起引用">OCR-VQA</button></td>
         <td>2019 年</td>
-        <td>面向书籍封面的<b>文字驱动视觉问答</b>基准，要求模型通过 OCR 识别封面文字并结合视觉信息回答书名、作者、类别、出版年份和版本等问题。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ocr-vqa-examples" title="展开或收起OCR-VQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：约 20.8K<br>问题：约 100K（测试集）</td>
+        <td>面向书籍封面的<b>文字驱动视觉问答</b>基准，<b>回答开放式问题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ocr-vqa-examples" title="展开或收起OCR-VQA样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像：约 20.8K<br>问题： 100K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="ocr-vqa-citation" class="benchmark-citation-row" hidden>
@@ -293,7 +293,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="docvqa-citation" title="展开或收起引用">DocVQA</button></td>
         <td>2021 年</td>
-        <td>面向真实文档图像的<b>文档视觉问答</b>基准，给定文档图像和自然语言问题，要求模型从文档中定位并抽取答案。</td>
+        <td>面向真实文档图像的<b>文档视觉问答</b>基准，给定文档图像和自然语言问题，要求模型从文档中定位并抽取答案。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="docvqa-examples" title="展开或收起DocVQA样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：1,287 <br>问题：5,188</td>
         <td class="benchmark-metric-cell">ANLS / Accuracy</td>
       </tr>
@@ -304,6 +304,13 @@ _styles: |
           <p><b>数据规模：</b>测试集 5,188 个问题、1,287 张图像；完整数据集 50,000 个问题、12,767 张图像。数据划分：Train / Val / Test = 80% / 10% / 10%。</p>
           <p><b>ANLS（Average Normalized Levenshtein Similarity）：</b>基于编辑距离计算预测答案与标准答案的相似度，降低 OCR 拼写错误等细微差异带来的惩罚。</p>
           <p><b>Accuracy：</b>预测答案与任意一个 Ground Truth 完全匹配的比例。</p>
+        </td>
+      </tr>
+      <tr id="docvqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/docvqa-example.png' | relative_url }}" alt="DocVQA 样例截图，询问信件上的邮政编码、日期和公司地址" loading="lazy">
+          </div>
         </td>
       </tr>
       <tr class="benchmark-data-row">
