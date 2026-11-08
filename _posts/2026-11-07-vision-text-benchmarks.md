@@ -224,7 +224,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="docvqa-citation" title="展开或收起引用">DocVQA</button></td>
         <td>2021 年</td>
-        <td>面向真实文档图像的<b>文档视觉问答</b>基准，给定文档图像和自然语言问题，要求模型从文档中定位并抽取答案，同时理解表格、表单、列表、图表及页面布局等结构信息，评估模型的文档文字识别、布局理解与视觉问答能力。</td>
+        <td>面向真实文档图像的<b>文档视觉问答</b>基准，给定文档图像和自然语言问题，要求模型从文档中定位并抽取答案。</td>
         <td class="benchmark-count-cell">图像：1,287 <br>问题：5,188</td>
         <td class="benchmark-metric-cell">ANLS / Accuracy</td>
       </tr>
