@@ -378,7 +378,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="vqav2-citation" title="展开或收起引用">VQAv2</button></td>
         <td>2017 年</td>
-        <td>通用开放式视觉问答基准，给定图像和自然语言问题，要求模型结合视觉信息、语言理解与常识知识生成答案。通过为同一问题收集语义相似但答案不同的互补图像，降低数据集中的语言先验偏差，促使模型依赖图像内容进行推理。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="vqav2-examples" title="展开或收起VQAv2样例">[样例]</button></td>
+        <td>通用开放式视觉问答基准，给定图像和自然语言问题，要求模型结合视觉信息、语言理解与常识知识生成答案。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="vqav2-examples" title="展开或收起VQAv2样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：81,434<br>问题：447,793</td>
         <td class="benchmark-metric-cell">VQA Accuracy</td>
       </tr>
@@ -395,6 +395,19 @@ _styles: |
           <div class="benchmark-examples-panel">
             <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/vqav2-example.png' | relative_url }}" alt="VQAv2 样例截图，展示关于戴眼镜的人、孩子位置、雨伞方向和床上儿童数量的问答" loading="lazy">
           </div>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="okvqa-citation" title="展开或收起引用">OK-VQA</button></td>
+        <td>2019 年</td>
+        <td>面向外部知识的视觉问答基准，要求模型结合图像内容与外部世界知识回答问题。涵盖科学技术、历史、体育、地理、动植物等 <b>10 类知识领域</b>，采用开放式问答（Open-ended QA）。</td>
+        <td class="benchmark-count-cell">图像：14,031<br>问题：14,055</td>
+        <td class="benchmark-metric-cell">VQA Accuracy</td>
+      </tr>
+      <tr id="okvqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Marino et al. <em>OK-VQA: A Visual Question Answering Benchmark Requiring External Knowledge.</em> CVPR, 2019.
+          <a href="https://arxiv.org/abs/1906.00067">arXiv:1906.00067</a>。
         </td>
       </tr>
     </tbody>
