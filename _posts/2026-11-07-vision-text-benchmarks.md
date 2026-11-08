@@ -401,6 +401,26 @@ _styles: |
         </td>
       </tr>
       <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="gqa-citation" title="展开或收起引用">GQA</button></td>
+        <td>2019 年</td>
+        <td>基于 Visual Genome 场景图自动生成的<b>组合式视觉问答</b>数据集，通过遍历物体、属性及关系构造多样化问题，并为每题提供描述推理过程的 Functional Program，重点考察物体识别、关系理解与多步组合推理能力。通过平衡答案分布降低统计偏差。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="gqa-examples" title="展开或收起GQA样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像：113K<br>原始问题：22.67M<br>平衡后问题：1.7M</td>
+        <td class="benchmark-metric-cell">Accuracy、Consistency 等</td>
+      </tr>
+      <tr id="gqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Hudson et al. <em>GQA: A New Dataset for Real-World Visual Reasoning and Compositional Question Answering.</em> CVPR, 2019.
+          <a href="https://arxiv.org/abs/1902.09506">论文链接</a>。
+        </td>
+      </tr>
+      <tr id="gqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/gqa-example.png' | relative_url }}" alt="GQA 样例截图，展示两张场景图及关于物体属性、位置、颜色和关系的组合式问题" loading="lazy">
+          </div>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="okvqa-citation" title="展开或收起引用">OK-VQA</button></td>
         <td>2019 年</td>
         <td>面向<b>外部知识(Outside Knowledge VQA)</b>的视觉问答基准，要求模型结合图像内容与外部世界知识回答问题。涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="okvqa-categories" title="展开或收起10类知识领域">10 类知识领域</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="okvqa-examples" title="展开或收起OK-VQA样例">[样例]</button></td>
