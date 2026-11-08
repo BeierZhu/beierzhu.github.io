@@ -405,7 +405,7 @@ _styles: |
         <td>2018 年</td>
         <td>面向视障人士的真实场景视觉问答基准，由视障用户使用手机拍摄图片并口述问题。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="vizwiz-examples" title="展开或收起VizWiz样例">[样例]</button></td>
         <td class="benchmark-count-cell">问题：31,173</td>
-        <td class="benchmark-metric-cell">VQA Accuracy / CIDEr / BLEU-4 / METEOR；AP（可回答性）</td>
+        <td class="benchmark-metric-cell">VQA Accuracy 等 </td>
       </tr>
       <tr id="vizwiz-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
