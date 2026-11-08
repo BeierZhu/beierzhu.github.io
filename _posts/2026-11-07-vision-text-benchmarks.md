@@ -185,15 +185,15 @@ _styles: |
 </div>
 
 <b>
-## 2. 文本密集型视觉理解
+## 2. 文本与图表视觉理解
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
-  <table aria-label="文本密集型视觉理解基准">
+  <table aria-label="文本与图表视觉理解基准">
     <colgroup>
       <col style="width: 12%">
       <col style="width: 10%">
-      <col style="width: 54%">
-      <col style="width: 12%">
+      <col style="width: 48%">
+      <col style="width: 18%">
       <col style="width: 12%">
     </colgroup>
     <thead>
@@ -237,31 +237,6 @@ _styles: |
           <p><b>Accuracy：</b>预测答案与任意一个 Ground Truth 完全匹配的比例。</p>
         </td>
       </tr>
-    </tbody>
-  </table>
-</div>
-
-## 3. 图表理解与数据推理
-
-<div class="table-responsive benchmark-preview-table" markdown="0">
-  <table aria-label="图表理解与数据推理基准">
-    <colgroup>
-      <col style="width: 12%">
-      <col style="width: 10%">
-      <col style="width: 48%">
-      <col style="width: 18%">
-      <col style="width: 12%">
-    </colgroup>
-    <thead>
-      <tr>
-        <th scope="col">名称</th>
-        <th scope="col">发布时间</th>
-        <th scope="col">简介</th>
-        <th scope="col">规模</th>
-        <th scope="col">评测指标</th>
-      </tr>
-    </thead>
-    <tbody>
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="chartqa-citation" title="展开或收起引用">ChartQA</button></td>
         <td>2022 年</td>
