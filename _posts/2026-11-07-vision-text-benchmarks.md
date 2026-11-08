@@ -149,8 +149,8 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="seed-bench-citation" title="展开或收起引用">SEED-Bench</button></td>
         <td>2023 年</td>
-        <td><b>图像与视频理解</b>评测基准，涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="seed-bench-dimensions" title="展开或收起12个评测维度">12 个评测维度</button>。采用人工验证的<b>四选一选择题</b>，评估模型的视觉感知、空间推理与时序理解能力。相比MME，SEED-Bench 样本数量更多，覆盖范围更广。</td>
-        <td class="benchmark-count-cell">19,242</td>
+        <td><b>图像与视频理解</b>评测基准，涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="seed-bench-dimensions" title="展开或收起12个评测维度">12 个评测维度</button>。采用人工验证的<b>四选一选择题</b>，评估模型的视觉感知、空间推理与时序理解能力。相比MME，SEED-Bench 样本数量更多，覆盖范围更广。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="seed-bench-examples" title="展开或收起SEED-Bench样例">[样例]</button></td>
+        <td class="benchmark-count-cell">问题：19,242</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="seed-bench-dimensions" class="benchmark-datasets-row" hidden>
@@ -187,6 +187,13 @@ _styles: |
           <a href="https://arxiv.org/abs/2307.16125">论文链接</a> ·
           <a href="https://github.com/AILab-CVC/SEED-Bench">官方仓库</a>。
           <p>注：规模采用原论文 Table 1 的 19,242 道选择题，包含 9 个图像空间理解维度与 3 个视频时序理解维度。原论文采用候选答案似然排序确定预测选项，并以 Accuracy 评估。</p>
+        </td>
+      </tr>
+      <tr id="seed-bench-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/seed-bench-example.png' | relative_url }}" alt="SEED-Bench 样例截图，展示图像空间理解与视频时序理解问题" loading="lazy">
+          </div>
         </td>
       </tr>
     </tbody>
