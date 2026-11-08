@@ -53,7 +53,7 @@ _styles: |
   .benchmark-subtask-table tbody:last-child tr:last-child th, .benchmark-subtask-table tbody:last-child tr:last-child td { border-bottom: 0; }
 ---
 
-<b>
+<br>
 ## 1. 综合视觉理解
 
 
@@ -149,7 +149,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="seed-bench-citation" title="展开或收起引用">SEED-Bench</button></td>
         <td>2023 年</td>
-        <td><b>图像与视频理解</b>评测基准，涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="seed-bench-dimensions" title="展开或收起12个评测维度">12 个评测维度</button>。采用人工验证的<b>四选一选择题</b>，评估模型的视觉感知、空间推理与时序理解能力。相比MME，SEED-Bench 样本数量更多，覆盖范围更广。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="seed-bench-examples" title="展开或收起SEED-Bench样例">[样例]</button></td>
+        <td> 包含<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="seed-bench-dimensions" title="展开或收起12个评测维度">12 个评测维度</button>。采用人工验证的<b>四选一选择题</b>，评估模型的视觉感知、空间推理与时序理解能力。相比MME，SEED-Bench 样本数量更多，覆盖范围更广。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="seed-bench-examples" title="展开或收起SEED-Bench样例">[样例]</button></td>
         <td class="benchmark-count-cell">问题：19K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -200,8 +200,8 @@ _styles: |
   </table>
 </div>
 
-<b>
-## 2. 文本、图表与示意图理解
+<br>
+## 2. 文本与图表理解
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="文本、图表与示意图理解基准">
@@ -225,7 +225,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ai2d-citation" title="展开或收起引用">AI2D</button></td>
         <td>2016 年</td>
-        <td>面向科学示意图的视觉问答基准，要求模型理解图中的<b>物体、文本标签、箭头及其关系</b>，并结合科学知识回答问题，考察复杂图表理解与关系推理能力。</td>
+        <td>面向小学科学示意图的视觉问答基准，<b>采用四选一选择题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ai2d-examples" title="展开或收起AI2D样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：5,000+<br>问题：15,000+</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -235,6 +235,13 @@ _styles: |
           <a href="https://arxiv.org/abs/1603.07396">论文链接</a>。
           <p><b>任务形式：</b>输入科学示意图与自然语言问题，输出四个候选选项中的正确答案。主要考察图表元素识别、实体关系理解与科学知识推理。</p>
           <p><b>数据规模：</b>包含 5,000+ 张科学示意图和 15,000+ 道问答题；其中训练集 4,000 张图像，测试集 1,000 张图像。</p>
+        </td>
+      </tr>
+      <tr id="ai2d-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/ai2d-example.png' | relative_url }}" alt="AI2D 样例截图，展示青蛙生命周期示意图及模型选择答案" loading="lazy">
+          </div>
         </td>
       </tr>
       <tr class="benchmark-data-row">
