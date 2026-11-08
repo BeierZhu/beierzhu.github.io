@@ -247,7 +247,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="textvqa-citation" title="展开或收起引用">TextVQA</button></td>
         <td>2019 年</td>
-        <td>面向自然场景中包含文字的图像问答基准，要求模型结合<b>图像视觉信息与文字内容</b>回答开放式问题。</td>
+        <td>面向自然场景中包含文字的图像问答基准，<b>回答开放式问题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="textvqa-examples" title="展开或收起TextVQA样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：3,289 <br>问题：5,734</td>
         <td class="benchmark-metric-cell">VQA Accuracy</td>
       </tr>
@@ -257,6 +257,13 @@ _styles: |
           <a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Singh_Towards_VQA_Models_That_Can_Read_CVPR_2019_paper.pdf">论文链接</a> ·
           <a href="https://textvqa.org/">数据集主页</a>。
           <p>规模按 TextVQA 0.5.1 测试集统计。</p>
+        </td>
+      </tr>
+      <tr id="textvqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/textvqa-example.png' | relative_url }}" alt="TextVQA 样例截图，询问彩色蜡笔的品牌，答案为 Crayola" loading="lazy">
+          </div>
         </td>
       </tr>
       <tr class="benchmark-data-row">
