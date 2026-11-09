@@ -424,7 +424,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="gqa-citation" title="展开或收起引用">GQA</button></td>
         <td>2019 年</td>
         <td>基于 Visual Genome 场景图自动生成的<b>组合式视觉问答</b>数据集，通过遍历物体、属性及关系构造多样化问题。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="gqa-examples" title="展开或收起GQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：113K<br>原始问题：22.67M</td>
+        <td class="benchmark-count-cell">图像：113K<br>问题：22.67M</td>
         <td class="benchmark-metric-cell">Accuracy </td>
       </tr>
       <tr id="gqa-citation" class="benchmark-citation-row" hidden>
@@ -483,6 +483,97 @@ _styles: |
         <td colspan="5">
           <div class="benchmark-examples-panel">
             <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/okvqa-example.png' | relative_url }}" alt="OK-VQA 样例截图，询问图中教堂最常在星期几开放，答案为 Sunday" loading="lazy">
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+## 4. 视觉定位与指代表达理解
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="视觉定位与指代表达理解基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 48%">
+      <col style="width: 18%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="refcoco-citation" title="展开或收起引用">RefCOCO</button></td>
+        <td>2016 年</td>
+        <td>基于 MS COCO 的<b>视觉指代表达理解</b>基准，给定图像和自然语言描述，要求定位对应的目标物体；允许使用空间位置描述。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="refcoco-examples" title="展开或收起RefCOCO样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像：19,994<br>表达式：142,210</td>
+        <td class="benchmark-metric-cell">Acc@0.5</td>
+      </tr>
+      <tr id="refcoco-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Yu et al. <em>Modeling Context in Referring Expressions.</em> ECCV, 2016.
+          <a href="https://arxiv.org/abs/1608.00272">论文链接</a>。
+          <p><b>任务形式：</b>输入图像和自然语言指代表达（Referring Expression），输出目标物体的 Bounding Box，考察视觉属性识别、空间关系理解与细粒度定位。</p>
+          <p><b>数据划分：</b>RefCOCO 和 RefCOCO+ 使用 Train / Val / TestA / TestB 划分；TestA 含多个人物实例的图像，TestB 含多个非人物物体实例的图像。</p>
+          <p><b>Acc@0.5：</b>预测框与 Ground Truth 的 IoU 大于 0.5 时计为正确，统计定位准确率。</p>
+        </td>
+      </tr>
+      <tr id="refcoco-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/refcoco-series-example.png' | relative_url }}" alt="RefCOCO、RefCOCO+ 和 RefCOCOg 样例截图，展示长颈鹿目标及不同指代表达">
+          </div>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="refcocoplus-citation" title="展开或收起引用">RefCOCO+</button></td>
+        <td>2016 年</td>
+        <td>在 RefCOCO 基础上禁止使用 left、right 等<b>绝对位置词</b>，要求模型更多依赖物体外观属性进行目标定位。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="refcocoplus-examples" title="展开或收起RefCOCO+样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像：19,992<br>表达式：141,564</td>
+        <td class="benchmark-metric-cell">Acc@0.5</td>
+      </tr>
+      <tr id="refcocoplus-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Yu et al. <em>Modeling Context in Referring Expressions.</em> ECCV, 2016.
+          <a href="https://arxiv.org/abs/1608.00272">论文链接</a>。
+          <p><b>数据划分与指标：</b>采用 Train / Val / TestA / TestB 划分，TestA 含多个人物实例图像，TestB 含多个非人物物体实例图像。Acc@0.5 以预测框与 Ground Truth 的 IoU 是否大于 0.5 判断定位正确。</p>
+        </td>
+      </tr>
+      <tr id="refcocoplus-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/refcoco-series-example.png' | relative_url }}" alt="RefCOCO、RefCOCO+ 和 RefCOCOg 样例截图，展示长颈鹿目标及不同指代表达">
+          </div>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="refcocog-citation" title="展开或收起引用">RefCOCOg</button></td>
+        <td>2016 年</td>
+        <td>基于 MS COCO 的视觉指代表达理解基准，采用非交互式众包标注，表达通常更长、更复杂，强调<b>细粒度语义理解</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="refcocog-examples" title="展开或收起RefCOCOg样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像：25,799<br>表达式：95,010</td>
+        <td class="benchmark-metric-cell">Acc@0.5</td>
+      </tr>
+      <tr id="refcocog-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Mao et al. <em>Generation and Comprehension of Unambiguous Object Descriptions.</em> CVPR, 2016.
+          <a href="https://openaccess.thecvf.com/content_cvpr_2016/html/Mao_Generation_and_Comprehension_CVPR_2016_paper.html">论文链接</a>。
+          <p><b>数据划分：</b>提供 Google 和 UMD 两种划分，分别按物体实例和图像划分。Acc@0.5 以预测框与 Ground Truth 的 IoU 是否大于 0.5 判断定位正确。</p>
+        </td>
+      </tr>
+      <tr id="refcocog-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/refcoco-series-example.png' | relative_url }}" alt="RefCOCO、RefCOCO+ 和 RefCOCOg 样例截图，展示长颈鹿目标及不同指代表达">
           </div>
         </td>
       </tr>
