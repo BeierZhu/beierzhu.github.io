@@ -83,7 +83,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mme-citation" title="展开或收起引用">MME</button></td>
         <td>2023 年</td>
         <td>包含<b>感知和认知</b>两大维度、共 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mme-subtasks" title="展开或收起14项子任务">14 项子任务</button>。所有题目均采用 <b>Yes/No 二分类</b>形式，每张图像对应一正一负两道问题，最终以汇总分数 <b>Score</b> 衡量模型表现。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mme-examples" title="展开或收起MME文字样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：1,187 <br>问题：2,374 </td>
+        <td class="benchmark-count-cell">图像：1.2K<br>问题：2.4K</td>
         <td class="benchmark-metric-cell">Score</td>
       </tr>
       <tr id="mme-subtasks" class="benchmark-datasets-row" hidden>
@@ -229,7 +229,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mathvista-citation" title="展开或收起引用">MathVista</button></td>
         <td>2024 年</td>
         <td>强调<b>视觉上下文的多样性</b>，涵盖几何图形、函数图像、统计图表、自然图像和抽象场景等。包含<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathvista-tasks" title="展开或收起五类主要任务">五类主要任务</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mathvista-examples" title="展开或收起MathVista样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：5,487 张<br>问题：6,141 道</td>
+        <td class="benchmark-count-cell">图像：5.5K<br>问题：6.1K<br>Testmini：1.0K<br>Test：5.1K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="mathvista-tasks" class="benchmark-datasets-row" hidden>
@@ -269,7 +269,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="math-vision-citation" title="展开或收起引用">MATH-Vision</button></td>
         <td>2024 年</td>
         <td>基于<b>真实数学竞赛题</b>的视觉数学推理基准，覆盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="math-vision-subjects" title="展开或收起16个数学领域">16 个数学领域</button>和 5 个难度等级。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="math-vision-examples" title="展开或收起MATH-Vision样例">[样例]</button></td>
-        <td class="benchmark-count-cell">问题：3,040 道</td>
+        <td class="benchmark-count-cell">问题：3.0K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="math-vision-subjects" class="benchmark-datasets-row" hidden>
@@ -346,7 +346,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ai2d-citation" title="展开或收起引用">AI2D</button></td>
         <td>2016 年</td>
         <td>小学科学示意图的视觉问答基准，<b>采用四选一选择题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ai2d-examples" title="展开或收起AI2D样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：5,000+<br>问题：15,000+</td>
+        <td class="benchmark-count-cell">图像：5.0K+<br>问题：15K+</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="ai2d-citation" class="benchmark-citation-row" hidden>
@@ -368,7 +368,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="textvqa-citation" title="展开或收起引用">TextVQA</button></td>
         <td>2019 年</td>
         <td>自然场景中包含文字的图像问答基准，<b>回答开放式问题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="textvqa-examples" title="展开或收起TextVQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：3,289 <br>问题：5,734</td>
+        <td class="benchmark-count-cell">图像：3.3K<br>问题：5.7K</td>
         <td class="benchmark-metric-cell">VQA Accuracy</td>
       </tr>
       <tr id="textvqa-citation" class="benchmark-citation-row" hidden>
@@ -390,7 +390,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ocr-vqa-citation" title="展开或收起引用">OCR-VQA</button></td>
         <td>2019 年</td>
         <td>书籍封面的<b>文字驱动视觉问答</b>基准，<b>回答开放式问题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ocr-vqa-examples" title="展开或收起OCR-VQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：约 20.8K<br>问题： 100K</td>
+        <td class="benchmark-count-cell">图像：约 21K<br>问题：100K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="ocr-vqa-citation" class="benchmark-citation-row" hidden>
@@ -414,7 +414,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="docvqa-citation" title="展开或收起引用">DocVQA</button></td>
         <td>2021 年</td>
         <td>真实文档图像的<b>文档视觉问答</b>基准，图像来自<b>工业文献档案库</b>，覆盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="docvqa-industries" title="展开或收起5个行业">5 个行业</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="docvqa-examples" title="展开或收起DocVQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：1,287 <br>问题：5,188</td>
+        <td class="benchmark-count-cell">图像：1.3K<br>问题：5.2K</td>
         <td class="benchmark-metric-cell">ANLS / Accuracy</td>
       </tr>
       <tr id="docvqa-industries" class="benchmark-datasets-row" hidden>
@@ -449,7 +449,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="chartqa-citation" title="展开或收起引用">ChartQA</button></td>
         <td>2022 年</td>
         <td>真实世界图表的视觉问答基准，<b>回答开放式问题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="chartqa-examples" title="展开或收起ChartQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像： 1.6K <br>问题：2,500</td>
+        <td class="benchmark-count-cell">图像：1.6K<br>问题：2.5K</td>
         <td class="benchmark-metric-cell">Relaxed Accuracy</td>
       </tr>
       <tr id="chartqa-citation" class="benchmark-citation-row" hidden>
@@ -473,7 +473,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="infographic-vqa-citation" title="展开或收起引用">InfoVQA</button></td>
         <td>2022 年</td>
         <td>面向<b>信息图（Infographics）</b>的视觉问答基准，输入包含文本、图表、表格、地图等视觉元素的信息图像。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="infographic-vqa-examples" title="展开或收起InfoVQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：579 <br>问题：3,288</td>
+        <td class="benchmark-count-cell">图像：0.6K<br>问题：3.3K</td>
         <td class="benchmark-metric-cell">ANLS / Accuracy</td>
       </tr>
       <tr id="infographic-vqa-citation" class="benchmark-citation-row" hidden>
@@ -519,7 +519,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="vqav2-citation" title="展开或收起引用">VQAv2</button></td>
         <td>2017 年</td>
         <td>通用开放式视觉问答基准，给定图像和自然语言问题，要求模型结合视觉信息、语言理解与常识知识生成答案。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="vqav2-examples" title="展开或收起VQAv2样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：81,434<br>问题：447,793</td>
+        <td class="benchmark-count-cell">图像：81K<br>问题：448K</td>
         <td class="benchmark-metric-cell">VQA Accuracy</td>
       </tr>
       <tr id="vqav2-citation" class="benchmark-citation-row" hidden>
@@ -541,7 +541,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="vizwiz-citation" title="展开或收起引用">VizWiz</button></td>
         <td>2018 年</td>
         <td>面向视障人士的真实场景视觉问答基准，由视障用户使用手机拍摄图片并口述问题。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="vizwiz-examples" title="展开或收起VizWiz样例">[样例]</button></td>
-        <td class="benchmark-count-cell">问题：31,173</td>
+        <td class="benchmark-count-cell">问题：31K</td>
         <td class="benchmark-metric-cell">VQA Accuracy 等 </td>
       </tr>
       <tr id="vizwiz-citation" class="benchmark-citation-row" hidden>
@@ -561,7 +561,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="gqa-citation" title="展开或收起引用">GQA</button></td>
         <td>2019 年</td>
         <td>基于 Visual Genome 场景图自动生成的<b>组合式视觉问答</b>数据集，通过遍历物体、属性及关系构造多样化问题。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="gqa-examples" title="展开或收起GQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：113K<br>问题：22.67M</td>
+        <td class="benchmark-count-cell">图像：113K<br>问题：22,670K</td>
         <td class="benchmark-metric-cell">Accuracy </td>
       </tr>
       <tr id="gqa-citation" class="benchmark-citation-row" hidden>
@@ -581,7 +581,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="okvqa-citation" title="展开或收起引用">OK-VQA</button></td>
         <td>2019 年</td>
         <td>面向<b>外部知识(Outside Knowledge VQA)</b>的视觉问答基准，要求模型结合图像内容与外部世界知识回答问题。涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="okvqa-categories" title="展开或收起10类知识领域">10 类知识领域</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="okvqa-examples" title="展开或收起OK-VQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：14,031<br>问题：14,055</td>
+        <td class="benchmark-count-cell">图像：14K<br>问题：14K</td>
         <td class="benchmark-metric-cell">VQA Accuracy</td>
       </tr>
       <tr id="okvqa-categories" class="benchmark-datasets-row" hidden>
@@ -627,7 +627,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="flickr30k-citation" title="展开或收起引用">Flickr30K</button></td>
         <td>2014 年</td>
         <td>经典<b>图像描述生成（Image Captioning）</b>基准，包含日常生活、人物活动和自然场景等图像。每张图像由 5 名不同标注者独立撰写英文描述。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="flickr30k-examples" title="展开或收起Flickr30K样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：31,783 张<br>描述：158,915 条</td>
+        <td class="benchmark-count-cell">图像：32K<br>描述：159K</td>
         <td class="benchmark-metric-cell"> CIDEr等</td>
       </tr>
       <tr id="flickr30k-citation" class="benchmark-citation-row" hidden>
@@ -673,7 +673,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="refcoco-citation" title="展开或收起引用">RefCOCO</button></td>
         <td>2016 年</td>
         <td>基于 MS COCO 的<b>视觉指代表达理解</b>基准，给定图像和自然语言描述，要求定位对应的目标物体；允许使用空间位置描述。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="refcoco-examples" title="展开或收起RefCOCO样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：19,994<br>表达式：142,210</td>
+        <td class="benchmark-count-cell">图像：20K<br>表达式：142K</td>
         <td class="benchmark-metric-cell">Acc@0.5</td>
       </tr>
       <tr id="refcoco-citation" class="benchmark-citation-row" hidden>
@@ -696,7 +696,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="refcocoplus-citation" title="展开或收起引用">RefCOCO+</button></td>
         <td>2016 年</td>
         <td>在 RefCOCO 基础上禁止使用 left、right 等<b>绝对位置词</b>，要求模型更多依赖物体外观属性进行目标定位。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="refcocoplus-examples" title="展开或收起RefCOCO+样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：19,992<br>表达式：141,564</td>
+        <td class="benchmark-count-cell">图像：20K<br>表达式：142K</td>
         <td class="benchmark-metric-cell">Acc@0.5</td>
       </tr>
       <tr id="refcocoplus-citation" class="benchmark-citation-row" hidden>
@@ -717,7 +717,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="refcocog-citation" title="展开或收起引用">RefCOCOg</button></td>
         <td>2016 年</td>
         <td>基于 MS COCO 的视觉指代表达理解基准，采用非交互式众包标注，表达通常更长、更复杂，强调<b>细粒度语义理解</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="refcocog-examples" title="展开或收起RefCOCOg样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：25,799<br>表达式：95,010</td>
+        <td class="benchmark-count-cell">图像：26K<br>表达式：95K</td>
         <td class="benchmark-metric-cell">Acc@0.5</td>
       </tr>
       <tr id="refcocog-citation" class="benchmark-citation-row" hidden>
