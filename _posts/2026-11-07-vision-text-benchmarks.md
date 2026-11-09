@@ -229,7 +229,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mathvista-citation" title="展开或收起引用">MathVista</button></td>
         <td>2024 年</td>
         <td>强调<b>视觉上下文的多样性</b>，涵盖几何图形、函数图像、统计图表、自然图像和抽象场景等。包含<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathvista-tasks" title="展开或收起五类主要任务">五类主要任务</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mathvista-examples" title="展开或收起MathVista样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：5.5K<br>问题：6.1K<br>Testmini：1.0K<br>Test：5.1K</td>
+        <td class="benchmark-count-cell">图像：5.5K<br>问题：6.1K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="mathvista-tasks" class="benchmark-datasets-row" hidden>
@@ -346,7 +346,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ai2d-citation" title="展开或收起引用">AI2D</button></td>
         <td>2016 年</td>
         <td>小学科学示意图的视觉问答基准，<b>采用四选一选择题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ai2d-examples" title="展开或收起AI2D样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：5.0K+<br>问题：15K+</td>
+        <td class="benchmark-count-cell">图像：5.0K<br>问题：15K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="ai2d-citation" class="benchmark-citation-row" hidden>
