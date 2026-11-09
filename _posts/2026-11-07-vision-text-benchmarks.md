@@ -211,8 +211,8 @@ _styles: |
     <colgroup>
       <col style="width: 12%">
       <col style="width: 10%">
-      <col style="width: 48%">
-      <col style="width: 18%">
+      <col style="width: 54%">
+      <col style="width: 12%">
       <col style="width: 12%">
     </colgroup>
     <thead>
@@ -328,8 +328,8 @@ _styles: |
     <colgroup>
       <col style="width: 12%">
       <col style="width: 10%">
-      <col style="width: 48%">
-      <col style="width: 18%">
+      <col style="width: 54%">
+      <col style="width: 12%">
       <col style="width: 12%">
     </colgroup>
     <thead>
@@ -390,7 +390,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ocr-vqa-citation" title="展开或收起引用">OCR-VQA</button></td>
         <td>2019 年</td>
         <td>书籍封面的<b>文字驱动视觉问答</b>基准，<b>回答开放式问题</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="ocr-vqa-examples" title="展开或收起OCR-VQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：约 21K<br>问题：100K</td>
+        <td class="benchmark-count-cell">图像：21K<br>问题：100K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="ocr-vqa-citation" class="benchmark-citation-row" hidden>
@@ -501,8 +501,8 @@ _styles: |
     <colgroup>
       <col style="width: 12%">
       <col style="width: 10%">
-      <col style="width: 48%">
-      <col style="width: 18%">
+      <col style="width: 54%">
+      <col style="width: 12%">
       <col style="width: 12%">
     </colgroup>
     <thead>
@@ -561,7 +561,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="gqa-citation" title="展开或收起引用">GQA</button></td>
         <td>2019 年</td>
         <td>基于 Visual Genome 场景图自动生成的<b>组合式视觉问答</b>数据集，通过遍历物体、属性及关系构造多样化问题。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="gqa-examples" title="展开或收起GQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：113K<br>问题：22,670K</td>
+        <td class="benchmark-count-cell">图像：113K<br>问题：22.67M</td>
         <td class="benchmark-metric-cell">Accuracy </td>
       </tr>
       <tr id="gqa-citation" class="benchmark-citation-row" hidden>
@@ -655,8 +655,8 @@ _styles: |
     <colgroup>
       <col style="width: 12%">
       <col style="width: 10%">
-      <col style="width: 48%">
-      <col style="width: 18%">
+      <col style="width: 54%">
+      <col style="width: 12%">
       <col style="width: 12%">
     </colgroup>
     <thead>
