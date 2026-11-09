@@ -357,10 +357,10 @@ _styles: |
 </div>
 
 <br>
-## 3. 传统视觉问答
+## 3. 传统视觉问答与图像描述生成
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
-  <table aria-label="传统视觉问答基准">
+  <table aria-label="传统视觉问答与图像描述生成基准">
     <colgroup>
       <col style="width: 12%">
       <col style="width: 10%">
@@ -486,12 +486,32 @@ _styles: |
           </div>
         </td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="flickr30k-citation" title="展开或收起引用">Flickr30K</button></td>
+        <td>2014 年</td>
+        <td>经典<b>图像描述生成（Image Captioning）</b>基准，包含日常生活、人物活动和自然场景等图像。每张图像由 5 名不同标注者独立撰写英文描述，要求模型根据输入图像生成自然语言 Caption，考察视觉内容理解与语言生成能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="flickr30k-examples" title="展开或收起Flickr30K样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像：31,783 张<br>描述：158,915 条</td>
+        <td class="benchmark-metric-cell">BLEU / METEOR / ROUGE-L / CIDEr</td>
+      </tr>
+      <tr id="flickr30k-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Young et al. <em>From image descriptions to visual denotations: New similarity metrics for semantic inference over event descriptions.</em> TACL, 2014.
+          <a href="https://aclanthology.org/Q14-1006/">论文链接</a>。
+        </td>
+      </tr>
+      <tr id="flickr30k-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/flickr30k-example.png' | relative_url }}" alt="Flickr30K 样例截图，展示两张日常场景图片及每张图片对应的五条英文描述" loading="lazy">
+          </div>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
 
 <br>
-## 4. 视觉定位与指代表达理解
+## 4. 视觉定位
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="视觉定位与指代表达理解基准">
