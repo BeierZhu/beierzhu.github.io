@@ -204,7 +204,68 @@ _styles: |
 </div>
 
 <br>
-## 2. 文本与图表理解
+## 2. 数据能力
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="数据能力基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 48%">
+      <col style="width: 18%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mathvista-citation" title="展开或收起引用">MathVista</button></td>
+        <td>2024 年</td>
+        <td>多模态数学推理基准，旨在评估大语言模型和多模态大模型在视觉场景下的数学推理能力。涵盖几何图形、函数图像、统计图表、自然图像和抽象场景等视觉上下文，要求模型结合视觉感知、数学知识和多步逻辑推理解决问题。包含<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathvista-tasks" title="展开或收起五类主要任务">五类主要任务</button>。</td>
+        <td class="benchmark-count-cell">图像：5,487 张<br>问题：6,141 道<br>Testmini：1,000 道<br>Test：5,141 道</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="mathvista-tasks" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <table class="benchmark-subtask-table" aria-label="MathVista 的五类主要任务">
+            <caption>MathVista 的五类主要任务</caption>
+            <thead>
+              <tr><th scope="col">任务类型</th><th scope="col">简称</th><th scope="col">任务说明</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Figure Question Answering</td><td>FQA</td><td>图表与统计图形问答</td></tr>
+              <tr><td>Geometry Problem Solving</td><td>GPS</td><td>几何问题求解</td></tr>
+              <tr><td>Math Word Problem</td><td>MWP</td><td>数学应用题</td></tr>
+              <tr><td>Textbook Question Answering</td><td>TQA</td><td>教材与科学知识问答</td></tr>
+              <tr><td>Visual Question Answering</td><td>VQA</td><td>视觉场景问答</td></tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr id="mathvista-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Lu et al. <em>MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts.</em> ICLR, 2024.
+          <a href="https://arxiv.org/abs/2310.02255">论文链接</a> ·
+          <a href="https://mathvista.github.io/">项目主页</a>。
+          <p><b>数据来源：</b>整合 31 个数据集，包括 9 个数学专项问答数据集、19 个通用视觉问答数据集，以及新构建的 IQTest、FunctionQA 和 PaperQA；新增数据集共 736 道题。</p>
+          <p><b>数学推理能力：</b>涵盖代数推理、算术推理、几何推理、逻辑推理、数值常识、科学推理和统计推理。</p>
+          <p><b>评测指标：</b>Accuracy。模型输出最终答案，经答案提取和格式标准化后进行精确匹配。</p>
+          <p><b>数据划分：</b>Testmini（1,000 道）用于模型开发与验证；Test（5,141 道）用于标准评测，答案不公开，通过在线评测平台评估。</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+## 3. 文本与图表理解
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="文本、图表与示意图理解基准">
@@ -377,7 +438,7 @@ _styles: |
 </div>
 
 <br>
-## 3. 传统视觉问答与图像描述生成
+## 4. 传统视觉问答与图像描述生成
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="传统视觉问答与图像描述生成基准">
@@ -531,7 +592,7 @@ _styles: |
 </div>
 
 <br>
-## 4. 视觉定位
+## 5. 视觉定位
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="视觉定位与指代表达理解基准">
