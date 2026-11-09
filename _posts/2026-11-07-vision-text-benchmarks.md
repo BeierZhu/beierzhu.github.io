@@ -228,7 +228,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mathvista-citation" title="展开或收起引用">MathVista</button></td>
         <td>2024 年</td>
-        <td>多模态数学推理基准，旨在评估大语言模型和多模态大模型在视觉场景下的数学推理能力。涵盖几何图形、函数图像、统计图表、自然图像和抽象场景等视觉上下文，要求模型结合视觉感知、数学知识和多步逻辑推理解决问题。包含<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathvista-tasks" title="展开或收起五类主要任务">五类主要任务</button>。</td>
+        <td>多模态数学推理基准，旨在评估大语言模型和多模态大模型在视觉场景下的数学推理能力。涵盖几何图形、函数图像、统计图表、自然图像和抽象场景等视觉上下文，要求模型结合视觉感知、数学知识和多步逻辑推理解决问题。包含<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathvista-tasks" title="展开或收起五类主要任务">五类主要任务</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mathvista-examples" title="展开或收起MathVista样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：5,487 张<br>问题：6,141 道<br>Testmini：1,000 道<br>Test：5,141 道</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -258,6 +258,13 @@ _styles: |
           <p><b>数学推理能力：</b>涵盖代数推理、算术推理、几何推理、逻辑推理、数值常识、科学推理和统计推理。</p>
           <p><b>评测指标：</b>Accuracy。模型输出最终答案，经答案提取和格式标准化后进行精确匹配。</p>
           <p><b>数据划分：</b>Testmini（1,000 道）用于模型开发与验证；Test（5,141 道）用于标准评测，答案不公开，通过在线评测平台评估。</p>
+        </td>
+      </tr>
+      <tr id="mathvista-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/mathvista-example.png' | relative_url }}" alt="MathVista 样例截图，展示 IQTest 数字谜题、FunctionQA 函数图像问题和 PaperQA 图表推理问题" loading="lazy">
+          </div>
         </td>
       </tr>
     </tbody>
