@@ -267,6 +267,29 @@ _styles: |
           </div>
         </td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="math-vision-citation" title="展开或收起引用">MATH-Vision</button></td>
+        <td>2024 年</td>
+        <td>基于真实数学竞赛题的视觉数学推理基准，覆盖 16 个数学领域和 5 个难度等级。与整合多来源、覆盖多种视觉问答任务的 MathVista 不同，MATH-Vision 聚焦竞赛数学问题，重点考察模型结合题目中的图形信息进行数学推理的能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="math-vision-examples" title="展开或收起MATH-Vision样例">[样例]</button></td>
+        <td class="benchmark-count-cell">问题：3,040 道</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="math-vision-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Wang et al. <em>Measuring Multimodal Mathematical Reasoning with MATH-Vision Dataset.</em> arXiv:2402.14804, 2024.
+          <a href="https://arxiv.org/abs/2402.14804">论文链接</a> ·
+          <a href="https://mathvision-cuhk.github.io/">项目主页</a>。
+          <p>数据集包含 3,040 道来自真实数学竞赛、带有视觉上下文的题目，覆盖 16 个数学学科领域与 5 个难度等级。</p>
+          <p><b>与 MathVista 的区别：</b>MathVista 汇集多种来源的数据，覆盖图表、自然图像等多类视觉数学任务；MATH-Vision 则集中于真实竞赛数学题，更强调从题目图形中提取信息并完成数学推理。</p>
+        </td>
+      </tr>
+      <tr id="math-vision-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/math-vision-example.png' | relative_url }}" alt="MATH-Vision 样例截图，给出等腰三角形图形与几何条件，要求求角 CDE" loading="lazy">
+          </div>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
