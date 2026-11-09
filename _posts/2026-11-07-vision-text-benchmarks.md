@@ -204,7 +204,7 @@ _styles: |
 </div>
 
 <br>
-## 2. 数据能力
+## 2. 数学能力
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="数据能力基准">
@@ -228,8 +228,8 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mathvista-citation" title="展开或收起引用">MathVista</button></td>
         <td>2024 年</td>
-        <td>多模态数学推理基准，旨在评估大语言模型和多模态大模型在视觉场景下的数学推理能力。涵盖几何图形、函数图像、统计图表、自然图像和抽象场景等视觉上下文，要求模型结合视觉感知、数学知识和多步逻辑推理解决问题。包含<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathvista-tasks" title="展开或收起五类主要任务">五类主要任务</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mathvista-examples" title="展开或收起MathVista样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：5,487 张<br>问题：6,141 道<br>Testmini：1,000 道<br>Test：5,141 道</td>
+        <td>强调<b>视觉上下文的多样性</b>，涵盖几何图形、函数图像、统计图表、自然图像和抽象场景等。包含<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathvista-tasks" title="展开或收起五类主要任务">五类主要任务</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mathvista-examples" title="展开或收起MathVista样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像：5,487 张<br>问题：6,141 道</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="mathvista-tasks" class="benchmark-datasets-row" hidden>
@@ -255,8 +255,6 @@ _styles: |
           <a href="https://arxiv.org/abs/2310.02255">论文链接</a> ·
           <a href="https://mathvista.github.io/">项目主页</a>。
           <p><b>数据来源：</b>整合 31 个数据集，包括 9 个数学专项问答数据集、19 个通用视觉问答数据集，以及新构建的 IQTest、FunctionQA 和 PaperQA；新增数据集共 736 道题。</p>
-          <p><b>数学推理能力：</b>涵盖代数推理、算术推理、几何推理、逻辑推理、数值常识、科学推理和统计推理。</p>
-          <p><b>评测指标：</b>Accuracy。模型输出最终答案，经答案提取和格式标准化后进行精确匹配。</p>
           <p><b>数据划分：</b>Testmini（1,000 道）用于模型开发与验证；Test（5,141 道）用于标准评测，答案不公开，通过在线评测平台评估。</p>
         </td>
       </tr>
@@ -270,9 +268,37 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="math-vision-citation" title="展开或收起引用">MATH-Vision</button></td>
         <td>2024 年</td>
-        <td>基于真实数学竞赛题的视觉数学推理基准，覆盖 16 个数学领域和 5 个难度等级。与整合多来源、覆盖多种视觉问答任务的 MathVista 不同，MATH-Vision 聚焦竞赛数学问题，重点考察模型结合题目中的图形信息进行数学推理的能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="math-vision-examples" title="展开或收起MATH-Vision样例">[样例]</button></td>
+        <td>基于<b>真实数学竞赛题</b>的视觉数学推理基准，覆盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="math-vision-subjects" title="展开或收起16个数学领域">16 个数学领域</button>和 5 个难度等级。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="math-vision-examples" title="展开或收起MATH-Vision样例">[样例]</button></td>
         <td class="benchmark-count-cell">问题：3,040 道</td>
         <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="math-vision-subjects" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <table class="benchmark-subtask-table" aria-label="MATH-Vision 的 16 个数学领域">
+            <caption>MATH-Vision 的 16 个数学领域</caption>
+            <thead>
+              <tr><th scope="col">序号</th><th scope="col">英文领域</th><th scope="col">中文名称</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">1</th><td>Transformation Geometry</td><td>变换几何</td></tr>
+              <tr><th scope="row">2</th><td>Algebra</td><td>代数</td></tr>
+              <tr><th scope="row">3</th><td>Analytic Geometry</td><td>解析几何</td></tr>
+              <tr><th scope="row">4</th><td>Topology</td><td>拓扑学</td></tr>
+              <tr><th scope="row">5</th><td>Arithmetic</td><td>算术</td></tr>
+              <tr><th scope="row">6</th><td>Combinatorial Geometry</td><td>组合几何</td></tr>
+              <tr><th scope="row">7</th><td>Statistics</td><td>统计学</td></tr>
+              <tr><th scope="row">8</th><td>Solid Geometry</td><td>立体几何</td></tr>
+              <tr><th scope="row">9</th><td>Metric Geometry - Length</td><td>度量几何（长度）</td></tr>
+              <tr><th scope="row">10</th><td>Metric Geometry - Area</td><td>度量几何（面积）</td></tr>
+              <tr><th scope="row">11</th><td>Metric Geometry - Angle</td><td>度量几何（角度）</td></tr>
+              <tr><th scope="row">12</th><td>Combinatorics</td><td>组合数学</td></tr>
+              <tr><th scope="row">13</th><td>Counting</td><td>计数</td></tr>
+              <tr><th scope="row">14</th><td>Descriptive Geometry</td><td>画法几何</td></tr>
+              <tr><th scope="row">15</th><td>Graph Theory</td><td>图论</td></tr>
+              <tr><th scope="row">16</th><td>Logic</td><td>逻辑</td></tr>
+            </tbody>
+          </table>
+        </td>
       </tr>
       <tr id="math-vision-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
@@ -446,8 +472,8 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="infographic-vqa-citation" title="展开或收起引用">InfoVQA</button></td>
         <td>2022 年</td>
-        <td>面向信息图（Infographics）的视觉问答基准，输入包含文本、图表、表格、地图等视觉元素的信息图像，要求模型联合理解图中文字、布局结构和图形信息，并通过计数、排序、算术等操作回答开放式问题。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="infographic-vqa-examples" title="展开或收起InfoVQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：579（测试集）<br>问题：3,288（测试集）</td>
+        <td>面向<b>信息图（Infographics）</b>的视觉问答基准，输入包含文本、图表、表格、地图等视觉元素的信息图像。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="infographic-vqa-examples" title="展开或收起InfoVQA样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像：579 <br>问题：3,288</td>
         <td class="benchmark-metric-cell">ANLS / Accuracy</td>
       </tr>
       <tr id="infographic-vqa-citation" class="benchmark-citation-row" hidden>
