@@ -352,6 +352,26 @@ _styles: |
           </div>
         </td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="infographic-vqa-citation" title="展开或收起引用">InfoVQA</button></td>
+        <td>2022 年</td>
+        <td>面向信息图（Infographics）的视觉问答基准，输入包含文本、图表、表格、地图等视觉元素的信息图像，要求模型联合理解图中文字、布局结构和图形信息，并通过计数、排序、算术等操作回答开放式问题。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="infographic-vqa-examples" title="展开或收起InfoVQA样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像：579（测试集）<br>问题：3,288（测试集）</td>
+        <td class="benchmark-metric-cell">ANLS / Accuracy</td>
+      </tr>
+      <tr id="infographic-vqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Mathew et al. <em>InfographicVQA.</em> WACV, 2022.
+          <a href="https://openaccess.thecvf.com/content/WACV2022/html/Mathew_InfographicVQA_WACV_2022_paper.html">论文链接</a>。
+        </td>
+      </tr>
+      <tr id="infographic-vqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/infovqa-example.png' | relative_url }}" alt="InfoVQA 样例截图，展示加拿大邮政与亚马逊配送员工人数和媒体覆盖地图，以及三个基于信息图的问答" loading="lazy">
+          </div>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -489,9 +509,9 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="flickr30k-citation" title="展开或收起引用">Flickr30K</button></td>
         <td>2014 年</td>
-        <td>经典<b>图像描述生成（Image Captioning）</b>基准，包含日常生活、人物活动和自然场景等图像。每张图像由 5 名不同标注者独立撰写英文描述，要求模型根据输入图像生成自然语言 Caption，考察视觉内容理解与语言生成能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="flickr30k-examples" title="展开或收起Flickr30K样例">[样例]</button></td>
+        <td>经典<b>图像描述生成（Image Captioning）</b>基准，包含日常生活、人物活动和自然场景等图像。每张图像由 5 名不同标注者独立撰写英文描述。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="flickr30k-examples" title="展开或收起Flickr30K样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：31,783 张<br>描述：158,915 条</td>
-        <td class="benchmark-metric-cell">BLEU / METEOR / ROUGE-L / CIDEr</td>
+        <td class="benchmark-metric-cell"> CIDEr等</td>
       </tr>
       <tr id="flickr30k-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
