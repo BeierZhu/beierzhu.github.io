@@ -150,6 +150,65 @@ _styles: |
         </td>
       </tr>
       <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmbench-citation" title="展开或收起引用">MMBench</button></td>
+        <td>2023 年</td>
+        <td>综合视觉语言理解基准，包含 <b>Perception（感知）</b> 和 <b>Reasoning（推理）</b> 两大维度，细分为<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mmbench-dimensions" title="展开或收起20个评测维度">20 个评测维度</button>，涵盖图像场景理解、物体定位、属性识别、空间关系与逻辑推理。采用人工构建的多项选择题，提供中英文两个版本。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mmbench-examples" title="展开或收起MMBench样例">[样例]</button></td>
+        <td class="benchmark-count-cell">问题：3.2K</td>
+        <td class="benchmark-metric-cell">CircularEval Accuracy</td>
+      </tr>
+      <tr id="mmbench-dimensions" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <table class="benchmark-subtask-table" aria-label="MMBench 的 20 个评测维度">
+            <caption>MMBench 的 20 个评测维度</caption>
+            <thead>
+              <tr><th scope="col">一级维度</th><th scope="col">二级维度</th><th scope="col">三级评测能力</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="rowgroup" rowspan="3">Perception（感知）</th>
+                <td>Coarse Perception</td>
+                <td>Image Style、Image Scene、Image Emotion、Image Quality、Image Topic</td>
+              </tr>
+              <tr>
+                <td>Fine-grained Perception (Single-instance)</td>
+                <td>Object Localization、Attribute Recognition、Celebrity Recognition、OCR</td>
+              </tr>
+              <tr>
+                <td>Fine-grained Perception (Cross-instance)</td>
+                <td>Spatial Relationship、Attribute Comparison、Action Recognition</td>
+              </tr>
+              <tr>
+                <th scope="rowgroup" rowspan="3">Reasoning（推理）</th>
+                <td>Attribute Reasoning</td>
+                <td>Physical Property Reasoning、Function Reasoning、Identity Reasoning</td>
+              </tr>
+              <tr>
+                <td>Relation Reasoning</td>
+                <td>Social Relation、Nature Relation、Physical Relation</td>
+              </tr>
+              <tr>
+                <td>Logic Reasoning</td>
+                <td>Structuralized Image-Text Understanding、Future Prediction</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr id="mmbench-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Liu et al. <em>MMBench: Is Your Multi-modal Model an All-around Player?</em> arXiv:2307.06281, 2023。
+          <a href="https://arxiv.org/abs/2307.06281">论文链接</a>。
+          <p><b>评测方法：</b>CircularEval 将一道含 N 个选项的问题循环移位为 N 种顺序；模型须在所有轮次都答对，该题才计为正确。自由文本回答无法直接提取选项时，使用 GPT-4 匹配对应选项，以减少严格字符串匹配造成的误判。</p>
+        </td>
+      </tr>
+      <tr id="mmbench-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/mmbench-example.png' | relative_url }}" alt="MMBench 样例截图，展示英文与中文版本的磁铁间磁力选择题" loading="lazy">
+          </div>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="seed-bench-citation" title="展开或收起引用">SEED-Bench</button></td>
         <td>2023 年</td>
         <td> 包含<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="seed-bench-dimensions" title="展开或收起12个评测维度">12 个评测维度</button>。采用人工验证的<b>四选一选择题</b>，评估模型的视觉感知、空间推理与时序理解能力。相比MME，SEED-Bench 样本数量更多，覆盖范围更广。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="seed-bench-examples" title="展开或收起SEED-Bench样例">[样例]</button></td>
