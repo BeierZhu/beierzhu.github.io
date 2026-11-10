@@ -732,7 +732,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="refcoco-citation" title="展开或收起引用">RefCOCO</button></td>
         <td>2016 年</td>
         <td>基于 MS COCO 的<b>视觉指代表达理解</b>基准，给定图像和自然语言描述，要求定位对应的目标物体；允许使用空间位置描述。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="refcoco-examples" title="展开或收起RefCOCO样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：20K<br>表达式：142K</td>
+        <td class="benchmark-count-cell">图像：20K<br>描述：142K</td>
         <td class="benchmark-metric-cell">Acc@0.5</td>
       </tr>
       <tr id="refcoco-citation" class="benchmark-citation-row" hidden>
@@ -755,7 +755,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="refcocoplus-citation" title="展开或收起引用">RefCOCO+</button></td>
         <td>2016 年</td>
         <td>在 RefCOCO 基础上禁止使用 left、right 等<b>绝对位置词</b>，要求模型更多依赖物体外观属性进行目标定位。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="refcocoplus-examples" title="展开或收起RefCOCO+样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：20K<br>表达式：142K</td>
+        <td class="benchmark-count-cell">图像：20K<br>描述：142K</td>
         <td class="benchmark-metric-cell">Acc@0.5</td>
       </tr>
       <tr id="refcocoplus-citation" class="benchmark-citation-row" hidden>
@@ -776,7 +776,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="refcocog-citation" title="展开或收起引用">RefCOCOg</button></td>
         <td>2016 年</td>
         <td>基于 MS COCO 的视觉指代表达理解基准，采用非交互式众包标注，表达通常更长、更复杂，强调<b>细粒度语义理解</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="refcocog-examples" title="展开或收起RefCOCOg样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：26K<br>表达式：95K</td>
+        <td class="benchmark-count-cell">图像：26K<br>描述：95K</td>
         <td class="benchmark-metric-cell">Acc@0.5</td>
       </tr>
       <tr id="refcocog-citation" class="benchmark-citation-row" hidden>
