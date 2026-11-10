@@ -152,8 +152,8 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmbench-citation" title="展开或收起引用">MMBench</button></td>
         <td>2023 年</td>
-        <td>综合视觉语言理解基准，包含<b>感知和推理</b>两大维度，<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mmbench-dimensions" title="展开或收起20个评测维度">20 个评测维度</button>。采用人工构建的多项选择题，提供中英文两个版本。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mmbench-examples" title="展开或收起MMBench样例">[样例]</button></td>
-        <td class="benchmark-count-cell">问题：3.2K</td>
+        <td>包含<b>感知和推理</b>两大维度，<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mmbench-dimensions" title="展开或收起20个评测维度">20 个评测维度</button>，涵盖图像场景理解、物体定位、属性识别、空间关系与逻辑推理。采用人工构建的多项选择题，提供中英文两个版本。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mmbench-examples" title="展开或收起MMBench样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像：3.2K<br>问题：3.2K</td>
         <td class="benchmark-metric-cell">CircularEval Accuracy</td>
       </tr>
       <tr id="mmbench-dimensions" class="benchmark-datasets-row" hidden>
@@ -620,7 +620,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="gqa-citation" title="展开或收起引用">GQA</button></td>
         <td>2019 年</td>
         <td>基于 Visual Genome 场景图自动生成的<b>组合式视觉问答</b>数据集，通过遍历物体、属性及关系构造多样化问题。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="gqa-examples" title="展开或收起GQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：113K<br>问题：22.67M</td>
+        <td class="benchmark-count-cell">图像：113K<br>问题：22.7M</td>
         <td class="benchmark-metric-cell">Accuracy </td>
       </tr>
       <tr id="gqa-citation" class="benchmark-citation-row" hidden>
