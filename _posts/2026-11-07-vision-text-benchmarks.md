@@ -209,6 +209,25 @@ _styles: |
         </td>
       </tr>
       <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="realworldqa-citation" title="展开或收起引用">RealWorldQA</button></td>
+        <td>2024 年</td>
+        <td>真实世界视觉理解基准，主要评估多模态模型对真实物理环境的<b>空间理解能力</b>，涵盖物体相对位置、距离判断、方向识别、物体大小比较及道路场景理解等。数据包含车辆拍摄的匿名化图像及其他真实场景图像，每张图像配有一个问题和可验证答案。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="realworldqa-examples" title="展开或收起RealWorldQA样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像：0.8K<br>问答对：0.8K</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="realworldqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          来源：xAI, <em>Grok-1.5 Vision Preview</em>, 2024（官方博客发布，非独立学术论文）。
+        </td>
+      </tr>
+      <tr id="realworldqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/realworldqa-example.png' | relative_url }}" alt="RealWorldQA 样例截图，夜间道路场景下询问当前车道可行驶方向" loading="lazy">
+          </div>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="seed-bench-citation" title="展开或收起引用">SEED-Bench</button></td>
         <td>2023 年</td>
         <td> 包含<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="seed-bench-dimensions" title="展开或收起12个评测维度">12 个评测维度</button>。采用人工验证的<b>四选一选择题</b>，评估模型的视觉感知、空间推理与时序理解能力。相比MME，SEED-Bench 样本数量更多，覆盖范围更广。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="seed-bench-examples" title="展开或收起SEED-Bench样例">[样例]</button></td>
