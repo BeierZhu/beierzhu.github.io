@@ -397,8 +397,8 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mathverse-citation" title="展开或收起引用">MathVerse</button></td>
         <td>2024 年</td>
-        <td>专门评估多模态大模型视觉数学推理能力，聚焦高中阶段的平面几何、立体几何和函数问题。与 MathVista 的多样化视觉上下文、MATH-Vision 的竞赛题目不同，MathVerse 通过六种文本与视觉信息配置，考察模型是否真正理解数学图形。<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-subjects" title="展开或收起三大数学领域及12个子领域">三大数学领域及 12 个子领域</button> <button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mathverse-examples" title="展开或收起MathVerse样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：2.4K<br>问题：2.6K</td>
+        <td>与 MathVista 广泛覆盖自然图像、统计图表、教材问答等多种视觉数学任务不同，MathVerse 聚焦专业视觉数学问题；与 MATH-Vision 的竞赛题目不同，MathVerse 聚焦高中阶段的平面几何、立体几何和函数问题，排除微积分、图论等高等院校高级学科知识。其核心特点是将每道题构建为六种不同的文本与视觉信息配置，通过逐步减少文本冗余、增加图像信息，考察模型是否真正理解数学图形，而非仅依赖文本完成推理。<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-subjects" title="展开或收起三大数学领域及12个子领域">三大数学领域及 12 个子领域</button> <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-versions" title="展开或收起六种不同的配置">六种不同的配置</button> <button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mathverse-examples" title="展开或收起MathVerse样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像：2.4K<br>问题：15.7K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="mathverse-subjects" class="benchmark-datasets-row" hidden>
@@ -417,11 +417,22 @@ _styles: |
           </table>
         </td>
       </tr>
+      <tr id="mathverse-versions" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <ul class="benchmark-dataset-list" aria-label="MathVerse 的六种文本与视觉信息配置">
+            <li>Text-dominant</li>
+            <li>Text-lite</li>
+            <li>Text-only</li>
+            <li>Vision-intensive</li>
+            <li>Vision-dominant</li>
+            <li>Vision-only</li>
+          </ul>
+        </td>
+      </tr>
       <tr id="mathverse-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
           Zhang et al. <em>MathVerse: Does Your Multi-modal LLM Truly See the Diagrams in Visual Math Problems?</em> arXiv:2403.14624, 2024.
           <a href="https://arxiv.org/abs/2403.14624">论文链接</a>。
-          <p><b>六种题目版本：</b>Text-dominant、Text-lite、Text-only、Vision-intensive、Vision-dominant、Vision-only。通过调整文本冗余与图像信息量，评估模型对几何关系、函数图像及数值条件的视觉理解能力。</p>
           <p><b>知识范围：</b>聚焦高中阶段的平面几何、立体几何和函数问题，不涉及微积分、图论等高等院校高级学科知识。</p>
         </td>
       </tr>
