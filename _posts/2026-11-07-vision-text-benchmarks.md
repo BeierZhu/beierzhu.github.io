@@ -516,7 +516,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mtvqa-citation" title="展开或收起引用">MTVQA</button></td>
         <td>2024 年</td>
-        <td><b>多语言</b>文本中心视觉问答基准，涵盖文档和自然场景中的<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mtvqa-image-types" title="展开或收起文本密集型图像类型">文本密集型图像</button>，要求模型理解图像中的原始语言文本并回答问题。覆盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mtvqa-languages" title="展开或收起9种语言">9 种语言</button>，由母语专家标注以避免翻译导致的图文错位。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mtvqa-examples" title="展开或收起MTVQA样例">[样例]</button></td>
+        <td><b>多语言</b>视觉问答基准，涵盖文档和自然场景中的<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mtvqa-image-types" title="展开或收起文本密集型图像类型">文本密集型图像</button>，覆盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mtvqa-languages" title="展开或收起9种语言">9 种语言</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mtvqa-examples" title="展开或收起MTVQA样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：2.1K<br>问题：6.8K</td>
         <td class="benchmark-metric-cell">Accuracy / ANLS</td>
       </tr>
@@ -905,6 +905,71 @@ _styles: |
         <td colspan="5">
           <div class="benchmark-examples-panel">
             <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/refcoco-series-example.png' | relative_url }}" alt="RefCOCO、RefCOCO+ 和 RefCOCOg 样例截图，展示长颈鹿目标及不同指代表达">
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+## 6. 多学科知识
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="多学科知识基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 54%">
+      <col style="width: 12%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmmu-citation" title="展开或收起引用">MMMU</button></td>
+        <td>2024 年</td>
+        <td>面向<b>专家级多模态理解与推理</b>的综合基准，收集大学考试、测验和教材中的多模态问题，覆盖 <b>6 大学科、30 个专业和 183 个子领域</b>。包含图表、示意图、地图、化学结构、乐谱、医学影像等 <b>30 种异构图像类型</b>，重点考察视觉感知、专业知识理解与复杂推理能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mmmu-examples" title="展开或收起MMMU样例">[样例]</button></td>
+        <td class="benchmark-count-cell">问题：11.5K</td>
+        <td class="benchmark-metric-cell">Micro-averaged Accuracy</td>
+      </tr>
+      <tr id="mmmu-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Yue et al. <em>MMMU: A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark for Expert AGI.</em> arXiv:2311.16502, 2024.
+          <a href="https://arxiv.org/abs/2311.16502">论文链接</a> ·
+          <a href="https://mmmu-benchmark.github.io/">项目主页</a>。
+          <p><b>数据划分：</b>Dev / Val / Test = 150 / 900 / 10,500 道题。</p>
+          <p><b>六大学科分布：</b></p>
+          <table class="benchmark-subtask-table" aria-label="MMMU 六大学科分布">
+            <thead>
+              <tr><th scope="col">学科</th><th scope="col">占比</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Art &amp; Design（艺术与设计）</td><td>11%</td></tr>
+              <tr><td>Business（商业）</td><td>14%</td></tr>
+              <tr><td>Science（科学）</td><td>23%</td></tr>
+              <tr><td>Health &amp; Medicine（健康与医学）</td><td>17%</td></tr>
+              <tr><td>Humanities &amp; Social Science（人文与社会科学）</td><td>9%</td></tr>
+              <tr><td>Tech &amp; Engineering（技术与工程）</td><td>26%</td></tr>
+            </tbody>
+          </table>
+          <p><b>题目形式：</b>Multiple-choice Questions 10,861 道（94.03%）；Open Questions 689 道（5.97%）。</p>
+          <p><b>难度分布：</b>Easy 28%、Medium 45%、Hard 27%。</p>
+          <p><b>评测指标：</b>Micro-averaged Accuracy，按样本数汇总各题的正确率。</p>
+        </td>
+      </tr>
+      <tr id="mmmu-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/mmmu-example.png' | relative_url }}" alt="MMMU 样例截图，展示艺术与设计、商业、科学、健康与医学、人文与社会科学、技术与工程六大学科题目" loading="lazy">
           </div>
         </td>
       </tr>
