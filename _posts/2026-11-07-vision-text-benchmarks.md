@@ -397,7 +397,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mathverse-citation" title="展开或收起引用">MathVerse</button></td>
         <td>2024 年</td>
-        <td>与MATH-Vision的竞赛题不同，MathVerse聚焦高中数学的<br><button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-subjects" title="展开或收起三大数学领域及12个子领域">三大领域</button>，排除微积分、图论等大学知识。其特点是为每道题构建<br><button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-versions" title="展开或收起六种不同的配置">六种问题</button>，通过逐步减少文本冗余、增加图像信息，考察模型是否真正理解数学图形，而非依赖文本完成推理。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mathverse-examples" title="展开或收起MathVerse样例">[样例]</button></td>
+        <td>与MATH-Vision的竞赛题不同，MathVerse聚焦高中数学的<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-subjects" title="展开或收起三大数学领域及12个子领域">三大领域</button>，排除微积分、图论等大学知识。其特点是为每道题构建<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-versions" title="展开或收起六种不同的配置">六种问题</button>，通过逐步减少文本冗余、增加图像信息，考察模型是否真正理解数学图形，而非依赖文本完成推理。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mathverse-examples" title="展开或收起MathVerse样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：2.4K<br>问题：15.7K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
