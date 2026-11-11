@@ -211,8 +211,8 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="realworldqa-citation" title="展开或收起引用">RealWorldQA</button></td>
         <td>2024 年</td>
-        <td>真实世界视觉理解基准，主要评估多模态模型对真实物理环境的<b>空间理解能力</b>，涵盖物体相对位置、距离判断、方向识别、物体大小比较及道路场景理解等。数据包含车辆拍摄的匿名化图像及其他真实场景图像，每张图像配有一个问题和可验证答案。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="realworldqa-examples" title="展开或收起RealWorldQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：0.8K<br>问答对：0.8K</td>
+        <td>评估对真实物理环境的<b>空间理解能力</b>，涵盖物体相对位置、距离判断、方向识别、物体大小比较及道路场景理解等。数据包含<b>车辆拍摄</b>的匿名化图像及其他真实场景图像。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="realworldqa-examples" title="展开或收起RealWorldQA样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像：0.8K<br>问题：0.8K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="realworldqa-citation" class="benchmark-citation-row" hidden>
@@ -392,6 +392,37 @@ _styles: |
           <div class="benchmark-examples-panel">
             <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/math-vision-example.png' | relative_url }}" alt="MATH-Vision 样例截图，给出等腰三角形图形与几何条件，要求求角 CDE" loading="lazy">
           </div>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mathverse-citation" title="展开或收起引用">MathVerse</button></td>
+        <td>2024 年</td>
+        <td>专门评估多模态大模型视觉数学推理能力，聚焦高中阶段的平面几何、立体几何和函数问题。与 MathVista 的多样化视觉上下文、MATH-Vision 的竞赛题目不同，MathVerse 通过六种文本与视觉信息配置，考察模型是否真正理解数学图形。<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-subjects" title="展开或收起三大数学领域及12个子领域">三大数学领域及 12 个子领域</button></td>
+        <td class="benchmark-count-cell">图像：2.4K<br>原始问题：2.6K<br>测试样本：15.7K</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="mathverse-subjects" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <table class="benchmark-subtask-table" aria-label="MathVerse 的三大数学领域及 12 个子领域">
+            <caption>MathVerse 的三大数学领域及 12 个子领域</caption>
+            <colgroup><col style="width: 28%"><col style="width: 72%"></colgroup>
+            <thead>
+              <tr><th scope="col">数学领域</th><th scope="col">子领域</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Plane Geometry（平面几何）</td><td>Length、Area、Angle、Analytic Geometry、Applied Geometry</td></tr>
+              <tr><td>Solid Geometry（立体几何）</td><td>Length、Area、Volume</td></tr>
+              <tr><td>Functions（函数）</td><td>Coordinate、Property、Expression、Applied Function</td></tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr id="mathverse-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Zhang et al. <em>MathVerse: Does Your Multi-modal LLM Truly See the Diagrams in Visual Math Problems?</em> arXiv:2403.14624, 2024.
+          <a href="https://arxiv.org/abs/2403.14624">论文链接</a>。
+          <p><b>六种题目版本：</b>Text-dominant、Text-lite、Text-only、Vision-intensive、Vision-dominant、Vision-only。通过调整文本冗余与图像信息量，评估模型对几何关系、函数图像及数值条件的视觉理解能力。</p>
+          <p><b>知识范围：</b>聚焦高中阶段的平面几何、立体几何和函数问题，不涉及微积分、图论等高等院校高级学科知识。</p>
         </td>
       </tr>
     </tbody>
