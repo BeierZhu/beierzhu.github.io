@@ -516,9 +516,36 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mtvqa-citation" title="展开或收起引用">MTVQA</button></td>
         <td>2024 年</td>
-        <td>多语言文本中心视觉问答（Multilingual Text-Centric VQA）基准，涵盖文档和自然场景中的文本密集型图像，包括菜单、标识、地图、账单、PPT、研究论文等。覆盖阿拉伯语、韩语、日语、泰语、越南语、俄语、法语、德语和意大利语共 9 种语言，要求模型直接理解图像中的原始语言文本并回答问题。采用母语专家人工标注，避免机器翻译导致的视觉文本与问答内容错位。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mtvqa-examples" title="展开或收起MTVQA样例">[样例]</button></td>
+        <td><b>多语言</b>文本中心视觉问答基准，涵盖文档和自然场景中的<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mtvqa-image-types" title="展开或收起文本密集型图像类型">文本密集型图像</button>，要求模型理解图像中的原始语言文本并回答问题。覆盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mtvqa-languages" title="展开或收起9种语言">9 种语言</button>，由母语专家标注以避免翻译导致的图文错位。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mtvqa-examples" title="展开或收起MTVQA样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：2.1K<br>问题：6.8K</td>
         <td class="benchmark-metric-cell">Accuracy / ANLS</td>
+      </tr>
+      <tr id="mtvqa-image-types" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <ul class="benchmark-dataset-list" aria-label="MTVQA 涵盖的文本密集型图像">
+            <li>菜单</li>
+            <li>标识</li>
+            <li>地图</li>
+            <li>账单</li>
+            <li>PPT</li>
+            <li>研究论文</li>
+          </ul>
+        </td>
+      </tr>
+      <tr id="mtvqa-languages" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <ul class="benchmark-dataset-list" aria-label="MTVQA 支持的9种语言">
+            <li>阿拉伯语</li>
+            <li>韩语</li>
+            <li>日语</li>
+            <li>泰语</li>
+            <li>越南语</li>
+            <li>俄语</li>
+            <li>法语</li>
+            <li>德语</li>
+            <li>意大利语</li>
+          </ul>
+        </td>
       </tr>
       <tr id="mtvqa-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
