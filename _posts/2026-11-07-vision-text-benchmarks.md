@@ -397,7 +397,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mathverse-citation" title="展开或收起引用">MathVerse</button></td>
         <td>2024 年</td>
-        <td>与MATH-Vision的竞赛题不同，MathVerse聚焦高中数学的<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-subjects" title="展开或收起三大数学领域及12个子领域">三大领域</button>，排除微积分、图论等大学知识。其特点是为每道题构建<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-versions" title="展开或收起六种不同的配置">六种问题</button>，通过逐步减少文本冗余、增加图像信息，考察模型是否真正理解数学图形，而非依赖文本完成推理。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mathverse-examples" title="展开或收起MathVerse样例">[样例]</button></td>
+        <td>与 MATH-Vision 的竞赛题不同，MathVerse 聚焦高中数学的<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-subjects" title="展开或收起三大数学领域及12个子领域">三大领域</button>，排除微积分、图论等大学知识。其特点是为每道题构建<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-versions" title="展开或收起六种不同的配置">六种问题</button>，通过逐步减少文本冗余、增加图像信息，考察模型是否真正理解数学图形，而非依赖文本完成推理。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mathverse-examples" title="展开或收起MathVerse样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：2.4K<br>问题：15.7K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -510,6 +510,26 @@ _styles: |
         <td colspan="5">
           <div class="benchmark-examples-panel">
             <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/textvqa-example.png' | relative_url }}" alt="TextVQA 样例截图，询问彩色蜡笔的品牌，答案为 Crayola" loading="lazy">
+          </div>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mtvqa-citation" title="展开或收起引用">MTVQA</button></td>
+        <td>2024 年</td>
+        <td>多语言文本中心视觉问答（Multilingual Text-Centric VQA）基准，涵盖文档和自然场景中的文本密集型图像，包括菜单、标识、地图、账单、PPT、研究论文等。覆盖阿拉伯语、韩语、日语、泰语、越南语、俄语、法语、德语和意大利语共 9 种语言，要求模型直接理解图像中的原始语言文本并回答问题。采用母语专家人工标注，避免机器翻译导致的视觉文本与问答内容错位。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mtvqa-examples" title="展开或收起MTVQA样例">[样例]</button></td>
+        <td class="benchmark-count-cell">图像：2.1K<br>问题：6.8K</td>
+        <td class="benchmark-metric-cell">Accuracy / ANLS</td>
+      </tr>
+      <tr id="mtvqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Tang et al. <em>MTVQA: Benchmarking Multilingual Text-Centric Visual Question Answering.</em> arXiv:2405.11985, 2024.
+          <a href="https://arxiv.org/abs/2405.11985">论文链接</a>。
+        </td>
+      </tr>
+      <tr id="mtvqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/mtvqa-example.png' | relative_url }}" alt="MTVQA 样例截图，展示阿拉伯语、俄语、泰语和越南语的文本密集图像问答" loading="lazy">
           </div>
         </td>
       </tr>
