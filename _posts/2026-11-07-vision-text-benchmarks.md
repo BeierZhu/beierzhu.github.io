@@ -53,6 +53,9 @@ _styles: |
   .benchmark-subtask-table.okvqa-categories-table th:first-child { width: 8%; }
   .benchmark-subtask-table.okvqa-categories-table th:nth-child(2) { width: 55%; }
   .benchmark-subtask-table.okvqa-categories-table th:nth-child(3) { width: 37%; }
+  .benchmark-subtask-table.mmmu-disciplines-table th:first-child { width: 28%; }
+  .benchmark-subtask-table.mmmu-disciplines-table th:nth-child(2) { width: 10%; }
+  .benchmark-subtask-table.mmmu-disciplines-table th:nth-child(3) { width: 62%; }
   .benchmark-subtask-table tbody:last-child tr:last-child th, .benchmark-subtask-table tbody:last-child tr:last-child td { border-bottom: 0; }
 ---
 
@@ -306,9 +309,26 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmmu-citation" title="展开或收起引用">MMMU</button></td>
         <td>2024 年</td>
-        <td>面向<b>专家级多模态理解与推理</b>的综合基准，收集大学考试、测验和教材中的多模态问题，覆盖 <b>6 大学科、30 个专业和 183 个子领域</b>。包含图表、示意图、地图、化学结构、乐谱、医学影像等 <b>30 种异构图像类型</b>，重点考察视觉感知、专业知识理解与复杂推理能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mmmu-examples" title="展开或收起MMMU样例">[样例]</button></td>
+        <td>面向<b>专家级多模态理解与推理</b>的综合基准，收集大学考试、测验和教材中的多模态问题，覆盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mmmu-disciplines" title="展开或收起6大学科及30个专业">6 大学科</button>、30 个专业和 183 个子领域。包含图表、示意图、地图、化学结构、乐谱、医学影像等 <b>30 种异构图像类型</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mmmu-examples" title="展开或收起MMMU样例">[样例]</button></td>
         <td class="benchmark-count-cell">问题：11.5K</td>
         <td class="benchmark-metric-cell">Micro-averaged Accuracy</td>
+      </tr>
+      <tr id="mmmu-disciplines" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <table class="benchmark-subtask-table mmmu-disciplines-table" aria-label="MMMU 六大学科、占比及30个专业">
+            <thead>
+              <tr><th scope="col">学科</th><th scope="col">占比</th><th scope="col">30 个专业</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Art &amp; Design（艺术与设计）</td><td>11%</td><td>Art（艺术）、Design（设计）、Music（音乐）、Art Theory（艺术理论）</td></tr>
+              <tr><td>Business（商业）</td><td>14%</td><td>Accounting（会计）、Economics（经济学）、Finance（金融）、Management（管理）、Marketing（市场营销）</td></tr>
+              <tr><td>Science（科学）</td><td>23%</td><td>Biology（生物学）、Chemistry（化学）、Geography（地理学）、Math（数学）、Physics（物理学）</td></tr>
+              <tr><td>Health &amp; Medicine（健康与医学）</td><td>17%</td><td>Basic Medical Science（基础医学）、Clinical Medicine（临床医学）、Diagnostics（医学诊断）、Pharmacy（药学）、Public Health（公共卫生）</td></tr>
+              <tr><td>Humanities &amp; Social Science（人文与社会科学）</td><td>9%</td><td>History（历史）、Literature（文学）、Psychology（心理学）、Sociology（社会学）</td></tr>
+              <tr><td>Tech &amp; Engineering（技术与工程）</td><td>26%</td><td>Agriculture（农业）、Architecture Engineering（建筑工程）、Computer Science（计算机科学）、Electronics（电子学）、Energy Power（能源动力）、Materials（材料）、Mechanical Engineering（机械工程）</td></tr>
+            </tbody>
+          </table>
+        </td>
       </tr>
       <tr id="mmmu-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
@@ -316,20 +336,6 @@ _styles: |
           <a href="https://arxiv.org/abs/2311.16502">论文链接</a> ·
           <a href="https://mmmu-benchmark.github.io/">项目主页</a>。
           <p><b>数据划分：</b>Dev / Val / Test = 150 / 900 / 10,500 道题。</p>
-          <p><b>六大学科分布：</b></p>
-          <table class="benchmark-subtask-table" aria-label="MMMU 六大学科分布">
-            <thead>
-              <tr><th scope="col">学科</th><th scope="col">占比</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Art &amp; Design（艺术与设计）</td><td>11%</td></tr>
-              <tr><td>Business（商业）</td><td>14%</td></tr>
-              <tr><td>Science（科学）</td><td>23%</td></tr>
-              <tr><td>Health &amp; Medicine（健康与医学）</td><td>17%</td></tr>
-              <tr><td>Humanities &amp; Social Science（人文与社会科学）</td><td>9%</td></tr>
-              <tr><td>Tech &amp; Engineering（技术与工程）</td><td>26%</td></tr>
-            </tbody>
-          </table>
           <p><b>题目形式：</b>Multiple-choice Questions 10,861 道（94.03%）；Open Questions 689 道（5.97%）。</p>
           <p><b>难度分布：</b>Easy 28%、Medium 45%、Hard 27%。</p>
           <p><b>评测指标：</b>Micro-averaged Accuracy，按样本数汇总各题的正确率。</p>
@@ -800,7 +806,7 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="gqa-citation" title="展开或收起引用">GQA</button></td>
         <td>2019 年</td>
         <td>基于 Visual Genome 场景图自动生成的<b>组合式视觉问答</b>数据集，通过遍历物体、属性及关系构造多样化问题。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="gqa-examples" title="展开或收起GQA样例">[样例]</button></td>
-        <td class="benchmark-count-cell">图像：113K<br>问题：22.7M</td>
+        <td class="benchmark-count-cell">图像：113K<br>问题：23M</td>
         <td class="benchmark-metric-cell">Accuracy </td>
       </tr>
       <tr id="gqa-citation" class="benchmark-citation-row" hidden>
