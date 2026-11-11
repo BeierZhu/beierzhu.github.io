@@ -397,7 +397,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mathverse-citation" title="展开或收起引用">MathVerse</button></td>
         <td>2024 年</td>
-        <td>与 MathVista 广泛覆盖自然图像、统计图表、教材问答等多种视觉数学任务不同，MathVerse 聚焦专业视觉数学问题；与 MATH-Vision 的竞赛题目不同，MathVerse 聚焦高中阶段的平面几何、立体几何和函数问题，排除微积分、图论等高等院校高级学科知识。其核心特点是将每道题构建为六种不同的文本与视觉信息配置，通过逐步减少文本冗余、增加图像信息，考察模型是否真正理解数学图形，而非仅依赖文本完成推理。<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-subjects" title="展开或收起三大数学领域及12个子领域">三大数学领域及 12 个子领域</button> <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-versions" title="展开或收起六种不同的配置">六种不同的配置</button> <button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mathverse-examples" title="展开或收起MathVerse样例">[样例]</button></td>
+        <td>与 MathVista 广泛覆盖自然图像、统计图表等多种视觉数学任务不同，MathVerse 聚焦专业视觉数学问题；与 MATH-Vision 的竞赛题目不同，MathVerse 聚焦高中阶段的数学问题，涵盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-subjects" title="展开或收起三大数学领域及12个子领域">三大数学领域及 12 个子领域</button>，排除微积分、图论等高级学科知识。其核心特点是为每道题构建<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mathverse-versions" title="展开或收起六种不同的配置">六种不同的配置</button>，通过逐步减少文本冗余、增加图像信息，考察模型是否真正理解数学图形，而非仅依赖文本完成推理。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mathverse-examples" title="展开或收起MathVerse样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：2.4K<br>问题：15.7K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
