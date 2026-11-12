@@ -298,7 +298,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmstar-citation" title="展开或收起引用">MMStar</button></td>
         <td>2024 年</td>
-        <td>面向大型视觉语言模型（LVLM）的综合评测基准，重点降低视觉内容不必要和训练数据泄漏的影响，并通过人工筛选确保样本依赖图像。包含<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mmstar-dimensions" title="展开或收起6大核心能力与18个细分维度">6 大核心能力与 18 个细分维度</button>，考察视觉感知、实例推理、逻辑推理、科学知识与数学推理。</td>
+        <td>从现有多模态基准收集候选样本，经人工筛选确保题目依赖图像，并减少无需图像即可作答的问题及训练数据泄漏。包含<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mmstar-dimensions" title="展开或收起6大核心能力与18个细分维度">6 大核心能力与 18 个细分维度</button>。</td>
         <td class="benchmark-count-cell">样本：1.5K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
