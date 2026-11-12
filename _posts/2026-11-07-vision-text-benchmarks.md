@@ -779,7 +779,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mme-realworld-citation" title="展开或收起引用">MME-RealWorld</button></td>
         <td>2025 年</td>
-        <td>面向真实世界复杂场景的<b>高分辨率多模态理解</b>基准，重点考察细粒度视觉感知与复杂场景推理，覆盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mme-realworld-domains" title="展开或收起5大领域与评测任务">5 大领域与 43 个子任务</button>。图像平均分辨率约为 <b>2000×1500（约 3MP）</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mme-realworld-examples" title="展开或收起MME-RealWorld样例">[样例]</button></td>
+        <td>面向真实世界复杂场景的<b>高分辨率多模态理解</b>基准，重点考察细粒度视觉感知与复杂场景推理，覆盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mme-realworld-domains" title="展开或收起5大领域与评测任务">5 大领域与 43 个子任务</button>。图像平均分辨率约为 <b>2000×1500（接近 2K）</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mme-realworld-examples" title="展开或收起MME-RealWorld样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：13.4K<br>问题：29.4K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -817,7 +817,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="vstar-bench-citation" title="展开或收起引用">V* Bench</button></td>
         <td>2024 年</td>
-        <td>面向约 2K 高分辨率图像的<b>细粒度视觉搜索与定位</b>基准，包含属性识别和空间关系推理两类任务，要求定位目标并识别其属性或与其他物体的相对位置。</td>
+        <td>面向约 2K 高分辨率图像的<b>细粒度视觉搜索与定位</b>基准，包含属性识别和空间关系推理两类任务，要求定位目标并识别其属性或与其他物体的相对位置。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="vstar-bench-examples" title="展开或收起 V* Bench 样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：0.2K<br>问题：0.2K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -828,10 +828,17 @@ _styles: |
           <p><b>评测方式：</b>多项选择题；开放式问题设 4 个选项，二分类问题设 2 个选项，以 Accuracy 评估。</p>
         </td>
       </tr>
+      <tr id="vstar-bench-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/vstar-bench-example.png' | relative_url }}" alt="V* Bench 样例：在玩具堆的高分辨率图像中定位猩猩，并判断它拿着什么乐器" loading="lazy">
+          </div>
+        </td>
+      </tr>
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="hr-bench-citation" title="展开或收起引用">HR-Bench</button></td>
         <td>2025 年</td>
-        <td>评估多模态大模型在<b>超高分辨率图像</b>中的细粒度感知能力，提供 4K 和 8K 设置，包含单实例细粒度感知（FSP）与跨实例细粒度感知（FCP）。</td>
+        <td>评估多模态大模型在<b>超高分辨率图像</b>中的细粒度感知能力，提供 4K 和 8K 设置，包含单实例细粒度感知（FSP）与跨实例细粒度感知（FCP）。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="hr-bench-examples" title="展开或收起 HR-Bench 样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：0.2K<br>问题：0.2K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -840,6 +847,13 @@ _styles: |
           Wang et al. <em>Divide, Conquer and Combine: A Training-Free Framework for High-Resolution Image Perception in Multimodal Large Language Models.</em> AAAI, 2025.
           <p><b>数据与任务：</b>200 张来自 DIV8K 和互联网的 8K 图像，人工标注问题与答案。FSP 共 100 道，识别单个物体的颜色、材质等属性；FCP 共 100 道，判断多个物体间的相对位置。另提供 HR-Bench 4K 版本，通过标注目标位置并裁剪原始 8K 图像生成。</p>
           <p><b>评测方式：</b>多项选择题采用 Cyclic Permutation 循环移位选项顺序，以降低选项顺序对模型表现的影响，最终以 Accuracy 衡量性能。</p>
+        </td>
+      </tr>
+      <tr id="hr-bench-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/hr-bench-example.png' | relative_url }}" alt="HR-Bench 样例：高分辨率迪士尼城堡场景中，放大定位雨伞并询问其颜色" loading="lazy">
+          </div>
         </td>
       </tr>
     </tbody>
