@@ -814,6 +814,34 @@ _styles: |
           </div>
         </td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="vstar-bench-citation" title="展开或收起引用">V* Bench</button></td>
+        <td>2024 年</td>
+        <td>面向约 2K 高分辨率图像的<b>细粒度视觉搜索与定位</b>基准，包含属性识别和空间关系推理两类任务，要求定位目标并识别其属性或与其他物体的相对位置。</td>
+        <td class="benchmark-count-cell">图像：0.2K<br>问题：0.2K</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="vstar-bench-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Wu and Xie. <em>V*: Guided Visual Search as a Core Mechanism in Multimodal LLMs.</em> CVPR, 2024.
+          <p><b>数据与任务：</b>从 SA-1B 筛选 191 张高分辨率图像，平均分辨率约 2K。Attribute Recognition 共 115 道，识别指定物体的颜色、材质等属性；Spatial Relationship Reasoning 共 76 道，判断两个物体的相对空间位置。</p>
+          <p><b>评测方式：</b>多项选择题；开放式问题设 4 个选项，二分类问题设 2 个选项，以 Accuracy 评估。</p>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="hr-bench-citation" title="展开或收起引用">HR-Bench</button></td>
+        <td>2025 年</td>
+        <td>评估多模态大模型在<b>超高分辨率图像</b>中的细粒度感知能力，提供 4K 和 8K 设置，包含单实例细粒度感知（FSP）与跨实例细粒度感知（FCP）。</td>
+        <td class="benchmark-count-cell">图像：0.2K<br>问题：0.2K</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="hr-bench-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Wang et al. <em>Divide, Conquer and Combine: A Training-Free Framework for High-Resolution Image Perception in Multimodal Large Language Models.</em> AAAI, 2025.
+          <p><b>数据与任务：</b>200 张来自 DIV8K 和互联网的 8K 图像，人工标注问题与答案。FSP 共 100 道，识别单个物体的颜色、材质等属性；FCP 共 100 道，判断多个物体间的相对位置。另提供 HR-Bench 4K 版本，通过标注目标位置并裁剪原始 8K 图像生成。</p>
+          <p><b>评测方式：</b>多项选择题采用 Cyclic Permutation 循环移位选项顺序，以降低选项顺序对模型表现的影响，最终以 Accuracy 衡量性能。</p>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
