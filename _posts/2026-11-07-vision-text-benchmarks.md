@@ -280,6 +280,21 @@ _styles: |
           </div>
         </td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="scienceqa-citation" title="展开或收起引用">ScienceQA</button></td>
+        <td>2022 年</td>
+        <td>面向小学至高中（1–12 年级）科学教育的多模态问答基准，采用多项选择题，覆盖自然科学、社会科学和语言科学，考察科学知识、多模态信息理解与推理。题目包含文本或图像上下文，大部分还提供背景知识（Lecture）和答案解释（Explanation）。</td>
+        <td class="benchmark-count-cell">图像：7.8K<br>问题：21.2K</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="scienceqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Lu et al. <em>Learn to Explain: Multimodal Reasoning via Thought Chains for Science Question Answering.</em> NeurIPS, 2022. arXiv:2209.09513. <a href="https://arxiv.org/abs/2209.09513">论文链接</a>。
+          <p><b>数据集构成：</b>共 21,208 道题目，涵盖 3 个学科、26 个主题（Topics）、127 个类别（Categories）、379 项具体技能（Skills）及 1–12 年级。Train / Val / Test 分别为 12,726 / 4,241 / 4,241 道。</p>
+          <p><b>上下文：</b>10,332 道（48.7%）包含图像，10,220 道（48.2%）包含文本；其中 6,532 道（30.8%）同时包含图像和文本，7,188 道（33.9%）不含额外上下文。图像包括自然图像与科学示意图。</p>
+          <p><b>标注与评测：</b>17,798 道（83.9%）提供 Lecture，19,202 道（90.5%）提供 Explanation。主指标为 Accuracy；解释生成质量还可用 BLEU、ROUGE-L、Sentence-BERT Similarity 及人工评估（相关性、正确性、完整性）衡量。</p>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
