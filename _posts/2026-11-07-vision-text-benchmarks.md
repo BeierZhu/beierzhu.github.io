@@ -351,8 +351,8 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmmu-pro-citation" title="展开或收起引用">MMMU-Pro</button></td>
         <td>2025 年</td>
-        <td>在 MMMU 基础上过滤可仅凭文本解答的问题，将选项从 4 个扩充至 10 个，并引入 <b>Vision-only</b> 输入：把问题和选项嵌入截图或照片，要求模型依据视觉内容与专业知识推理。</td>
-        <td class="benchmark-count-cell">问题：1.73K<br>标准：1.73K<br>截图/照片：1.73K</td>
+        <td>在 MMMU 基础上<b>过滤可仅凭文本解答的问题</b>，将<b>选项从 4 个扩充至 10 个</b>，并引入 <b>Vision-only</b> 输入：把问题和选项嵌入截图或照片，要求模型依据视觉内容与专业知识推理。</td>
+        <td class="benchmark-count-cell">图像：1.73K<br>问题：1.73K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="mmmu-pro-citation" class="benchmark-citation-row" hidden>
@@ -755,7 +755,64 @@ _styles: |
 </div>
 
 <br>
-## 5. 传统视觉问答与图像描述生成
+## 5. 高分辨率视觉理解
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="高分辨率视觉理解基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 54%">
+      <col style="width: 12%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mme-realworld-citation" title="展开或收起引用">MME-RealWorld</button></td>
+        <td>2025 年</td>
+        <td>面向真实世界复杂场景的<b>高分辨率多模态理解</b>基准，重点考察细粒度视觉感知与复杂场景推理，覆盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mme-realworld-domains" title="展开或收起5大领域与评测任务">5 大领域与 43 个子任务</button>。图像平均分辨率约为 <b>2000×1500（约 3MP）</b>，最高达到 5304×7952。</td>
+        <td class="benchmark-count-cell">图像：13.4K<br>问题：29.4K</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="mme-realworld-domains" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <table class="benchmark-subtask-table mme-realworld-domains-table" aria-label="MME-RealWorld 的五大领域与评测任务">
+            <thead>
+              <tr><th scope="col">领域</th><th scope="col">Perception（感知）</th><th scope="col">Reasoning（推理）</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>OCR in the Wild（真实场景文字识别）</td><td>联系信息、身份信息、商品广告、标识文字、书籍地图及海报识别</td><td>场景理解、人物角色理解</td></tr>
+              <tr><td>Remote Sensing（遥感）</td><td>物体计数、颜色识别、空间关系理解</td><td>—</td></tr>
+              <tr><td>Diagram and Table（图表与表格）</td><td>表格信息提取、图表信息提取</td><td>表格推理、图表推理</td></tr>
+              <tr><td>Autonomous Driving（自动驾驶）</td><td>物体识别、属性识别、物体计数</td><td>意图预测、交互关系理解、驾驶员注意力理解</td></tr>
+              <tr><td>Monitoring（视频监控）</td><td>物体计数、位置识别、属性识别</td><td>多物体数量计算、意图推理、属性推理</td></tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr id="mme-realworld-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Zhang et al. <em>MME-RealWorld: Could Your Multimodal LLM Challenge High-Resolution Real-World Scenarios that are Difficult for Humans?</em> ICLR, 2025. arXiv:2408.13257.
+          <a href="https://arxiv.org/abs/2408.13257">论文链接</a>。
+          <p><b>数据构建：</b>从超过 300K 张公开数据集及互联网图像中筛选出 13,366 张高质量图像，由 25 名专业标注人员和 7 名多模态模型领域专家参与构建与审核。每题为五选一，选项 E 表示图像中不存在相关对象或信息。</p>
+          <p><b>评测指标：</b>Accuracy。Avg 按各子任务样本数加权平均；Avg-C 为各子任务准确率的非加权平均。论文另提供中文版本 MME-RealWorld-CN，包含 5,917 个问答对。</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+## 6. 传统视觉问答与图像描述生成
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="传统视觉问答与图像描述生成基准">
@@ -909,7 +966,7 @@ _styles: |
 </div>
 
 <br>
-## 6. 视觉定位
+## 7. 视觉定位
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="视觉定位与指代表达理解基准">
