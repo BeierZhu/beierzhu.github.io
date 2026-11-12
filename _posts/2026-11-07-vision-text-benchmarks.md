@@ -348,6 +348,22 @@ _styles: |
           </div>
         </td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmmu-pro-citation" title="展开或收起引用">MMMU-Pro</button></td>
+        <td>2025 年</td>
+        <td>在 MMMU 基础上过滤可仅凭文本解答的问题，将选项从 4 个扩充至 10 个，并引入 <b>Vision-only</b> 输入：把问题和选项嵌入截图或照片，要求模型依据视觉内容与专业知识推理。</td>
+        <td class="benchmark-count-cell">问题：1.73K<br>标准：1.73K<br>截图/照片：1.73K</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="mmmu-pro-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Yue et al. <em>MMMU-Pro: A More Robust Multi-discipline Multimodal Understanding Benchmark.</em> ACL, 2025.
+          <a href="https://aclanthology.org/2025.acl-long.736/">论文链接</a> ·
+          <a href="https://mmmu-benchmark.github.io/#leaderboard">项目主页</a>。
+          <p><b>评测设置：</b>Standard 将选择题扩充至 10 个选项；Vision-only 将问题与选项嵌入截图或照片，以纯视觉形式输入。</p>
+          <p><b>综合成绩：</b>Standard 与 Vision-only 两种设置的 Accuracy 平均值。</p>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
