@@ -779,7 +779,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mme-realworld-citation" title="展开或收起引用">MME-RealWorld</button></td>
         <td>2025 年</td>
-        <td>面向真实世界复杂场景的<b>高分辨率多模态理解</b>基准，重点考察细粒度视觉感知与复杂场景推理，覆盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mme-realworld-domains" title="展开或收起5大领域与评测任务">5 大领域与 43 个子任务</button>。图像平均分辨率约为 <b>2000×1500（约 3MP）</b>，最高达到 5304×7952。</td>
+        <td>面向真实世界复杂场景的<b>高分辨率多模态理解</b>基准，重点考察细粒度视觉感知与复杂场景推理，覆盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mme-realworld-domains" title="展开或收起5大领域与评测任务">5 大领域与 43 个子任务</button>。图像平均分辨率约为 <b>2000×1500（约 3MP）</b>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mme-realworld-examples" title="展开或收起MME-RealWorld样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：13.4K<br>问题：29.4K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -805,6 +805,13 @@ _styles: |
           <a href="https://arxiv.org/abs/2408.13257">论文链接</a>。
           <p><b>数据构建：</b>从超过 300K 张公开数据集及互联网图像中筛选出 13,366 张高质量图像，由 25 名专业标注人员和 7 名多模态模型领域专家参与构建与审核。每题为五选一，选项 E 表示图像中不存在相关对象或信息。</p>
           <p><b>评测指标：</b>Accuracy。Avg 按各子任务样本数加权平均；Avg-C 为各子任务准确率的非加权平均。论文另提供中文版本 MME-RealWorld-CN，包含 5,917 个问答对。</p>
+        </td>
+      </tr>
+      <tr id="mme-realworld-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/mme-realworld-example.png' | relative_url }}" alt="MME-RealWorld 样例截图，展示真实场景文字识别与遥感图像问答" loading="lazy">
+          </div>
         </td>
       </tr>
     </tbody>
