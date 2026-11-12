@@ -283,7 +283,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="scienceqa-citation" title="展开或收起引用">ScienceQA</button></td>
         <td>2022 年</td>
-        <td>面向小学至高中（1–12 年级）科学教育的多模态问答基准，采用多项选择题，覆盖自然科学、社会科学和语言科学，考察科学知识、多模态信息理解与推理。题目包含文本或图像上下文，大部分还提供背景知识（Lecture）和答案解释（Explanation）。</td>
+        <td>面向小学至高中科学教育的多模态问答基准，采用多项选择题，覆盖自然科学、社会科学和语言科学，还提供背景知识和答案解释。</td>
         <td class="benchmark-count-cell">图像：7.8K<br>问题：21.2K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -293,6 +293,39 @@ _styles: |
           <p><b>数据集构成：</b>共 21,208 道题目，涵盖 3 个学科、26 个主题（Topics）、127 个类别（Categories）、379 项具体技能（Skills）及 1–12 年级。Train / Val / Test 分别为 12,726 / 4,241 / 4,241 道。</p>
           <p><b>上下文：</b>10,332 道（48.7%）包含图像，10,220 道（48.2%）包含文本；其中 6,532 道（30.8%）同时包含图像和文本，7,188 道（33.9%）不含额外上下文。图像包括自然图像与科学示意图。</p>
           <p><b>标注与评测：</b>17,798 道（83.9%）提供 Lecture，19,202 道（90.5%）提供 Explanation。主指标为 Accuracy；解释生成质量还可用 BLEU、ROUGE-L、Sentence-BERT Similarity 及人工评估（相关性、正确性、完整性）衡量。</p>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmstar-citation" title="展开或收起引用">MMStar</button></td>
+        <td>2024 年</td>
+        <td>面向大型视觉语言模型（LVLM）的综合评测基准，重点降低视觉内容不必要和训练数据泄漏的影响，并通过人工筛选确保样本依赖图像。包含<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mmstar-dimensions" title="展开或收起6大核心能力与18个细分维度">6 大核心能力与 18 个细分维度</button>，考察视觉感知、实例推理、逻辑推理、科学知识与数学推理。</td>
+        <td class="benchmark-count-cell">样本：1.5K</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="mmstar-dimensions" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <table class="benchmark-subtask-table" aria-label="MMStar 的六大核心能力与18个细分评测维度">
+            <caption>MMStar 的六大核心能力与 18 个细分评测维度</caption>
+            <thead>
+              <tr><th scope="col">核心能力</th><th scope="col">英文名称</th><th scope="col">细分评测维度</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>粗粒度感知</td><td>Coarse Perception (CP)</td><td>Image Style &amp; Quality（图像风格与质量）、Image Scene &amp; Topic（场景与主题）、Image Emotion（图像情感）</td></tr>
+              <tr><td>细粒度感知</td><td>Fine-grained Perception (FP)</td><td>Attribute &amp; Celebrity Recognition（属性与名人识别）、Object Location（物体定位）、Object Counting（物体计数）</td></tr>
+              <tr><td>实例推理</td><td>Instance Reasoning (IR)</td><td>Single-instance Attribute Reasoning（单实例属性推理）、Cross-instance Attribute Comparison（跨实例属性比较）、Cross-instance Relation Reasoning（跨实例关系推理）</td></tr>
+              <tr><td>逻辑推理</td><td>Logical Reasoning (LR)</td><td>Diagram Reasoning（图表推理）、Code &amp; Sequence Reasoning（代码与序列推理）、Common Reasoning（常识推理）</td></tr>
+              <tr><td>科学与技术</td><td>Science &amp; Technology (ST)</td><td>Natural Science（自然科学）、Engineering（工程学）、Geography &amp; Earth Science（地理与地球科学）</td></tr>
+              <tr><td>数学能力</td><td>Mathematics (MA)</td><td>Numeric Commonsense &amp; Calculation（数值常识与计算）、Geometry（几何）、Statistical Analysis（统计分析）</td></tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr id="mmstar-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Chen et al. <em>Are We on the Right Way for Evaluating Large Vision-Language Models?</em> arXiv:2403.20330, 2024. <a href="https://arxiv.org/abs/2403.20330">论文链接</a>。
+          <p><b>数据构建：</b>从 MMBench、SEED-Bench、MMMU、ScienceQA、AI2D 和 MathVista 收集 22,401 条候选样本，经 8 个 LLM 检查器过滤后保留 11,607 条，再结合 16 个 LVLM 的答题表现划分难度，并由 3 位专家审核，最终选出 1,500 条样本。六大核心能力各含 250 条，并尽可能均衡覆盖 18 个细分维度。构建原则包括视觉依赖性、最小化数据泄漏和高级多模态能力。</p>
+          <p><b>评测指标：</b>Accuracy 用于衡量整体及各维度表现。辅助指标包括 Multi-modal Gain（MG = Sᵥ − S₍wv₎，衡量有图像与无图像输入的准确率差异）和 Multi-modal Leakage（ML = max(0, S₍wv₎ − Sₜ)，估计多模态训练可能引入的数据泄漏；Sₜ 为对应原始语言模型准确率）。</p>
+          <p><b>评测设置：</b>纯 LLM 使用 2-shot，LVLM 使用 0-shot。论文实验中，纯 LLM 平均准确率为 24.6%，GPT-4V（High）最高为 57.1%；MMStar 平均 ML 为 1.9。</p>
         </td>
       </tr>
     </tbody>
