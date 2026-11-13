@@ -720,6 +720,53 @@ _styles: |
         </td>
       </tr>
       <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ocrbench-citation" title="展开或收起引用">OCRBench</button></td>
+        <td>2023 年</td>
+        <td>面向多模态大模型的综合 OCR 评测基准，涵盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="ocrbench-tasks" title="展开或收起五大评测任务">5 大任务</button>：文字识别、场景文字问答、文档问答、关键信息抽取和手写数学公式识别，考察复杂场景、非语义、多语言及手写文本的识别与理解能力。</td>
+        <td class="benchmark-count-cell">样本：1.0K</td>
+        <td class="benchmark-metric-cell">Score（满分 1,000）</td>
+      </tr>
+      <tr id="ocrbench-tasks" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <table class="benchmark-subtask-table" aria-label="OCRBench 的五大评测任务">
+            <caption>OCRBench 的五大评测任务</caption>
+            <thead>
+              <tr><th scope="col">任务</th><th scope="col">数据集 / 子任务</th><th scope="col">样本数</th><th scope="col">评测内容</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="rowgroup" rowspan="6">Text Recognition（文字识别）</th><td>Regular Text Recognition</td><td>50</td><td>常规文本识别</td></tr>
+              <tr><td>Irregular Text Recognition</td><td>50</td><td>不规则文本识别</td></tr>
+              <tr><td>Artistic Text Recognition</td><td>50</td><td>艺术字识别</td></tr>
+              <tr><td>Handwriting Recognition</td><td>50</td><td>手写文本识别</td></tr>
+              <tr><td>Digit String Recognition</td><td>50</td><td>数字串识别</td></tr>
+              <tr><td>Non-Semantic Text Recognition</td><td>50</td><td>非语义文本识别</td></tr>
+              <tr><th scope="rowgroup" rowspan="4">Scene Text-centric VQA（场景文字问答）</th><td>STVQA</td><td>50</td><td>场景文字视觉问答</td></tr>
+              <tr><td>TextVQA</td><td>50</td><td>文本密集场景问答</td></tr>
+              <tr><td>ESTVQA (EN)</td><td>50</td><td>英文场景文字问答</td></tr>
+              <tr><td>OCRVQA</td><td>50</td><td>基于图像文字的视觉问答</td></tr>
+              <tr><th scope="rowgroup" rowspan="4">Doc-oriented VQA（文档问答）</th><td>DocVQA</td><td>50</td><td>文档图像问答</td></tr>
+              <tr><td>ChartQA (Aug.)</td><td>50</td><td>图表问答（增强数据）</td></tr>
+              <tr><td>ChartQA (Hum.)</td><td>50</td><td>图表问答（人工标注）</td></tr>
+              <tr><td>InfoVQA</td><td>50</td><td>信息图问答</td></tr>
+              <tr><th scope="rowgroup" rowspan="3">Key Information Extraction（关键信息抽取）</th><td>SROIE</td><td>67</td><td>收据关键信息抽取</td></tr>
+              <tr><td>FUNSD</td><td>66</td><td>表单信息抽取</td></tr>
+              <tr><td>POIE</td><td>67</td><td>商品营养标签信息抽取</td></tr>
+              <tr><th scope="row">HMER（手写数学公式识别）</th><td>HME100K</td><td>100</td><td>手写数学公式识别</td></tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr id="ocrbench-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Liu et al. <em>OCRBench: On the Hidden Mystery of OCR in Large Multimodal Models.</em> arXiv:2305.07895, 2023.
+          <a href="https://arxiv.org/abs/2305.07895">论文链接</a> ·
+          <a href="https://github.com/Yuliang-Liu/MultimodalOCR">官方仓库</a>。
+          <p><b>数据集构成：</b>共 1,000 个经人工筛选和校正的问答样本：文字识别 300 个、场景文字问答 200 个、文档问答 200 个、关键信息抽取 200 个、手写数学公式识别 100 个。文字识别覆盖常规、不规则、艺术字、手写、数字串和非语义文本；非语义文本通过打乱单词中字母顺序构造，以检验模型是否真正识别字符。</p>
+          <p><b>评测指标：</b>采用统一的 GT-in-output 判定，模型回答包含 Ground Truth 即算正确；五大任务的正确样本数相加得到 Score，满分 1,000。考虑到模型回答常包含解释，论文未直接沿用原始任务的 Exact Match 或 ANLS；同时过滤短答案样本，并人工核验、修正答案及补充多答案。关键信息抽取任务还使用专门提示词，要求模型直接依据图中文字回答。</p>
+          <p><b>评测特点：</b>重点考察非语义字符、模糊图像、多语言文字、手写文本及数学公式。论文报告多模态大模型在非语义文本上的平均表现较语义文本下降 57.0%，传统场景文字识别 SOTA 方法约下降 4.6%；模型在手写文本、中文识别和手写数学公式方面仍有不足，文档问答和关键信息抽取也对图像分辨率要求较高。</p>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="docvqa-citation" title="展开或收起引用">DocVQA</button></td>
         <td>2021 年</td>
         <td>真实文档图像的<b>文档视觉问答</b>基准，图像来自<b>工业文献档案库</b>，覆盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="docvqa-industries" title="展开或收起5个行业">5 个行业</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="docvqa-examples" title="展开或收起DocVQA样例">[样例]</button></td>
@@ -1086,7 +1133,7 @@ _styles: |
     <tbody>
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="countbench-citation" title="展开或收起引用">CountBench</button></td>
-        <td>2023 年</td>
+        <td>2023 年（ICCV）</td>
         <td>面向真实场景图像的<b>物体计数</b>基准，评估模型根据文本描述判断图像中指定类别的物体数量，数量范围为 2–10。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="countbench-examples" title="展开或收起 CountBench 样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：0.5K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
