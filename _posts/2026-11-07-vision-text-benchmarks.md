@@ -1123,6 +1123,29 @@ _styles: |
         </td>
       </tr>
       <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="tallyqa-citation" title="展开或收起引用">TallyQA</button></td>
+        <td>2018 年</td>
+        <td>面向真实场景图像的开放式<b>视觉计数问答</b>基准，区分简单计数（Simple）和复杂计数（Complex）：简单计数考察物体检测与数量统计；复杂计数还需结合物体属性、动作或空间关系筛选目标，例如统计正在吃东西的狗或坐着的长颈鹿。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="tallyqa-examples" title="展开或收起 TallyQA 样例">[样例]</button></td>
+        <td class="benchmark-count-cell">问题：287.9K<br>答案范围：0–15</td>
+        <td class="benchmark-metric-cell">Accuracy / RMSE</td>
+      </tr>
+      <tr id="tallyqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Acharya et al. <em>TallyQA: Answering Complex Counting Questions.</em> arXiv:1810.12440, 2018.
+          <a href="https://arxiv.org/abs/1810.12440">论文链接</a>。
+          <p><b>数据集构成：</b>共包含 287,907 个问答对，其中简单计数问题 211,430 个，复杂计数问题 76,477 个。图像来自 COCO 和 Visual Genome；训练集使用两个数据集的图像，测试集仅使用 Visual Genome 图像，答案为 0–15 的整数。</p>
+          <p><b>数据划分：</b>Train、Test-Simple 和 Test-Complex 分别包含 249,318、22,991 和 15,598 个问题。Train 中有 3,902 个新构建的人工标注问题和 245,416 个从其他数据集导入的问题；Test-Simple 全部来自导入数据集，Test-Complex 全部由 AMT 人工构建并经过人工审核。</p>
+          <p><b>评测指标：</b>Accuracy 统计预测数量与标准答案完全一致的比例；RMSE（Root Mean Squared Error）衡量预测数量与真实数量之间的均方根误差。</p>
+        </td>
+      </tr>
+      <tr id="tallyqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/tallyqa-example.png' | relative_url }}" alt="TallyQA 样例：问题询问有多少只长颈鹿坐着，图中以半透明区域标出目标长颈鹿" loading="lazy">
+          </div>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="refcoco-citation" title="展开或收起引用">RefCOCO</button></td>
         <td>2016 年</td>
         <td>基于 MS COCO 的<b>视觉指代表达理解</b>基准，给定图像和自然语言描述，要求定位对应的目标物体；允许使用空间位置描述。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="refcoco-examples" title="展开或收起RefCOCO样例">[样例]</button></td>
