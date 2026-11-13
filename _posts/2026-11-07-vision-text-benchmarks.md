@@ -1125,7 +1125,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="tallyqa-citation" title="展开或收起引用">TallyQA</button></td>
         <td>2018 年</td>
-        <td>面向真实场景图像的开放式<b>视觉计数问答</b>基准，区分简单计数（Simple）和复杂计数（Complex）：简单计数考察物体检测与数量统计；复杂计数还需结合物体属性、动作或空间关系筛选目标，例如统计正在吃东西的狗或坐着的长颈鹿。答案数量范围为 0–15。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="tallyqa-examples" title="展开或收起 TallyQA 样例">[样例]</button></td>
+        <td>面向真实场景图像的<b>视觉计数问答</b>基准，区分简单计数和复杂计数：简单计数考察物体检测与数量统计；复杂计数还需结合物体属性、动作或空间关系筛选目标，例如统计正在吃东西的狗或坐着的长颈鹿。答案数量范围为 0–15。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="tallyqa-examples" title="展开或收起 TallyQA 样例">[样例]</button></td>
         <td class="benchmark-count-cell">问题：287.9K</td>
         <td class="benchmark-metric-cell">Accuracy / RMSE</td>
       </tr>
