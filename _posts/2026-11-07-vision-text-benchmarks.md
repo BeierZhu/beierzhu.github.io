@@ -722,39 +722,9 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ocrbench-citation" title="展开或收起引用">OCRBench</button></td>
         <td>2023 年</td>
-        <td>面向多模态大模型的综合 OCR 评测基准，涵盖<button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="ocrbench-tasks" title="展开或收起五大评测任务">5 大任务</button>：文字识别、场景文字问答、文档问答、关键信息抽取和手写数学公式识别，考察复杂场景、非语义、多语言及手写文本的识别与理解能力。</td>
+        <td>综合 OCR 评测基准，涵盖 5 大任务：文字识别、场景文字问答、文档问答、关键信息抽取和手写数学公式识别。</td>
         <td class="benchmark-count-cell">样本：1.0K</td>
         <td class="benchmark-metric-cell">Score（满分 1,000）</td>
-      </tr>
-      <tr id="ocrbench-tasks" class="benchmark-datasets-row" hidden>
-        <td colspan="5">
-          <table class="benchmark-subtask-table" aria-label="OCRBench 的五大评测任务">
-            <caption>OCRBench 的五大评测任务</caption>
-            <thead>
-              <tr><th scope="col">任务</th><th scope="col">数据集 / 子任务</th><th scope="col">样本数</th><th scope="col">评测内容</th></tr>
-            </thead>
-            <tbody>
-              <tr><th scope="rowgroup" rowspan="6">Text Recognition（文字识别）</th><td>Regular Text Recognition</td><td>50</td><td>常规文本识别</td></tr>
-              <tr><td>Irregular Text Recognition</td><td>50</td><td>不规则文本识别</td></tr>
-              <tr><td>Artistic Text Recognition</td><td>50</td><td>艺术字识别</td></tr>
-              <tr><td>Handwriting Recognition</td><td>50</td><td>手写文本识别</td></tr>
-              <tr><td>Digit String Recognition</td><td>50</td><td>数字串识别</td></tr>
-              <tr><td>Non-Semantic Text Recognition</td><td>50</td><td>非语义文本识别</td></tr>
-              <tr><th scope="rowgroup" rowspan="4">Scene Text-centric VQA（场景文字问答）</th><td>STVQA</td><td>50</td><td>场景文字视觉问答</td></tr>
-              <tr><td>TextVQA</td><td>50</td><td>文本密集场景问答</td></tr>
-              <tr><td>ESTVQA (EN)</td><td>50</td><td>英文场景文字问答</td></tr>
-              <tr><td>OCRVQA</td><td>50</td><td>基于图像文字的视觉问答</td></tr>
-              <tr><th scope="rowgroup" rowspan="4">Doc-oriented VQA（文档问答）</th><td>DocVQA</td><td>50</td><td>文档图像问答</td></tr>
-              <tr><td>ChartQA (Aug.)</td><td>50</td><td>图表问答（增强数据）</td></tr>
-              <tr><td>ChartQA (Hum.)</td><td>50</td><td>图表问答（人工标注）</td></tr>
-              <tr><td>InfoVQA</td><td>50</td><td>信息图问答</td></tr>
-              <tr><th scope="rowgroup" rowspan="3">Key Information Extraction（关键信息抽取）</th><td>SROIE</td><td>67</td><td>收据关键信息抽取</td></tr>
-              <tr><td>FUNSD</td><td>66</td><td>表单信息抽取</td></tr>
-              <tr><td>POIE</td><td>67</td><td>商品营养标签信息抽取</td></tr>
-              <tr><th scope="row">HMER（手写数学公式识别）</th><td>HME100K</td><td>100</td><td>手写数学公式识别</td></tr>
-            </tbody>
-          </table>
-        </td>
       </tr>
       <tr id="ocrbench-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
