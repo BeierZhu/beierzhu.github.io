@@ -1089,13 +1089,13 @@ _styles: |
         <td>2023 年</td>
         <td>面向真实场景图像的<b>物体计数</b>基准，评估模型根据文本描述判断图像中指定类别的物体数量，数量范围为 2–10。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="countbench-examples" title="展开或收起 CountBench 样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：0.5K</td>
-        <td class="benchmark-metric-cell">Accuracy / Mean Deviation</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="countbench-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
           <em>Teaching CLIP to Count to Ten.</em> ICCV, 2023.
           <p><b>数据集构成：</b>从 LAION-400M 图文数据集中自动筛选，并经人工验证，共包含 540 张图像及对应文本描述。物体数量从 2 到 10，每种数量各有 60 张图像，确保指定物体数量与文本描述一致。</p>
-          <p><b>评测方式：</b>采用 Zero-shot Counting Classification。将每张图像的原始描述分别替换为数量 2–10，生成 9 个候选描述；计算图像与各描述的相似度，以最高相似度对应的数量作为预测。使用 Accuracy 和 Mean Deviation 评估计数表现。</p>
+          <p><b>评测方式：</b>采用 Zero-shot Counting Classification。将每张图像的原始描述分别替换为数量 2–10，生成 9 个候选描述；计算图像与各描述的相似度，以最高相似度对应的数量作为预测，并以 Accuracy 评估。</p>
         </td>
       </tr>
       <tr id="countbench-examples" class="benchmark-examples-row" hidden>
