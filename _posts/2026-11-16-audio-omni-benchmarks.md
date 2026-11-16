@@ -51,7 +51,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mer2023-citation" title="展开或收起引用">MER 2023</button></td>
         <td>2023 年</td>
-        <td>多模态视频情绪识别基准，包含三个评测赛道：MER-MULTI 联合预测离散情绪类别与连续情绪效价（Valence）；MER-NOISE 评估噪声干扰下的模态鲁棒性；MER-SEMI 利用大规模未标注视频进行半监督情绪识别。</td>
+        <td>包含三个评测赛道：MER-MULTI 联合预测离散情绪类别与连续情绪效价；MER-NOISE 评估噪声干扰下的模态鲁棒性；MER-SEMI 利用未标注视频进行半监督情绪识别。</td>
         <td>视频片段：78.2K<br>平均时长：3.3 秒</td>
         <td>Weighted F1 / Combined Score</td>
       </tr>
@@ -72,3 +72,5 @@ _styles: |
     </tbody>
   </table>
 </div>
+
+<script src="{{ '/assets/js/benchmark-citations.js' | relative_url }}" defer></script>
