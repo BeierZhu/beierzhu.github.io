@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "大模型测评基准II：视觉文本基准"
+title: "大模型测评II：视觉文本基准"
 date: 2026-11-07
 permalink: /blog/2026/vision-text-benchmarks/
 description: "梳理主流视觉文本基准，便于个人查阅参考。"

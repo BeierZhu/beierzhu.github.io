@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "大模型测评基准I：纯文本基准"
+title: "大模型测评I：纯文本基准"
 date: 2026-11-03
 permalink: /blog/2026/text-only-benchmarks/
 description: "梳理主流纯文本基准，便于个人查阅参考。"
