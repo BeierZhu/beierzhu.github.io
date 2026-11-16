@@ -70,6 +70,27 @@ _styles: |
         </td>
       </tr>
       <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mer2024-citation" title="展开或收起引用">MER 2024</button></td>
+        <td>2024 年</td>
+        <td>包含三个评测赛道：MER-SEMI 利用大规模未标注视频进行半监督情绪识别；MER-NOISE 评估音频噪声和图像模糊干扰下的情绪识别鲁棒性；MER-OV 引入开放词汇情绪识别，允许模型自由生成情绪标签。</td>
+        <td>视频片段：120.6K<br>MER-OV：332<br>视频时长：2–16 秒</td>
+        <td>Weighted Average F1 (WAF) / Set-level Accuracy &amp; Recall</td>
+      </tr>
+      <tr id="mer2024-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Lian et al. <em>MER 2024: Semi-Supervised Learning, Noise Robustness, and Open-Vocabulary Multimodal Emotion Recognition.</em> MRAC @ ACM MM, 2024.
+          <a href="https://arxiv.org/abs/2404.17113">论文链接</a>。
+          <p><b>数据集构成：</b>在 MER 2023 基础上扩展，包含 Train&amp;Val（5,030）、MER-SEMI（1,169 个标注样本及 115,595 个视频片段）、MER-NOISE（1,170 个标注样本及 115,595 个视频片段）和 MER-OV（332 个样本）。视频主要来源于中文电影和电视剧，经过视频切分、人脸检测及身份一致性筛选，片段时长为 2–16 秒。</p>
+          <p><b>标注形式：</b>MER-SEMI 和 MER-NOISE 使用 Worried、Happy、Neutral、Angry、Surprised 和 Sad 六类离散情绪标签。MER-OV 采用开放词汇标注，不限制情绪类别和标签数量，每个样本平均约有 3 个情绪标签。</p>
+          <ul>
+            <li><b>MER-SEMI：</b>利用大规模同领域未标注视频开展半监督学习，研究如何在有限标注数据下提升情绪识别性能。</li>
+            <li><b>MER-NOISE：</b>在音频中加入加性噪声（SNR 为 5–10 dB），并对视频图像进行模糊处理，评估复杂环境下的噪声鲁棒性。</li>
+            <li><b>MER-OV：</b>允许模型生成任意数量、任意类别的情绪标签，以更全面地描述人物情绪，避免局限于预定义类别。</li>
+          </ul>
+          <p><b>评测指标：</b>MER-SEMI 和 MER-NOISE 使用 Accuracy 和 Weighted Average F1-score（WAF），其中 WAF 为最终排名指标。MER-OV 使用 Set-level Accuracy 和 Set-level Recall，并以二者平均值作为最终指标；计算前会通过语义归并处理不同表达但含义相同的情绪标签。</p>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="emer-citation" title="展开或收起引用">EMER</button></td>
         <td>2023 年</td>
         <td>基于 MER 2023 的中文影视片段构建可解释多模态情绪识别任务，要求模型结合视觉、音频和文本线索生成情绪解释，并识别开放词汇情绪标签。</td>
