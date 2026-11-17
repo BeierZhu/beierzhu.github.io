@@ -49,6 +49,22 @@ _styles: |
     </thead>
     <tbody>
       <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="dfew-citation" title="展开或收起引用">DFEW</button></td>
+        <td>2020 年</td>
+        <td>面向真实场景的<b>动态面部表情识别</b>基准，涵盖复杂光照、面部遮挡和姿态变化等干扰；原始视频音轨也可用于扩展音视频情绪识别。</td>
+        <td>视频片段：16,372<br>单标签样本：12,059<br>平均时长：3.42 秒</td>
+        <td>UAR / WAR</td>
+      </tr>
+      <tr id="dfew-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Jiang et al. <em>DFEW: A Large-Scale Database for Recognizing Dynamic Facial Expressions in the Wild.</em> ACM MM, 2020.
+          <p><b>数据集构成：</b>从全球 1,500 多部高清电影中采集 16,372 个动态面部表情视频片段，覆盖不同场景及复杂自然环境。视频平均时长约 3.42 秒，时长主要集中在 2–5 秒；单标签子集的时长分布为 0–2 秒 4,056 个、2–5 秒 5,734 个、5 秒以上 2,269 个。</p>
+          <p><b>标注形式：</b>每个视频由 10 名独立标注者标注，提供 Happy、Sad、Neutral、Angry、Surprise、Disgust 和 Fear 七类情绪的投票分布。对获得超过 6 票一致支持的主导情绪进行筛选，得到 12,059 个单标签样本。</p>
+          <p><b>模态扩展：</b>原始论文主要使用 RGB 视频进行动态面部表情识别；原始电影视频也可提取音轨。后续 AVERE（ICLR 2026）将 DFEW 用于音视频情绪识别评测，采用 24 FPS 视频和 16 kHz 单声道音频作为联合输入。</p>
+          <p><b>评测指标与划分：</b>UAR（Unweighted Average Recall）衡量各情绪类别的平均识别能力，WAR（Weighted Average Recall）衡量整体识别准确率。实验采用 5-fold Cross-Validation：数据分为五个互不重叠的子集，每次用一个子集测试、其余四个子集训练。</p>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mer2023-citation" title="展开或收起引用">MER 2023</button></td>
         <td>2023 年</td>
         <td>包含三个评测赛道：MER-MULTI 联合预测离散情绪类别与连续情绪效价；MER-NOISE 评估噪声干扰下的模态鲁棒性；MER-SEMI 利用未标注视频进行半监督情绪识别。</td>
@@ -73,8 +89,8 @@ _styles: |
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mer2024-citation" title="展开或收起引用">MER 2024</button></td>
         <td>2024 年</td>
         <td>包含三个评测赛道：MER-SEMI 利用大规模未标注视频进行半监督情绪识别；MER-NOISE 评估音频噪声和图像模糊干扰下的情绪识别鲁棒性；MER-OV 引入开放词汇情绪识别，允许模型自由生成情绪标签。</td>
-        <td>视频片段：120.6K<br>MER-OV：332<br>视频时长：2–16 秒</td>
-        <td>Weighted Average F1 (WAF) / Set-level Accuracy &amp; Recall</td>
+        <td>视频片段：120.6K<br>MER-OV：332<br>时长：2–16 秒</td>
+        <td>WAF / Set-level Accuracy </td>
       </tr>
       <tr id="mer2024-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
