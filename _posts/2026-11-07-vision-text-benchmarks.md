@@ -328,6 +328,26 @@ _styles: |
           <p><b>评测设置：</b>纯 LLM 使用 2-shot，LVLM 使用 0-shot。论文实验中，纯 LLM 平均准确率为 24.6%，GPT-4V（High）最高为 57.1%；MMStar 平均 ML 为 1.9。</p>
         </td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="simplevqa-citation" title="展开或收起引用">SimpleVQA</button></td>
+        <td>2025 年</td>
+        <td>视觉事实性（Visual Factuality）评测基准，涵盖 <b>9 类任务和 9 个知识领域</b>。采用开放式简短问答，要求模型结合视觉识别与内化知识回答客观事实问题。通过多模型难度筛选构建具有挑战性的样本，并引入原子问题（Atomic Question），分析错误来自视觉理解不足还是知识储备不足。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="simplevqa-examples" title="展开或收起SimpleVQA样例">[样例]</button></td>
+        <td class="benchmark-count-cell">问答：2,025<br>中文：1,012<br>英文：1,013</td>
+        <td class="benchmark-metric-cell">Correct / F-score</td>
+      </tr>
+      <tr id="simplevqa-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Cheng et al. <em>SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models.</em> arXiv:2502.13059, 2025. <a href="https://arxiv.org/abs/2502.13059">论文链接</a>。
+          <p><b>评测指标：</b>使用 LLM-as-a-Judge 将回答分为 Correct（正确）、Incorrect（错误）和 Not Attempted（未作答）。Correct 为全部问题中的正确率；CGA（Correct Given Attempted）为已作答问题中的正确率；F-score 为 Correct 与 CGA 的调和平均值。</p>
+        </td>
+      </tr>
+      <tr id="simplevqa-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/simplevqa-example.png' | relative_url }}" alt="SimpleVQA 中英文样例，展示逻辑与科学、物体识别、时间与事件三类视觉事实问题" loading="lazy">
+          </div>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -410,19 +430,6 @@ _styles: |
           <a href="https://mmmu-benchmark.github.io/#leaderboard">项目主页</a>。
           <p><b>评测设置：</b>Standard 将选择题扩充至 10 个选项；Vision-only 将问题与选项嵌入截图或照片，以纯视觉形式输入。</p>
           <p><b>综合成绩：</b>Standard 与 Vision-only 两种设置的 Accuracy 平均值。</p>
-        </td>
-      </tr>
-      <tr class="benchmark-data-row">
-        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="simplevqa-citation" title="展开或收起引用">SimpleVQA</button></td>
-        <td>2025 年</td>
-        <td>视觉事实性（Visual Factuality）评测基准，涵盖 <b>9 类任务和 9 个知识领域</b>。采用开放式简短问答，要求模型结合视觉识别与内化知识回答客观事实问题。通过多模型难度筛选构建具有挑战性的样本，并引入原子问题（Atomic Question），分析错误来自视觉理解不足还是知识储备不足。</td>
-        <td class="benchmark-count-cell">问答：2,025<br>中文：1,012<br>英文：1,013</td>
-        <td class="benchmark-metric-cell">Correct / F-score</td>
-      </tr>
-      <tr id="simplevqa-citation" class="benchmark-citation-row" hidden>
-        <td colspan="5">
-          Cheng et al. <em>SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models.</em> arXiv:2502.13059, 2025. <a href="https://arxiv.org/abs/2502.13059">论文链接</a>。
-          <p><b>评测指标：</b>使用 LLM-as-a-Judge 将回答分为 Correct（正确）、Incorrect（错误）和 Not Attempted（未作答）。Correct 为全部问题中的正确率；CGA（Correct Given Attempted）为已作答问题中的正确率；F-score 为 Correct 与 CGA 的调和平均值。</p>
         </td>
       </tr>
     </tbody>
