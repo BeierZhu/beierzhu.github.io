@@ -331,9 +331,41 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="simplevqa-citation" title="展开或收起引用">SimpleVQA</button></td>
         <td>2025 年</td>
-        <td>视觉事实性（Visual Factuality）评测基准，涵盖 <b>9 类任务和 9 个知识领域</b>。采用开放式简短问答，要求模型结合视觉识别与内化知识回答客观事实问题。通过多模型难度筛选构建具有挑战性的样本，并引入原子问题（Atomic Question），分析错误来自视觉理解不足还是知识储备不足。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="simplevqa-examples" title="展开或收起SimpleVQA样例">[样例]</button></td>
+        <td>视觉事实性评测基准，涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="simplevqa-tasks" title="展开或收起9类任务">9 类任务</button>和 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="simplevqa-domains" title="展开或收起9个知识领域">9 个知识领域</button>。采用开放式<b>简短问答</b>，要求模型结合视觉识别与内化知识回答客观事实问题。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="simplevqa-examples" title="展开或收起SimpleVQA样例">[样例]</button></td>
         <td class="benchmark-count-cell">问答：2,025<br>中文：1,012<br>英文：1,013</td>
         <td class="benchmark-metric-cell">Correct / F-score</td>
+      </tr>
+      <tr id="simplevqa-tasks" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <b>SimpleVQA 的 9 类任务</b>
+          <ol>
+            <li>Logic &amp; Science（逻辑与科学）</li>
+            <li>Object Identification Recognition（物体身份识别）</li>
+            <li>Time &amp; Event（时间与事件）</li>
+            <li>Person &amp; Emotion（人物与情感）</li>
+            <li>Location &amp; Building（地点与建筑）</li>
+            <li>Text Processing（文本处理）</li>
+            <li>Quantity &amp; Position Relationship（数量与位置关系）</li>
+            <li>Art &amp; Culture（艺术与文化）</li>
+            <li>Object Attributes Recognition（物体属性识别）</li>
+          </ol>
+        </td>
+      </tr>
+      <tr id="simplevqa-domains" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <b>SimpleVQA 的 9 个知识领域</b>
+          <ol>
+            <li>Literature, Education &amp; Sports（文学、教育与体育）</li>
+            <li>Euro-American History &amp; Culture（欧美历史与文化）</li>
+            <li>Contemporary Society（当代社会）</li>
+            <li>Engineering, Technology &amp; Application（工程、技术与应用）</li>
+            <li>Film, Television &amp; Media（电影、电视与媒体）</li>
+            <li>Natural Science（自然科学）</li>
+            <li>Art（艺术）</li>
+            <li>Chinese History &amp; Culture（中国历史与文化）</li>
+            <li>Life（生活）</li>
+          </ol>
+        </td>
       </tr>
       <tr id="simplevqa-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
