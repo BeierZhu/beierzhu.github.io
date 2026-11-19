@@ -51,8 +51,8 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="dfew-citation" title="展开或收起引用">DFEW</button></td>
         <td>2020 年</td>
-        <td>面向真实场景的<b>动态面部表情识别</b>基准，涵盖复杂光照、面部遮挡和姿态变化等干扰；原始视频音轨也可用于扩展音视频情绪识别。</td>
-        <td>视频片段：16,372<br>单标签样本：12,059<br>平均时长：3.42 秒</td>
+        <td>面向真实场景的<b>面部表情识别</b>基准，涵盖复杂光照、面部遮挡和姿态变化等干扰；原始视频音轨可用于扩展音视频情绪识别。</td>
+        <td>视频片段：16,372 <br>平均时长：3.42 秒</td>
         <td>UAR / WAR</td>
       </tr>
       <tr id="dfew-citation" class="benchmark-citation-row" hidden>
