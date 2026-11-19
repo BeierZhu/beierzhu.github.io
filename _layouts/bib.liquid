@@ -23,13 +23,16 @@
             {% endif %}
           </abbr>
           {% if entry.award %}
+            {% assign awards = entry.award | split: "|" %}
+            {% for award in awards %}
             <div style="text-align: center; margin-top: 0.3em;">
               {% if venue_color %}
-                <span class="badge rounded w-100 award-badge" style="color: {{ venue_color }}; border: 1.5px solid {{ venue_color }}; background-color: white;">{{ entry.award }}</span>
+                <span class="badge rounded w-100 award-badge" style="color: {{ venue_color }}; border: 1.5px solid {{ venue_color }}; background-color: white;">{{ award | strip }}</span>
               {% else %}
-                <span class="badge rounded w-100 award-badge award-badge-theme">{{ entry.award }}</span>
+                <span class="badge rounded w-100 award-badge award-badge-theme">{{ award | strip }}</span>
               {% endif %}
             </div>
+            {% endfor %}
           {% endif %}
         {% else %}
           
@@ -37,9 +40,12 @@
             <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
           </div>
           {% if entry.award %}
+            {% assign awards = entry.award | split: "|" %}
+            {% for award in awards %}
             <div style="text-align: center; margin-top: 0.3em;">
-              <span class="badge rounded w-100 award-badge award-badge-theme">{{ entry.award }}</span>
+              <span class="badge rounded w-100 award-badge award-badge-theme">{{ award | strip }}</span>
             </div>
+            {% endfor %}
           {% endif %}
 
         {% endif %}
