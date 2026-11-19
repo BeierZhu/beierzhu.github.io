@@ -630,6 +630,24 @@ _styles: |
           </div>
         </td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="we-math-citation" title="展开或收起引用与评测说明">We-Math</button></td>
+        <td>2024 年</td>
+        <td>面向视觉数学推理的<b>知识驱动</b>评测基准。依据数学教材建立包含 <b>5 个层级、67 个基础知识点</b>的知识体系，将多步数学题拆解为单步子题。联合评估原题与子题的正确性，将表现划分为<b>知识不足（IK）、泛化不足（IG）、完全掌握（CM）和机械记忆（RM）</b>，区分基础知识缺失、知识组合困难及复杂题答对但子题答错等现象，而非仅关注最终答案正确率。</td>
+        <td class="benchmark-count-cell">图像：6.3K<br>问题：6.5K</td>
+        <td class="benchmark-metric-cell">Accuracy<br>IK / IG / CM / RM<br>Score_average（Strict / Loose）</td>
+      </tr>
+      <tr id="we-math-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Qiao et al. <em>We-Math: Does Your Large Multimodal Model Achieve Human-like Mathematical Reasoning?</em> arXiv:2407.01284, 2024.
+          <a href="https://arxiv.org/abs/2407.01284">论文链接</a> ·
+          <a href="https://we-math.github.io/">项目主页</a>。
+          <p><b>数据规模：</b>图像约 6.3K，问题 6,524 道；Testmini 包含 1,740 道题，其中单步题 1,215 道、两步题 360 道、三步题 165 道。</p>
+          <p><b>评测指标：</b>Accuracy、IK / IG / CM / RM、Score_average（Strict / Loose）。通过原题与子题的回答情况识别不同推理问题：IK 表示知识不足，IG 表示泛化不足，CM 表示完全掌握，RM 表示机械记忆。</p>
+          <p><b>评测设置：</b>Strict 要求原题及全部子题均正确才判为 CM；Loose 则允许原题正确且部分子题错误的情况归入 CM。</p>
+          <p><b>知识概念增强（KCA）：</b>论文通过补充基础知识验证，KCA 能够缓解 IK，但对 IG 的改善有限。</p>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
