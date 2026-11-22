@@ -381,7 +381,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="blink-citation" title="展开或收起引用">BLINK</button></td>
         <td>2024 年</td>
-        <td>面向基础视觉感知能力的多模态大模型评测基准，聚焦人类无需专业知识、仅需“瞟一眼”（within a blink）便能完成，而多模态大模型仍难以解决的视觉任务。将经典计算机视觉问题改造为选择题，涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="blink-tasks" title="展开或收起14项视觉感知任务">14 项视觉感知任务</button>，重点评估难以通过图像文字描述替代的细粒度视觉感知能力。</td>
+        <td>基础视觉感知能力评测基准，聚焦无需人类专业知识、仅需“瞟一眼”（blink）便能完成的视觉任务。涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="blink-tasks" title="展开或收起14项视觉感知任务">14 项视觉感知任务</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="blink-examples" title="展开或收起BLINK样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：7.4K<br>问题：3.8K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -416,6 +416,13 @@ _styles: |
           Fu et al. <em>BLINK: Multimodal Large Language Models Can See but Not Perceive.</em> ECCV, 2024. <a href="https://arxiv.org/abs/2404.12390">论文链接</a> · <a href="https://zeyofu.github.io/blink/">项目主页</a>。
           <p><b>数据构建：</b>共 3,807 道选择题、7,358 张图像，验证集与测试集分别包含 1,901 和 1,906 道题。数据主要来自 HPatches、Depth in the Wild、TARA、LVIS、DreamSim 等视觉数据集，也包含人工收集数据。任务包括单图和多图输入，其中 2,218 道题涉及多图输入，1,946 道题使用圆圈、边界框或遮罩等视觉提示，引导模型关注指定区域。</p>
           <p><b>评测方法：</b>使用 Accuracy 衡量整体及各子任务的选择题正确率。论文中人类平均准确率为 95.70%，GPT-4V 为 51.26%，随机猜测水平为 38.09%。进一步实验发现，将图像转换为 Dense Caption 后，纯文本模型在 BLINK 上的表现接近随机猜测；专用视觉模型在深度估计、视觉对应和多视角推理等任务上明显优于多模态大模型。</p>
+        </td>
+      </tr>
+      <tr id="blink-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/blink-example.png' | relative_url }}" alt="BLINK 样例，展示相对深度、图像拼图、多视角推理、视觉对应、反射率、语义与功能对应、视觉相似性、IQ测试及图像真实性检测任务" loading="lazy">
+          </div>
         </td>
       </tr>
       <tr class="benchmark-data-row">
