@@ -633,9 +633,9 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="we-math-citation" title="展开或收起引用与评测说明">We-Math</button></td>
         <td>2024 年</td>
-        <td>面向视觉数学推理的<b>知识驱动</b>评测基准。依据数学教材建立包含 <b>5 个层级、67 个基础知识点</b>的知识体系，将多步数学题拆解为单步子题。联合评估原题与子题的正确性，将表现划分为<b>知识不足（IK）、泛化不足（IG）、完全掌握（CM）和机械记忆（RM）</b>，区分基础知识缺失、知识组合困难及复杂题答对但子题答错等现象，而非仅关注最终答案正确率。</td>
+        <td>面向视觉数学推理的<b>知识驱动</b>评测基准。将多步数学题拆解为单步子题。联合评估原题与子题的正确性，将表现划分为<b>知识不足、泛化不足、完全掌握和机械记忆</b>，区分基础知识缺失、知识组合困难及复杂题答对但子题答错等现象，而非仅关注最终答案正确率。</td>
         <td class="benchmark-count-cell">图像：6.3K<br>问题：6.5K</td>
-        <td class="benchmark-metric-cell">Accuracy<br>IK / IG / CM / RM<br>Score_average（Strict / Loose）</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
       <tr id="we-math-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">

@@ -122,6 +122,26 @@ _styles: |
           <p><b>评测指标：</b>将模型生成的情绪描述转换为开放词汇情绪标签集合，经同义词归并后计算集合级 Accuracy 和 Recall，并以两者的算术平均值 Avg 作为主要排名指标。另提供 BLEU-1、BLEU-4、METEOR 和 ROUGE-L 衡量生成描述与参考描述的文本相似性。</p>
         </td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ov-merd-citation" title="展开或收起引用">OV-MERD</button></td>
+        <td>2025 年</td>
+        <td>开放词汇多模态情绪识别数据集，与 EMER 和 MER 2024 的 MER-OV 使用相同的 332 个视频样本。通过人类与大模型协作重新整理标注，覆盖 236 种情绪类别；以集合级 F1 作为主要指标，并提供基于 Emotion Wheel 的语义归并方法，降低对 GPT API 的依赖。</td>
+        <td>视频片段：332<br>情绪类别：236<br>时长主要为 1–4 秒</td>
+        <td>Set-level Precision / Recall / F1（主要指标）</td>
+      </tr>
+      <tr id="ov-merd-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          <em>OV-MER: Towards Open-Vocabulary Multimodal Emotion Recognition.</em> ICML, 2025.
+          <a href="https://arxiv.org/abs/2410.01495">论文链接</a> · <a href="https://github.com/zeroQiaoba/AffectGPT">代码与数据</a>。
+          <p><b>数据集构成：</b>与 EMER（2023）和 MER 2024 的 MER-OV 使用相同的 332 个视频样本，但对标注和评测方式进行了改进。最终覆盖 236 种情绪类别，每个样本包含 1–9 个情绪标签，多数为 2–4 个；视频时长主要集中在 1–4 秒。</p>
+          <ul>
+            <li><b>标注：</b>EMER 侧重情绪解释，MER-OV 沿用其开放词汇标签；OV-MERD 通过人类与大模型协作重新整理标注。</li>
+            <li><b>评测：</b>EMER 和 MER-OV 使用集合级 Precision（原文称 Accuracy）与 Recall 的算术平均作为排名指标；OV-MERD 改用集合级 F1（调和平均），更强调准确性与覆盖率的平衡。</li>
+            <li><b>语义匹配：</b>EMER 和 MER-OV 主要使用 GPT 归并相近情绪；OV-MERD 进一步提供基于 Emotion Wheel 的归并方法，降低对 GPT API 的依赖。</li>
+          </ul>
+          <p><b>评测指标：</b>Set-level Precision、Recall 和 F1，其中 F1 为主要指标。</p>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
