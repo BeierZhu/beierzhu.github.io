@@ -331,7 +331,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="muirbench-citation" title="展开或收起引用">MuirBench</button></td>
         <td>2024 年</td>
-        <td>综合多图像理解基准，涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="muirbench-tasks" title="展开或收起12类任务">12 类任务</button>和 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="muirbench-relations" title="展开或收起10种图像关系">10 种图像关系</button>，评估模型对多张图像的联合感知、比较与推理能力。通过可回答与不可回答问题配对，并以最小修改构造不可回答样本，检验推理鲁棒性与拒答能力。</td>
+        <td><b>多图像</b>理解基准，涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="muirbench-tasks" title="展开或收起12类任务">12 类任务</button>和 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="muirbench-relations" title="展开或收起10种图像关系">10 种图像关系</button>，评估模型对多张图像的联合感知、比较与推理能力。通过可回答与不可回答问题配对，检验推理鲁棒性与拒答能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="muirbench-examples" title="展开或收起MuirBench样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：11.3K<br>问题：2.6K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -369,6 +369,13 @@ _styles: |
           Wang et al. <em>MuirBench: A Comprehensive Benchmark for Robust Multi-image Understanding.</em> arXiv:2406.09411, 2024. <a href="https://arxiv.org/abs/2406.09411">论文链接</a> · <a href="https://muirbench.github.io/">项目主页</a>。
           <p><b>数据构建：</b>共 2,600 道选择题，包括 1,300 道可回答问题和 1,300 道对应的不可回答问题。每题包含 2–9 张图像，平均 4.3 张。可回答数据来自已有数据集（40.8%）、现有数据集改编（21.7%）及新构建数据（37.5%）；不可回答样本通过替换或调整图像顺序（24.2%）、修改问题（35.3%）或修改选项（40.5%）构造。</p>
           <p><b>评测方法：</b>使用 Accuracy 衡量全部选择题的正确率，不可回答问题需选择“以上选项均不正确”。论文报告的人类准确率为 93.15%，GPT-4o 为 68.00%，Gemini Pro 为 49.35%。</p>
+        </td>
+      </tr>
+      <tr id="muirbench-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/muirbench-example.png' | relative_url }}" alt="MuirBench 样例：多图像地图与图表理解、幻灯片排序、多视角建筑匹配，以及不可回答问题中的汽车停放顺序判断" loading="lazy">
+          </div>
         </td>
       </tr>
       <tr class="benchmark-data-row">
