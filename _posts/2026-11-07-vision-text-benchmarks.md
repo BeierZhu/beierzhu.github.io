@@ -379,6 +379,46 @@ _styles: |
         </td>
       </tr>
       <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="blink-citation" title="展开或收起引用">BLINK</button></td>
+        <td>2024 年</td>
+        <td>面向基础视觉感知能力的多模态大模型评测基准，聚焦人类无需专业知识、仅需“瞟一眼”（within a blink）便能完成，而多模态大模型仍难以解决的视觉任务。将经典计算机视觉问题改造为选择题，涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="blink-tasks" title="展开或收起14项视觉感知任务">14 项视觉感知任务</button>，重点评估难以通过图像文字描述替代的细粒度视觉感知能力。</td>
+        <td class="benchmark-count-cell">图像：7.4K<br>问题：3.8K</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="blink-tasks" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <table class="benchmark-subtask-table" aria-label="BLINK 的 14 项视觉感知任务">
+            <caption>BLINK 的 14 项视觉感知任务</caption>
+            <thead>
+              <tr><th scope="col">任务</th><th scope="col">中文名称</th><th scope="col">评测内容</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Visual Correspondence</td><td>视觉对应</td><td>判断不同视角或光照下，两张图像中对应的同一场景点</td></tr>
+              <tr><td>Relative Reflectance</td><td>相对反射率</td><td>排除光照和阴影影响，比较两点表面本征颜色的深浅</td></tr>
+              <tr><td>Relative Depth</td><td>相对深度</td><td>判断两个指定点中哪个距离相机更近</td></tr>
+              <tr><td>Spatial Reasoning</td><td>空间关系推理</td><td>判断物体之间的相对位置、方向或接触关系</td></tr>
+              <tr><td>Multi-view Reasoning</td><td>多视角推理</td><td>根据不同视角图像判断相机的相对运动方向</td></tr>
+              <tr><td>Jigsaw</td><td>图像拼图</td><td>根据形状、颜色和纹理连续性选择正确的缺失图像块</td></tr>
+              <tr><td>Art Style</td><td>艺术风格识别</td><td>判断哪幅画作与参考图像的艺术风格更相近</td></tr>
+              <tr><td>Object Localization</td><td>目标定位</td><td>比较候选边界框，选择更准确定位目标物体的边界框</td></tr>
+              <tr><td>Counting</td><td>目标计数</td><td>统计图像中满足指定条件的物体数量</td></tr>
+              <tr><td>Forensics Detection</td><td>图像真实性检测</td><td>从真实照片与 AI 生成图像中识别真实照片</td></tr>
+              <tr><td>IQ Test</td><td>图形智力测试</td><td>根据图形变化规律或空间关系选择正确图像</td></tr>
+              <tr><td>Visual Similarity</td><td>视觉相似性</td><td>判断哪张候选图像与参考图像在视觉上更相似</td></tr>
+              <tr><td>Semantic Correspondence</td><td>语义对应</td><td>匹配不同物体图像中语义相同的部位或关键点</td></tr>
+              <tr><td>Functional Correspondence</td><td>功能对应</td><td>识别不同物体中执行相同操作时对应的功能部位</td></tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr id="blink-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Fu et al. <em>BLINK: Multimodal Large Language Models Can See but Not Perceive.</em> ECCV, 2024. <a href="https://arxiv.org/abs/2404.12390">论文链接</a> · <a href="https://zeyofu.github.io/blink/">项目主页</a>。
+          <p><b>数据构建：</b>共 3,807 道选择题、7,358 张图像，验证集与测试集分别包含 1,901 和 1,906 道题。数据主要来自 HPatches、Depth in the Wild、TARA、LVIS、DreamSim 等视觉数据集，也包含人工收集数据。任务包括单图和多图输入，其中 2,218 道题涉及多图输入，1,946 道题使用圆圈、边界框或遮罩等视觉提示，引导模型关注指定区域。</p>
+          <p><b>评测方法：</b>使用 Accuracy 衡量整体及各子任务的选择题正确率。论文中人类平均准确率为 95.70%，GPT-4V 为 51.26%，随机猜测水平为 38.09%。进一步实验发现，将图像转换为 Dense Caption 后，纯文本模型在 BLINK 上的表现接近随机猜测；专用视觉模型在深度估计、视觉对应和多视角推理等任务上明显优于多模态大模型。</p>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="simplevqa-citation" title="展开或收起引用">SimpleVQA</button></td>
         <td>2025 年</td>
         <td>视觉事实性评测基准，涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="simplevqa-tasks" title="展开或收起9类任务">9 类任务</button>和 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="simplevqa-domains" title="展开或收起9个知识领域">9 个知识领域</button>。采用开放式<b>简短问答</b>，要求模型结合视觉识别与内化知识回答客观事实问题。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="simplevqa-examples" title="展开或收起SimpleVQA样例">[样例]</button></td>
