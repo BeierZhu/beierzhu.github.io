@@ -965,7 +965,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="charxiv-citation" title="展开或收起引用">CharXiv</button></td>
         <td>2024 年</td>
-        <td>针对 ChartQA 等现有图表基准图表来源有限、视觉多样性不足的问题，从 arXiv 科研论文中收集真实复杂图表，构建 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="charxiv-tasks" title="展开或收起两类任务">两类任务</button>，评估图表信息提取、视觉感知、数值分析及复杂推理能力。</td>
+        <td>针对 ChartQA 等现有图表基准图表来源有限、视觉多样性不足的问题，从 arXiv 科研论文中收集真实复杂图表，构建 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="charxiv-tasks" title="展开或收起两类任务">描述和推理</button>两类任务。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="charxiv-examples" title="展开或收起CharXiv样例">[样例]</button></td>
         <td class="benchmark-count-cell">图表：2.3K<br>问题：11.6K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -997,6 +997,13 @@ _styles: |
           <p><b>数据划分：</b>验证集与测试集分别包含 1,000 和 1,323 张图表，不提供训练集。</p>
           <p><b>评测方法：</b>采用开放式简短问答，由 GPT-4o 判断答案正确性并计算 Accuracy。论文报告 GPT-4o 在 Descriptive 和 Reasoning 上分别为 84.45% 和 47.10%，人类分别为 92.10% 和 80.50%。</p>
           <p><b>主要发现：</b>对已有基准进行问题改写或图表替换后，部分开源模型准确率下降最多 34.5 个百分点。基础图表感知是复杂推理的重要前提；当视觉信息提取不准确时，更长的 CoT 推理不一定改善表现。多子图理解、组合计数及不可回答问题判断仍具挑战。</p>
+        </td>
+      </tr>
+      <tr id="charxiv-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/charxiv-example.png' | relative_url }}" alt="CharXiv 样例，展示科研论文中的多子图折线图、描述性问题与不可回答问题，以及关于图表趋势的推理问题" loading="lazy">
+          </div>
         </td>
       </tr>
       <tr class="benchmark-data-row">
