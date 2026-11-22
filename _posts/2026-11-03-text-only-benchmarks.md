@@ -259,6 +259,18 @@ _styles: |
       <tr id="bbh-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Suzgun et al. <em>Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can Solve Them.</em> arXiv:2210.09261, 2022. <a href="https://arxiv.org/abs/2210.09261">论文链接</a> · <a href="https://github.com/suzgunmirac/BIG-Bench-Hard">官方仓库</a>。23 类任务中，逻辑演绎和物体交换追踪各含 3、5、7 个对象的变体，共 27 个数据文件、6,511 条评测样本。指标按生成答案与标准答案的完全匹配（EM）计算正确率，再跨任务汇总。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td>
+          <button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="livebench-citation" title="展开或收起引用">LiveBench</button>
+        </td>
+        <td>2024 年</td>
+        <td>动态更新的大语言模型综合评测基准，涵盖数学、代码、逻辑推理、语言理解、指令遵循和数据分析 <b>6 大类别、18 项任务</b>。题目每月更新，纳入近期竞赛、编程题、论文及新闻，并通过<b>客观标准答案自动评分</b>，减少静态测试集污染及人工或 LLM 裁判带来的偏差，评估模型的综合能力与泛化表现。</td>
+        <td title="ICLR 2025 论文版本；题目持续更新">1,000 道题</td>
+        <td>LiveBench Score（六大类别得分平均值；任务指标包括 Accuracy、Pass@1、F1 等）</td>
+      </tr>
+      <tr id="livebench-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">White et al. <em>LiveBench: A Challenging, Contamination-Limited LLM Benchmark.</em> ICLR, 2025（预印本于 2024 年发布）。<a href="https://arxiv.org/abs/2406.19314">论文链接</a> · <a href="https://github.com/LiveBench/LiveBench">官方仓库</a> · <a href="https://livebench.ai/">排行榜</a>。规模采用 ICLR 2025 论文版本；基准题目持续更新。</td>
+      </tr>
     </tbody>
   </table>
 </div>
