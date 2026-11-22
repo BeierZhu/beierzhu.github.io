@@ -125,9 +125,9 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="ov-merd-citation" title="展开或收起引用">OV-MERD</button></td>
         <td>2025 年</td>
-        <td>开放词汇多模态情绪识别数据集，与 EMER 和 MER 2024 的 MER-OV 使用相同的 332 个视频样本。通过人类与大模型协作重新整理标注，覆盖 236 种情绪类别；以集合级 F1 作为主要指标，并提供基于 Emotion Wheel 的语义归并方法，降低对 GPT API 的依赖。</td>
+        <td>开放词汇多模态情绪识别数据集，与 EMER 和 MER 2024 的 MER-OV 使用相同的 332 个视频样本。以集合级 F1 作为主要指标，并提供基于 Emotion Wheel 的语义归并方法，降低对 GPT API 的依赖。</td>
         <td>视频片段：332<br>情绪类别：236<br>时长主要为 1–4 秒</td>
-        <td>Set-level Precision / Recall / F1（主要指标）</td>
+        <td>Set-level Precision / Recall / F1</td>
       </tr>
       <tr id="ov-merd-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">
