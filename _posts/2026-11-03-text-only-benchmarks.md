@@ -842,7 +842,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="writingbench-citation" title="展开或收起引用">WritingBench</button></td>
         <td>2025 年</td>
-        <td>面向大语言模型开放式写作能力的综合评测基准，覆盖学术工程、金融商业、政治法律、文学艺术、教育及广告营销 <b>6 大领域、100 个子领域</b>。采用人机协作构建包含风格、格式、长度等多重约束及参考材料的真实写作任务，并为每条指令动态生成 5 项评价标准，由专门训练的 Critic Model 评分，评估内容质量、写作能力及复杂指令遵循能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="writingbench-examples" title="展开或收起写作样例">[样例]</button></td>
+        <td>开放式写作能力评测基准，覆盖学术工程、金融商业、政治法律、文学艺术、教育及广告营销 <b>6 大领域</b>。构建包含风格、格式、长度等多重约束及参考材料的真实写作任务，并为每条指令动态生成 5 项评价标准，由专门训练的 Critic Model 评分。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="writingbench-examples" title="展开或收起写作样例">[样例]</button></td>
         <td><b>1,000</b><br>中文：445<br>英文：555</td>
         <td><b>Judge Score</b></td>
       </tr>

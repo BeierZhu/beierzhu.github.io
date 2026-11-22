@@ -963,6 +963,43 @@ _styles: |
         </td>
       </tr>
       <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="charxiv-citation" title="展开或收起引用">CharXiv</button></td>
+        <td>2024 年</td>
+        <td>针对 ChartQA 等现有图表基准图表来源有限、视觉多样性不足的问题，从 arXiv 科研论文中收集真实复杂图表，构建 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="charxiv-tasks" title="展开或收起两类任务">两类任务</button>，评估图表信息提取、视觉感知、数值分析及复杂推理能力。</td>
+        <td class="benchmark-count-cell">图表：2.3K<br>问题：11.6K</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="charxiv-tasks" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <table class="benchmark-subtask-table" aria-label="CharXiv 的两类任务">
+            <caption>CharXiv 的两类任务</caption>
+            <thead>
+              <tr><th scope="col">任务</th><th scope="col">子类别</th><th scope="col">评测内容</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="rowgroup" rowspan="5">Descriptive</th><td>Information Extraction（信息提取）</td><td>识别标题、坐标轴标签及刻度值</td></tr>
+              <tr><td>Enumeration（枚举）</td><td>提取图例标签、计算刻度间隔及色条数值</td></tr>
+              <tr><td>Pattern Recognition（模式识别）</td><td>判断曲线交叉、数据趋势及子图布局</td></tr>
+              <tr><td>Counting（计数）</td><td>统计曲线、图例标签及子图数量</td></tr>
+              <tr><td>Compositionality（组合性）</td><td>统计多个坐标轴的刻度标签总数</td></tr>
+              <tr><th scope="rowgroup" rowspan="4">Reasoning</th><td>Text-in-Chart</td><td>根据图表分析回答图中明确标注的文本信息</td></tr>
+              <tr><td>Text-in-General</td><td>根据图表进行比较、判断与推理，输出文本答案</td></tr>
+              <tr><td>Number-in-Chart</td><td>识别并推断图表中明确标注的数值</td></tr>
+              <tr><td>Number-in-General</td><td>通过数值计算或估计得到数值答案</td></tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr id="charxiv-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Wang et al. <em>CharXiv: Charting Gaps in Realistic Chart Understanding in Multimodal LLMs.</em> arXiv:2406.18521, 2024. <a href="https://arxiv.org/abs/2406.18521">论文链接</a>。
+          <p><b>数据构建：</b>从 2020–2023 年 arXiv 论文的 8 个学科领域中人工筛选 2,323 张真实图表，覆盖复杂图表类型及多子图结构。每张图表包含 4 道描述性问题和 1 道人工编写或审核的推理问题；25% 的描述性问题不可回答。ChartQA 的图表仅来自 4 个网站，视觉风格相对有限。</p>
+          <p><b>数据划分：</b>验证集与测试集分别包含 1,000 和 1,323 张图表，不提供训练集。</p>
+          <p><b>评测方法：</b>采用开放式简短问答，由 GPT-4o 判断答案正确性并计算 Accuracy。论文报告 GPT-4o 在 Descriptive 和 Reasoning 上分别为 84.45% 和 47.10%，人类分别为 92.10% 和 80.50%。</p>
+          <p><b>主要发现：</b>对已有基准进行问题改写或图表替换后，部分开源模型准确率下降最多 34.5 个百分点。基础图表感知是复杂推理的重要前提；当视觉信息提取不准确时，更长的 CoT 推理不一定改善表现。多子图理解、组合计数及不可回答问题判断仍具挑战。</p>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="infographic-vqa-citation" title="展开或收起引用">InfoVQA</button></td>
         <td>2022 年</td>
         <td>面向<b>信息图（Infographics）</b>的视觉问答基准，输入包含文本、图表、表格、地图等视觉元素的信息图像。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="infographic-vqa-examples" title="展开或收起InfoVQA样例">[样例]</button></td>
