@@ -381,7 +381,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="blink-citation" title="展开或收起引用">BLINK</button></td>
         <td>2024 年</td>
-        <td>基础视觉感知能力评测基准，聚焦无需人类专业知识、仅需“瞟一眼”（blink）便能完成的视觉任务。涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="blink-tasks" title="展开或收起14项视觉感知任务">14 项视觉感知任务</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="blink-examples" title="展开或收起BLINK样例">[样例]</button></td>
+        <td>基础视觉感知评测基准，聚焦无需人类专业知识、仅需“瞟一眼”（blink）便能完成的任务。涵盖 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="blink-tasks" title="展开或收起14项视觉感知任务">14 项视觉感知任务</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="blink-examples" title="展开或收起BLINK样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：7.4K<br>问题：3.8K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>

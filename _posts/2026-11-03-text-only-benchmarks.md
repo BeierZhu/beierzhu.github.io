@@ -839,6 +839,25 @@ _styles: |
       <tr id="ifeval-citation" class="benchmark-citation-row" hidden>
         <td colspan="5">Zhou et al. <em>Instruction-Following Evaluation for Large Language Models.</em> 2023。<a href="https://arxiv.org/abs/2311.07911">论文链接</a> · <a href="https://github.com/google-research/google-research/tree/master/instruction_following_eval">官方仓库</a> · <a href="https://github.com/google-research/google-research/blob/master/instruction_following_eval/data/input_data.jsonl">评测题目</a>。规模按官方公开的 541 个 Prompt 计，覆盖 25 类可验证指令。评测区分 Prompt 级与 Instruction 级准确率，并提供 strict 与 loose 两种判定方式；此处图表不额外指定具体口径。样例对应官方数据 key 2637。</td>
       </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="writingbench-citation" title="展开或收起引用">WritingBench</button></td>
+        <td>2025 年</td>
+        <td>面向大语言模型开放式写作能力的综合评测基准，覆盖学术工程、金融商业、政治法律、文学艺术、教育及广告营销 <b>6 大领域、100 个子领域</b>。采用人机协作构建包含风格、格式、长度等多重约束及参考材料的真实写作任务，并为每条指令动态生成 5 项评价标准，由专门训练的 Critic Model 评分，评估内容质量、写作能力及复杂指令遵循能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="writingbench-examples" title="展开或收起写作样例">[样例]</button></td>
+        <td><b>1,000</b><br>中文：445<br>英文：555</td>
+        <td><b>Judge Score</b></td>
+      </tr>
+      <tr id="writingbench-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Wu et al. <em>WritingBench: A Comprehensive Benchmark for Generative Writing.</em> NeurIPS Datasets and Benchmarks Track, 2025。
+          <a href="https://github.com/X-PLUG/WritingBench">官方仓库</a> · <a href="https://huggingface.co/spaces/WritingBench/WritingBench">排行榜</a>。
+          <p><b>评测方式：</b>针对每条写作指令动态生成 5 项评价标准，由专门训练的 Critic Model 按 1–10 分进行评分。</p>
+        </td>
+      </tr>
+      <tr id="writingbench-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          {% include benchmarks/writingbench-examples.liquid %}
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
