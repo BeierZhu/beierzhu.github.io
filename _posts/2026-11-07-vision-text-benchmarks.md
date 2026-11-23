@@ -212,6 +212,21 @@ _styles: |
         </td>
       </tr>
       <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmt-bench-citation" title="展开或收起引用与详细信息">MMT-Bench</button></td>
+        <td>2024 年</td>
+        <td>面向多任务视觉理解的综合评测基准，包含 <b>32 个核心任务和 162 个细分任务</b>，覆盖视觉识别、目标定位、OCR、计数、视觉推理、时序理解、3D 感知、GUI 导航及具身智能等 14 类能力。输入包括自然、合成、文本密集、医学图像，以及深度图、点云和视频等，评估模型的综合表现与跨任务能力差异。</td>
+        <td class="benchmark-count-cell">问题：31.3K</td>
+        <td class="benchmark-metric-cell">Accuracy</td>
+      </tr>
+      <tr id="mmt-bench-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Ying et al. <em>MMT-Bench: A Comprehensive Multimodal Benchmark for Evaluating Large Vision-Language Models Towards Multitask AGI.</em> arXiv:2404.16006, 2024. <a href="https://arxiv.org/abs/2404.16006">论文链接</a> · <a href="https://github.com/OpenGVLab/MMT-Bench">官方仓库</a>。
+          <p><b>数据构建：</b>从公开数据集中收集不同视觉任务的数据并统一整理为 Metadata，再通过人工设计规则或 ChatGPT 生成选择题、标准答案及干扰项。最终包含 31,325 道选择题，覆盖 13 种视觉输入类型。</p>
+          <p><b>任务体系：</b>包含 32 个 Meta-tasks 和 162 个 Subtasks，涵盖 14 类多模态能力，涉及细粒度定位、像素级感知、多图像分析、时序理解、GUI 导航和具身智能等任务。</p>
+          <p><b>Taskonomy 分析：</b>将各子任务表示为 Task Vector，通过 Cosine Distance 构建 Task Map，并采用层次聚类划分为 12 个 Cluster。进一步分析模型的 In-domain 和 Out-of-domain 任务关系，揭示不同视觉任务之间的关联，以及模型在细粒度视觉感知、空间关系理解和 GUI 导航等方面的能力短板。</p>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="realworldqa-citation" title="展开或收起引用">RealWorldQA</button></td>
         <td>2024 年</td>
         <td>评估对真实物理环境的<b>空间理解能力</b>，涵盖物体相对位置、距离判断、方向识别、物体大小比较及道路场景理解等。数据包含<b>车辆拍摄</b>的匿名化图像及其他真实场景图像。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="realworldqa-examples" title="展开或收起RealWorldQA样例">[样例]</button></td>
