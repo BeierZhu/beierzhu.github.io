@@ -482,7 +482,71 @@ _styles: |
 </div>
 
 <br>
-## 2. 多学科知识
+## 2. 视觉幻觉与可靠性
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="视觉幻觉与可靠性基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 54%">
+      <col style="width: 12%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="hallusionbench-citation" title="展开或收起引用与详细信息">Hallusion<wbr>Bench</button></td>
+        <td>2023 年</td>
+        <td>视觉幻觉诊断基准，包含 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="hallusionbench-categories" title="展开或收起2类任务及9个子类别">2 类任务、9 个子类别</button>。通过对比原始图像、人工修改图像及无图像输入，分析模型是否依赖语言先验、忽略视觉证据，并评估回答偏置与逻辑一致性。所有问题均为 Yes/No 二分类。</td>
+        <td class="benchmark-count-cell">图像：346<br>问题：1,129<br>对照组：455</td>
+        <td class="benchmark-metric-cell">aAcc / fAcc / qAcc</td>
+      </tr>
+      <tr id="hallusionbench-categories" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <table class="benchmark-subtask-table" aria-label="HallusionBench 两类任务与九个子类别">
+            <thead>
+              <tr><th scope="col">任务类型</th><th scope="col">子类别</th><th scope="col">问题数</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Visual Dependent（视觉依赖）</td><td>Illusion（视觉错觉）</td><td>144</td></tr>
+              <tr><td></td><td>Math（数学与几何）</td><td>108</td></tr>
+              <tr><td></td><td>Video（视频与图像序列）</td><td>170</td></tr>
+              <tr><td></td><td>Poster（海报）</td><td>89</td></tr>
+              <tr><td></td><td>Others（其他视觉理解）</td><td>80</td></tr>
+              <tr><td>Visual Supplement（视觉补充）</td><td>Chart（统计图表）</td><td>206</td></tr>
+              <tr><td></td><td>Table（表格）</td><td>155</td></tr>
+              <tr><td></td><td>Map（地图）</td><td>96</td></tr>
+              <tr><td></td><td>OCR（文字识别）</td><td>81</td></tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr id="hallusionbench-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Guan et al. <em>HallusionBench: An Advanced Diagnostic Suite for Entangled Language Hallucination and Visual Illusion in Large Vision-Language Models.</em> arXiv:2310.14566, 2023. <a href="https://arxiv.org/abs/2310.14566">论文链接</a> · <a href="https://github.com/tianyi-lab/HallusionBench">官方仓库</a>。
+          <p><b>数据构建：</b>包含 165 张原始图像和 181 张人工修改图像，平均每张图像对应 3.26 道问题。无图像问题 178 道（16%）、原始图像问题 447 道（39%）、修改图像问题 504 道（45%）。修改方式包括图像翻转、时序反转、遮挡、文字、物体及颜色修改。</p>
+          <p><b>任务分类：</b>Visual Dependent 共 591 道问题，必须依赖图像确定答案；Visual Supplement 共 538 道问题，模型可利用已有知识作答，但图像可补充或修正信息。</p>
+          <p><b>对照组设计：</b>455 组视觉问答对照中，Visual Dependent 比较原图与修改图的回答；Visual Supplement 比较无图像、原图或修改图条件下的回答，以判断模型是否忽略实际视觉信息。</p>
+          <p><b>评测指标：</b>All Accuracy（aAcc）为全部问题的单题准确率；Figure Accuracy（fAcc）为同一图像的所有问题均答对的比例；Question Pair Accuracy（qAcc）为同一问题在不同视觉条件下均答对的比例。另以 Yes Percentage Difference 和 False Positive Ratio 检测 Yes/No 偏置，并进行回答一致性及失败原因诊断。</p>
+          <p><b>评测方式与发现：</b>使用纯文本 GPT-4 判断回答为 Correct、Incorrect 或 Uncertain；Visual Supplement 的无图像问题中，Uncertain 也视为有效回答。论文发现模型常受语言先验影响，在图像内容被修改后仍沿用已有知识作答；数学与几何、视觉错觉及视频时序理解是主要薄弱环节。</p>
+          <p><b>典型样例：</b>将经典视觉错觉图中的一条线段人工改长后，模型面对修改图仍回答两条线段等长，显示其可能依赖已有知识而没有识别图像变化。</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+## 3. 多学科知识
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="多学科知识基准">
@@ -566,7 +630,7 @@ _styles: |
 </div>
 
 <br>
-## 3. 数学能力
+## 4. 数学能力
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="数据能力基准">
@@ -750,7 +814,7 @@ _styles: |
 </div>
 
 <br>
-## 4. 文本与图表理解
+## 5. 文本与图表理解
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="文本、图表与示意图理解基准">
@@ -1031,7 +1095,7 @@ _styles: |
 </div>
 
 <br>
-## 5. 高分辨率视觉理解
+## 6. 高分辨率视觉理解
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="高分辨率视觉理解基准">
@@ -1137,7 +1201,7 @@ _styles: |
 </div>
 
 <br>
-## 6. 传统视觉问答与图像描述生成
+## 7. 传统视觉问答与图像描述生成
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="传统视觉问答与图像描述生成基准">
@@ -1291,7 +1355,7 @@ _styles: |
 </div>
 
 <br>
-## 7. 视觉定位与计数
+## 8. 视觉定位与计数
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="视觉定位与计数基准">
