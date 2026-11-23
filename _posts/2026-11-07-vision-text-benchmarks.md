@@ -214,7 +214,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mmt-bench-citation" title="展开或收起引用与详细信息">MMT-Bench</button></td>
         <td>2024 年</td>
-        <td>面向多任务视觉理解的综合评测基准，包含 <b>32 个核心任务和 162 个细分任务</b>，覆盖视觉识别、目标定位、OCR、计数、视觉推理、时序理解、3D 感知、GUI 导航及具身智能等 14 类能力。输入包括自然、合成、文本密集、医学图像，以及深度图、点云和视频等，评估模型的综合表现与跨任务能力差异。</td>
+        <td>面向多任务视觉理解的综合评测基准，覆盖视觉识别、目标定位、OCR、计数、视觉推理、时序理解、3D 感知、GUI 导航及具身智能等 14 类能力。</td>
         <td class="benchmark-count-cell">问题：31.3K</td>
         <td class="benchmark-metric-cell">Accuracy</td>
       </tr>
@@ -1504,6 +1504,74 @@ _styles: |
         <td colspan="5">
           <div class="benchmark-examples-panel">
             <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/refcoco-series-example.png' | relative_url }}" alt="RefCOCO、RefCOCO+ 和 RefCOCOg 样例截图，展示长颈鹿目标及不同指代表达">
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+## 9. 多模态指令遵循
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="多模态指令遵循基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 54%">
+      <col style="width: 12%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="mia-bench-citation" title="展开或收起引用与详细信息">MIA-Bench</button></td>
+        <td>2025 年</td>
+        <td>MIA（<b>Multimodal Instruction Adherence</b>，多模态指令遵循）基准，重点考察模型理解图像时精确执行多层次组合指令的能力，涵盖描述内容、文本长度、提及要求、文体、语法、数学、视角和 OCR 等 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="mia-bench-categories" title="展开或收起8类子指令">8 类子指令</button>。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="mia-bench-examples" title="展开或收起MIA-Bench样例指令">[样例]</button></td>
+        <td class="benchmark-count-cell">图像-Prompt 对：400</td>
+        <td class="benchmark-metric-cell">Meta-Avg（0–100）</td>
+      </tr>
+      <tr id="mia-bench-categories" class="benchmark-datasets-row" hidden>
+        <td colspan="5">
+          <table class="benchmark-subtask-table" aria-label="MIA-Bench 的八类子指令">
+            <thead>
+              <tr><th scope="col">子指令类别</th><th scope="col">中文名称</th><th scope="col">评测内容</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Description</td><td>内容描述</td><td>根据要求描述图像中的特定对象、场景或细节</td></tr>
+              <tr><td>Length Limit</td><td>长度限制</td><td>按指定句数、词数或文本长度生成回答</td></tr>
+              <tr><td>Mention</td><td>内容提及</td><td>按要求提及或避免提及特定对象、实体或信息</td></tr>
+              <tr><td>Genre</td><td>文体要求</td><td>按指定文体生成内容，如诗歌、叙事或双关语</td></tr>
+              <tr><td>Grammar</td><td>语法要求</td><td>遵循指定语法规则，如时态、大小写及数字格式</td></tr>
+              <tr><td>Math</td><td>数学要求</td><td>根据图像中的数学问题、图表或解答进行计算与推理</td></tr>
+              <tr><td>Perspective</td><td>视角要求</td><td>从指定人物或物体的视角观察和描述，理解可见范围与空间关系</td></tr>
+              <tr><td>OCR</td><td>文字识别</td><td>读取并理解菜单、票据、标识等文本密集图像中的文字</td></tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr id="mia-bench-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Qian et al. <em>MIA-Bench: Towards Better Instruction Following Evaluation of Multimodal LLMs.</em> ICLR, 2025. arXiv:2407.01509. <a href="https://arxiv.org/abs/2407.01509">论文链接</a> · <a href="https://github.com/apple/ml-mia-bench">官方仓库</a>。
+          <p><b>数据构建：</b>包含 400 组图像与指令对，图像来自 COCO 2017 Validation Set、SBU、TextVQA 和 Flickr，涵盖动物、食物、地标、体育、艺术、风景及文本等内容。每条 Prompt 由人工编写，并按 Basic、Intermediate、Advanced、Creative 和 Complex 五种难度组织。构建时要求指令可回答、不泄露答案，且必须依赖图像信息。</p>
+          <p><b>评测方法：</b>由 GPT-4o 担任 Judge，将复杂指令拆解为多个子指令，按各项要求及其权重评分；单条样本满分 10 分。对 400 条样本得分取平均后除以 10，得到百分制 Meta-Avg。包含多个子指令时，Description 通常权重更高。</p>
+          <p><b>主要结果：</b>论文评测 29 个多模态大模型，GPT-4o 得分最高，为 88.58。实验显示，模型在传统多模态基准上的表现与复杂指令遵循能力并不完全一致。</p>
+          <p><b>指令遵循能力增强：</b>作者构建 5,000 组图像-Prompt 训练数据（DIT），使用 GPT-4V 生成回答并经人工抽检。在 LLaVA-NeXT-13B 上进行 1 epoch SFT 后，MIA-Bench 得分由 69.16 提升至 78.85；加入 LLaVA-Instruct150K 混合训练后为 78.90，其他部分多模态基准上则出现轻微性能下降。</p>
+        </td>
+      </tr>
+      <tr id="mia-bench-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/mia-bench-example.png' | relative_url }}" alt="MIA-Bench 样例：左侧为多只狗的图像，右侧指令要求从中间角色的第一人称视角，用两句话叙述并遵循指定文体、季节提及和时态要求" loading="lazy">
           </div>
         </td>
       </tr>
