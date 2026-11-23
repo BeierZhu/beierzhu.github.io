@@ -482,7 +482,7 @@ _styles: |
 </div>
 
 <br>
-## 2. 视觉幻觉与可靠性
+## 2. 幻觉与可靠性
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="视觉幻觉与可靠性基准">
@@ -506,7 +506,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="hallusionbench-citation" title="展开或收起引用与详细信息">Hallusion<wbr>Bench</button></td>
         <td>2023 年</td>
-        <td>视觉幻觉诊断基准，包含 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="hallusionbench-categories" title="展开或收起2类任务及9个子类别">2 类任务、9 个子类别</button>。通过对比原始图像、人工修改图像及无图像输入，分析模型是否依赖语言先验、忽略视觉证据，并评估回答偏置与逻辑一致性。所有问题均为 Yes/No 二分类。</td>
+        <td>视觉幻觉诊断基准，包含 <button type="button" class="benchmark-datasets-toggle" aria-expanded="false" aria-controls="hallusionbench-categories" title="展开或收起2类任务及9个子类别">2 类任务、9 个子类别</button>。通过对比原始图像、人工修改图像及无图像输入，分析模型是否依赖语言先验、忽略视觉证据。问题为 Yes/No 二分类。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="hallusionbench-examples" title="展开或收起HallusionBench样例">[样例]</button></td>
         <td class="benchmark-count-cell">图像：346<br>问题：1,129<br>对照组：455</td>
         <td class="benchmark-metric-cell">aAcc / fAcc / qAcc</td>
       </tr>
@@ -539,6 +539,13 @@ _styles: |
           <p><b>评测指标：</b>All Accuracy（aAcc）为全部问题的单题准确率；Figure Accuracy（fAcc）为同一图像的所有问题均答对的比例；Question Pair Accuracy（qAcc）为同一问题在不同视觉条件下均答对的比例。另以 Yes Percentage Difference 和 False Positive Ratio 检测 Yes/No 偏置，并进行回答一致性及失败原因诊断。</p>
           <p><b>评测方式与发现：</b>使用纯文本 GPT-4 判断回答为 Correct、Incorrect 或 Uncertain；Visual Supplement 的无图像问题中，Uncertain 也视为有效回答。论文发现模型常受语言先验影响，在图像内容被修改后仍沿用已有知识作答；数学与几何、视觉错觉及视频时序理解是主要薄弱环节。</p>
           <p><b>典型样例：</b>将经典视觉错觉图中的一条线段人工改长后，模型面对修改图仍回答两条线段等长，显示其可能依赖已有知识而没有识别图像变化。</p>
+        </td>
+      </tr>
+      <tr id="hallusionbench-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <div class="benchmark-examples-panel">
+            <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/hallusionbench-example.png' | relative_url }}" alt="HallusionBench 样例，展示 Visual Dependent 与 Visual Supplement 两类问题，包括视觉错觉、数学、海报、视频、表格、图表、地图和 OCR" loading="lazy">
+          </div>
         </td>
       </tr>
     </tbody>
