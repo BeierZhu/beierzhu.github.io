@@ -24,7 +24,7 @@ _styles: |
 <br>
 ## 1. 音频基准
 
-### 自动语音识别（ASR）
+### 1.1 自动语音识别
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="自动语音识别基准">
@@ -48,8 +48,8 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="librispeech-citation" title="展开或收起引用">LibriSpeech</button></td>
         <td>2015 年</td>
-        <td>大规模英语自动语音识别（ASR）基准，基于公共领域有声书构建，提供高质量的音频与文本转录对齐数据，并通过 Clean 和 Other 子集评估不同难度下的语音识别性能。</td>
-        <td>音频：约 1,000 小时<br>采样率：16 kHz<br>说话人：2,484</td>
+        <td> 英语 ASR 基准，基于公共领域有声书构建，提供高质量的音频与文本转录对齐数据，并通过 Clean 和 Other 子集评估不同难度下的语音识别性能。</td>
+        <td>音频：约 1K 小时<br> 说话人：2,484</td>
         <td>WER</td>
       </tr>
       <tr id="librispeech-citation" class="benchmark-citation-row" hidden>
@@ -61,6 +61,23 @@ _styles: |
           <p><b>标注形式：</b>每段音频配有对应的英语文本转录。作者先使用 Smith-Waterman 算法进行音频与文本的初步对齐，再利用包含音素级错误路径的解码图检测插入、删除和替换等转录错误，并过滤不可靠样本。训练集主要依据静音间隔切分音频；验证集和测试集则优先在句子边界切分，以保留完整语言上下文。</p>
           <p><b>评测设置：</b>采用 Clean 和 Other 两类测试集。两类数据依据预训练 ASR 模型的词错误率划分：Clean 包含相对容易识别的语音，Other 包含更具挑战性的口音或录音条件；Other 表示识别难度较高，并不代表存在错误标注。</p>
           <p><b>评测指标：</b>使用 Word Error Rate（WER，词错误率），根据模型转录与参考文本之间的替换错误数（S）、删除错误数（D）和插入错误数（I）计算：<span>WER = (S + D + I) / N</span>，其中 N 为参考文本的单词总数，WER 越低表示识别性能越好。原论文中，使用全部约 960 小时训练数据的 DNN 声学模型结合 4-gram 语言模型，在 test-clean 和 test-other 上分别取得 5.51% 和 13.97% 的 WER。</p>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="aishell1-citation" title="展开或收起引用">AISHELL-1</button></td>
+        <td>2017 年</td>
+        <td>开源中文普通话自动语音识别（ASR）基准，包含不同性别、年龄和地域口音的语音数据，提供人工转录文本及发音词典，用于评估普通话语音转写能力。</td>
+        <td>语音：约 170 小时<br>片段：141.6K<br>说话人：400</td>
+        <td>CER</td>
+      </tr>
+      <tr id="aishell1-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Bu et al. <em>AISHELL-1: An Open-Source Mandarin Speech Corpus and A Speech Recognition Baseline.</em> O-COCOSDA, 2017.
+          <a href="https://arxiv.org/abs/1709.05522">论文链接</a> ·
+          <a href="https://openslr.org/33/">数据集下载</a>。
+          <p><b>数据集构成：</b>AISHELL-1 是 AISHELL-ASR0009 普通话语音数据库的开源子集，包含来自中国不同地区的 400 名说话人，男性占 47%、女性占 53%，约 80% 的说话人年龄为 16–25 岁。原始语音通过高保真麦克风、Android 手机和 iPhone 三类设备同步录制，开源版本使用高保真麦克风录音，并统一重采样为 16 kHz、16-bit WAV 格式。语音文本涵盖金融、科技、体育、娱乐和新闻五个领域。数据集按说话人互不重叠划分为训练集（120,098 条、340 人、150 小时）、验证集（14,326 条、40 人、10 小时）和测试集（7,176 条、20 人、5 小时）。</p>
+          <p><b>标注形式：</b>每段语音提供人工转录的中文文本，并通过质量检查剔除转录不一致及明显发音错误的样本。文本经过规范化处理，涵盖数字、英文缩写和专有名词等。此外，数据集提供中文发音词典（Lexicon），收录常用汉字、词语及其声韵母发音表示，支持语音识别系统的建模与解码。</p>
+          <p><b>评测任务与指标：</b>面向中文自动语音识别（Automatic Speech Recognition, ASR），要求将输入语音转写为对应中文文本。采用字符错误率（Character Error Rate, CER），以替换（Substitution）、删除（Deletion）和插入（Insertion）错误总数除以参考文本字符数计算；CER 越低表示识别效果越好。论文提供 GMM-HMM、TDNN-HMM 和 LF-MMI 三类基线，测试集 CER 分别为 12.23%、8.42% 和 7.62%。</p>
         </td>
       </tr>
     </tbody>
