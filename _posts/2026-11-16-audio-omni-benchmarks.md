@@ -24,6 +24,49 @@ _styles: |
 <br>
 ## 1. 音频基准
 
+### 自动语音识别（ASR）
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="自动语音识别基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 51%">
+      <col style="width: 15%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="librispeech-citation" title="展开或收起引用">LibriSpeech</button></td>
+        <td>2015 年</td>
+        <td>大规模英语自动语音识别（ASR）基准，基于公共领域有声书构建，提供高质量的音频与文本转录对齐数据，并通过 Clean 和 Other 子集评估不同难度下的语音识别性能。</td>
+        <td>音频：约 1,000 小时<br>采样率：16 kHz<br>说话人：2,484</td>
+        <td>WER</td>
+      </tr>
+      <tr id="librispeech-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Panayotov et al. <em>LibriSpeech: An ASR Corpus Based on Public Domain Audio Books.</em> ICASSP, 2015.
+          <a href="https://www.clsp.jhu.edu/wp-content/uploads/2015/11/icassp2015_librispeech.pdf">论文链接</a> ·
+          <a href="https://www.openslr.org/12/">数据集链接</a>。
+          <p><b>数据集构成：</b>基于 LibriVox 项目的英语有声书录音及 Project Gutenberg 的对应书籍文本构建，通过自动语音识别、文本对齐和错误过滤获得音频—文本样本，并排除多人朗读及部分音质较差的录音。训练集包括 train-clean-100（100.6 小时）、train-clean-360（363.6 小时）和 train-other-500（496.7 小时）；评测集包括 dev-clean（5.4 小时）、dev-other（5.3 小时）、test-clean（5.4 小时）和 test-other（5.1 小时）。各子集之间没有说话人重叠。</p>
+          <p><b>标注形式：</b>每段音频配有对应的英语文本转录。作者先使用 Smith-Waterman 算法进行音频与文本的初步对齐，再利用包含音素级错误路径的解码图检测插入、删除和替换等转录错误，并过滤不可靠样本。训练集主要依据静音间隔切分音频；验证集和测试集则优先在句子边界切分，以保留完整语言上下文。</p>
+          <p><b>评测设置：</b>采用 Clean 和 Other 两类测试集。两类数据依据预训练 ASR 模型的词错误率划分：Clean 包含相对容易识别的语音，Other 包含更具挑战性的口音或录音条件；Other 表示识别难度较高，并不代表存在错误标注。</p>
+          <p><b>评测指标：</b>使用 Word Error Rate（WER，词错误率），根据模型转录与参考文本之间的替换错误数（S）、删除错误数（D）和插入错误数（I）计算：<span>WER = (S + D + I) / N</span>，其中 N 为参考文本的单词总数，WER 越低表示识别性能越好。原论文中，使用全部约 960 小时训练数据的 DNN 声学模型结合 4-gram 语言模型，在 test-clean 和 test-other 上分别取得 5.51% 和 13.97% 的 WER。</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <br>
 ## 2. 全模态基准
 
