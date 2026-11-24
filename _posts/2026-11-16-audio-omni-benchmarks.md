@@ -66,8 +66,8 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="aishell1-citation" title="展开或收起引用">AISHELL-1</button></td>
         <td>2017 年</td>
-        <td>开源中文普通话自动语音识别（ASR）基准，包含不同性别、年龄和地域口音的语音数据，提供人工转录文本及发音词典，用于评估普通话语音转写能力。</td>
-        <td>语音：约 170 小时<br>片段：141.6K<br>说话人：400</td>
+        <td>中文普通话 ASR 基准，包含不同性别、年龄和地域口音的语音数据，提供人工转录文本及发音词典。</td>
+        <td>语音：约 170 小时 <br>说话人：400</td>
         <td>CER</td>
       </tr>
       <tr id="aishell1-citation" class="benchmark-citation-row" hidden>
@@ -78,6 +78,23 @@ _styles: |
           <p><b>数据集构成：</b>AISHELL-1 是 AISHELL-ASR0009 普通话语音数据库的开源子集，包含来自中国不同地区的 400 名说话人，男性占 47%、女性占 53%，约 80% 的说话人年龄为 16–25 岁。原始语音通过高保真麦克风、Android 手机和 iPhone 三类设备同步录制，开源版本使用高保真麦克风录音，并统一重采样为 16 kHz、16-bit WAV 格式。语音文本涵盖金融、科技、体育、娱乐和新闻五个领域。数据集按说话人互不重叠划分为训练集（120,098 条、340 人、150 小时）、验证集（14,326 条、40 人、10 小时）和测试集（7,176 条、20 人、5 小时）。</p>
           <p><b>标注形式：</b>每段语音提供人工转录的中文文本，并通过质量检查剔除转录不一致及明显发音错误的样本。文本经过规范化处理，涵盖数字、英文缩写和专有名词等。此外，数据集提供中文发音词典（Lexicon），收录常用汉字、词语及其声韵母发音表示，支持语音识别系统的建模与解码。</p>
           <p><b>评测任务与指标：</b>面向中文自动语音识别（Automatic Speech Recognition, ASR），要求将输入语音转写为对应中文文本。采用字符错误率（Character Error Rate, CER），以替换（Substitution）、删除（Deletion）和插入（Insertion）错误总数除以参考文本字符数计算；CER 越低表示识别效果越好。论文提供 GMM-HMM、TDNN-HMM 和 LF-MMI 三类基线，测试集 CER 分别为 12.23%、8.42% 和 7.62%。</p>
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="aishell2-citation" title="展开或收起引用">AISHELL-2</button></td>
+        <td>2018 年</td>
+        <td>AISHELL-1 的大规模扩展，面向工业级中文普通话语音识别应用。通过多种录音设备和录音环境，评估模型在不同真实录音条件下的转写能力。</td>
+        <td>语音：约 1,000 小时<br>片段：约 1M<br>说话人：1,991</td>
+        <td>CER</td>
+      </tr>
+      <tr id="aishell2-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          <em>AISHELL-2: Transforming Mandarin ASR Research Into Industrial Scale.</em>
+          <a href="https://arxiv.org/abs/1808.10583">论文链接</a> ·
+          <a href="https://www.aishelltech.com/aishell_2">数据集链接</a>。
+          <p><b>数据集构成：</b>作为 AISHELL-1 的大规模扩展，数据规模从约 170 小时增至约 1,000 小时，包含约 100 万条语音和 1,991 名说话人。录音由 iOS、Android 和高保真麦克风三类设备同步采集；除录音室外，还包含具有自然混响的客厅环境，以提升模型对不同录音条件的适应能力。</p>
+          <p><b>录音设备与评测设置：</b>训练集仅公开 iOS 通道，验证集和测试集提供 iOS、Android 与高保真麦克风三个通道，可分别比较不同设备下的普通话识别性能。</p>
+          <p><b>评测指标：</b>沿用 AISHELL-1 的字符错误率（Character Error Rate, CER），根据转写结果中的替换、删除和插入错误总数相对于参考文本字符数计算；CER 越低表示识别效果越好。</p>
         </td>
       </tr>
     </tbody>
