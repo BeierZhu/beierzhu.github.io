@@ -83,8 +83,8 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="aishell2-citation" title="展开或收起引用">AISHELL-2</button></td>
         <td>2018 年</td>
-        <td>AISHELL-1 的大规模扩展，面向工业级中文普通话语音识别应用。通过多种录音设备和录音环境，评估模型在不同真实录音条件下的转写能力。</td>
-        <td>语音：约 1,000 小时<br>片段：约 1M<br>说话人：1,991</td>
+        <td>AISHELL-1 的大规模扩展，面向工业级中文普通话语音识别应用。</td>
+        <td>语音：约 1K 小时 <br>说话人：1,991</td>
         <td>CER</td>
       </tr>
       <tr id="aishell2-citation" class="benchmark-citation-row" hidden>
@@ -217,6 +217,51 @@ _styles: |
             <li><b>语义匹配：</b>EMER 和 MER-OV 主要使用 GPT 归并相近情绪；OV-MERD 进一步提供基于 Emotion Wheel 的归并方法，降低对 GPT API 的依赖。</li>
           </ul>
           <p><b>评测指标：</b>Set-level Precision、Recall 和 F1，其中 F1 为主要指标。</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+### 2.2 通用全模态理解与推理
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="通用全模态理解与推理基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 51%">
+      <col style="width: 15%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="omnibench-citation" title="展开或收起引用">OmniBench</button></td>
+        <td>2024 年</td>
+        <td>面向图像、音频和文本三模态联合理解与推理的基准，强调视觉与听觉信息的互补性，涵盖时空实体理解、因果推理和抽象概念理解。通过人工审核与模态消融筛选，减少仅依赖单一模态即可回答的样本。</td>
+        <td>问答对：1,142<br>平均音频：9.22 秒<br>最长：30 秒</td>
+        <td>Accuracy</td>
+      </tr>
+      <tr id="omnibench-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Li et al. <em>OmniBench: Towards The Future of Universal Omni-Language Models.</em> NeurIPS, 2025（2024 年首次发布）。
+          <a href="https://arxiv.org/abs/2409.15272">论文链接</a> ·
+          <a href="https://m-a-p.ai/OmniBench">项目主页、代码与数据</a>。
+          <p><b>数据集构成：</b>包含 1,142 个由人工构建的四选一问答样本，每个样本由单张静态图像、音频片段及文本问题与选项组成。音频包括 Speech（771）、Sound Event（265）和 Music（106）。OmniBench 使用静态图像而非连续视频，以减少视觉时序信息干扰，突出音视觉信息的互补理解与推理。</p>
+          <p><b>任务类型：</b>包含三大类、八个子任务：Temporal-Spatial Entity（时空实体理解：Object Identification &amp; Description，211；Contextual &amp; Environmental，141）；Causal Inference（因果推理：Story Cause Description，230；Current Action &amp; Activity，251；Future Plot and Purpose Inference，237）；Abstract Concept（抽象概念理解：Identity &amp; Relationship，32；Text &amp; Symbols，25；Count &amp; Quantity，15）。</p>
+          <p><b>标注形式与质量控制：</b>每个样本提供四个候选答案、唯一正确答案、音频转录或描述，以及分别对应视觉和音频模态的答案依据（Rationale）。数据经过人工交叉审核与 LLaVA-1.6-34B 自动筛选，并通过 Image + Text、Audio Transcript + Text 和 Text Only 三种模态消融设置，过滤仅凭部分模态即可答对的样本。</p>
+          <p><b>评测设置：</b>Omni-Understanding 输入原始图像、音频和文本，评估三模态联合能力；Modality Ablation 移除图像或音频，分析各模态贡献；Textual Approximation 使用人工标注的 Audio Transcript 或 VLM 生成的 Image Caption 替代原始模态，以比较多模态模型、音频模型和纯文本模型的感知与推理表现。</p>
+          <p><b>评测指标：</b>使用 Accuracy，即预测选项与正确答案一致的样本比例。所有问题均为四选一，随机猜测准确率为 25%。</p>
+          <p><b>配套训练数据：</b>作者另构建 OmniInstruct，用 MSRVTT-QA、AVQA 和 Music-AVQA 2.0 进行静态图像提取与跨模态问答筛选，包含 84,580 条训练样本和 11,525 条验证样本，用于三模态联合指令微调（SFT）。数据规模依据论文 Table 1 和 Table 2，任务分类及质量控制依据 Section 3，评测设置与指标依据 Section 4。</p>
         </td>
       </tr>
     </tbody>
