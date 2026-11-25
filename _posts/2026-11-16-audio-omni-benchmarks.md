@@ -102,6 +102,58 @@ _styles: |
   </table>
 </div>
 
+### 1.2 基础音频感知（Basic Audio Perception）
+
+<div class="table-responsive benchmark-preview-table" markdown="0">
+  <table aria-label="基础音频感知基准">
+    <colgroup>
+      <col style="width: 12%">
+      <col style="width: 10%">
+      <col style="width: 51%">
+      <col style="width: 15%">
+      <col style="width: 12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">名称</th>
+        <th scope="col">发布时间</th>
+        <th scope="col">简介</th>
+        <th scope="col">规模</th>
+        <th scope="col">评测指标</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="deaftest-citation" title="展开或收起引用">DeafTest</button></td>
+        <td>2024 年</td>
+        <td>评估模型对底层声学属性的感知能力，包含声音计数、响度比较、音高比较和时长比较四类任务，不以高层语义理解与推理为重点。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="deaftest-examples" title="展开或收起 DeafTest 样例">[样例]</button></td>
+        <td>问题：400<br>任务：4 类</td>
+        <td>Accuracy</td>
+      </tr>
+      <tr id="deaftest-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Gong et al. <em>AV-Odyssey Bench: Can Your Multimodal LLMs Really Understand Audio-Visual Information?</em> arXiv:2412.02611, 2024.
+          <a href="https://arxiv.org/abs/2412.02611">论文链接</a> ·
+          <a href="https://av-odyssey.github.io/">项目主页</a>。
+          <p><b>数据集构成：</b>DeafTest 受到听力学中的 Schwabach Test 和视觉领域 BlindTest 启发，包含四类基础音频感知任务，每类 100 道二选一问题，共 400 道。音频根据预设声学参数构造，并通过随机采样及调整输入顺序降低位置偏差。</p>
+          <ul>
+            <li><b>Sound Counting（声音计数）：</b>判断音频中声音出现的次数。每段音频包含 3–8 次单调声音，相邻声音之间有明显静音间隔。</li>
+            <li><b>Loudness Comparison（响度比较）：</b>判断两段音频中哪段更响；较低响度为 30–60 dB，较高响度为 70–100 dB。</li>
+            <li><b>Pitch Comparison（音高比较）：</b>判断两段音频中哪段音高更高；低音高频率为 100–500 Hz，高音高频率为 1,000–2,000 Hz。</li>
+            <li><b>Duration Comparison（时长比较）：</b>判断两段音频中哪段持续时间更长；短音频为 1–3 秒，长音频为 4–6 秒。</li>
+          </ul>
+          <p><b>评测指标：</b>采用 Accuracy 衡量各任务表现。所有问题均为二选一，随机猜测基线为 50%。论文实验中，Gemini 1.5 Pro 在声音计数和时长比较上分别达到 81% 和 84%；所有受测模型在响度比较和音高比较上的准确率均低于 65%。结果显示，高层音频语义理解能力不必然意味着具备良好的底层音频感知能力，而这类感知不足可能成为复杂音视频联合理解与推理的瓶颈。</p>
+        </td>
+      </tr>
+      <tr id="deaftest-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/deaftest-example.png' | relative_url }}" alt="DeafTest 响度比较和音高比较样例，展示音频波形、模型回答与错误标记" loading="lazy">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <br>
 ## 2. 全模态基准
 
@@ -129,7 +181,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="omnibench-citation" title="展开或收起引用">OmniBench</button></td>
         <td>2024 年</td>
-        <td>面向图像、音频和文本三模态联合理解与推理的基准，强调视觉与听觉信息的互补性，涵盖时空实体理解、因果推理和抽象概念理解。通过人工审核与模态消融筛选，减少仅依赖单一模态即可回答的样本。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="omnibench-examples" title="展开或收起 OmniBench 样例">[样例]</button></td>
+        <td>面向图像、音频和文本三模态联合理解与推理的基准，强调视觉与听觉信息的互补性，涵盖时空实体理解、因果推理和抽象概念理解。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="omnibench-examples" title="展开或收起 OmniBench 样例">[样例]</button></td>
         <td>问答对：1,142<br>平均音频：9.22 秒<br>最长：30 秒</td>
         <td>Accuracy</td>
       </tr>
