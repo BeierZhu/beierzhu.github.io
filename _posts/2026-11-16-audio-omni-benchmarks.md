@@ -205,9 +205,9 @@ _styles: |
       </tr>
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="av-odyssey-citation" title="展开或收起引用与详细信息">AV-Odyssey Bench</button></td>
-        <td>2024 年 12 月</td>
-        <td>面向全模态大模型的音视频联合理解与推理基准。相比 OmniBench，扩展了音频属性、应用领域和任务类型，支持文本、图像、视频与音频交错输入，并通过单模态筛选降低信息冗余，重点评估音视频融合能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="av-odyssey-examples" title="展开或收起 AV-Odyssey Bench 样例">[样例]</button></td>
-        <td>问题：4,555<br>任务：26 类<br>领域：10 类<br>平均音频：16.32 秒<br>平均视频：15.58 秒</td>
+        <td>2024  </td>
+        <td>相比 OmniBench，扩展了音频属性、应用领域和任务类型，支持文本、图像、视频与音频交错输入。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="av-odyssey-examples" title="展开或收起 AV-Odyssey Bench 样例">[样例]</button></td>
+        <td>问题：4,555<br>平均时长：16 秒</td>
         <td>Accuracy</td>
       </tr>
       <tr id="av-odyssey-citation" class="benchmark-citation-row" hidden>
