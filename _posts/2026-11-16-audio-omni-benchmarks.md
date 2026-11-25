@@ -102,7 +102,7 @@ _styles: |
   </table>
 </div>
 
-### 1.2 基础音频感知（Basic Audio Perception）
+### 1.2 基础音频感知
 
 <div class="table-responsive benchmark-preview-table" markdown="0">
   <table aria-label="基础音频感知基准">
@@ -126,7 +126,7 @@ _styles: |
       <tr class="benchmark-data-row">
         <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="deaftest-citation" title="展开或收起引用">DeafTest</button></td>
         <td>2024 年</td>
-        <td>评估模型对底层声学属性的感知能力，包含声音计数、响度比较、音高比较和时长比较四类任务，不以高层语义理解与推理为重点。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="deaftest-examples" title="展开或收起 DeafTest 样例">[样例]</button></td>
+        <td>评估底层声学属性的感知能力，包含声音计数、响度比较、音高比较和时长比较四类任务。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="deaftest-examples" title="展开或收起 DeafTest 样例">[样例]</button></td>
         <td>问题：400<br>任务：4 类</td>
         <td>Accuracy</td>
       </tr>
@@ -201,6 +201,46 @@ _styles: |
       <tr id="omnibench-examples" class="benchmark-examples-row" hidden>
         <td colspan="5">
           <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/omnibench-example.png' | relative_url }}" alt="OmniBench 样例，展示目标识别、情境理解、身份关系、动作活动、故事因果、未来推断、文本符号和数量任务" loading="lazy">
+        </td>
+      </tr>
+      <tr class="benchmark-data-row">
+        <td><button type="button" class="benchmark-citation-toggle" aria-expanded="false" aria-controls="av-odyssey-citation" title="展开或收起引用与详细信息">AV-Odyssey Bench</button></td>
+        <td>2024 年 12 月</td>
+        <td>面向全模态大模型的音视频联合理解与推理基准。相比 OmniBench，扩展了音频属性、应用领域和任务类型，支持文本、图像、视频与音频交错输入，并通过单模态筛选降低信息冗余，重点评估音视频融合能力。<button type="button" class="benchmark-examples-toggle" aria-expanded="false" aria-controls="av-odyssey-examples" title="展开或收起 AV-Odyssey Bench 样例">[样例]</button></td>
+        <td>问题：4,555<br>任务：26 类<br>领域：10 类<br>平均音频：16.32 秒<br>平均视频：15.58 秒</td>
+        <td>Accuracy</td>
+      </tr>
+      <tr id="av-odyssey-citation" class="benchmark-citation-row" hidden>
+        <td colspan="5">
+          Gong et al. <em>AV-Odyssey Bench: Can Your Multimodal LLMs Really Understand Audio-Visual Information?</em> arXiv:2412.02611, 2024.
+          <a href="https://arxiv.org/abs/2412.02611">论文链接</a> ·
+          <a href="https://av-odyssey.github.io/">项目主页</a>。
+          <p><b>数据集构成：</b>包含 4,555 道四选一问题，覆盖 26 类任务和 10 个应用领域，包括音乐、动物、交通、日常生活、场景、动作及语音等。数据来自公开数据集及互联网资源，通过自动化问题构建与人工审核相结合的方式生成；每个问题均包含文本、视觉和音频三种模态。</p>
+          <p><b>输入形式：</b>支持多张图像、多段音频及视频与文本交错输入。多图像 + 单音频：2,610 题；单图像 + 多音频：891 题；单图像 + 单音频：434 题；单视频 + 单音频：220 题；单视频 + 多音频：400 题。</p>
+          <p><b>评测任务：</b>围绕七个音频相关维度组织 26 类任务：Timbre（音色），如乐器、歌手、动物、材质和交通工具识别；Tone（语气），如语音情感与幽默理解；Melody（旋律），如音乐情感、风格分类及舞蹈/电影与音乐匹配；Space（空间），包括四通道空间音频下的声源角度与距离估计；Time（时间），包括音频定位、音视频同步与动作顺序识别；Hallucination（幻觉），判断特定声音是否真实存在；Intricacy（复杂综合理解），结合视觉与多种音频属性进行动作预测和回溯。</p>
+          <p><b>质量控制：</b>使用 InternVL2、Qwen2-VL 等视觉语言模型以及 Qwen2-Audio、SALMONN 等音频语言模型进行单模态测试，过滤可由全部受测视觉模型或全部受测音频模型独立解答的问题，共过滤 2.54%，以降低单模态信息冗余。</p>
+          <p><b>评测指标：</b>使用 Accuracy 衡量各任务及整体音视频理解表现；所有题目均为四选一，随机猜测基线为 25%。论文中 GPT-4o Audio Caption 和 Gemini 1.5 Pro 的整体准确率分别为 34.5% 和 30.8%。对 Gemini 1.5 Pro 的错误归因显示，感知错误占 81%，其中音频理解错误占 63%，说明音频感知不足是音视频联合理解的重要瓶颈。</p>
+          <p><b>与 OmniBench 的主要区别：</b></p>
+          <div class="table-responsive">
+            <table class="table table-sm" aria-label="OmniBench 与 AV-Odyssey Bench 对比">
+              <thead>
+                <tr><th>对比维度</th><th>OmniBench</th><th>AV-Odyssey Bench</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>问题数量</td><td>1,142</td><td>4,555</td></tr>
+                <tr><td>视觉输入</td><td>单张图像</td><td>图像或视频</td></tr>
+                <tr><td>音频输入</td><td>单音频</td><td>单音频或多音频</td></tr>
+                <tr><td>交错输入</td><td>不支持</td><td>支持</td></tr>
+                <tr><td>评测覆盖</td><td>音色、时间等</td><td>扩展至语气、旋律、空间、幻觉及复杂综合理解等</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>以上比较依据 AV-Odyssey 原论文 Table 2，音频属性划分沿用论文分类体系。AV-Odyssey 并非 OmniBench 的直接扩展版本，而是在评测目标相近的基础上，扩展了输入形式、数据规模及音频属性覆盖范围。</p>
+        </td>
+      </tr>
+      <tr id="av-odyssey-examples" class="benchmark-examples-row" hidden>
+        <td colspan="5">
+          <img class="benchmark-example-image" src="{{ '/assets/img/benchmarks/av-odyssey-example.png' | relative_url }}" alt="AV-Odyssey Bench 样例，展示动物识别、危险场景识别、梗图理解、音乐情感分析、舞蹈音乐匹配、音频距离估计、时间定位、幻觉评估和动作预测等任务" loading="lazy">
         </td>
       </tr>
     </tbody>
